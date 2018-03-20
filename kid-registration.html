@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<?php include('kids.php') ?>
+<html>
+<head>
+<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
+        <link rel="stylesheet" type="text/css" href="vendors/css/ionicons.min.css">
+        <link rel="stylesheet" type="text/css" href="vendors/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/nav-menu.css">
+        <link rel="stylesheet" type="text/css" href="picture-container/picture-container.css">
+        <link rel="stylesheet" type="text/css" href="css/queries.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
+        <script src="vendors/js/jquery-3.2.1.min.js"></script>
+        <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+
+<title>Title of the document</title>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+</head>
+
+<body>
+       <header>
+        <div class="picture-container"></div>
+        <div class="navbar"></div> 
+     </header>
+
+<section id="registration-kid">
+        <form>
+        <h1> kid registration  </h1>
+        <p id="form-exp"> Please enter a phone number that is at least one of the parents <p>
+        <p class="success-message"></p>
+        <div class="row kid-form1">
+           <div class="col span-1-of-3 box">
+               <div class="registration-info">
+                  <label  for="name"> <span> * </span>  First name: </label>
+                  <input name="fname" type="name" id="name"/>
+                </div>
+           </div>
+              <div class="col span-1-of-3 box">
+                   <div class="registration-info">
+                      <label for="lname"> <span> * </span> Last name: </label>
+                      <input name="lname" type="text"/>
+                   </div>
+              </div>
+              <div class="col span-1-of-3 box">
+                  <div class="registration-info">
+                    <label for="id"> <span> * </span> ID: </label>
+                    <input name="kidId" type="text" id="kid-id">
+                  </div>
+              </div>
+        </div>
+           <div class="row kid-form2">
+              <div class="col span-1-of-3 box">
+                  <div class="registration-info">
+                    <label> <span> * </span> gender: </label>
+                    <select name="genders" size="1" id="gender"> 
+                            <option value="boy" selected> Boy  </option>
+                            <option value="Girl"> Girl </option>
+                    </select>
+                  </div>
+              </div>
+              <div class="col span-1-of-2 box">
+                <div class="registration-info">
+                    <label for="data"> <span> * </span> Birthday date: </label>
+                    <input name="bDate" type="date">
+                </div>
+              </div> 
+
+        </div>
+
+         <div class="row kid-form3">
+              <div class="col span-1-of-2 box">
+                  <div class="registration-info">
+                    <label for="name"> mother name: </label>
+                    <input name="mothername" type="text" id="mother-name">
+                  </div>
+              </div>
+              <div class="col span-1-of-2 box">
+                  <div class="registration-info">
+                     <label for="phone"> phone: </label>
+                     <input name="motherphone" type="phone" id="phone">
+                  </div>
+              </div>
+        </div>
+
+         <div class="row kid-form3">
+              <div class="col span-1-of-2 box">
+                  <div class="registration-info">
+                    <label for="name"> father name: </label>
+                    <input name="fathername" type="text" id="father-name">
+                  </div>
+              </div>
+              <div class="col span-1-of-2 box">
+                  <div class="registration-info">
+                     <label for="phone"> phone: </label>
+                     <input name="fatherphone" type="phone" id="phone">
+                  </div>
+              </div>
+        </div>
+
+        <div class="row kid-form3">
+              <div class="col span-1-of-2 box">
+                  <div class="registration-info">
+                    <label for="text"> adress: </label>
+                    <input name="adressKid" type="text" id="adress">
+                  </div>
+              </div>
+              <div class="col span-1-of-2 box">
+                  <div class="registration-info">
+                     <label> city: </label>
+                     <input name="city" type="text" id="city">
+              </div>
+        </div>
+
+        <div class="row">
+              <div class="col span-1-of-2 box">
+                  <div class="registration-info">
+                    <label>  Allergies, comments and special requests </label>
+                    <textarea name="allergies" cols="50" rows="8" placeholder="type here..."> </textarea>
+                  </div>
+              </div>
+         </div>
+         
+        <button type="button" class="save-1" onClick="createKidForm()">Save</button>
+
+
+  </form>
+        <script src="commons.js"></script>
+        <script src="main.js"></script>
+</section>
+
+    
+    <script>
+         $.get("nav-menu/nav-menu.html", function(template){
+             document.querySelector(".navbar").innerHTML = template;
+         });
+         $.get("picture-container/picture-container.html", function(template){
+             document.querySelector(".picture-container").innerHTML = template;
+         });
+   </script>
+</body>
+
+</html>

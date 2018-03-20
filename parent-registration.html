@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
+        <link rel="stylesheet" type="text/css" href="vendors/css/ionicons.min.css">
+        <link rel="stylesheet" type="text/css" href="vendors/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/nav-menu.css">
+        <link rel="stylesheet" type="text/css" href="picture-container/picture-container.css">
+        <link rel="stylesheet" type="text/css" href="css/queries.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
+        <script src="vendors/js/jquery-3.2.1.min.js"></script>
+        <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+
+<title>Title of the document</title>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+</head>
+
+<body>
+       <header>
+        <div class="picture-container"></div>
+        <div class="navbar"></div> 
+     </header>
+
+<section id="registration-parent">
+        <form>
+            <h1> parent registration </h1>
+            <p class="success-message"></p>
+            <div class="row parent-form1">
+                <div class="col span-1-of-3 box">
+                    <div class="registration-info">
+                        <label for="name"> <span> * </span> name: </label>
+                        <input name="name" type="text" id="name" required/> 
+                    </div>
+                </div>
+                <div class="col span-1-of-3 box">
+                    <div class="registration-info">
+                            <label> <span> * </span> family member: </label>
+                            <select name="familyMember" size="1" > 
+                                    <option value="Father"> Father  </option>
+                                    <option value="Mother" selected> Mother </option>
+                            </select>
+                    </div>
+                </div> 
+                
+                <div class="col span-1-of-3 box">
+                    <div class="registration-info">
+                        <label for="phone" id="parent-phone"> <span> * </span> phone: </label>
+                        <input name="phone" type="phone" id="phone" required/> 
+                    </div>
+                </div> 
+            </div>
+            <div class="row parent-form2">
+                <div class="col span-1-of-3 box">
+                    <div class="registration-info">
+                            <label for="email"> <span> * </span> email: </label>
+                            <input name="email" type="email" id="email" required/>
+                    </div>
+                </div>
+                <div class="col span-1-of-3 box">
+                    <div class="registration-info">
+                        <label for="password"> <span> * </span> password: </label>
+                        <input name="password" type="password" id="password" required/> 
+                    </div> 
+                </div>
+                <div class="col span-1-of-3 box">
+                    <div class="registration-info">
+                        <label for="id" id="parent-id"> <span> * </span> ID: </label>
+                        <input name="parentId" type="text" id="parent-id-input" required>
+                    </div>
+            
+                </div>
+
+                <!--<input type="hidden" name="route" value="create_user" />-->
+            </div>
+
+       <button type="button" class="save-2" onClick="createParentUser()">Save</button>   
+  </form>
+
+        <script src="commons.js"></script>
+        <script src="main.js"></script>
+</section>
+    
+    <script>
+         $.get("nav-menu/nav-menu.html", function(template){
+             document.querySelector(".navbar").innerHTML = template;
+         });
+         $.get("picture-container/picture-container.html", function(template){
+             document.querySelector(".picture-container").innerHTML = template;
+         });
+   </script>
+</body>
+
+</html>
