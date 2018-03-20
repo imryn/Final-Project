@@ -70,17 +70,13 @@
 
          public function login(){
             $this->allowSpecialCharacters($_POST);
-            $sql = "SELECT email FROM users WHERE email='{$_POST['email']}' AND password='{$_POST['password']}'";
+            $sql = "SELECT email FROM users WHERE email='{$_POST['email']}' AND password ='{$_POST['password']}'";
             $result = $this->db->query($sql); 
-            if($result->$num_rows > 0 ){
-                  echo json_encode((object) [
-                    'success'=>true
-                ]);
+            if(mysqli_num_rows($result) > 0 ){
+                header("Location: /Sadna/index.html");
             }
             else{
-                echo json_encode((object) [
-                    'error'=>true
-                ]);
+                header("Location: /Sadna/login_page.html");
             }
            
         }

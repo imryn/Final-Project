@@ -6,7 +6,7 @@
         private $connect;
     
         private function __construct(){
-            $this->connect = new mysqli('84.229.144.10','imryno_imryno', '&#$nBP8;&ZDx', 'imryno_project');
+            $this->connect = new mysqli('localhost','root', '', 'project');
         }
         
         public static function getInstance(){
