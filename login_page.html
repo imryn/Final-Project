@@ -23,40 +23,45 @@
 </head>
 
 <body>
-       <header>
-        <div class="picture-container"></div>
-        <div class="navbar"></div> 
-     </header>
-
 <section id="login-section">
     <form action="/Sadna/server/api.php" method="post">
-        <div class="container">
-	    <div class="login-container">
-            <div id="output"></div>
-            <div class="avatar"></div>
-            <div class="form-box">
-                    <input name="email" type="text" placeholder="email" required>
-                    <input name="password" type="password" placeholder="password" required>
-                    <input type="hidden" name="route" value="login" >
-                    <button class="btn btn-info btn-block login" type="submit">Login</button>
-            </div>
+            		<div id="playground-container">
+	    
+		<div class="col-md-10 col-md-offset-1 main" >
+		<div class="col-md-6 left-side" >
+		<h3>Kidin Touch</h3>
+		<br>
+		</div>
+		
+		<div class="col-md-6 right-side">
+		<h3>Login</h3>
+		
+<div class="form">
+        <div class="form-group">
+		    <label for="form2">Your e-mail</label>
+            <input class= "form-control input-lg" name="email" type="text" id="form2" placeholder="email" required>
+        </div>
+
+        <div class="form-group">
+		    <label for="form4">Your password</label>
+            <input name="password" id="form4"  class="form-control input-lg" type="password" placeholder="password" required>
+        </div>
+
+        <div class="text-xs-center">
+            <input type="hidden" name="route" value="login" >
+            <button class="btn btn-deep-purple" type="submit" >Login</button>
+        </div>
+
+</div>
+		</div><!--col-sm-6-->
+        </div><!--col-sm-8-->
+        
         </div>
      </form>     
-
-       <!--<button type="button" class="login" onClick="login()"> login</button>   -->
-</section>
-
+   </section>
         <script src="commons.js"></script>
         <script src="main.js"></script>
     
-    <script>
-         $.get("nav-menu/nav-menu.html", function(template){
-             document.querySelector(".navbar").innerHTML = template;
-         });
-         $.get("picture-container/picture-container.html", function(template){
-             document.querySelector(".picture-container").innerHTML = template;
-         });
-   </script>
 </body>
 
 </html>

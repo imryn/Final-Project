@@ -19,9 +19,7 @@
                 $this->allowSpecialCharacters($_POST);
                 $values = "'{$_POST['parentId']}','{$_POST['name']}','{$_POST['familyMember']}','{$_POST['phone']}','{$_POST['email']}','{$_POST['password']}'";
                 $sql = "INSERT INTO users (parentId,name,familyMember,phone,email,password) VALUES ($values)";
-                $result =$this->db->query($sql);
             
-
                 $result =$this->db->query($sql);
                 $id = $this->db->insert_id;
                 if($result){

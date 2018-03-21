@@ -54,6 +54,11 @@ function createParentUser(){
     var data = getFormData("#registration-parent");
     data['route'] = 'create_user';
     httpPost("/Sadna/server/api.php",data,function(response){
-        document.querySelector(".success-message").textContent = "The form was completed successfully!";
+        if(response.success){
+             window.location.assign("/Sadna/kid-registration.html");
+        }
+        else{
+            document.querySelector(".success-message").textContent = "Error";
+        }
     })
 }

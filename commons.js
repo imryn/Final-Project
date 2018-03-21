@@ -30,9 +30,7 @@ function httpGet(url,params,callback){
         if(response){
             try {
                 var responseData = JSON.parse(response);
-                if(responseData.success){
-                    callback(responseData);
-                }
+                callback(responseData);
             }
             catch(err) {}
         }
@@ -45,9 +43,7 @@ function httpPost(url,data,callback){
         if(response){
             try {
                 var responseData = JSON.parse(response);
-                if(responseData.success){
-                    callback(responseData);
-                }
+                callback(responseData);
             }
             catch(err) {}
         }
