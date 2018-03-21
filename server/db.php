@@ -6,8 +6,8 @@
         private $connect;
     
         private function __construct(){
-           $this->connect = new mysqli('imryno.mtacloud.co.il:3307','imryno_sa', '1qaz2wsx', 'imryno_project');
-                        // $this->connect = new mysqli('localhost','root', '', 'project');
+        //    $this->connect = new mysqli('imryno.mtacloud.co.il:3307','imryno_sa', '1qaz2wsx', 'imryno_project');
+              $this->connect = new mysqli('localhost','root', '', 'project');
 
         }
         
