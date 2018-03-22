@@ -27,7 +27,6 @@ h1{
     letter-spacing: 2px;
     font-size: 150%; 
     margin-bottom: 30px;
-    text-transform: uppercase;
     text-align: center;
 }
 
@@ -70,15 +69,15 @@ section{
 
 #registration-kid{
     background-color: #f0f0f0;
-    width: 78.3%;
-    margin-left: 10.5%;
+    width: 75.3%;
+    margin-left: 12.5%;
 }
 
 .parent-form1, .kid-form1{
-    margin-top: 5%;
+    margin-top: 7%;
 }
 
-.parent-form2, .parent-form1{
+.parent-form1, .parent-form2, .parent-form3, .parent-form4 {
     margin-left: 2%;
 }
 
@@ -86,7 +85,7 @@ section{
    margin-left: 2%;
 }
 
-.kid-form3{
+.kid-form3, .kid-form4{
     margin-left: 3.3%;
 }
 .registration-info input{
@@ -104,6 +103,10 @@ section{
     height: 28px;
 }
 
+#birthday-date{
+    width: 65%;
+}
+
 .report-info input{
     background-color: transparent;
     border: solid 1px rgb(169,169,169);
@@ -119,74 +122,61 @@ section{
     height: 28px;
 }
 
- .registration-info input[type="password"]{
-    width: 60%;
-    margin-left: 3.2%;
+#address, #city, #phone{
+    margin-left: 4%;
 }
 
-#city{
-    width: 55.5%;
-    margin-left: 11%;
-}
-
-#gender{
-    width: 59%;
-    margin-left: 14%;
-}
-#mother-name{
-    width: 46%;
-    margin-left: 8%;
-}
-
-#phone{
-  width: 55%;
-  margin-left: 6%;  
-}
-
-#father-name{
-    width: 46%;
-    margin-left: 10.3%;
-}
-
-#adress{
-    width: 46%;
-    margin-left: 22%;    
-}
-
-#kid-id{
-  margin-left: 19%;
-   
-}
-
-#parent-id, #parent-phone{
-    margin-left: 3%;
-}
-
-
-.registration-info input[type="date"]{
-    width: 45%;
-    margin-left: 2%;
-    color: black;   
-}
-
-#parent-id-input{
-    margin-left: 18%;
-    width: 55%;
+#f-member{
+    margin-left: -6%;
 }
 
 .registration-info select, .report-info select{
     border-radius: 5px;
     font-family: 'Lato';
     font-weight: 300;
+ 
 }
 
 .registration-info select{
-     margin-left: 47px;
+    margin-top: 1%;
+    margin-left: 4%;
+    width: 59%;
+}
+
+#gender{
+    width: 127%;
+    margin-left: 8%;
+}
+
+#email-input{
+    margin-left: -1%; 
+}
+
+#f-member-select{
+    width: 109%;
+    margin-left: -1%;
+}
+
+input[type=checkbox], input[type=radio]{
+    background-color: transparent;
+    border: solid 1px rgb(169,169,169);
+    color: black;
+    background: white;
+    border-radius: 5px;
+    margin-top: 6%;   
+}
+
+input[type=checkbox]{
+    width: 10%;
+}
+
+input[type=radio]{
+    width: 7%;
 }
 
 .report-info select{
     margin-left: 25px;
-}
+} 
 
 .save-1, .save-2, .create-botton{
     padding: 5px;
@@ -207,7 +197,7 @@ section{
 }
 
 .save-2{
-   margin-top: 10%;
+   margin-top: 12%;
    margin-left: 48%; 
 }
 
@@ -226,6 +216,8 @@ section{
    margin-left: 4%;
    color: #9b59b6;
    margin-bottom: -4%;
+   word-spacing: 2px;
+
 }
 
 #kids-table{

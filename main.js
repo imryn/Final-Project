@@ -58,7 +58,7 @@ function createParentUser(){
              window.location.assign("/Sadna/kid-registration.html");
         }
         else{
-            document.querySelector(".success-message").textContent = "Error";
+            document.querySelector(".success-message").textContent = "one of the field is wrong or already used";
         }
     })
 }

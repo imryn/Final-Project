@@ -18,13 +18,11 @@
 
                 // $createTime = now_time_in_timeStampe()
 
-                $values = "'{$_POST['fname']}','{$_POST['lname']}','{$_POST['kidId']}','{$_POST['genders']}',
-                '{$_POST['bDate']}','{$_POST['mothername']}','{$_POST['motherphone']}','{$_POST['fathername']}', '{$_POST['fatherphone']}',
-                '{$_POST['adressKid']}','{$_POST['city']}','{$_POST['allergies']}'";
+                $values = "'{$_POST['fname']}','{$_POST['kidId']}','{$_POST['bDate']}','{$_POST['genders']}',
+                ,'{$_POST['comments']}'";
 
             
-                $sql = "INSERT INTO kids (fname,lname,kidId,genders,bDate,mothername,motherphone
-                        ,fathername,fatherphone,adressKid,city,allergies) VALUES ($values)";
+                $sql = "INSERT INTO kids (fname,kidId,genders,bDate,adressKid,city,comments) VALUES ($values)";
 
                 
                 $result =$this->db->query($sql);

@@ -17,8 +17,11 @@
        
         public function createUser(){
                 $this->allowSpecialCharacters($_POST);
-                $values = "'{$_POST['parentId']}','{$_POST['name']}','{$_POST['familyMember']}','{$_POST['phone']}','{$_POST['email']}','{$_POST['password']}'";
-                $sql = "INSERT INTO users (parentId,name,familyMember,phone,email,password) VALUES ($values)";
+                $values = "'{$_POST['kindergartenid']}','{$_POST['firstname']}','{$_POST['lastname']}','{$_POST['parentId']}','{$_POST['password']}'
+                ,'{$_POST['addressuser']}','{$_POST['city']}','{$_POST['email']}','{$_POST['phone']}','{$_POST['mobilephone']}','{$_POST['familyMember']}'";
+
+                $sql = "INSERT INTO users (kindergartenid,firstname,lastname,parentId,password,
+                addressuser,city,email,phone,mobilephone,familyMember) VALUES ($values)";
             
                 $result =$this->db->query($sql);
                 $id = $this->db->insert_id;
@@ -44,9 +47,9 @@
                $data= [];
              while($row = mysqli_fetch_array($result)){
                  array_push($data, (object) [
-                     'name' => $row['name'],
+                     'firstname' => $row['firstname'],
                      'familyMember' => $row['familyMember'],
-                     'phone' => $row['phone'],
+                     'mobilephone' => $row['mobilephone'],
                      'email' => $row['email'],
                      'parentId' => $row['parentId']
                 ]);
@@ -68,7 +71,7 @@
 
          public function login(){
             $this->allowSpecialCharacters($_POST);
-            $sql = "SELECT email FROM users WHERE email='{$_POST['email']}' AND password ='{$_POST['password']}'";
+            $sql = "SELECT parentId FROM users WHERE parentId='{$_POST['parentId']}' AND password ='{$_POST['password']}'";
             $result = $this->db->query($sql); 
             if(mysqli_num_rows($result) > 0 ){
                 header("Location: /Sadna/index.html");

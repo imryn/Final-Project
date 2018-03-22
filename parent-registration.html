@@ -12,7 +12,6 @@
         <link rel="stylesheet" type="text/css" href="picture-container/picture-container.css">
         <link rel="stylesheet" type="text/css" href="css/queries.css">
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
-        <script src="vendors/js/jquery-3.2.1.min.js"></script>
         <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
 
 <title>Title of the document</title>
@@ -30,54 +29,87 @@
 
 <section id="registration-parent">
         <form>
-            <h1> parent registration </h1>
+            <h1> Parent Registration </h1>
             <p class="success-message"></p>
             <div class="row parent-form1">
                 <div class="col span-1-of-3 box">
                     <div class="registration-info">
-                        <label for="name"> <span> * </span> name: </label>
-                        <input name="name" type="text" id="name" required/> 
+                        <label for="kindergarten"> <span> * </span> Kindergarten Code </label>
+                        <input name="kindergartenid" type="text" required/> 
                     </div>
                 </div>
                 <div class="col span-1-of-3 box">
                     <div class="registration-info">
-                            <label> <span> * </span> family member: </label>
-                            <select name="familyMember" size="1" > 
-                                    <option value="Father"> Father  </option>
-                                    <option value="Mother" selected> Mother </option>
-                            </select>
+                        <label for="name"> <span> * </span> First Name: </label>
+                        <input name="firstname" type="text" required/> 
                     </div>
-                </div> 
-                
+                </div>
                 <div class="col span-1-of-3 box">
                     <div class="registration-info">
-                        <label for="phone" id="parent-phone"> <span> * </span> phone: </label>
-                        <input name="phone" type="phone" id="phone" required/> 
+                        <label for="name"> <span> * </span> Last Name: </label>
+                        <input name="lastname" type="text" required/> 
                     </div>
                 </div> 
             </div>
             <div class="row parent-form2">
+                 <div class="col span-1-of-3 box">
+                     <div class="registration-info">
+                         <label for="id" id="parent-id"> <span> * </span> ID: </label> <br>
+                         <input name="parentId" type="text" required>
+                     </div>    
+                </div>
+                 <div class="col span-1-of-3 box">
+                     <div class="registration-info">
+                         <label for="password"> <span> * </span> Password: </label> <br>
+                         <input name="password" type="password" id="password" required/>
+                     </div> 
+                 </div>
+            </div>
+            <div class="row parent-form3">
                 <div class="col span-1-of-3 box">
                     <div class="registration-info">
-                            <label for="email"> <span> * </span> email: </label>
-                            <input name="email" type="email" id="email" required/>
+                        <label for="address" id="address"> Address: </label> <br>
+                        <input name="addressuser" type="text"/> 
                     </div>
                 </div>
                 <div class="col span-1-of-3 box">
                     <div class="registration-info">
-                        <label for="password"> <span> * </span> password: </label>
-                        <input name="password" type="password" id="password" required/> 
-                    </div> 
+                        <label id="city"> City: </label> <br>
+                            <select name="city" size="1"> 
+                                <option value="Tel-aviv"> Tel-aviv  </option>
+                            </select>
+                    </div>
                 </div>
                 <div class="col span-1-of-3 box">
-                    <div class="registration-info">
-                        <label for="id" id="parent-id"> <span> * </span> ID: </label>
-                        <input name="parentId" type="text" id="parent-id-input" required>
-                    </div>
-            
+                        <div class="registration-info">
+                                <label for="email"> <span> * </span> Email: </label> <br>
+                                <input name="email" type="email" id="email-input" required/>
+                        </div>
                 </div>
             </div>
-
+                <div class="row parent-form4">
+                    <div class="col span-1-of-3 box">
+                            <div class="registration-info">
+                                <label for="phone" id="phone"> Phone: </label> <br>
+                                <input name="phone" type="phone" /> 
+                            </div>
+                    </div>
+                    <div class="col span-1-of-3 box">
+                            <div class="registration-info">
+                                <label for="phone" id="parent-phone"> <span> * </span> Mobile Phone: </label>
+                                <input name="mobilephone" type="phone" id="phone" required/> 
+                            </div>
+                    </div>
+                    <div class="col span-1-of-1 box">
+                            <div class="registration-info">
+                                    <label id="f-member"> <span> * </span> Family member: </label> <br>
+                                    <select name="familyMember" size="1" id="f-member-select" > 
+                                            <option value="Father"> Father  </option>
+                                            <option value="Mother" selected> Mother </option>
+                                    </select>
+                            </div>
+                    </div> 
+               </div>
        <button type="button" class="save-2" onClick="createParentUser()">Save</button>   
   </form>
 
