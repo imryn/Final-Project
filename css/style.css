@@ -206,11 +206,6 @@ input[type=radio]{
    margin-left: 48%;  
 }
 
-#form-exp{
-    margin-left: 4%;
-    color: #e67e22;
-}
-
 .success-message{
    font-weight: bold; 
    margin-left: 4%;
