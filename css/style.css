@@ -122,12 +122,16 @@ section{
     height: 28px;
 }
 
-#address, #city, #phone{
+#address, #city, #phone, #another-contact{
     margin-left: 4%;
 }
 
 #f-member{
     margin-left: -6%;
+}
+
+#another-phone{
+    margin-left: -3%;
 }
 
 .registration-info select, .report-info select{
@@ -155,6 +159,10 @@ section{
 #f-member-select{
     width: 109%;
     margin-left: -1%;
+}
+
+#more-phone{
+    margin-left: 0%; 
 }
 
 input[type=checkbox], input[type=radio]{
