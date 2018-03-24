@@ -1,44 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css">
-        <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
-        <link rel="stylesheet" type="text/css" href="vendors/css/ionicons.min.css">
-        <link rel="stylesheet" type="text/css" href="vendors/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="stylesheet" type="text/css" href="css/nav-menu.css">
-        <link rel="stylesheet" type="text/css" href="picture-container/picture-container.css">
-        <link rel="stylesheet" type="text/css" href="css/queries.css">
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
-        <script src="vendors/js/jquery-3.2.1.min.js"></script>
-        <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+    <head>
+        <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css">
+                <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
+                <link rel="stylesheet" type="text/css" href="vendors/css/ionicons.min.css">
+                <link rel="stylesheet" type="text/css" href="vendors/bootstrap/css/bootstrap.min.css">
+                <link rel="stylesheet" type="text/css" href="css/style.css">
+                <link rel="stylesheet" type="text/css" href="css/nav-menu.css">
+                <link rel="stylesheet" type="text/css" href="picture-container/picture-container.css">
+                <link rel="stylesheet" type="text/css" href="css/queries.css">
+                <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
+                <script src="vendors/js/jquery-3.2.1.min.js"></script>
+                <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
 
-<title>Building Weekly Scheduler</title>
-<script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-</head>
+        <title>Building Weekly Scheduler</title>
+        <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous">
+        </script>
+    </head>
 
-<body>
-    <header>
-        <div class="picture-container"></div>
-        <div class="navbar"></div> 
-    </header>
+    <body>
+        <header>
+            <div class="picture-container"></div>
+            <div class="navbar"></div> 
+        </header>
 
 
-    
-    
-    <script>
-         $.get("nav-menu/nav-menu.html", function(template){
-             document.querySelector(".navbar").innerHTML = template;
-         });
-         $.get("picture-container/picture-container.html", function(template){
-             document.querySelector(".picture-container").innerHTML = template;
-         });
-   </script>
-</body>
+        
+        
+        <script>
+            $.get("nav-menu/nav-menu.html", function(template){
+                document.querySelector(".navbar").innerHTML = template;
+            });
+            $.get("picture-container/picture-container.html", function(template){
+                document.querySelector(".picture-container").innerHTML = template;
+            });
+        </script>
+    </body>
 
 </html>
