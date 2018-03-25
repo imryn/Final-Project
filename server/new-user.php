@@ -18,10 +18,11 @@
         public function createUser(){
                 $this->allowSpecialCharacters($_POST);
                 $values = "'{$_POST['kindergartenid']}','{$_POST['firstname']}','{$_POST['lastname']}','{$_POST['parentId']}','{$_POST['password']}'
-                ,'{$_POST['addressuser']}','{$_POST['city']}','{$_POST['email']}','{$_POST['phone']}','{$_POST['mobilephone']}','{$_POST['familyMember']}'";
+                ,'{$_POST['addressuser']}','{$_POST['city']}','{$_POST['email']}','{$_POST['phone']}','{$_POST['mobilephone']}','{$_POST['familyMember']}'
+                ,'{$_POST['anothercontact']}','{$_POST['relationship']}','{$_POST['mobilephone2']}'";
 
                 $sql = "INSERT INTO users (kindergartenid,firstname,lastname,parentId,password,
-                addressuser,city,email,phone,mobilephone,familyMember) VALUES ($values)";
+                addressuser,city,email,phone,mobilephone,familyMember,anothercontact,relationship,mobilephone2) VALUES ($values)";
             
                 $result =$this->db->query($sql);
                 $id = $this->db->insert_id;

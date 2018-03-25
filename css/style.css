@@ -165,13 +165,14 @@ section{
     margin-left: 0%; 
 }
 
+
 input[type=checkbox], input[type=radio]{
     background-color: transparent;
     border: solid 1px rgb(169,169,169);
     color: black;
     background: white;
     border-radius: 5px;
-    margin-top: 6%;   
+    /* margin-top: 6%;    */
 }
 
 input[type=checkbox]{
