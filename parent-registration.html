@@ -134,11 +134,124 @@
 
        <button type="button" class="save-2" onClick="createParentUser()">Save</button>   
   </form>
-
+<!-- 
         <script src="commons.js"></script>
-        <script src="main.js"></script>
+        <script src="main.js"></script> -->
 </section>
-    
+
+<!-- kid section -->
+<section id="registration-kid">
+    <form>
+        <h1> Kid Registration  </h1>
+        <p class="success-message"></p>
+            <div class="row kid-form1">
+                 <div class="col span-1-of-3 box">
+                    <div class="registration-info">
+                        <label  for="name"> <span> * </span>  First name: </label> <br>
+                        <input name="fname" type="name" id="name"/>
+                    </div>
+                </div>
+                 <div class="col span-1-of-3 box">
+                     <div class="registration-info">
+                        <label for="id"> <span> * </span> ID: </label> <br>
+                        <input name="kidId" type="text" id="kid-id">
+                     </div>
+                </div>
+                <div class="col span-1-of-3 box">
+                    <div class="registration-info">
+                        <label for="data"> <span> * </span> Birthday date: </label>
+                        <input name="bDate" type="date" id="birthday-date">
+                    </div>
+                </div> 
+           </div>
+           <div class="row kid-form2">
+                   <div class="col span-1-of-1 box">
+                        <div class="registration-info">
+                            <label> <span> * </span> Gender: </label>
+                            <select name="genders" size="1" id="gender"> 
+                                <option value="boy" selected> Boy  </option>
+                                <option value="Girl"> Girl </option>
+                            </select>
+                        </div>
+                   </div>
+           </div>
+
+           <div class="row kid-form3">
+                <div class="col span-1-of-4 box">
+                    <div class="registration-info">
+                        <label for="name"> Allergies: </label>   
+                        <p> <input type="checkbox" name="allergies1"> Celiac </p>
+                    </div>
+                </div>
+                <div class="col span-1-of-4 box">
+                    <div class="registration-info">
+                    <!-- <label for="name"> </label>    -->
+                        <p> <input type="checkbox" name="allergies2"> Eggs </p>                  
+                    </div>
+                </div>
+                <div class="col span-1-of-4 box">
+                    <div class="registration-info">
+                    <!-- <label for="name"> </label>    -->
+                        <p> <input type="checkbox" name="allergies3"> Fish </p>                  
+                    </div>
+                </div>
+                <div class="col span-1-of-4 box">
+                    <div class="registration-info">
+                    <!-- <label for="name"> </label>    -->
+                        <p> <input type="checkbox" name="allergies4"> Kiwis </p>                  
+                    </div>
+                </div>
+           </div>
+           <div class="row kid-form3">
+                <div class="col span-1-of-4 box"> 
+                     <div class="registration-info"> 
+                        <p> <input type="checkbox" name="allergies5"> Lactose intolerance </p>                  
+                     </div>
+                </div>
+           <div class="col span-1-of-4 box">
+                    <div class="registration-info">
+                        <p> <input type="checkbox" name="allergies6"> Nuts </p>
+                    </div>
+           </div>
+           <div class="col span-1-of-4 box">
+                    <div class="registration-info">   
+                         <p> <input type="checkbox" name="allergies7"> Soy </p>                  
+                    </div>
+           </div>
+           <div class="col span-1-of-4 box">
+                    <div class="registration-info"> 
+                        <p> <input type="checkbox" name="allergies8"> Strawberries </p>                  
+                    </div>
+           </div>
+           </div>
+           <div class="row kid-form3">
+                <div class="col span-1-of-3 box">
+                    <div class="registration-info">
+                        <label for="food"> Food Preference: </label>   
+                        <p> <input type="radio" name="food-pref"> vegan </p>                  
+                    </div>
+                </div>
+                <div class="col span-1-of-3 box">
+                    <div class="registration-info">
+                        <label for="food"> </label>   
+                        <p> <input type="radio" name="food-pref"> vegetarian </p>                  
+                    </div>
+                </div>
+           </div>
+           <div class="row kid-form4">
+                <div class="col span-1-of-2 box">
+                     <div class="registration-info">
+                        <label>  Comments and Special Requests </label>
+                        <textarea name="comments" cols="50" rows="8" placeholder="type here..."> </textarea>
+                </div>
+                </div>
+            </div>
+     
+            <button type="button" class="save-1" onClick="createKidForm()">Save</button>
+     </form>  
+</section>
+           <script src="commons.js"></script>
+           <script src="main.js"></script>
     <script>
          $.get("nav-menu/nav-menu.html", function(template){
              document.querySelector(".navbar").innerHTML = template;
