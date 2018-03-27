@@ -14,9 +14,6 @@
                 foreach( $_POST as $key => $value ) {
                      $_POST[$key] = strip_tags($this->db->real_escape_string($value));
                 }
-                
-
-                // $createTime = now_time_in_timeStampe()
 
                 $values = "'{$_POST['fname']}','{$_POST['kidId']}','{$_POST['bDate']}','{$_POST['genders']}',
                 ,'{$_POST['allergies']}','{$_POST['comments']}','{$_POST['foodpreference']}'";
