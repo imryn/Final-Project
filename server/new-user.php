@@ -14,9 +14,21 @@
                      $method[$key] = strip_tags($this->db->real_escape_string($value));
             }
         }
+
+        private function error(){
+            echo json_encode((object) [
+                'error'=>true
+            ]);
+        }
        
         public function createUser(){
-                $this->allowSpecialCharacters($_POST);
+            
+            $this->allowSpecialCharacters($_POST);
+                 
+            if(!isEmpty($_POST['kindergartenid']) && !isEmpty($_POST['kindergartenid']) ){
+
+              
+
                 $values = "'{$_POST['kindergartenid']}','{$_POST['firstname']}','{$_POST['lastname']}','{$_POST['parentId']}','{$_POST['password']}'
                 ,'{$_POST['addressuser']}','{$_POST['city']}','{$_POST['email']}','{$_POST['phone']}','{$_POST['mobilephone']}','{$_POST['familyMember']}'
                 ,'{$_POST['anothercontact']}','{$_POST['relationship']}','{$_POST['mobilephone2']}'";
@@ -33,10 +45,13 @@
                     ]);
                 }
                 else{
-                    echo json_encode((object) [
-                        'error'=>true
-                    ]);
+                  $this->error();
                 }
+            }
+            else{
+                $this->error();
+            }
+                
 
         }
 

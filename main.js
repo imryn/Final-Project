@@ -42,23 +42,40 @@ function getReports(){
 
 
 
-function createKidForm(){
+function createKidForm(callback){
     var data = getFormData("#registration-kid");
+    console.log(data);
+    var date = new Date(data.bDate).getTime();
+    if(!isNaN(date)){
+        data.bDate = date;
+    }
     data['route'] = 'create_kid';
-    httpPost("/Sadna/server/api.php",data,function(response){
-        document.querySelector(".success-message").textContent = "The form was completed successfully!";
-    })
+    httpPost("/Sadna/server/api.php",data,callback);
+}
+
+function error(msg){
+    document.querySelector(".success-message").textContent = msg;
 }
 
 function createParentUser(){
     var data = getFormData("#registration-parent");
-    data['route'] = 'create_user';
-    httpPost("/Sadna/server/api.php",data,function(response){
+
+    createKidForm(function(response){
+
         if(response.success){
-             window.location.assign("/Sadna/kid-registration.html");
+            data['route'] = 'create_user';
+            httpPost("/Sadna/server/api.php",data,function(response){
+                if(response.success){
+                    window.location.assign("/Sadna/index.html");
+                }
+                else{
+                    error("one of the field is wrong or already used");
+                }
+            })
         }
         else{
-            document.querySelector(".success-message").textContent = "one of the field is wrong or already used";
+            error("one of the field is wrong or already used");
         }
-    })
+
+    });
 }

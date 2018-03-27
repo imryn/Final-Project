@@ -15,9 +15,9 @@
                     $user->createUser();
                     break;
                 case "create_kid":
-                    $kid = new Kids();
-                    $kid->createKidbag();
-                    break;
+                     $kid = new Kids();
+                     $kid->createKidbag();
+                     break;
                 case "login":
                     $user = new Users();
                     $user->login();

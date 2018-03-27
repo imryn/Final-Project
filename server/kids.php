@@ -21,10 +21,8 @@
                 $values = "'{$_POST['fname']}','{$_POST['kidId']}','{$_POST['bDate']}','{$_POST['genders']}',
                 ,'{$_POST['allergies']}','{$_POST['comments']}','{$_POST['foodpreference']}'";
 
-            
                 $sql = "INSERT INTO kids (fname,kidId,bDate,genders,allergies,comments,foodpreference) VALUES ($values)";
 
-                
                 $result =$this->db->query($sql);
                 $id = $this->db->insert_id;
                 if($result){
