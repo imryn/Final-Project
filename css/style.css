@@ -51,10 +51,10 @@ section{
     padding: 30px 0;
 }
 
-#registration-parent{
+#registration-parent, #registration-kid{
     background-color: #f0f0f0;
-    width: 73.3%;
-    margin-left: 13.5%;
+    width: 74.3%;
+    margin-left: 13%;
 }
 
  #reports{
@@ -67,26 +67,20 @@ section{
     margin-left: 3.2%;
  }
 
-#registration-kid{
-    background-color: #f0f0f0;
-    width: 73.3%;
-    margin-left: 13.5%;
-}
-
 .parent-form1, .kid-form1{
     margin-top: 7%;
 }
 
 .parent-form1, .parent-form2, .parent-form3, .parent-form4 {
-    margin-left: 2%;
+    margin-left: 10%;
 }
 
 .kid-form1,.kid-form2 {
-   margin-left: 2%;
+   margin-left: 10%;
 }
 
 .kid-form3, .kid-form4{
-    margin-left: 3.3%;
+    margin-left: 11.3%;
 }
 .registration-info input{
     background-color: transparent;
@@ -104,7 +98,7 @@ section{
 }
 
 #birthday-date{
-    width: 66%;
+    width: 71%;
 }
 
 .report-info input{
@@ -126,14 +120,6 @@ section{
     margin-left: 4%;
 }
 
-#f-member{
-    margin-left: -6%;
-}
-
-#another-phone{
-    margin-left: -3%;
-}
-
 .registration-info select, .report-info select{
     border-radius: 5px;
     font-family: 'Lato';
@@ -148,23 +134,14 @@ section{
 }
 
 #gender{
-    width: 127%;
+    width: 120%;
     margin-left: 8%;
 }
 
-#email-input{
-    margin-left: -1%; 
-}
-
 #f-member-select{
-    width: 109%;
-    margin-left: -1%;
+    width: 103%;
+    margin-left: 7%;
 }
-
-#more-phone{
-    margin-left: 0%; 
-}
-
 
 input[type=checkbox], input[type=radio]{
     background-color: transparent;
@@ -206,7 +183,7 @@ input[type=radio]{
 }
 
 .save-2{
-   margin-top: 12%;
+   margin-top: 5%;
    margin-left: 48%; 
 }
 
