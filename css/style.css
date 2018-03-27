@@ -143,21 +143,35 @@ section{
     margin-left: 7%;
 }
 
-input[type=checkbox], input[type=radio]{
+/* input[type=checkbox]{
+    width: 10%;
+    margin-top: 6%; 
+} */
+
+.allergie-info{
+    margin-top: 17%;
+    width: 100%; 
+}
+
+.food-pref{
+    margin-top: 3%;
+    width: 100%;  
+}
+
+input[type=checkbox]:first-child{
     background-color: transparent;
     border: solid 1px rgb(169,169,169);
     color: black;
     background: white;
     border-radius: 5px;
-    /* margin-top: 6%;    */
+    margin-top: 6%;
+    width: 10%;  
 }
 
-input[type=checkbox]{
-    width: 10%;
-}
 
-input[type=radio]{
+input[type=radio]:first-child{
     width: 7%;
+    margin-top: 6%;
 }
 
 .report-info select{
