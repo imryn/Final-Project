@@ -24,14 +24,14 @@
             if(!empty($_POST['fname']) && !empty($_POST['kidId']) && !empty($_POST['bDate']) &&
                 !empty($_POST['genders']) ){
 
-                $values = "'{$_POST['fname']}','{$_POST['kidId']}','{$_POST['bDate']}','{$_POST['genders']}',
+                $values = "'{$_POST['fname']}','{$_POST['kidId']}',{$_POST['bDate']},'{$_POST['genders']}',
                 {$_POST['celiac']},{$_POST['eggs']},{$_POST['fish']},{$_POST['kiwis']},
                 {$_POST['lactoseintolerance']},{$_POST['nuts']},{$_POST['soy']},{$_POST['strawberries']},
                 {$_POST['vegan']},{$_POST['vegetarian']},'{$_POST['comments']}'";
 
                 $sql = "INSERT INTO kids (fname,kidId,bDate,genders,celiac,eggs,fish,
                 kiwis,lactoseintolerance,nuts,soy,strawberries,vegan,vegetarian,comments) VALUES ($values)";
-
+                
                 $result =$this->db->query($sql);
                 $id = $this->db->insert_id;
                 if($result){
