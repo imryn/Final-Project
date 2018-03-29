@@ -88,7 +88,7 @@ section{
     color: black;
     background: white;
     text-indent: 10px;
-    width: 59%;
+    width: 71%;
     border-radius: 5px;
     margin-left: 3.5%;
     margin-top: 1%;
@@ -116,7 +116,7 @@ section{
     height: 28px;
 }
 
-#address, #city, #phone, #another-contact{
+#address, #city, #phone{
     margin-left: 4%;
 }
 
@@ -130,23 +130,19 @@ section{
 .registration-info select{
     margin-top: 1%;
     margin-left: 4%;
-    width: 59%;
+    width: 71%;
 }
 
 #gender{
-    width: 120%;
+    width: 133%;
     margin-left: 8%;
 }
 
 #f-member-select{
-    width: 103%;
+    width: 124%;
     margin-left: 7%;
 }
 
-/* input[type=checkbox]{
-    width: 10%;
-    margin-top: 6%; 
-} */
 
 .allergie-info{
     margin-top: 17%;
@@ -172,6 +168,10 @@ input[type=checkbox]:first-child{
 input[type=radio]:first-child{
     width: 7%;
     margin-top: 6%;
+}
+
+#email-input{
+    width:71%;
 }
 
 .report-info select{

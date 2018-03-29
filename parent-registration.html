@@ -16,7 +16,7 @@
             src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous"></script>
-        <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../vendors/bootstrap/js/bootstrap.min.js"></script>
 
 <title>Title of the document</title>
 </head>
@@ -84,7 +84,7 @@
                 <div class="col span-1-of-3 box">
                         <div class="registration-info">
                                 <label for="email"> <span> * </span> Email: </label> <br>
-                                <input name="email" type="email" required/>
+                                <input name="email" type="email" required/ id="email-input">
                         </div>
                 </div>
             </div>
@@ -114,8 +114,8 @@
                <div class="row parent-form4">
                 <div class="col span-1-of-3 box">
                         <div class="registration-info">
-                            <label id="another-contact"> Another Contact: </label> <br>
-                            <input name="anothercontact" type="text" /> 
+                            <label>  <span> * </span> Another Contact: </label> <br>
+                            <input name="anothercontact" type="text" required/> 
                         </div>
                 </div>
                 <div class="col span-1-of-3 box">
@@ -175,44 +175,44 @@
                 <div class="col span-1-of-4 box">
                     <div class="registration-info">
                         <label for="name"> Allergies: </label>   
-                        <p> <input type="checkbox" name="allergies1"> Celiac </p>
+                        <p> <input type="checkbox" name="celiac"> Celiac </p>
                     </div>
                 </div>
                 <div class="col span-1-of-4 box">
                     <div class="registration-info">
-                        <p class="allergie-info"> <input type="checkbox" name="allergies2"> Eggs </p>                  
+                        <p class="allergie-info"> <input type="checkbox" name="eggs"> Eggs </p>                  
                     </div>
                 </div>
                 <div class="col span-1-of-4 box">
                     <div class="registration-info">
-                        <p class="allergie-info"> <input type="checkbox" name="allergies3"> Fish </p>                  
+                        <p class="allergie-info"> <input type="checkbox" name="fish"> Fish </p>                  
                     </div>
                 </div>
                 <div class="col span-1-of-4 box">
                     <div class="registration-info">
-                        <p class="allergie-info"> <input type="checkbox" name="allergies4"> Kiwis </p>                  
+                        <p class="allergie-info"> <input type="checkbox" name="kiwis"> Kiwis </p>                  
                     </div>
                 </div>
            </div>
            <div class="row kid-form3">
                 <div class="col span-1-of-4 box"> 
                      <div class="registration-info"> 
-                        <p> <input type="checkbox" name="allergies5"> Lactose intolerance </p>                  
+                        <p> <input type="checkbox" name="lactoseintolerance"> Lactose intolerance </p>                  
                      </div>
                 </div>
            <div class="col span-1-of-4 box">
                     <div class="registration-info">
-                        <p> <input type="checkbox" name="allergies6"> Nuts </p>
+                        <p> <input type="checkbox" name="nuts"> Nuts </p>
                     </div>
            </div>
            <div class="col span-1-of-4 box">
                     <div class="registration-info">   
-                         <p> <input type="checkbox" name="allergies7"> Soy </p>                  
+                         <p> <input type="checkbox" name="soy"> Soy </p>                  
                     </div>
            </div>
            <div class="col span-1-of-4 box">
                     <div class="registration-info"> 
-                        <p> <input type="checkbox" name="allergies8"> Strawberries </p>                  
+                        <p> <input type="checkbox" name="strawberries"> Strawberries </p>                  
                     </div>
            </div>
            </div>
@@ -220,13 +220,13 @@
                 <div class="col span-1-of-3 box">
                     <div class="registration-info">
                         <label for="food"> Food Preference: </label>   
-                        <p> <input type="radio" name="food-pref"> vegan </p>                  
+                        <p> <input type="radio" name="vegan"> Vegan </p>                  
                     </div>
                 </div>
                 <div class="col span-1-of-3 box">
                     <div class="registration-info">
                         <label for="food"> </label>   
-                        <p class="food-pref"> <input type="radio" name="food-pref"> vegetarian </p>                  
+                        <p class="food-pref"> <input type="radio" name="vegetarian"> Vegetarian </p>                  
                     </div>
                 </div>
            </div>
@@ -234,7 +234,7 @@
                 <div class="col span-1-of-2 box">
                      <div class="registration-info">
                         <label>  Comments and Special Requests </label>
-                        <textarea name="comments" cols="50" rows="8" placeholder="type here..."> </textarea>
+                        <textarea name="comments" cols="50" rows="8" style="overflow:auto;resize:none"> </textarea>
                 </div>
                 </div>
             </div>
