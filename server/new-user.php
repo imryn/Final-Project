@@ -25,13 +25,16 @@
             
             $this->allowSpecialCharacters($_POST);
                  
-            if(!isEmpty($_POST['kindergartenid']) && !isEmpty($_POST['kindergartenid']) ){
+            if(!empty($_POST['kindergartenid']) && !empty($_POST['firstname']) && !empty($_POST['lastname']) &&
+            !empty($_POST['parentId']) && !empty($_POST['password']) && !empty($_POST['email']) && 
+            !empty($_POST['mobilephone']) && !empty($_POST['familyMember']) && !empty($_POST['anothercontact']) &&
+            !empty($_POST['relationship']) && !empty($_POST['mobilephone2']) ){
 
               
 
-                $values = "'{$_POST['kindergartenid']}','{$_POST['firstname']}','{$_POST['lastname']}','{$_POST['parentId']}','{$_POST['password']}'
-                ,'{$_POST['addressuser']}','{$_POST['city']}','{$_POST['email']}','{$_POST['phone']}','{$_POST['mobilephone']}','{$_POST['familyMember']}'
-                ,'{$_POST['anothercontact']}','{$_POST['relationship']}','{$_POST['mobilephone2']}'";
+                $values = "'{$_POST['kindergartenid']}','{$_POST['firstname']}','{$_POST['lastname']}','{$_POST['parentId']}','{$_POST['password']}',
+                '{$_POST['addressuser']}','{$_POST['city']}','{$_POST['email']}','{$_POST['phone']}','{$_POST['mobilephone']}','{$_POST['familyMember']}',
+                '{$_POST['anothercontact']}','{$_POST['relationship']}','{$_POST['mobilephone2']}'";
 
                 $sql = "INSERT INTO users (kindergartenid,firstname,lastname,parentId,password,
                 addressuser,city,email,phone,mobilephone,familyMember,anothercontact,relationship,mobilephone2) VALUES ($values)";
@@ -47,12 +50,10 @@
                 else{
                   $this->error();
                 }
-            }
+            } 
             else{
                 $this->error();
             }
-                
-
         }
 
       

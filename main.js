@@ -44,7 +44,6 @@ function getReports(){
 
 function createKidForm(callback){
     var data = getFormData("#registration-kid");
-    console.log(data);
     var date = new Date(data.bDate).getTime();
     if(!isNaN(date)){
         data.bDate = date;
@@ -58,14 +57,14 @@ function error(msg){
 }
 
 function createParentUser(){
-    var data = getFormData("#registration-parent");
-
+   
     createKidForm(function(response){
-
+        console.log(response)
         if(response.success){
+            var data = getFormData("#registration-parent");
             data['route'] = 'create_user';
-            httpPost("/Sadna/server/api.php",data,function(response){
-                if(response.success){
+            httpPost("/Sadna/server/api.php",data,function(_response){
+                if(_response.success){
                     window.location.assign("/Sadna/index.html");
                 }
                 else{
