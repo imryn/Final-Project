@@ -1,3 +1,15 @@
+
+
+ document.addEventListener("DOMContentLoaded", function(event) {
+    document.querySelectorAll("templateHtml").forEach(function(item){
+        var src= item.getAttribute("src");
+        $.get(src,function(template) {
+            item.innerHTML = template;
+        })
+    })
+  });
+
+
 function getFormData(formSelector){
     var form = document.querySelector(formSelector),
         data = {},

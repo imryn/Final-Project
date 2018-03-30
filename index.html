@@ -23,18 +23,9 @@
 
 <body>
        <header>
-        <div class="picture-container"></div>
-        <div class="navbar"></div> 
+            <templateHtml src="picture-container/picture-container.html"></templateHtml>
+            <templateHtml src="nav-menu/nav-menu.html"></templateHtml>
        </header>
-    
-    <script>
-         $.get("nav-menu/nav-menu.html", function(template){
-             document.querySelector(".navbar").innerHTML = template;
-         });
-         $.get("picture-container/picture-container.html", function(template){
-             document.querySelector(".picture-container").innerHTML = template;
-         });
-   </script>
 </body>
 
 </html>

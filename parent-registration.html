@@ -17,14 +17,15 @@
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous"></script>
         <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+        <script src="vendors/bootstrap/js/bootpopup.min.js"></script>
 
 <title>Title of the document</title>
 </head>
 
 <body>
-       <header>
-        <div class="picture-container"></div>
-        <div class="navbar"></div> 
+    <header>
+        <templateHtml src="picture-container/picture-container.html"></templateHtml>
+        <templateHtml src="nav-menu/nav-menu.html"></templateHtml>
      </header>
 
 <section id="registration-parent">
@@ -241,16 +242,9 @@
             <button type="button" class="save-2" onClick="createParentUser()">Save</button>   
      </form>  
 </section>
-           <script src="commons.js"></script>
-           <script src="main.js"></script>
-    <script>
-         $.get("nav-menu/nav-menu.html", function(template){
-             document.querySelector(".navbar").innerHTML = template;
-         });
-         $.get("picture-container/picture-container.html", function(template){
-             document.querySelector(".picture-container").innerHTML = template;
-         });
-   </script>
+    <script src="commons.js"></script>
+    <script src="main.js"></script>
+   
 </body>
 
 </html>
