@@ -11,7 +11,20 @@ function getFormData(formSelector){
     }
 
     if(inputs.length){
-        inputs.forEach(getData);
+        inputs.forEach(function(input){
+            
+            var name = input.getAttribute("name");
+
+            switch (input.getAttribute("type")) {
+                case "checkbox":
+                case "radio":
+                    data[name] = input.checked;
+                    break;
+                default:
+                    data[name] = input.value;
+                    break;
+            }
+        });
     }
 
     if(selectors.length){
