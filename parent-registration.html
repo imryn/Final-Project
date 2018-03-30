@@ -19,7 +19,7 @@
         <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
         <script src="vendors/bootstrap/js/bootpopup.min.js"></script>
 
-<title>Title of the document</title>
+<title>registration document</title>
 </head>
 
 <body>
@@ -32,6 +32,7 @@
         <form>
             <h1> Registration</h1>
             <h2> Parent </h2>
+            <p class="describe-info"> Please fill in your personal details: </p>
             <p class="success-message"></p>
             <div class="row parent-form1">
                 <div class="col span-1-of-3 box">
@@ -92,19 +93,19 @@
                 <div class="row parent-form4">
                     <div class="col span-1-of-3 box">
                             <div class="registration-info">
-                                <label for="phone" id="phone"> Phone: </label> <br>
+                                <label for="phone" id="phone"> Phone No.: </label> <br>
                                 <input name="phone" type="phone" /> 
                             </div>
                     </div>
                     <div class="col span-1-of-3 box">
                             <div class="registration-info">
-                                <label for="phone" id="parent-phone"> <span> * </span> Mobile Phone: </label>
+                                <label for="phone" id="parent-phone"> <span> * </span> Cell Phone No.: </label>
                                 <input name="mobilephone" type="phone" id="phone" required/> 
                             </div>
                     </div>
                     <div class="col span-1-of-1 box">
                             <div class="registration-info">
-                                    <label> <span> * </span> Family member: </label> <br>
+                                    <label> <span> * </span> Family Member: </label> <br>
                                     <select name="familyMember" size="1" id="f-member-select" > 
                                             <option value="Father"> Father  </option>
                                             <option value="Mother" selected> Mother </option>
@@ -127,7 +128,7 @@
                 </div> 
                 <div class="col span-1-of-3 box">
                         <div class="registration-info">
-                            <label for="phone"> <span> * </span> Mobile Phone: </label>
+                            <label for="phone"> <span> * </span> Cell Phone No.: </label>
                             <input name="mobilephone2" type="phone" required/> 
                         </div>
                 </div>    
@@ -139,6 +140,7 @@
 <section id="registration-kid">
     <form>
         <h2> Kid </h2>
+        <p class="describe-info"> Please fill in your child details: </p>
         <p class="success-message"></p>
             <div class="row kid-form1">
                  <div class="col span-1-of-3 box">
@@ -155,8 +157,8 @@
                 </div>
                 <div class="col span-1-of-3 box">
                     <div class="registration-info">
-                        <label for="data"> <span> * </span> Birthday date: </label>
-                        <input name="bDate" type="date" id="birthday-date">
+                        <label for="data"> <span> * </span> Birth date: </label>
+                        <input name="bDate" type="date" id="birth-date">
                     </div>
                 </div> 
            </div>
@@ -235,7 +237,7 @@
                 <div class="col span-1-of-2 box">
                      <div class="registration-info">
                         <label>  Comments and Special Requests </label>
-                        <textarea name="comments" cols="50" rows="8" style="overflow:auto;resize:none"> </textarea>
+                        <textarea name="comments" cols="42" rows="4" style="overflow:auto;resize:none"> </textarea>
                 </div>
                 </div>
             </div>
