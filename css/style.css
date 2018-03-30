@@ -237,3 +237,17 @@ input[type=radio]:first-child{
    text-align: center;
    border-bottom: solid 1px #dfe4ea;
 }
+
+
+/* START building schedule design */
+.calendar_row{
+    width:100%;
+    float:left;
+}
+#calendar{
+    margin-left:-350px;
+    position:relative;
+    float:left;
+    left:50%;
+}
+/* END building_schedule design  */
