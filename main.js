@@ -65,7 +65,9 @@ function createParentUser(){
             data['route'] = 'create_user';
             httpPost("/Sadna/server/api.php",data,function(_response){
                 if(_response.success){
-                    window.location.assign("/Sadna/index.html");
+                    bootpopup.alert("The form saved successfully","Success",function(){
+                        window.location.assign("/Sadna/index.html");
+                    });
                 }
                 else{
                     error("one of the field is wrong or already used");

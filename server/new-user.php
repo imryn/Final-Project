@@ -32,7 +32,7 @@
 
               
 
-                $values = "'{$_POST['kindergartenid']}','{$_POST['firstname']}','{$_POST['lastname']}','{$_POST['parentId']}','{$_POST['password']}',
+                $values = "'{$_POST['kindergartenid']}','{$_POST['firstname']}','{$_POST['lastname']}',{$_POST['parentId']},'{$_POST['password']}',
                 '{$_POST['addressuser']}','{$_POST['city']}','{$_POST['email']}','{$_POST['phone']}','{$_POST['mobilephone']}','{$_POST['familyMember']}',
                 '{$_POST['anothercontact']}','{$_POST['relationship']}','{$_POST['mobilephone2']}'";
 

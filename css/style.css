@@ -97,8 +97,8 @@ section{
     height: 28px;
 }
 
-#birthday-date{
-    width: 71%;
+#birth-date{
+    width: 72%;
 }
 
 .report-info input{
@@ -206,6 +206,12 @@ input[type=radio]:first-child{
    margin-left: 48%;  
 }
 
+.describe-info{
+    margin-left: 11%;
+    margin-top: 3%;
+    color: #e67e22;
+    word-spacing: 2px;
+}
 .success-message{
    font-weight: bold; 
    margin-left: 4%;
@@ -229,7 +235,6 @@ input[type=radio]:first-child{
     text-align: center;
     border: solid 1px #dfe4ea;
 }
-
 
 
 #kids-table th{
