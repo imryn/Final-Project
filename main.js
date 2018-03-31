@@ -48,18 +48,30 @@ function createKidForm(callback){
     if(!isNaN(date)){
         data.bDate = date;
     }
-    data['route'] = 'create_kid';
-    httpPost("/Sadna/server/api.php",data,callback);
+   
+    var idcheck= data['kidId'];
+
+    if(idcheck.toString().length>9){
+        errorForkidBag("The id is not valid");
+    }
+    else{
+        data['route'] = 'create_kid';
+        httpPost("/Sadna/server/api.php",data,callback);
+    }
+    
 }
 
-function error(msg){
+function errorForUser(msg){
     document.querySelector(".success-message").textContent = msg;
+}
+
+function errorForkidBag(msg){
+    document.querySelector(".success-message2").textContent = msg;
 }
 
 function createParentUser(){
    
     createKidForm(function(response){
-        console.log(response)
         if(response.success){
             var data = getFormData("#registration-parent");
             data['route'] = 'create_user';
@@ -70,12 +82,12 @@ function createParentUser(){
                     });
                 }
                 else{
-                    error("one of the field is wrong or already used");
+                    errorForUser("One of the field is wrong or already used");
                 }
             })
         }
         else{
-            error("one of the field is wrong or already used");
+            errorForUser("One of the field is wrong or already used");
         }
 
     });

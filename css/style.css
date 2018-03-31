@@ -212,7 +212,7 @@ input[type=radio]:first-child{
     color: #e67e22;
     word-spacing: 2px;
 }
-.success-message{
+.success-message, .success-message2{
    font-weight: bold; 
    margin-left: 11%;
    color: #9b59b6;
