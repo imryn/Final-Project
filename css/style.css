@@ -139,7 +139,7 @@ section{
 }
 
 #f-member-select{
-    width: 124%;
+    width: 119%;
     margin-left: 7%;
 }
 
@@ -214,7 +214,7 @@ input[type=radio]:first-child{
 }
 .success-message{
    font-weight: bold; 
-   margin-left: 4%;
+   margin-left: 11%;
    color: #9b59b6;
    margin-bottom: -4%;
    word-spacing: 2px;
