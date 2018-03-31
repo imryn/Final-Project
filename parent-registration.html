@@ -78,9 +78,17 @@
                 <div class="col span-1-of-3 box">
                     <div class="registration-info">
                         <label id="city"> City: </label> <br>
-                            <select name="city" size="1"> 
+                            <!-- <select name="city" size="1"> 
                                 <option value="Tel-aviv"> Tel-aviv  </option>
-                            </select>
+                            </select> -->
+                            <div id="pac-container">
+                                <input id="pac-input"  name="city" type="text" placeholder="Enter a location">
+                            </div>
+                            <div id="map"></div>
+                            <div id="infowindow-content">
+                                    <span id="place-name"  class="title"></span><br>
+                                    <span id="place-address"></span>
+                            </div>
                     </div>
                 </div>
                 <div class="col span-1-of-3 box">
@@ -246,7 +254,10 @@
 </section>
     <script src="commons.js"></script>
     <script src="main.js"></script>
-   
+    <script src="location.js"> </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCANOMcofoYNJ5CwAicrOY-0cm7mK1yTXg
+    &libraries=places&callback=initMap"
+        async defer></script>
 </body>
 
 </html>
