@@ -51,17 +51,11 @@ section{
     padding: 30px 0;
 }
 
-#registration-parent, #registration-kid{
+#registration-parent, #registration-kid, #reports{
     background-color: #f0f0f0;
-    width: 74.3%;
-    margin-left: 13%;
+    width: 75.2%;
+    margin-left: 12.4%;
 }
-
- #reports{
-    background-color: #f0f0f0;
-    width: 80.3%;
-    margin-left: 10%; 
- }
 
  .reports-line{
     margin-left: 3.2%;
@@ -206,11 +200,17 @@ input[type=radio]:first-child{
    margin-left: 48%;  
 }
 
-.describe-info{
-    margin-left: 11%;
+.describe-info, #form-exp{
     margin-top: 3%;
     color: #e67e22;
     word-spacing: 2px;
+}
+.describe-info{
+    margin-left: 11%;
+}
+
+#form-exp{
+    margin-left: 4%;  
 }
 .success-message, .success-message2{
    font-weight: bold; 
