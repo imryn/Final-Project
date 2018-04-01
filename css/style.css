@@ -51,7 +51,7 @@ section{
     padding: 30px 0;
 }
 
-#registration-parent, #registration-kid, #reports{
+#registration-parent,#registration-kid,#reports,#kid-detailsUpdate{
     background-color: #f0f0f0;
     width: 75.2%;
     margin-left: 12.4%;
@@ -195,6 +195,22 @@ input[type=radio]:first-child{
    margin-left: 48%; 
 }
 
+#New-observation{
+    padding: 8px;
+    width: 42%;
+    margin-top: 5%;
+    margin-left: 30%; 
+    display: block;
+    cursor: pointer;
+    border: none;
+    background-color: #e67e22;
+    color: white;
+    border-radius: 5px;
+    font-family: 'Lato';
+    font-weight: 300;
+    word-spacing: 4px;
+    text-align: center; 
+}
 .create-botton{
    margin-top: 5%;
    margin-left: 48%;  
