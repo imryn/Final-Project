@@ -23,57 +23,6 @@
 
         <title>Building Weekly Scheduler</title>
         
-        <!-- <script>
-            $(function() {
-
-            // page is now ready, initialize the calendar...
-                
-            $('#calendar').fullCalendar({
-                
-                businessHours: [ // specify an array instead
-                    {
-                        dow: [0,1,2,3,4,5], // Sunday, Monday, Tuesday, Wednesday,thursday, friday
-                        start: '08:00', // 8am
-                        end: '17:30' // 5:30pm
-                    }
-                    ],
-
-                eventSources: [
-                    {
-                        url:  '/ordini/ajax_calendar/',
-                        type: 'POST',
-                    }
-                    ],
-                
-                header:
-                    {
-                        left: 'prev,next today',
-                        center: 'title',
-                        right: 'month,agendaWeek,agendaDay'
-                    },
-                selectable: true, // this is marking the box on an hour
-                selectHelper: true,
-                editable: true,
-                defaultView: 'listWeek'
-                    
-                // put your options and callbacks here
-                })
-
-            });
-
-        </script> -->
-        <!-- <script type='text/javascript'>
-
-            $(function() {
-              $('#calendar').fullCalendar({
-                googleCalendarApiKey: 'AIzaSyCUB4dkAVG8cMM_4A4hgQjmon7YeEhzYpE',
-                events: {
-                  googleCalendarId: 'sadnakidintouch@gmail.com'
-                }
-              });
-            });
-            
-        </script> -->
     </head>
 
     <body>
@@ -95,11 +44,7 @@
                        <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=WEEK&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffcc66&amp;src=sadnakidintouch%40gmail.com&amp;color=%231B887A&amp;src=iw.jewish%23holiday%40group.v.calendar.google.com&amp;color=%23125A12&amp;ctz=Asia%2FJerusalem" style="border:solid 1px #777" width="700" height="600" frameborder="0" scrolling="no"></iframe>
                    </div>
                 </div>
-                
-                <!-- <a href="http://www.google.com/calendar/event?action=TEMPLATE&text=[event-title]&dates=[start-custom format='Ymd\\THi00\\Z']/[end-custom format='Ymd\\THi00\\Z']&details=[description]&location=[location]&trp=false&sprop=&sprop=name:" target="_blank" rel="nofollow"><button type="button" class="save-1"> Add To My Calendar </button></a> -->
-                
-
-                
+     
                 <div class="row schduler_holder">
             
                     <div class="registration-info">
@@ -144,10 +89,10 @@
                     </div>
 
                     <div class="schedule_row">
-                        <div class="scheduler-description" id="ln">
-                            
+                        <div class="scheduler-description" id="ln">                            
                             <label for="Lunch">  Lunch: </label>
                             <input name="Lunch" id='lInput' type="text" /> 
+
                             <!-- Button code -->
                             <div title="Add to Calendar" class="addeventatc"> 
                                 Add  
@@ -159,9 +104,6 @@
                             </div>
                          </div>
                     </div>                    
-                    
-                    <!-- <button type="button" class="save-1" onClick="saveSchedule()"> Save </button> -->
-            
                 </div>
             </form>
         </section>
