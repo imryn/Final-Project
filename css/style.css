@@ -255,4 +255,53 @@ input[type=radio]:first-child{
     float:left;
     left:50%;
 }
+
+.schedule_row{
+    width:100%;
+    margin-top:25px;
+    float:left;
+}
+.schedule_row label{
+    width:190px;
+    float:left;
+}
+.schduler_holder{
+    padding:20px;
+    margin-left:120px; 
+}
+.scheduler-description{
+    width:720px;
+    float:left;
+}
+.pick{
+    float:left;
+    margin-left:140px;
+    margin-top:10px;
+}
+#date{
+    width:27%;
+}
+.addeventatc_icon{
+    top:3px !important;
+}
+.addeventatc{
+    padding-top:5px !important;
+    padding-bottom:5px !important;
+    margin-left:10px;
+    float:left;
+}
+.scheduler-description input{
+    background-color: transparent;
+    border: solid 1px rgb(169,169,169);
+    color: black;
+    background: white;
+    text-indent: 10px;
+    width: 430px;
+    float:left;
+    border-radius: 5px;
+    font-family: 'Lato';
+    font-weight: 300;
+    height: 32px;
+    
+}
 /* END building_schedule design  */

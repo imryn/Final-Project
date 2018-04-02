@@ -98,64 +98,67 @@
                 
                 <!-- <a href="http://www.google.com/calendar/event?action=TEMPLATE&text=[event-title]&dates=[start-custom format='Ymd\\THi00\\Z']/[end-custom format='Ymd\\THi00\\Z']&details=[description]&location=[location]&trp=false&sprop=&sprop=name:" target="_blank" rel="nofollow"><button type="button" class="save-1"> Add To My Calendar </button></a> -->
                 
-                <div class="col span-1-of-3 box">
-                        <div class="registration-info">
-                            <label for="data"> <span> * </span> Please pick a date: </label>
-                            <input name="Date" type="date" id="date">
-                        </div>
-                    </div>
-                
-                <div class="row kid-form1">
 
+                
+                <div class="row schduler_holder">
             
-                    <div class="col span-1-of-3 box">
-                       <div class="registration-info">
-                          <label  for="Breakfast">  Breakfast: </label> 
-                          <textarea name="Breakfast" style="overflow:auto;resize:none" cols="30" rows="3" > </textarea> <br>
-                      
-                            <!-- Button code -->
-                            <div title="Add to Calendar" class="addeventatc"> 
-                                Add Breakfest Event to Calendar
-                                <span class="start">04/13/2018 08:45 AM</span>
-                                <span class="end">04/13/2018 10:00 AM</span>
-                                <span class="timezone">America/Los_Angeles</span>
-                                <span class="title">Summary of the event</span>
-                                <span class="description">Description of the event</span>
-                            </div>                      
+                    <div class="registration-info">
+                        <div class="scheduler-description">
+                            <label for="data" class="pick"> Pick a date: </label>
+                            <input name="Date" type="date" id="date"/>
                         </div>
                     </div>
-                    <div class="col span-1-of-3 box">
-                           <div class="registration-info">
-                              <label for="Lunch">  Lunch: </label> <br>
-                              <textarea name="Lunch" style="overflow:auto;resize:none" cols=30 rows="3" > </textarea>
-                           
+                    <div class="schedule_row">
+                        <div class="scheduler-description" id="bf">
+                        
+                            <label for="Breakfast">  Breakfast: </label> 
+                            <input name="Breakfast" id="bfInput" type="text" /> 
+                            
                             <!-- Button code -->
                             <div title="Add to Calendar" class="addeventatc"> 
-                                Add Lunch Event to Calendar    
-                                <span class="start">04/13/2018 08:00 AM</span>
-                                <span class="end">04/13/2018 10:00 AM</span>
-                                <span class="timezone">America/Los_Angeles</span>
-                                <span class="title">Summary of the event</span>
-                                <span class="description">Description of the event</span>
-                            </div>
-                            </div>
+                                Add
+                                <span class="start" id="startb"><!-- start from jquery --></span>
+                                <span class="end" id="endb"><!-- end from jquery --></span>
+                                <span class="timezone">Asia/Jerusalem</span>
+                                <span class="title">Breakfast Menu</span>
+                                <span class="description"><!-- description from jquery --></span>
+                            </div>                    
+                        </div>
                     </div>
-                    <div class="col span-1-of-3 box">
-                          <div class="registration-info">
-                            <label for="Educational">  Educational Activity: </label> <br>
-                            <textarea name="Educational" style="overflow:auto;resize:none" cols="30" rows="3" > </textarea>
-                         
+
+                    <div class="schedule_row">
+                          <div class="scheduler-description" id="ea">
+                            <label for="Educational">  Educational Activity: </label>
+                            <input name="Educational" id='eaInput' type="text" /> 
+
                             <!-- Button code -->
                             <div title="Add to Calendar" class="addeventatc"> 
-                                Add Educational Event to Calendar
-                                <span class="start">04/13/2018 08:00 AM</span>
-                                <span class="end">04/13/2018 10:00 AM</span>
-                                <span class="timezone">America/Los_Angeles</span>
-                                <span class="title">Summary of the event</span>
-                                <span class="description">Description of the event</span>
+                                Add
+                                <span class="start" id="starte"><!-- start from jquery --></span>
+                                <span class="end" id="ende"><!-- end from jquery --></span>
+                                <span class="timezone">Asia/Jerusalem</span>
+                                <span class="title">Educational Activities</span>
+                                <span class="description"><!-- description from jquery --></span>
                             </div>                        
                         </div>
                     </div>
+
+                    <div class="schedule_row">
+                        <div class="scheduler-description" id="ln">
+                            
+                            <label for="Lunch">  Lunch: </label>
+                            <input name="Lunch" id='lInput' type="text" /> 
+                            <!-- Button code -->
+                            <div title="Add to Calendar" class="addeventatc"> 
+                                Add  
+                                <span class="start" id="startl"><!-- start from jquery --></span>
+                                <span class="end" id="endl"><!-- end from jquery --></span>
+                                <span class="timezone">Asia/Jerusalem</span>
+                                <span class="title">Lunch Menu</span>
+                                <span class="description"><!-- description from jquery --></span>
+                            </div>
+                         </div>
+                    </div>                    
                     
                     <!-- <button type="button" class="save-1" onClick="saveSchedule()"> Save </button> -->
             
@@ -177,7 +180,29 @@
                     outlookcom : {show:false, text:"Outlook.com <em>(online)</em>"},
                     yahoo      : {show:false, text:"Yahoo <em>(online)</em>"}
                 });
-            };
+            };      
+
+
+
+
+            $("#bfInput, #eaInput, #lInput").blur(function(e){
+                var newText = $(this).val();
+
+                $(this).parent().find('.description').text(newText);
+            })
+
+            $("#date").blur(function(){
+                var newDate = $("#date").val()
+
+                $("#bf #startb").text(newDate + ' 10:45 AM')
+                $("#bf #endb").text(newDate + ' 11:15 AM')
+
+                $("#ea #starte").text(newDate + ' 11:20 AM')
+                $("#ea #ende").text(newDate + ' 13:30')
+
+                $("#ln #startl").text(newDate + ' 13:45')
+                $("#ln #endl").text(newDate + ' 14:15')
+            })
 
         </script>
     </body>
