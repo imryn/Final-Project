@@ -51,7 +51,7 @@ section{
     padding: 30px 0;
 }
 
-#registration-parent,#registration-kid,#reports,#kid-detailsUpdate{
+#registration-parent,#registration-kid,#reports,#kid-detailsUpdate,#Weekly-Scheduler{
     background-color: #f0f0f0;
     width: 75.2%;
     margin-left: 12.4%;
@@ -292,10 +292,11 @@ input[type=radio]:first-child{
 .pick{
     float:left;
     margin-left:140px;
-    margin-top:10px;
+    margin-top:5%;
 }
 #date{
     width:27%;
+    margin-top: 5%;
 }
 .addeventatc_icon{
     top:3px !important;
