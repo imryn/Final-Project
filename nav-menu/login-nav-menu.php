@@ -13,6 +13,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
             <li><a href="login_page.php"> Sign Out </a></li>
+            <li><a href="kid_detailsUpdate.php"> Change My Kid Bag </a></li>
             <li><a href="index.php"> home </a></li>
             <li><a href="#"> about </a></li>
             <!--<li class="nav-item dropdown">
@@ -24,7 +25,7 @@
                 <!--<a class="dropdown-item" href="kid-registration.html"> kid registration </a>-->
               <!--</div>-->
             <!--</li>-->
-            <li><a href="parent-registration.php"> registration </a></li>
+            
             <li><a href="reports.php"> reports </a></li>
             <li><a href="Building_Schedule.php">schedule </a></li>
             <li><a href="#"> shopping list </a></li>
