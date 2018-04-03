@@ -24,7 +24,7 @@
 <body>
        <header>
             <templateHtml src="picture-container/picture-container.html"></templateHtml>
-            <templateHtml src="nav-menu/nav-menu.html"></templateHtml>
+            <?php include "nav-menu/nav-menu-container.php" ?>
        </header>
 
        <script src="commons.js"></script>

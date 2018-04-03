@@ -25,11 +25,122 @@
 <body>
     <header>
         <templateHtml src="picture-container/picture-container.html"></templateHtml>
-        <templateHtml src="nav-menu/nav-menu.html"></templateHtml>
+        <?php include "nav-menu/nav-menu-container.php" ?>
      </header>
 
+<section id="registration-parent">
+        <form>
+            <h1> Registration</h1>
+            <h2> Parent </h2>
+            <p class="describe-info"> Please fill in your personal details: </p>
+            <p class="success-message"></p>
+            <div class="row parent-form1">
+                <div class="col span-1-of-3 box">
+                    <div class="registration-info">
+                        <label for="kindergarten"> <span> * </span> Kindergarten Code </label>
+                        <input name="kindergartenid" type="text" required/> 
+                    </div>
+                </div>
+                <div class="col span-1-of-3 box">
+                    <div class="registration-info">
+                        <label for="name"> <span> * </span> First Name: </label>
+                        <input name="firstname" type="text" required/> 
+                    </div>
+                </div>
+                <div class="col span-1-of-3 box">
+                    <div class="registration-info">
+                        <label for="name"> <span> * </span> Last Name: </label>
+                        <input name="lastname" type="text" required/> 
+                    </div>
+                </div> 
+            </div>
+            <div class="row parent-form2">
+                 <div class="col span-1-of-3 box">
+                     <div class="registration-info">
+                         <label for="id" id="parent-id"> <span> * </span> ID: </label> <br>
+                         <input name="parentId" type="text" required>
+                     </div>    
+                </div>
+                 <div class="col span-1-of-3 box">
+                     <div class="registration-info">
+                         <label for="password"> <span> * </span> Password: </label> <br>
+                         <input name="password" type="password" id="password" required/>
+                     </div> 
+                 </div>
+            </div>
+            <div class="row parent-form3">
+                <div class="col span-1-of-3 box">
+                    <div class="registration-info">
+                        <label for="address" id="address"> Address: </label> <br>
+                        <input name="addressuser" type="text"/> 
+                    </div>
+                </div>
+                <div class="col span-1-of-3 box">
+                    <div class="registration-info">
+                        <label id="city"> City: </label> <br>
+                            <!-- <select name="city" size="1"> 
+                                <option value="Tel-aviv"> Tel-aviv  </option>
+                            </select> -->
+                            <div id="pac-container">
+                                <input id="pac-input" name="city" type="text" placeholder="Enter a location">
+                            </div>
+                    </div>
+                </div>
+                <div class="col span-1-of-3 box">
+                        <div class="registration-info">
+                                <label for="email"> <span> * </span> Email: </label> <br>
+                                <input name="email" type="email" required/ id="email-input">
+                        </div>
+                </div>
+            </div>
+                <div class="row parent-form4">
+                    <div class="col span-1-of-3 box">
+                            <div class="registration-info">
+                                <label for="phone" id="phone"> Phone No.: </label> <br>
+                                <input name="phone" type="phone" /> 
+                            </div>
+                    </div>
+                    <div class="col span-1-of-3 box">
+                            <div class="registration-info">
+                                <label for="phone" id="parent-phone"> <span> * </span> Cell Phone No.: </label>
+                                <input name="mobilephone" type="phone" id="phone" required/> 
+                            </div>
+                    </div>
+                    <div class="col span-1-of-1 box">
+                            <div class="registration-info">
+                                    <label> <span> * </span> Family Member: </label> <br>
+                                    <select name="familyMember" size="1" id="f-member-select" > 
+                                            <option value="Father"> Father  </option>
+                                            <option value="Mother" selected> Mother </option>
+                                    </select>
+                            </div>
+                    </div> 
+               </div>
+               <div class="row parent-form4">
+                <div class="col span-1-of-3 box">
+                        <div class="registration-info">
+                            <label>  <span> * </span> Another Contact: </label> <br>
+                            <input name="anothercontact" type="text" required/> 
+                        </div>
+                </div>
+                <div class="col span-1-of-3 box">
+                    <div class="registration-info">
+                        <label> <span> * </span> Relationship:  </label>
+                        <input name="relationship" type="text" required/> 
+                    </div>
+                </div> 
+                <div class="col span-1-of-3 box">
+                        <div class="registration-info">
+                            <label for="phone"> <span> * </span> Cell Phone No.: </label>
+                            <input name="mobilephone2" type="phone" required/> 
+                        </div>
+                </div>    
+            </div>
+      </form> 
+</section>
+
 <!-- kid section -->
-<section id="kid-detailsUpdate">
+<section id="registration-kid">
     <form>
         <h2> Kid </h2>
         <p class="describe-info"> Please fill in your child details: </p>
@@ -133,14 +244,15 @@
                 </div>
                 </div>
             </div>
-
-            <!-- <button type="button" class="save-2" onClick="kidDetailsUpdate()"> Save</button> -->
-            <button type="button" id="New-observation"> To Insert New observation Please Click Here </button>   
-
+            <button type="button" class="save-2" onClick="createParentUser()"> Save</button>   
      </form>  
 </section>
     <script src="commons.js"></script>
     <script src="main.js"></script>
+    <script src="location.js"> </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBheLjhOReAW-Y5Ki1P3MxNHVRW5K6yY-8
+    &libraries=places&callback=initMap"
+        async defer></script>
 </body>
 
 </html>

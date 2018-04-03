@@ -36,6 +36,11 @@
                     $kids= new Kids();
                     $kids -> createKidAlergicreport();
                     break;
+
+                 case "getKidInfo":
+                    $kids= new Kids();
+                    $kids -> showInfoAboutakid();
+                    break;
             }
        }
  

@@ -40,6 +40,16 @@ function getReports(){
 
 }
 
+function showInfoAboutakid(){
+    if(response.success){
+        var kidUpdatedata = getFormData("#registration-kid");
+        data['route'] = 'update_kid';
+        httpGet("/Sadna/server/api.php", data);
+    }
+
+
+}
+
 
 
 function createKidForm(data,callback){
@@ -73,6 +83,8 @@ function errorForUser(msg){
 function createParentUser(){
     var parentData = getFormData("#registration-parent");
     var kidData = getFormData("#registration-kid");
+    kidData['parentId'] = parentData['parentId'];
+    parentData['kidId'] = kidData['kidId'];
     var checkKid = idcheck(kidData['kidId'],createKidForm);
     var checkParent = idcheck(parentData['parentId'],createParentUser);
     if(!checkKid || !checkParent){
@@ -84,7 +96,7 @@ function createParentUser(){
             httpPost("/Sadna/server/api.php",parentData,function(_response){
                 if(_response.success){
                     bootpopup.alert("The form saved successfully","Success",function(){
-                        window.location.assign("/Sadna/index.html");
+                        window.location.assign("/Sadna/index.php");
                     });
                 }
                 else{

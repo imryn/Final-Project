@@ -50,6 +50,15 @@ function getFormData(formSelector){
 }
 
 
+function setFormData(formId,data){
+    for(var key in data){
+        var item = document.querySelector(formId + " [name= " + key + "]");
+        if(item){
+            item.setAttribute("value",data[key]);
+        }
+    }
+}
+
 function httpGet(url,params,callback){
     $.get(url,params,function(response) {
         if(response){

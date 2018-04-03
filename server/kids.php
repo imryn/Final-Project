@@ -1,6 +1,7 @@
 <?php
 
     require_once('db.php');
+    session_start();
 
     class Kids{
         
@@ -27,18 +28,20 @@
                 $values = "'{$_POST['fname']}',{$_POST['kidId']},{$_POST['bDate']},'{$_POST['genders']}',
                 {$_POST['celiac']},{$_POST['eggs']},{$_POST['fish']},{$_POST['kiwis']},
                 {$_POST['lactoseintolerance']},{$_POST['nuts']},{$_POST['soy']},{$_POST['strawberries']},
-                {$_POST['vegan']},{$_POST['vegetarian']},'{$_POST['comments']}'";
+                {$_POST['vegan']},{$_POST['vegetarian']},'{$_POST['comments']}',{$_POST['parentId']}";
 
                 $sql = "INSERT INTO kids (fname,kidId,bDate,genders,celiac,eggs,fish,
-                kiwis,lactoseintolerance,nuts,soy,strawberries,vegan,vegetarian,comments) VALUES ($values)";
+                kiwis,lactoseintolerance,nuts,soy,strawberries,vegan,vegetarian,comments,parentId) VALUES ($values)";
                 
                 $result =$this->db->query($sql);
-                $id = $this->db->insert_id;
                 if($result){
+                    $id = $this->db->insert_id;
                      echo json_encode((object) [
                         'id' => $id,
                          'success'=>true
                     ]);
+
+                    
                 }
                 else{
                     $this->error();
@@ -105,8 +108,23 @@
                 $this->getAllallergies();
              }
         }
-        
-        
+    
+
+        function showInfoAboutakid(){
+           $sql = "SELECT kids.Id, kids.fname, kids.bDate, kids.genders, kids.celiac,
+           kids.eggs, kids.fish, kids.kiwis, kids.lactoseintolerance, kids.nuts, kids.soy,
+           kids.strawberries, kids.vegan, kids.vegetarian, kids.comments FROM kids INNER JOIN users ON kids.parentId=users.parentId
+           WHERE users.parentId={$_POST['parentId']}";
+
+           $result =$this->db->query($sql);
+           if($result){
+            echo json_encode((object) [
+               'id' => $id,
+                'success'=>true
+           ]);
+         }
+
+    }
 
 
        public function __destruct(){
