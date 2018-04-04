@@ -130,14 +130,52 @@
                      <div class="registration-info">
                         <label>  Comments and Special Requests </label>
                         <textarea name="comments" cols="42" rows="4" style="overflow:auto;resize:none"> </textarea>
-                </div>
+                     </div>
                 </div>
             </div>
 
             <!-- <button type="button" class="save-2" onClick="kidDetailsUpdate()"> Save</button> -->
-            <button type="button" id="New-observation"> To Insert New observation Please Click Here </button>   
-
+            <button type="button" id="new-observation"> To Insert New observation Please Click Here </button>
      </form>  
+</section>
+
+<section id="kid-observation">
+    <form>
+        <p class="success-message2"></p>
+            <div class="row kid-update1">
+                 <div class="col span-1-of-2 box">
+                    <div class="update-info">
+                        <label  for="name"> Please choose a new observation: </label> <br>
+                        <select name="observation" size="1" id="observation"> 
+                                <option value="observation-1" selected>your child argues with another kid  </option>
+                                <option value="observation-2"> your kid didn't eat </option>
+                                <option value="observation-3"> your kid didn't feel good during the day </option>
+                                <option value="observation-4"> Your kid has been rude to the kindergarten teacher </option>
+                                <option value="observation-5"> your kid enjoyed painting activity </option>
+                                <option value="observation-6"> your kid enjoyed solving puzzle activity </option>
+                                <option value="observation-7"> your kid helped another kid </option>
+                                <option value="observation-8"> your kid likes to hear stories </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col span-1-of-2 box">
+                    <div class="update-info">
+                        <label> <span> * </span> Pick The Date: </label>
+                        <input name="observationDate" type="date" id="upDate" />
+                    </div>
+                </div>
+           </div>
+           <div class="row kid-update2">
+                <div class="col span-1-of-2 box">
+                     <div class="update-info">
+                        <label>  Comments and Special Requests </label>
+                        <textarea name="SpecialRequests" cols="42" rows="4" style="overflow:auto;resize:none"> </textarea>
+                     </div>
+                </div>
+            </div>
+            <button type="button" class="save-1" onClick="DetailsUpdate()"> Save</button>
+            <button type="button" class="exit" onClick="backtoIndex()"> Exit</button>
+        </form>
 </section>
     <script src="commons.js"></script>
     <script src="main.js"></script>
