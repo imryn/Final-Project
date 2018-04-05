@@ -173,7 +173,7 @@
                 </div>
             </div>
             <button type="button" class="save-details" onClick="DetailskidUpdate()"> Save</button>
-            <button type="button" class="exit" onClick="backtoIndex()"> Exit</button>
+            <button type="button" class="exit"> <a href="/Sadna/index.php" id="special-link"> Exit </a> </button>
         </form>
 </section>
     <script src="commons.js"></script>
