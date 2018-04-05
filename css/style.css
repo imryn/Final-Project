@@ -254,6 +254,8 @@ input[type=radio]:first-child{
     position:relative;
     float:left;
     left:50%;
+    width:700px;
+    height:600px;
 }
 
 .schedule_row{
