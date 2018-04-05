@@ -22,7 +22,7 @@
 <title>registration document</title>
 </head>
 
-<body>
+<body onload="showInfoAboutakid()">
     <header>
         <templateHtml src="picture-container/picture-container.html"></templateHtml>
         <?php include "nav-menu/nav-menu-container.php" ?>
@@ -134,7 +134,6 @@
                 </div>
             </div>
 
-            <!-- <button type="button" class="save-2" onClick="kidDetailsUpdate()"> Save</button> -->
             <button type="button" id="new-observation"> To Insert New observation Please Click Here </button>
      </form>  
 </section>
@@ -173,7 +172,7 @@
                      </div>
                 </div>
             </div>
-            <button type="button" class="save-1" onClick="DetailsUpdate()"> Save</button>
+            <button type="button" class="save-1" onClick="DetailskidUpdate()"> Save</button>
             <button type="button" class="exit" onClick="backtoIndex()"> Exit</button>
         </form>
 </section>

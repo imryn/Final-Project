@@ -2,6 +2,7 @@
 
        include 'new-user.php';
        include 'kids.php';
+       include 'exceptions.php';
 
        $method = $_SERVER['REQUEST_METHOD'];
 
@@ -21,6 +22,10 @@
                 case "login":
                     $user = new Users();
                     $user->login();
+                    break;
+                case "observation_error":
+                    $exceptions = new Exceptions();
+                    $exceptions->DetailsUpdate();
                     break;
             }
        }

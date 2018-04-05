@@ -1,7 +1,6 @@
 <?php
 
     require_once('db.php');
-    session_start();
 
     class Kids{
         
@@ -111,20 +110,24 @@
     
 
         function showInfoAboutakid(){
-           $sql = "SELECT kids.Id, kids.fname, kids.bDate, kids.genders, kids.celiac,
+            
+           $sql = "SELECT kids.kidId, kids.fname, kids.bDate, kids.genders, kids.celiac,
            kids.eggs, kids.fish, kids.kiwis, kids.lactoseintolerance, kids.nuts, kids.soy,
            kids.strawberries, kids.vegan, kids.vegetarian, kids.comments FROM kids INNER JOIN users ON kids.parentId=users.parentId
-           WHERE users.parentId={$_POST['parentId']}";
-
+           WHERE users.parentId={$_SESSION['parentId']}";
            $result =$this->db->query($sql);
            if($result){
-            echo json_encode((object) [
-               'id' => $id,
-                'success'=>true
-           ]);
-         }
+                $data = $result->fetch_assoc();
+                echo json_encode((object) [
+                    'data' => $data,
+                    'success'=>true
+                ]);
+            }
+            else{
+                $this->error();
+            }
 
-    }
+        }
 
 
        public function __destruct(){
