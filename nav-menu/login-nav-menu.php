@@ -27,7 +27,7 @@
             <!--</li>-->
             
             <li><a href="reports.php"> reports </a></li>
-            <li><a href="Building_Schedule.html">schedule </a></li>
+            <li><a href="Building_Schedule.php">schedule </a></li>
             <li><a href="#"> shopping list </a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
