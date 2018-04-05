@@ -17,11 +17,15 @@
 
 
         function DetailsUpdate(){
+
+            foreach( $_POST as $key => $value ) {
+                $_POST[$key] = strip_tags($this->db->real_escape_string($value));
+            }
+
             $values = "'{$_POST['observation']}','{$_POST['observationDate']}','{$_POST['SpecialRequests']}',
             {$_POST['kidId']},'{$_POST['fname']}'";
     
             $sql = "INSERT INTO exceptions (observation,observationDate,SpecialRequests,kidId,fname) VALUES($values)";
-            echo $sql;
             $result =$this->db->query($sql);
             if($result){
              echo json_encode((object) [

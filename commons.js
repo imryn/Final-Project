@@ -59,11 +59,11 @@ function setFormData(formId,data){
                 case "radio":
                 case "checkbox":
                     if(data[key] == "1"){
-                        item.setAttribute("checked", true);
+                        item.checked = true;
                     }
                     break;
                 default:
-                    item.setAttribute("value",data[key]);
+                    item.value = data[key];
                     break;
             }
         }
