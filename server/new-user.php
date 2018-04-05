@@ -1,6 +1,7 @@
 <?php
 
     require_once('db.php');
+    session_start();
 
     class Users{
 
@@ -19,6 +20,11 @@
             echo json_encode((object) [
                 'error'=>true
             ]);
+        }
+
+        private  function deleteKid($kidId){
+            $sql = "DELETE FROM kids WHERE kidId={$kidId}";
+            $result = $this->db->query($sql);
         }
        
         public function createUser(){
@@ -40,18 +46,20 @@
                 addressuser,city,email,phone,mobilephone,familyMember,anothercontact,relationship,mobilephone2) VALUES ($values)";
             
                 $result =$this->db->query($sql);
-                $id = $this->db->insert_id;
                 if($result){
+                    $id = $this->db->insert_id;
                      echo json_encode((object) [
                         'id' => $id,
                          'success'=>true
                     ]);
                 }
                 else{
-                  $this->error();
+                    $this->deleteKid($_POST['kidId']);
+                    $this->error();
                 }
             } 
             else{
+                $this->deleteKid($_POST['kidId']);
                 $this->error();
             }
         }
@@ -87,16 +95,23 @@
 
 
          public function login(){
-            $this->allowSpecialCharacters($_POST);
-            $sql = "SELECT parentId FROM users WHERE parentId='{$_POST['parentId']}' AND password ='{$_POST['password']}'";
-            $result = $this->db->query($sql); 
-            if(mysqli_num_rows($result) > 0 ){
-                header("Location: /Sadna/index.html");
+            if( isSet($_SESSION['token']) && isSet($_POST['token']) && $_SESSION['token'] == $_POST['token']){
+                $this->allowSpecialCharacters($_POST);
+                $sql = "SELECT parentId FROM users WHERE parentId='{$_POST['parentId']}' AND password ='{$_POST['password']}'";
+                $result = $this->db->query($sql);
+                if(mysqli_num_rows($result) > 0 ){
+                    $_SESSION['login'] = $_POST['token'];
+                    $_SESSION['parentId'] = $_POST['parentId'];
+                    header("Location: /Sadna/index.php");
+                    
+                }
+                else{
+                    header("Location: /Sadna/login_page.php");
+                }
             }
             else{
-                header("Location: /Sadna/login_page.html");
+                header("Location: /Sadna/login_page.php");
             }
-           
         }
    
         

@@ -50,6 +50,34 @@ function getFormData(formSelector){
 }
 
 
+function setFormData(formId,data){
+    for(var key in data){
+        var item = document.querySelector(formId + " [name= " + key + "]");
+        if(item){
+            var type = item.getAttribute("type");
+            switch (type) {
+                case "radio":
+                case "checkbox":
+                    if(data[key] == "1"){
+                        item.setAttribute("checked", true);
+                    }
+                    break;
+                default:
+                    item.setAttribute("value",data[key]);
+                    break;
+            }
+        }
+    }
+}
+
+function timestampToDate(timestamp){
+    var date = new Date(Number(timestamp));
+    var month = date.getMonth() + 1;
+    month =  month < 10 ? "0" + month  : month;
+    var day =  date.getDate() < 10 ? ("0" + date.getDate() ) : date.getDate();
+    return date.getFullYear() + "-" + month + "-" + day;
+}
+
 function httpGet(url,params,callback){
     $.get(url,params,function(response) {
         if(response){

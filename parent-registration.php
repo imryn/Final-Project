@@ -25,7 +25,7 @@
 <body>
     <header>
         <templateHtml src="picture-container/picture-container.html"></templateHtml>
-        <templateHtml src="nav-menu/nav-menu.html"></templateHtml>
+        <?php include "nav-menu/nav-menu-container.php" ?>
      </header>
 
 <section id="registration-parent">
@@ -83,11 +83,6 @@
                             </select> -->
                             <div id="pac-container">
                                 <input id="pac-input" name="city" type="text" placeholder="Enter a location">
-                            </div>
-                            <div id="map"></div>
-                            <div id="infowindow-content">
-                                    <span id="place-name"  class="title"></span><br>
-                                    <span id="place-address"></span>
                             </div>
                     </div>
                 </div>
@@ -255,7 +250,7 @@
     <script src="commons.js"></script>
     <script src="main.js"></script>
     <script src="location.js"> </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCANOMcofoYNJ5CwAicrOY-0cm7mK1yTXg
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBheLjhOReAW-Y5Ki1P3MxNHVRW5K6yY-8
     &libraries=places&callback=initMap"
         async defer></script>
 </body>
