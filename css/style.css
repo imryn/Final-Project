@@ -184,7 +184,8 @@ input[type=radio]:first-child{
     margin-left: 25px;
 } 
 
-.save-1, .save-2, .create-botton, .exit{
+.save-1, .save-2, .create-botton,
+.exit, .save-details{
     padding: 5px;
     width: 75px;
     display: block;
@@ -198,7 +199,7 @@ input[type=radio]:first-child{
     text-align: center;
 }
 
-.save-1{
+.save-1, .save-details{
     margin-left: 56%;
     margin-top: 5%;
 }

@@ -56,15 +56,17 @@ function DetailskidUpdate(){
     var data = getFormData("#kid-observation");
     var kidData = getFormData("#kid-detailsUpdate");
     data["kidId"] = kidData['kidId'];
+    data["fname"] = kidData['fname'];
+    var date = new Date(data.observationDate).getTime();
+    if(!isNaN(date)){
+        data.observationDate = date;
+    }
     data['route'] = 'observation_error';
     httpPost("/Sadna/server/api.php",data,function(response){
-        if(_response.success){
+        if(response.success){
             bootpopup.alert("The form saved successfully","Success",function(){
                 window.location.assign("/Sadna/index.php");
             });
-        }
-        else{
-            errorForUser("One of the field is wrong or already used");
         }
     })
 
@@ -72,7 +74,7 @@ function DetailskidUpdate(){
 
 
 $(document).ready(function(){
-    $("button").click(function(){
+    $("#new-observation").click(function(){
         $("#kid-observation").fadeToggle(2000);
         
     });

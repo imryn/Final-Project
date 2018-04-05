@@ -78,9 +78,6 @@
                 <div class="col span-1-of-3 box">
                     <div class="registration-info">
                         <label id="city"> City: </label> <br>
-                            <!-- <select name="city" size="1"> 
-                                <option value="Tel-aviv"> Tel-aviv  </option>
-                            </select> -->
                             <div id="pac-container">
                                 <input id="pac-input" name="city" type="text" placeholder="Enter a location">
                             </div>
