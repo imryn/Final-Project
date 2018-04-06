@@ -16,11 +16,6 @@
                 <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
                 <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
 
-                <link rel='stylesheet' href='lib/fullcalendar.css' />
-                <script src='lib/moment.min.js'></script>
-                <script src='lib/fullcalendar.js'></script>
-                <script type='text/javascript' src='lib/gcal.js'></script>
-
         <title>Building Weekly Scheduler</title>
         
     </head>
@@ -31,15 +26,13 @@
             <?php include "nav-menu/nav-menu-container.php" ?>
         </header>
 
-        
-
         <section id="Weekly-Scheduler">
  
             <form>
                 <h1> Updating Weekly Scheduler </h1>
 
 
-                <div class='calendar_row'>
+                <div class="calendar_row">
                     <div id="calendar">
                        <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=WEEK&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffcc66&amp;src=sadnakidintouch%40gmail.com&amp;color=%231B887A&amp;src=iw.jewish%23holiday%40group.v.calendar.google.com&amp;color=%23125A12&amp;ctz=Asia%2FJerusalem" style="border:solid 1px #777" width="700" height="600" frameborder="0" scrolling="no"></iframe>
                    </div>
@@ -109,7 +102,7 @@
         </section>
 
 
-        <script src="googleCalander.js"> </script>
+        <script src="Building_Schedule.js"> </script>
         <script src="commons.js"></script>
 
     </body>
