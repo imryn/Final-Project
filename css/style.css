@@ -135,8 +135,9 @@ section{
 }
 
 #gender{
-    width: 133%;
+    width: 112%;
     margin-left: 8%;
+    Height:32px;
 }
 
 #observation{
@@ -150,8 +151,9 @@ section{
 }
 
 #f-member-select{
-    width: 119%;
+    width: 122%;
     margin-left: 7%;
+    height:32px;
 }
 
 

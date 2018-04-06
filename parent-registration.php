@@ -32,7 +32,7 @@
 <section id="registration-parent">
         <form>
             <h1> Registration</h1>
-            <h2> Parent </h2>
+            <h2><u> Parent </u></h2>
             <p class="describe-info"> Please fill in your personal details: </p>
             <p class="success-message"></p>
             <div class="row parent-form1">
@@ -80,13 +80,13 @@
                     <div class="registration-info">
                         <label id="city"> City: </label> <br>
                             <div id="pac-container">
-                                <input id="pac-input" name="city" type="text" placeholder="Enter a location">
+                                <input id="pac-input" name="city" type="text">
                             </div>
                     </div>
                 </div>
                 <div class="col span-1-of-3 box">
                         <div class="registration-info">
-                                <label for="email"> <span> * </span> Email: </label> <br>
+                                <label for="email"> <span> * </span> Email Address: </label> <br>
                                 <input name="email" type="email" required/ id="email-input">
                         </div>
                 </div>
@@ -94,13 +94,13 @@
                 <div class="row parent-form4">
                     <div class="col span-1-of-3 box">
                             <div class="registration-info">
-                                <label for="phone" id="phone"> Phone No: </label> <br>
+                                <label for="phone" id="phone"> Phone No.: </label> <br>
                                 <input name="phone" type="phone" /> 
                             </div>
                     </div>
                     <div class="col span-1-of-3 box">
                             <div class="registration-info">
-                                <label for="phone" id="parent-phone"> <span> * </span> Cell Phone No: </label>
+                                <label for="phone" id="parent-phone"> <span> * </span> Cell Phone No.: </label>
                                 <input name="mobilephone" type="phone" id="phone" required/> 
                             </div>
                     </div>
@@ -108,8 +108,9 @@
                             <div class="registration-info">
                                     <label> <span> * </span> Family Member: </label> <br>
                                     <select name="familyMember" size="1" id="f-member-select" > 
+                                            <option value="empty" selected> Select...  </option>
                                             <option value="Father"> Father  </option>
-                                            <option value="Mother" selected> Mother </option>
+                                            <option value="Mother"> Mother </option>
                                     </select>
                             </div>
                     </div> 
@@ -117,7 +118,7 @@
                <div class="row parent-form4">
                 <div class="col span-1-of-3 box">
                         <div class="registration-info">
-                            <label>  <span> * </span> Another Contact: </label> <br>
+                            <label>  <span> * </span> Addition Contact: </label> <br>
                             <input name="anothercontact" type="text" required/> 
                         </div>
                 </div>
@@ -129,7 +130,7 @@
                 </div> 
                 <div class="col span-1-of-3 box">
                         <div class="registration-info">
-                            <label for="phone"> <span> * </span> Cell Phone No: </label>
+                            <label for="phone"> <span> * </span> Cell Phone No.: </label>
                             <input name="mobilephone2" type="phone" required/> 
                         </div>
                 </div>    
@@ -137,10 +138,14 @@
       </form> 
 </section>
 
+
+
+
+
 <!-- kid section -->
 <section id="registration-kid">
     <form>
-        <h2> Kid </h2>
+        <h2> <u> Kid </u></h2>
         <p class="describe-info"> Please fill in your child details: </p>
         <p class="success-message2"></p>
             <div class="row kid-form1">
@@ -158,7 +163,7 @@
                 </div>
                 <div class="col span-1-of-3 box">
                     <div class="registration-info">
-                        <label for="data"> <span> * </span> Birth date: </label>
+                        <label for="data"> <span> * </span> Date of birth: </label>
                         <input name="bDate" type="date" id="birth-date">
                     </div>
                 </div> 
@@ -168,8 +173,9 @@
                         <div class="registration-info">
                             <label> <span> * </span> Gender: </label>
                             <select name="genders" size="1" id="gender"> 
-                                <option value="boy" selected> Boy  </option>
-                                <option value="Girl"> Girl </option>
+                                <option value="empty" selected> Select...  </option>
+                                <option value="boy"> Male </option>
+                                <option value="Girl"> Female </option>
                             </select>
                         </div>
                    </div>
@@ -237,8 +243,8 @@
            <div class="row kid-form4">
                 <div class="col span-1-of-2 box">
                      <div class="registration-info">
-                        <label>  Comments and Special Requests </label>
-                        <textarea name="comments" cols="83" rows="4" style="overflow:auto;resize:none"> </textarea>
+                        <label>  Comments and Special Requests: </label>
+                        <textarea name="comments" cols="88" rows="4" style="overflow:auto;resize:none"> </textarea>
                 </div>
                 </div>
             </div>
