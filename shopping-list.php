@@ -27,43 +27,19 @@
             <?php include "nav-menu/nav-menu-container.php" ?>
         </header>
 
-<<<<<<< HEAD
         <section id="shopping-list">
             <form>
                  <h1> Shopping List</h1>
                  <p>Select item to the list:</p>      
                  <div class="row shoppinglist-form3">
-                    <div class="col span-1-of-3 box">
+                    <div class="col span-1-of-1 box">
                         <div class="list-info">
                             <label>Category: </label> 
                             <select name="Category" size="1" id="itemcategory" onchange="SelectCategory(this.value);" > 
-=======
-        <script src="commons.js"></script>
-    
-       
-
-
-
-
-
-        <section id="shopping-list">
-            <form>
-                <h1> Shopping List</h1>
-                            
-                <div class="row shoppinglist-form3">
-                    
-                    <p>Select item to the list:</p>
-                    
-                    <div class="col">
-                    
-                        <label>Category: </label> 
-                        <select name="Category" size="0" id="itemcategory" onchange="SelectCategory(this.value);" > 
->>>>>>> 78ec870f92f0179c8706c9cd254f2ce588452964
                                 <option value="Empty" > --Select Category--  </option>
                                 <option value="Artmaterials"> Art materials  </option>
                                 <option value="Office" > Office  </option>
                                 <option value="Food" > Food  </option>
-<<<<<<< HEAD
                             </select>
                         </div>
                      </div>
@@ -73,19 +49,6 @@
                         <label> Item: </label>   
                         <select name="Item" size="1" id="artitems" > 
                             <option value="" > --Select Item--  </option>
-=======
-                        </select>
-                        
-                    </div>
-                    
-                    <div class="col">
-                        <label> Item: </label> 
-                        
-                        <select name="Item" size="0" id="empty">  </select>                     
-                        
-                        <select name="Item" size="17" id="artitems" > 
-                            <option value=""> Select...  </option>
->>>>>>> 78ec870f92f0179c8706c9cd254f2ce588452964
                             <option value="Crayons-24"> Crayons (package of 24)</option>
                             <option value="Crayons-200" > Crayons (package of 200)  </option>
                             <option value="Glue-stick" > Glue-stick (package of 5)  </option>
@@ -102,17 +65,10 @@
                             <option value="Paper-red-A4" > Paper-red-A4 (package of 50)  </option>
                             <option value="Paper-white-A4" > Paper-white-A4 (package of 50)  </option>
                             <option value="Paper-Yellow-A4" > Paper-Yellow-A4 (package of 50)  </option>
-<<<<<<< HEAD
                     </select>
                 
                     <select name="Item" size="1" id="officeitems" > 
                             <option value="" > --Select Item--  </option>
-=======
-                        </select>
-                                         
-                        <select name="Item" size="10" id="officeitems" > 
-                            <option value="" > Select...  </option>
->>>>>>> 78ec870f92f0179c8706c9cd254f2ce588452964
                             <option value="folder"> Folder  </option>
                             <option value="notebook" > Notebook (package of 5)  </option>
                             <option value="Pens-black" > Pens-black (package of 10)  </option>
@@ -122,17 +78,10 @@
                             <option value="rubber bands"> Rubber bands (package of 50)  </option>
                             <option value="stapler"> Stapler  </option>
                             <option value="staples"> Staples  </option>
-<<<<<<< HEAD
                     </select>
             
                     <select name="Item" size="1" id="fooditems" > 
                             <option value="" > --Select Item--  </option>
-=======
-                        </select>
-                            
-                        <select name="Item" size="20" id="fooditems" > 
-                            <option value="" > Select...  </option>
->>>>>>> 78ec870f92f0179c8706c9cd254f2ce588452964
                             <option value="apples"> Apples  </option>
                             <option value="bread" > Bread  </option>
                             <option value="butter" > Butter spread  </option>
@@ -152,7 +101,6 @@
                             <option value="tomato" > Tomato (kg)  </option>
                             <option value="tehina" > Tehina  </option>
                             <option value="tuna" > Tuna  </option>
-<<<<<<< HEAD
                     </select>
                 </div>
          </div>
@@ -173,32 +121,6 @@
         <script src="shopping-list.js"></script>
         <script src="commons.js"></script>
 
-=======
-                        </select>
-                        
-                    </div>
-                    
-                    <div class="col">                       
-                        <label> Quantity: </label> 
-                        <input type="number" name="quantity" min="1" max="10" id="quantity">   
-                    </div>
-                                            
-                    <div class="col">  
-                        <button type="button"id="add" onClick="createTables()" > Add </button>
-                    </div>
-                    <br><br><br>   
-                </div>
-                
-                
-                <div class="row">		
-                    <table id="item-table"> </table >
-                </div>
-            </form>  
-        </section>
-        
-        <script src="shopping-list.js"></script>
-    
->>>>>>> 78ec870f92f0179c8706c9cd254f2ce588452964
 </body>
 
 </html>
