@@ -30,9 +30,9 @@
         <section id="shopping-list">
             <form>
                  <h1> Shopping List</h1>
-                 <p>Select item to the list:</p>      
+                 <p class="describe-list-info"> Select item to the list:</p>      
                  <div class="row shoppinglist-form3">
-                    <div class="col span-1-of-1 box">
+                    <div class="col span-1-of-3 box">
                         <div class="list-info">
                             <label>Category: </label> 
                             <select name="Category" size="1" id="itemcategory" onchange="SelectCategory(this.value);" > 
@@ -44,7 +44,7 @@
                         </div>
                      </div>
                 
-                <div class="col span-1-of-3 box">
+                <div class="col span-1-of-2 box">
                     <div class="list-info">
                         <label> Item: </label>   
                         <select name="Item" size="1" id="artitems" > 
@@ -104,10 +104,10 @@
                     </select>
                 </div>
          </div>
-                <div class=""col span-1-of-3 box"">
+                <div class="col span-1-of-1 box">
                      <div class="list-info">
-                        <label> Quantity: </label> 
-                        <input type="number" name="quantity" min="1" max="10" id="quantity">
+                        <label id="quantity"> Quantity: </label> 
+                        <input type="number" name="quantity" min="1" max="10" id="quantity-input">
                     </div>
                 </div>
         </div>

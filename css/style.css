@@ -247,13 +247,17 @@ input[type=radio]:first-child{
    margin-left: 48%;  
 }
 
-.describe-info, #form-exp{
+.describe-info, #form-exp, .describe-list-info{
     margin-top: 3%;
     color: #e67e22;
     word-spacing: 2px;
 }
 .describe-info{
     margin-left: 11%;
+}
+
+.describe-list-info{
+    margin-left: 5%
 }
 
 #form-exp{
@@ -375,6 +379,10 @@ input[type=radio]:first-child{
 }
 
 #quantity{
+    margin-left: -20%;
+}
+
+#quantity-input{
     background-color: transparent;
     border: solid 1px rgb(169,169,169);
     color: black;
@@ -384,32 +392,29 @@ input[type=radio]:first-child{
     font-family: 'Lato';
     font-weight: 300;
     height: 32px;
+    margin-left: 12%;
 }
 
 #empty{
     width: 303px;
 }
 
-#artitems{
-    width: 303px;
+#artitems,#officeitems,#fooditems{
+    width: 73%;
+    margin-left: 5%;
 }
 
-#officeitems{
-    width: 303px;
-}
-
-#fooditems{
-    width: 303px;
+#itemcategory{
+    width: 62%;
+    margin-left: 5%;
 }
 
 .shoppinglist-form3{
-    margin-left: 1.3%;
+    margin-left: 4.3%;
 }
 
 #add{
-    margin-top: 5%;
-    margin-left: 48%; 
-    
+     margin-left: 5%; 
      padding: 5px;
      width: 75px;
      display: block;
@@ -421,7 +426,6 @@ input[type=radio]:first-child{
      font-family: 'Lato';
      font-weight: 300;
      text-align: center;
-     
  }
 
 
