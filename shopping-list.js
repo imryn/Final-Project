@@ -1,5 +1,5 @@
   // conditions for the selects
-//   document.getElementById("artitems").style.display = "none";
+  document.getElementById("artitems").style.display = "none";
   document.getElementById("officeitems").style.display = "none";
   document.getElementById("fooditems").style.display = "none";
   
@@ -37,7 +37,7 @@
       aitem.style.display = "none";
       oitem.style.display = "none";
       fitem.style.display = "none";
-      emptyitem.style.display = "block";
+      emptyitem.style.display = "inline-block";
       }
   }
   

@@ -46,7 +46,10 @@
                 
                 <div class="col span-1-of-3 box">
                     <div class="list-info">
-                        <label> Item: </label>   
+                        <label> Item: </label>  
+
+                        <select disabled name="Item" size="0" id="empty">  </select>
+
                         <select name="Item" size="1" id="artitems" > 
                             <option value="" > --Select Item--  </option>
                             <option value="Crayons-24"> Crayons (package of 24)</option>
@@ -65,7 +68,7 @@
                             <option value="Paper-red-A4" > Paper-red-A4 (package of 50)  </option>
                             <option value="Paper-white-A4" > Paper-white-A4 (package of 50)  </option>
                             <option value="Paper-Yellow-A4" > Paper-Yellow-A4 (package of 50)  </option>
-                    </select>
+                        </select>
                 
                     <select name="Item" size="1" id="officeitems" > 
                             <option value="" > --Select Item--  </option>
