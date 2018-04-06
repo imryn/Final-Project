@@ -51,17 +51,22 @@ section{
     padding: 30px 0;
 }
 
-#registration-parent, #registration-kid, #reports{
+#registration-parent,#registration-kid,#reports,
+#kid-detailsUpdate,#Weekly-Scheduler,#kid-observation{
     background-color: #f0f0f0;
-    width: 75.2%;
-    margin-left: 12.4%;
+    width: 75%;
+    margin-left: 12.5%;
+}
+
+#kid-observation{
+    display: none;
 }
 
  .reports-line{
     margin-left: 3.2%;
  }
 
-.parent-form1, .kid-form1{
+.parent-form1, .kid-form1, .kid-update1{
     margin-top: 7%;
 }
 
@@ -69,14 +74,14 @@ section{
     margin-left: 10%;
 }
 
-.kid-form1,.kid-form2 {
+.kid-form1,.kid-form2,.kid-update1, .kid-update2 {
    margin-left: 10%;
 }
 
 .kid-form3, .kid-form4{
     margin-left: 11.3%;
 }
-.registration-info input{
+.registration-info input, .update-info input{
     background-color: transparent;
     border: solid 1px rgb(169,169,169);
     color: black;
@@ -88,7 +93,7 @@ section{
     margin-top: 1%;
     font-family: 'Lato';
     font-weight: 300;
-    height: 28px;
+    height: 32px;
 }
 
 #birth-date{
@@ -107,17 +112,19 @@ section{
     margin-top: 1%;
     font-family: 'Lato';
     font-weight: 300;
-    height: 28px;
+    height: 32px;
 }
 
 #address, #city, #phone{
     margin-left: 4%;
 }
 
-.registration-info select, .report-info select{
+.registration-info select,.report-info select,
+.update-info select{
     border-radius: 5px;
     font-family: 'Lato';
     font-weight: 300;
+    margin-top: 1%;
  
 }
 
@@ -130,6 +137,11 @@ section{
 #gender{
     width: 133%;
     margin-left: 8%;
+}
+
+#observation{
+    width: 80%;
+    margin-left: 0;
 }
 
 #f-member-select{
@@ -172,7 +184,8 @@ input[type=radio]:first-child{
     margin-left: 25px;
 } 
 
-.save-1, .save-2, .create-botton{
+.save-1, .save-2, .create-botton,
+.exit, .save-details{
     padding: 5px;
     width: 75px;
     display: block;
@@ -186,8 +199,9 @@ input[type=radio]:first-child{
     text-align: center;
 }
 
-.save-1{
-    margin-left: 48%;
+.save-1, .save-details{
+    margin-left: 56%;
+    margin-top: 5%;
 }
 
 .save-2{
@@ -195,6 +209,32 @@ input[type=radio]:first-child{
    margin-left: 48%; 
 }
 
+.exit{
+    margin-left: 37%;
+    margin-top: -3.7%; 
+}
+
+#special-link{
+    text-decoration:none;
+    color: white;
+}
+
+#new-observation{
+    padding: 8px;
+    width: 42%;
+    margin-top: 5%;
+    margin-left: 30%; 
+    display: block;
+    cursor: pointer;
+    border: none;
+    background-color: #e67e22;
+    color: white;
+    border-radius: 5px;
+    font-family: 'Lato';
+    font-weight: 300;
+    word-spacing: 4px;
+    text-align: center; 
+}
 .create-botton{
    margin-top: 5%;
    margin-left: 48%;  
@@ -265,5 +305,57 @@ input[type=radio]:first-child{
     position:relative;
     float:left;
     left:50%;
+    width:700px;
+    height:600px;
+}
+
+.schedule_row{
+    width:100%;
+    margin-top:25px;
+    float:left;
+}
+.schedule_row label{
+    width:190px;
+    float:left;
+}
+.schduler_holder{
+    padding:20px;
+    margin-left:120px; 
+}
+.scheduler-description{
+    width:720px;
+    float:left;
+}
+.pick{
+    float:left;
+    margin-left:140px;
+    margin-top:5%;
+}
+#date{
+    width:27%;
+    margin-top: 5%;
+}
+.addeventatc_icon{
+    top:3px !important;
+}
+.addeventatc{
+    padding-top:5px !important;
+    padding-bottom:5px !important;
+    margin-left:10px;
+    float:left;
+}
+.scheduler-description input{
+    background-color: transparent;
+    border: solid 1px rgb(169,169,169);
+    color: black;
+    background: white;
+    text-indent: 10px;
+    width: 430px;
+    float:left;
+    border-radius: 5px;
+    font-family: 'Lato';
+    font-weight: 300;
+    height: 32px;
+    
 }
 /* END building_schedule design  */

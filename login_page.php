@@ -1,3 +1,6 @@
+<?php 
+    include 'server/token.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,6 +51,7 @@
 
         <div class="text-xs-center">
             <input type="hidden" name="route" value="login" >
+            <input type="hidden" name="token" value="<?php echo createToken()  ?>" >
             <button class="btn btn-deep-purple" type="submit" >Login</button>
         </div>
 
