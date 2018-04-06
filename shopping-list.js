@@ -1,5 +1,5 @@
   // conditions for the selects
-  document.getElementById("artitems").style.display = "none";
+//   document.getElementById("artitems").style.display = "none";
   document.getElementById("officeitems").style.display = "none";
   document.getElementById("fooditems").style.display = "none";
   

@@ -81,7 +81,7 @@ section{
 .kid-form3, .kid-form4{
     margin-left: 11.3%;
 }
-.registration-info input, .update-info input{
+.registration-info input, .update-info input, .list-info input{
     background-color: transparent;
     border: solid 1px rgb(169,169,169);
     color: black;
@@ -120,7 +120,7 @@ section{
 }
 
 .registration-info select,.report-info select,
-.update-info select{
+.update-info select, .list-info select{
     border-radius: 5px;
     font-family: 'Lato';
     font-weight: 300;
@@ -408,7 +408,6 @@ input[type=radio]:first-child{
      font-weight: 300;
      text-align: center;
      
- 
  }
 
 

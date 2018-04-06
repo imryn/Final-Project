@@ -27,46 +27,27 @@
             <?php include "nav-menu/nav-menu-container.php" ?>
        </header>
 
-       <script src="commons.js"></script>
-    
-       
-
-
-
-
-
         <section id="shopping-list">
-        <form>
-            <h1> Shopping List</h1>
-                        
-            <div class="row shoppinglist-form3">
+            <form>
+                 <h1> Shopping List</h1>
+                 <p>Select item to the list:</p>      
+                 <div class="row shoppinglist-form3">
+                    <div class="col span-1-of-3 box">
+                        <div class="list-info">
+                            <label>Category: </label> 
+                            <select name="Category" size="1" id="itemcategory" onchange="SelectCategory(this.value);" > 
+                                <option value="Empty" > --Select Category--  </option>
+                                <option value="Artmaterials"> Art materials  </option>
+                                <option value="Office" > Office  </option>
+                                <option value="Food" > Food  </option>
+                            </select>
+                        </div>
+                     </div>
                 
-                <p>Select item to the list:</p>
-                
-                <div class="col">
-                
-                    <label>Category: </label> 
-                    <select name="Category" size="0" id="itemcategory" onchange="SelectCategory(this.value);" > 
-                            <option value="Empty" > --Select Category--  </option>
-                            <option value="Artmaterials"> Art materials  </option>
-                            <option value="Office" > Office  </option>
-                            <option value="Food" > Food  </option>
-                    </select>
-                    
-                </div>
-                
-                <div class="col">
-                
-                    <label> Item: </label> 
-                    
-                    <select name="Item" size="0" id="empty"> 
-                            
-                            
-                    </select>
-                    
-                    
-                    
-                    <select name="Item" size="17" id="artitems" > 
+                <div class="col span-1-of-3 box">
+                    <div class="list-info">
+                        <label> Item: </label>   
+                        <select name="Item" size="1" id="artitems" > 
                             <option value="" > --Select Item--  </option>
                             <option value="Crayons-24"> Crayons (package of 24)</option>
                             <option value="Crayons-200" > Crayons (package of 200)  </option>
@@ -85,11 +66,8 @@
                             <option value="Paper-white-A4" > Paper-white-A4 (package of 50)  </option>
                             <option value="Paper-Yellow-A4" > Paper-Yellow-A4 (package of 50)  </option>
                     </select>
-                    
                 
-                
-                
-                    <select name="Item" size="10" id="officeitems" > 
+                    <select name="Item" size="1" id="officeitems" > 
                             <option value="" > --Select Item--  </option>
                             <option value="folder"> Folder  </option>
                             <option value="notebook" > Notebook (package of 5)  </option>
@@ -101,13 +79,8 @@
                             <option value="stapler"> Stapler  </option>
                             <option value="staples"> Staples  </option>
                     </select>
-                    
-                
-                
-                
-                
-                    
-                    <select name="Item" size="20" id="fooditems" > 
+            
+                    <select name="Item" size="1" id="fooditems" > 
                             <option value="" > --Select Item--  </option>
                             <option value="apples"> Apples  </option>
                             <option value="bread" > Bread  </option>
@@ -129,53 +102,24 @@
                             <option value="tehina" > Tehina  </option>
                             <option value="tuna" > Tuna  </option>
                     </select>
-                    
                 </div>
-                
-                <div class="col">
-                    
-                    <label> Quantity: </label> 
-                    <input type="number" name="quantity" min="1" max="10" id="quantity">
-                
+         </div>
+                <div class=""col span-1-of-3 box"">
+                     <div class="list-info">
+                        <label> Quantity: </label> 
+                        <input type="number" name="quantity" min="1" max="10" id="quantity">
+                    </div>
                 </div>
-                                        
-                <div class="col">
-                    
-                <button type="button"  id="add"  onClick="createTables()" > Add</button> 
-                
-                </div>
-                <br><br><br>
-                
-            </div>
+        </div>
             
-            
-            <div class="row">		
-
-                <table id="item-table">
-
-                </table >
-                
-
-            </div>
-                
-        </form>  
+                <table id="item-table"> </table >
+          
+            <button type="button"  id="add"  onClick="createTables()" > Add</button> 
+    </form>  
         </section>
-
-        
-        <script>
-      
-        
-        
-        
-        
-        </script>	
-        
-        
+           
         <script src="shopping-list.js"></script>
-       
-            
-       
-
+        <script src="commons.js"></script>
 
 </body>
 
