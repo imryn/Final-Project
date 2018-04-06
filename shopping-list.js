@@ -1,5 +1,5 @@
   // conditions for the selects
-//   document.getElementById("artitems").style.display = "none";
+  document.getElementById("artitems").style.display = "none";
   document.getElementById("officeitems").style.display = "none";
   document.getElementById("fooditems").style.display = "none";
   
@@ -12,7 +12,7 @@
   
   if(category == "Artmaterials")
       {
-      aitem.style.display = "block";
+      aitem.style.display = "inline-block";
       oitem.style.display = "none";
       fitem.style.display = "none";
       emptyitem.style.display = "none";
@@ -20,7 +20,7 @@
   else{
       if(category == "Office"){
           aitem.style.display = "none";
-          oitem.style.display = "block";
+          oitem.style.display = "inline-block";
           fitem.style.display = "none";
           emptyitem.style.display = "none";
       }
@@ -28,7 +28,7 @@
       else{
               aitem.style.display = "none";
               oitem.style.display = "none";
-              fitem.style.display = "block";
+              fitem.style.display = "inline-block";
               emptyitem.style.display = "none";
       }
       }
@@ -37,7 +37,7 @@
       aitem.style.display = "none";
       oitem.style.display = "none";
       fitem.style.display = "none";
-      emptyitem.style.display = "block";
+      emptyitem.style.display = "inline-block";
       }
   }
   
