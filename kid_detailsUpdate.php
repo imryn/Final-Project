@@ -37,7 +37,7 @@
             <div class="row kid-form1">
                  <div class="col span-1-of-3 box">
                     <div class="registration-info">
-                        <label  for="name"> <span> * </span>  First name: </label> <br>
+                        <label  for="name"> <span> * </span>  First Name: </label> <br>
                         <input name="fname" type="name" id="name"/>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                 </div>
                 <div class="col span-1-of-3 box">
                     <div class="registration-info">
-                        <label for="data"> <span> * </span> Birth date: </label>
+                        <label for="data"> <span> * </span> Date of birth: </label>
                         <input name="bDate" type="date" id="birth-date">
                     </div>
                 </div> 

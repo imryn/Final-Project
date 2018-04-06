@@ -36,12 +36,12 @@
             <form>
                 <div class="col span-1-of-2 box">
                     <div class="report-info">
-                        <label for="start-date"> Pick date: </label>
+                        <label for="start-date"> Pick a date: </label>
                         <input name="startDate" type="date"/>
                     </div>
                 </div> 
                 
-                <input type="button" value="create" class="create-botton" onClick="getReports()"/>
+                <input type="button" value="Load" class="create-botton" onClick="getReports()"/>
             </form>
                 <table id="kids-table"></table>
                 <script src="commons.js"></script>
