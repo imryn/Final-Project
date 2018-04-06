@@ -244,6 +244,17 @@ input[type=radio]:first-child{
 }
 
 
+
+
+.shop{
+	word-spacing: 5px;
+    letter-spacing: 2px;
+   
+    font-size: 120%;
+    font-weight: bold;
+}
+
+
 /* START building schedule design */
 .calendar_row{
     width:100%;
