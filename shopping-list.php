@@ -193,7 +193,6 @@
                 <div class="row">		
                     <table id="item-table"> </table >
                 </div>
-                    
             </form>  
         </section>
         
