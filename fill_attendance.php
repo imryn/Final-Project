@@ -30,40 +30,26 @@
                 <templateHtml src="picture-container/picture-container.html"></templateHtml>
                 <?php include "nav-menu/nav-menu-container.php" ?>
         </header>
-
-        <script src="commons.js"></script>
-
         <h1> Daily Attendance </h1>
         
-        <table border="2px" >
-            <tr>
-                <td>
-                    <th> Attendance  </th>
-                </td>
-                <td>
-                    <th> Full Name </th>
-                </td>
-                <td>
-                    <th> Send SMS Now </th>
-                </td>
-            </tr>
+        <section>
+            <form>
+                <div class="col span-1-of-2 box">
+                    <div class="report-info">
+                        <label for="start-date"> Pick date: </label>
+                        <input name="startDate" type="date"/>
+                    </div>
+                </div> 
+                
+                <input type="button" value="create" class="create-botton" onClick="getReports()"/>
+            </form>
+                <table id="kids-table"></table>
+                <script src="commons.js"></script>
+                <script src="fill_attendance.js"></script>
+        </section>
 
-                for (int i=0;i<3;i++)
-                {  
-                    <tr> 
+        <input type="checkbox" data-toggle="toggle" data-onstyle="warning" data-offstyle="info">
 
-                        <td>ff</td>
-                        <td> 
-                            <input type="checkbox" data-toggle="toggle" data-onstyle="warning" data-offstyle="info">
-                        </td>
-                        <td>jj</td>
-
-                    </tr>
-                }
-
-            
-
-        </table>
         <!-- <?php
         echo date("l jS \of F Y h:i:s A") . "<br>";
             $today = date("F j, Y, g:i a");      

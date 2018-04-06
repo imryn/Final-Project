@@ -16,7 +16,7 @@
                 <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
                 <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
 
-        <title>Building Weekly Scheduler</title>
+        <title>Update Weekly Scheduler</title>
         
     </head>
 
@@ -29,7 +29,7 @@
         <section id="Weekly-Scheduler">
  
             <form>
-                <h1> Updating Weekly Scheduler </h1>
+                <h1> Update Weekly Scheduler </h1>
 
 
                 <div class="calendar_row">

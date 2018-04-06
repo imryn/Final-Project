@@ -21,8 +21,8 @@
                 <script src='lib/fullcalendar.js'></script>
                 <script type='text/javascript' src='lib/gcal.js'></script>
 
-        <title>Building Weekly Scheduler</title>
-        
+        <title> Weekly Scheduler</title>
+        <script src="commons.js"></script>       
     </head>
 
     <body>
@@ -33,18 +33,19 @@
 
         <section id="Weekly-Scheduler">
  
-            <h1> View Weekly Scheduler </h1>
+            <h1> Weekly Scheduler </h1>
                 <div id="calendar">
                 </div>
                 <script src="view_schedule.js"> </script>    
         </section>        
                 
-                <br><a href="http://www.google.com/calendar/event?action=TEMPLATE&text=[event-title]&dates=[start-custom format='Ymd\\THi00\\Z']/[end-custom format='Ymd\\THi00\\Z']&details=[description]&location=[location]&trp=false&sprop=&sprop=name:" target="_blank" rel="nofollow"><button type="button" class="save-1"> Add To My Calendar </button></a>         
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <a href="http://www.google.com/calendar/event?action=TEMPLATE&text=[event-title]&dates=[start-custom format='Ymd\\THi00\\Z']/[end-custom format='Ymd\\THi00\\Z']&details=[description]&location=[location]&trp=false&sprop=&sprop=name:" target="_blank" rel="nofollow"><button type="button" class="save-1"> Add To My Calendar </button></a>         
 
         
 
 
-        <script src="commons.js"></script>
+
         
         
     </body>
