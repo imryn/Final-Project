@@ -13,9 +13,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
             <li><a href="login_page.php"> Sign Out </a></li>
-            <li><a href="kid_detailsUpdate.php"> Change My Kid Bag </a></li>
             <li><a href="index.php"> home </a></li>
             <li><a href="#"> about </a></li>
+            <li><a href="kid_detailsUpdate.php"> My Kid Bag </a></li>
             <!--<li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 registration 

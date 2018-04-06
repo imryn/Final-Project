@@ -32,7 +32,7 @@
 <section id="kid-detailsUpdate">
     <form>
         <h2> Kid </h2>
-        <p class="describe-info"> Please fill in your child details: </p>
+        <p class="describe-info"> Update your child details: </p>
         <p class="success-message2"></p>
             <div class="row kid-form1">
                  <div class="col span-1-of-3 box">
@@ -128,13 +128,13 @@
            <div class="row kid-form4">
                 <div class="col span-1-of-2 box">
                      <div class="registration-info">
-                        <label>  Comments and Special Requests </label>
-                        <textarea name="comments" cols="42" rows="4" style="overflow:auto;resize:none"> </textarea>
+                        <label> Comments and Special Requests </label>
+                        <textarea name="comments" cols="84" rows="4" style="overflow:auto;resize:none"> </textarea>
                      </div>
                 </div>
             </div>
 
-            <button type="button" id="new-observation"> To Insert New observation Please Click Here </button>
+            <button type="button" id="new-observation"> Kindergarten teacher's comments </button>
      </form>  
 </section>
 
@@ -146,20 +146,20 @@
                     <div class="update-info">
                         <label  for="name"> Please choose a new observation: </label> <br>
                         <select name="observation" size="1" id="observation"> 
-                                <option value="your child argues with another kid" selected>your child argues with another kid  </option>
-                                <option value="your kid didn't eat"> your kid didn't eat </option>
-                                <option value="your kid didn't feel good during the day"> your kid didn't feel good during the day </option>
-                                <option value="Your kid has been rude to the kindergarten teacher"> Your kid has been rude to the kindergarten teacher </option>
-                                <option value="your kid enjoyed painting activity "> your kid enjoyed painting activity </option>
-                                <option value="your kid enjoyed solving puzzle activity"> your kid enjoyed solving puzzle activity </option>
-                                <option value="your kid helped another kid"> your kid helped another kid </option>
-                                <option value="your kid likes to hear stories"> your kid likes to hear stories </option>
+                                <option value="child argues with another kid" selected>child argues with another kid </option>
+                                <option value="child didn't eat"> child didn't eat </option>
+                                <option value="child didn't feel good during the day"> child didn't feel good during the day </option>
+                                <option value="child has been rude to the kindergarten teacher"> child has been rude to the kindergarten teacher </option>
+                                <option value="child enjoyed painting activity "> child enjoyed painting activity </option>
+                                <option value="child enjoyed solving puzzle activity"> child enjoyed solving puzzle activity </option>
+                                <option value="child helped another kid"> child helped another kid </option>
+                                <option value="child likes to hear stories"> child likes to hear stories </option>
                         </select>
                     </div>
                 </div>
                 <div class="col span-1-of-2 box">
                     <div class="update-info">
-                        <label> <span> * </span> Pick The Date: </label>
+                        <label id="pickDate"> <span> * </span> Pick The Date: </label>
                         <input name="observationDate" type="date" id="upDate" />
                     </div>
                 </div>
@@ -167,8 +167,8 @@
            <div class="row kid-update2">
                 <div class="col span-1-of-2 box">
                      <div class="update-info">
-                        <label>  Comments and Special Requests </label>
-                        <textarea name="SpecialRequests" cols="42" rows="4" style="overflow:auto;resize:none"> </textarea>
+                        <label>  Comments </label>
+                        <textarea name="SpecialRequests" cols="76" rows="4" style="overflow:auto;resize:none"> </textarea>
                      </div>
                 </div>
             </div>
