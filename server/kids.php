@@ -9,21 +9,28 @@
             $this->db = $db->getConnection();
         }
 
+        private function error(){
+            echo json_encode((object) [
+                'error'=>true
+            ]);
+        }
+
         public function createKidbag(){
 
-                foreach( $_POST as $key => $value ) {
-                     $_POST[$key] = strip_tags($this->db->real_escape_string($value));
-                }
-                
+            foreach( $_POST as $key => $value ) {
+                    $_POST[$key] = strip_tags($this->db->real_escape_string($value));
+            }
 
-                // $createTime = now_time_in_timeStampe()
+            if(!empty($_POST['fname']) && !empty($_POST['kidId']) && !empty($_POST['bDate']) &&
+                !empty($_POST['genders']) ){
 
-                $values = "'{$_POST['fname']}','{$_POST['kidId']}','{$_POST['bDate']}','{$_POST['genders']}',
-                ,'{$_POST['allergies']}','{$_POST['comments']}','{$_POST['foodpreference']}'";
+                $values = "'{$_POST['fname']}',{$_POST['kidId']},{$_POST['bDate']},'{$_POST['genders']}',
+                {$_POST['celiac']},{$_POST['eggs']},{$_POST['fish']},{$_POST['kiwis']},
+                {$_POST['lactoseintolerance']},{$_POST['nuts']},{$_POST['soy']},{$_POST['strawberries']},
+                {$_POST['vegan']},{$_POST['vegetarian']},'{$_POST['comments']}'";
 
-            
-                $sql = "INSERT INTO kids (fname,kidId,bDate,genders,allergies,comments,foodpreference) VALUES ($values)";
-
+                $sql = "INSERT INTO kids (fname,kidId,bDate,genders,celiac,eggs,fish,
+                kiwis,lactoseintolerance,nuts,soy,strawberries,vegan,vegetarian,comments) VALUES ($values)";
                 
                 $result =$this->db->query($sql);
                 $id = $this->db->insert_id;
@@ -34,11 +41,13 @@
                     ]);
                 }
                 else{
-                    echo json_encode((object) [
-                        'error'=>true
-                    ]);
+                    $this->error();
                 }
-               
+            }
+            else{
+                $this->error();
+            }
+            
         }
 
         private function getAllallergies(){

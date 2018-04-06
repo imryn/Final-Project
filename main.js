@@ -42,23 +42,61 @@ function getReports(){
 
 
 
-function createKidForm(){
-    var data = getFormData("#registration-kid");
-    data['route'] = 'create_kid';
-    httpPost("/Sadna/server/api.php",data,function(response){
-        document.querySelector(".success-message").textContent = "The form was completed successfully!";
-    })
+function createKidForm(data,callback){
+    var date = new Date(data.bDate).getTime();
+    if(!isNaN(date)){
+        data.bDate = date;
+    }
+
+    if(idcheck(data['kidId'],createKidForm)){
+        data['route'] = 'create_kid';
+        httpPost("/Sadna/server/api.php",data,callback);
+    }
+}
+createKidForm.error= function(msg){
+    document.querySelector(".success-message2").textContent = msg;
+}
+
+
+function idcheck(idcheck,errorFunction){
+    if(idcheck.toString().length > 9){
+        errorFunction.error("ID field must contain 9 digits");
+        return false;
+    }
+    return true;
+}
+
+function errorForUser(msg){
+    document.querySelector(".success-message").textContent = msg;
 }
 
 function createParentUser(){
-    var data = getFormData("#registration-parent");
-    data['route'] = 'create_user';
-    httpPost("/Sadna/server/api.php",data,function(response){
+    var parentData = getFormData("#registration-parent");
+    var kidData = getFormData("#registration-kid");
+    var checkKid = idcheck(kidData['kidId'],createKidForm);
+    var checkParent = idcheck(parentData['parentId'],createParentUser);
+    if(!checkKid || !checkParent){
+        return;
+    }
+    createKidForm(kidData,function(response){
         if(response.success){
-             window.location.assign("/Sadna/kid-registration.html");
+            parentData['route'] = 'create_user';
+            httpPost("/Sadna/server/api.php",parentData,function(_response){
+                if(_response.success){
+                    bootpopup.alert("The form saved successfully","Success",function(){
+                        window.location.assign("/Sadna/index.html");
+                    });
+                }
+                else{
+                    errorForUser("One of the field is wrong or already used");
+                }
+            })
         }
         else{
-            document.querySelector(".success-message").textContent = "one of the field is wrong or already used";
+            errorForUser("One of the field is wrong or already used");
         }
-    })
+    });
+}
+createParentUser.error = function(msg){
+    document.querySelector(".success-message").textContent = msg;
 }

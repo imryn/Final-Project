@@ -1,3 +1,15 @@
+
+
+ document.addEventListener("DOMContentLoaded", function(event) {
+    document.querySelectorAll("templateHtml").forEach(function(item){
+        var src= item.getAttribute("src");
+        $.get(src,function(template) {
+            item.innerHTML = template;
+        })
+    })
+  });
+
+
 function getFormData(formSelector){
     var form = document.querySelector(formSelector),
         data = {},
@@ -11,7 +23,20 @@ function getFormData(formSelector){
     }
 
     if(inputs.length){
-        inputs.forEach(getData);
+        inputs.forEach(function(input){
+            
+            var name = input.getAttribute("name");
+
+            switch (input.getAttribute("type")) {
+                case "checkbox":
+                case "radio":
+                    data[name] = input.checked;
+                    break;
+                default:
+                    data[name] = input.value;
+                    break;
+            }
+        });
     }
 
     if(selectors.length){

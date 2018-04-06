@@ -13,24 +13,27 @@
         <link rel="stylesheet" type="text/css" href="picture-container/picture-container.css">
         <link rel="stylesheet" type="text/css" href="css/queries.css">
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
         <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+        <script src="vendors/bootstrap/js/bootpopup.min.js"></script>
 
-<title>Title of the document</title>
-<script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+<title>registration document</title>
 </head>
 
 <body>
-       <header>
-        <div class="picture-container"></div>
-        <div class="navbar"></div> 
+    <header>
+        <templateHtml src="picture-container/picture-container.html"></templateHtml>
+        <templateHtml src="nav-menu/nav-menu.html"></templateHtml>
      </header>
 
 <section id="registration-parent">
         <form>
-            <h1> Parent Registration </h1>
+            <h1> Registration</h1>
+            <h2> Parent </h2>
+            <p class="describe-info"> Please fill in your personal details: </p>
             <p class="success-message"></p>
             <div class="row parent-form1">
                 <div class="col span-1-of-3 box">
@@ -76,34 +79,42 @@
                 <div class="col span-1-of-3 box">
                     <div class="registration-info">
                         <label id="city"> City: </label> <br>
-                            <select name="city" size="1"> 
+                            <!-- <select name="city" size="1"> 
                                 <option value="Tel-aviv"> Tel-aviv  </option>
-                            </select>
+                            </select> -->
+                            <div id="pac-container">
+                                <input id="pac-input" name="city" type="text" placeholder="Enter a location">
+                            </div>
+                            <div id="map"></div>
+                            <div id="infowindow-content">
+                                    <span id="place-name"  class="title"></span><br>
+                                    <span id="place-address"></span>
+                            </div>
                     </div>
                 </div>
                 <div class="col span-1-of-3 box">
                         <div class="registration-info">
                                 <label for="email"> <span> * </span> Email: </label> <br>
-                                <input name="email" type="email" id="email-input" required/>
+                                <input name="email" type="email" required/ id="email-input">
                         </div>
                 </div>
             </div>
                 <div class="row parent-form4">
                     <div class="col span-1-of-3 box">
                             <div class="registration-info">
-                                <label for="phone" id="phone"> Phone: </label> <br>
+                                <label for="phone" id="phone"> Phone No.: </label> <br>
                                 <input name="phone" type="phone" /> 
                             </div>
                     </div>
                     <div class="col span-1-of-3 box">
                             <div class="registration-info">
-                                <label for="phone" id="parent-phone"> <span> * </span> Mobile Phone: </label>
+                                <label for="phone" id="parent-phone"> <span> * </span> Cell Phone No.: </label>
                                 <input name="mobilephone" type="phone" id="phone" required/> 
                             </div>
                     </div>
                     <div class="col span-1-of-1 box">
                             <div class="registration-info">
-                                    <label id="f-member"> <span> * </span> Family member: </label> <br>
+                                    <label> <span> * </span> Family Member: </label> <br>
                                     <select name="familyMember" size="1" id="f-member-select" > 
                                             <option value="Father"> Father  </option>
                                             <option value="Mother" selected> Mother </option>
@@ -114,8 +125,8 @@
                <div class="row parent-form4">
                 <div class="col span-1-of-3 box">
                         <div class="registration-info">
-                            <label id="another-contact"> Another Contact: </label> <br>
-                            <input name="anothercontact" type="text" /> 
+                            <label>  <span> * </span> Another Contact: </label> <br>
+                            <input name="anothercontact" type="text" required/> 
                         </div>
                 </div>
                 <div class="col span-1-of-3 box">
@@ -126,25 +137,20 @@
                 </div> 
                 <div class="col span-1-of-3 box">
                         <div class="registration-info">
-                            <label for="phone" id="another-phone"> <span> * </span> Mobile Phone: </label>
-                            <input name="mobilephone2" type="phone" id="more-phone" required/> 
+                            <label for="phone"> <span> * </span> Cell Phone No.: </label>
+                            <input name="mobilephone2" type="phone" required/> 
                         </div>
-                </div>
-               
-           </div>
-
-       <button type="button" class="save-2" onClick="createParentUser()">Save</button>   
-  </form>
-<!-- 
-        <script src="commons.js"></script>
-        <script src="main.js"></script> -->
+                </div>    
+            </div>
+      </form> 
 </section>
 
 <!-- kid section -->
 <section id="registration-kid">
     <form>
-        <h1> Kid Registration  </h1>
-        <p class="success-message"></p>
+        <h2> Kid </h2>
+        <p class="describe-info"> Please fill in your child details: </p>
+        <p class="success-message2"></p>
             <div class="row kid-form1">
                  <div class="col span-1-of-3 box">
                     <div class="registration-info">
@@ -160,8 +166,8 @@
                 </div>
                 <div class="col span-1-of-3 box">
                     <div class="registration-info">
-                        <label for="data"> <span> * </span> Birthday date: </label>
-                        <input name="bDate" type="date" id="birthday-date">
+                        <label for="data"> <span> * </span> Birth date: </label>
+                        <input name="bDate" type="date" id="birth-date">
                     </div>
                 </div> 
            </div>
@@ -181,47 +187,44 @@
                 <div class="col span-1-of-4 box">
                     <div class="registration-info">
                         <label for="name"> Allergies: </label>   
-                        <p> <input type="checkbox" name="allergies1"> Celiac </p>
+                        <p> <input type="checkbox" name="celiac"> Celiac </p>
                     </div>
                 </div>
                 <div class="col span-1-of-4 box">
                     <div class="registration-info">
-                    <!-- <label for="name"> </label>    -->
-                        <p> <input type="checkbox" name="allergies2"> Eggs </p>                  
+                        <p class="allergie-info"> <input type="checkbox" name="eggs"> Eggs </p>                  
                     </div>
                 </div>
                 <div class="col span-1-of-4 box">
                     <div class="registration-info">
-                    <!-- <label for="name"> </label>    -->
-                        <p> <input type="checkbox" name="allergies3"> Fish </p>                  
+                        <p class="allergie-info"> <input type="checkbox" name="fish"> Fish </p>                  
                     </div>
                 </div>
                 <div class="col span-1-of-4 box">
                     <div class="registration-info">
-                    <!-- <label for="name"> </label>    -->
-                        <p> <input type="checkbox" name="allergies4"> Kiwis </p>                  
+                        <p class="allergie-info"> <input type="checkbox" name="kiwis"> Kiwis </p>                  
                     </div>
                 </div>
            </div>
            <div class="row kid-form3">
                 <div class="col span-1-of-4 box"> 
                      <div class="registration-info"> 
-                        <p> <input type="checkbox" name="allergies5"> Lactose intolerance </p>                  
+                        <p> <input type="checkbox" name="lactoseintolerance"> Lactose intolerance </p>                  
                      </div>
                 </div>
            <div class="col span-1-of-4 box">
                     <div class="registration-info">
-                        <p> <input type="checkbox" name="allergies6"> Nuts </p>
+                        <p> <input type="checkbox" name="nuts"> Nuts </p>
                     </div>
            </div>
            <div class="col span-1-of-4 box">
                     <div class="registration-info">   
-                         <p> <input type="checkbox" name="allergies7"> Soy </p>                  
+                         <p> <input type="checkbox" name="soy"> Soy </p>                  
                     </div>
            </div>
            <div class="col span-1-of-4 box">
                     <div class="registration-info"> 
-                        <p> <input type="checkbox" name="allergies8"> Strawberries </p>                  
+                        <p> <input type="checkbox" name="strawberries"> Strawberries </p>                  
                     </div>
            </div>
            </div>
@@ -229,13 +232,13 @@
                 <div class="col span-1-of-3 box">
                     <div class="registration-info">
                         <label for="food"> Food Preference: </label>   
-                        <p> <input type="radio" name="food-pref"> vegan </p>                  
+                        <p> <input type="radio" name="vegan"> Vegan </p>                  
                     </div>
                 </div>
                 <div class="col span-1-of-3 box">
                     <div class="registration-info">
                         <label for="food"> </label>   
-                        <p> <input type="radio" name="food-pref"> vegetarian </p>                  
+                        <p class="food-pref"> <input type="radio" name="vegetarian"> Vegetarian </p>                  
                     </div>
                 </div>
            </div>
@@ -243,24 +246,19 @@
                 <div class="col span-1-of-2 box">
                      <div class="registration-info">
                         <label>  Comments and Special Requests </label>
-                        <textarea name="comments" cols="50" rows="8" placeholder="type here..."> </textarea>
+                        <textarea name="comments" cols="42" rows="4" style="overflow:auto;resize:none"> </textarea>
                 </div>
                 </div>
             </div>
-     
-            <button type="button" class="save-1" onClick="createKidForm()">Save</button>
+            <button type="button" class="save-2" onClick="createParentUser()"> Save</button>   
      </form>  
 </section>
-           <script src="commons.js"></script>
-           <script src="main.js"></script>
-    <script>
-         $.get("nav-menu/nav-menu.html", function(template){
-             document.querySelector(".navbar").innerHTML = template;
-         });
-         $.get("picture-container/picture-container.html", function(template){
-             document.querySelector(".picture-container").innerHTML = template;
-         });
-   </script>
+    <script src="commons.js"></script>
+    <script src="main.js"></script>
+    <script src="location.js"> </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCANOMcofoYNJ5CwAicrOY-0cm7mK1yTXg
+    &libraries=places&callback=initMap"
+        async defer></script>
 </body>
 
 </html>
