@@ -93,7 +93,7 @@ section{
     margin-top: 1%;
     font-family: 'Lato';
     font-weight: 300;
-    height: 28px;
+    height: 32px;
 }
 
 #birth-date{
@@ -289,6 +289,17 @@ input[type=radio]:first-child{
 }
 
 
+
+
+.shop{
+	word-spacing: 5px;
+    letter-spacing: 2px;
+   
+    font-size: 120%;
+    font-weight: bold;
+}
+
+
 /* START building schedule design */
 .calendar_row{
     width:100%;
@@ -353,3 +364,53 @@ input[type=radio]:first-child{
     
 }
 /* END building_schedule design  */
+
+/* START building shopping-list design */
+#shopping-list{
+    background-color: #f0f0f0;
+    width: 75.2%;
+    margin-left: 12.4%;
+}
+
+#empty{
+    width: 303px;
+}
+
+#artitems{
+    width: 303px;
+}
+
+#officeitems{
+    width: 303px;
+}
+
+#fooditems{
+    width: 303px;
+}
+
+.shoppinglist-form3{
+    margin-left: 11.3%;
+}
+
+#add{
+    margin-top: 5%;
+    margin-left: 48%; 
+    
+     padding: 5px;
+     width: 75px;
+     display: block;
+     cursor: pointer;
+     border: none;
+     background-color: #e67e22;
+     color: white;
+     border-radius: 5px;
+     font-family: 'Lato';
+     font-weight: 300;
+     text-align: center;
+     
+ 
+ }
+
+
+
+/* END building shopping-list design */

@@ -19,7 +19,7 @@
         <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
         <script src="vendors/bootstrap/js/bootpopup.min.js"></script>
 
-<title>registration document</title>
+<title>Update Child File </title>
 </head>
 
 <body onload="showInfoAboutakid()">
