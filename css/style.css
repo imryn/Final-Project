@@ -53,8 +53,6 @@ h2{
 }
 
 /* sections */
-
-
 #registration-parent,#registration-kid,#reports,
 #kid-detailsUpdate,#Weekly-Scheduler,#kid-observation{
     background-color: #f0f0f0;
@@ -314,7 +312,6 @@ input[type=radio]:first-child{
 .shop{
 	word-spacing: 5px;
     letter-spacing: 2px;
-   
     font-size: 120%;
     font-weight: bold;
 }
@@ -328,9 +325,17 @@ input[type=radio]:first-child{
 #calendar{
     margin-left:-350px;
     position:relative;
-    float:left;
+    float:left;  
     left:50%;
+}
+#viewCalendar{
+    margin-left:-350px;
+    position:relative;
+    left:50%; 
     width:700px;
+    background-color:white;
+    border:1px orange solid;
+    font-size:16px;
 }
 
 .schedule_row{
