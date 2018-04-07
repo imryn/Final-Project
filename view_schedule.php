@@ -34,14 +34,15 @@
         <section id="Weekly-Scheduler">
  
             <h1> Weekly Scheduler </h1>
+            <p class="describe-list-info"> Just click on event and add it to your private calendar</p> <br>
 
-            <p class="describe-list-info"> Just click on event and add it to your private calendar</p> 
-                <div id="calendar">
+                <div id="viewCalendar">
                 </div>
-                <script src="view_schedule.js"> </script>    
+                <script src="view_schedule.js"> </script>
+                <script src="commons.js"></script>      
         </section>        
         
-        <script src="commons.js"></script>  
+
     </body>
 
 </html>

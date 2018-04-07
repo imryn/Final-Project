@@ -11,7 +11,7 @@ function buildThs(array){
 
 function createTable(data){
     console.log(data)
-    var tableElement = document.getElementById("kids-table");
+    var tableElement = document.getElementById("attendance-table");
     var table='';
 
     table = table + buildThs(['ID','First Name','Last Name','Attendance ?','Send SMS now']);
@@ -39,7 +39,7 @@ function getReports(){
     })
 
 }
-
+// getReports()
 
 
 
