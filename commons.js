@@ -54,17 +54,22 @@ function setFormData(formId,data){
     for(var key in data){
         var item = document.querySelector(formId + " [name= " + key + "]");
         if(item){
-            var type = item.getAttribute("type");
-            switch (type) {
-                case "radio":
-                case "checkbox":
-                    if(data[key] == "1"){
-                        item.checked = true;
-                    }
-                    break;
-                default:
-                    item.value = data[key];
-                    break;
+            if(item.nodeName == "INPUT" || item.nodeName == "SELECT" || item.nodeName == "TEXTAREA"){
+                var type = item.getAttribute("type");
+                switch (type) {
+                    case "radio":
+                    case "checkbox":
+                        if(data[key] == "1"){
+                            item.checked = true;
+                        }
+                        break;
+                    default:
+                        item.value = data[key];
+                        break;
+                }
+            }
+            else{
+                item.innerText =  data[key];
             }
         }
     }
