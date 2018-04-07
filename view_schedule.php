@@ -14,7 +14,7 @@
                 <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
                 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
                 <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
-                <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer  target="_blank"></script>
+                <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
 
                 <link rel='stylesheet' href='lib/fullcalendar.css' />
                 <script src='lib/moment.min.js'></script>
@@ -38,10 +38,11 @@
 
                 <div id="viewCalendar">
                 </div>
-                <script src="view_schedule.js"> </script>    
+                <script src="view_schedule.js"> </script>
+                <script src="commons.js"></script>      
         </section>        
         
-        <script src="commons.js"></script>  
+
     </body>
 
 </html>

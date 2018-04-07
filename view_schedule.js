@@ -31,8 +31,16 @@ $(function() {
         selectable: true, // this is marking the box on an hour
         selectHelper: true,
         editable: true,
-        defaultView: 'listWeek'
-        })
+        defaultView: 'listWeek',
+
+
+        editable: false,
+        eventRender: function (event, element) {
+            var html = '<span class="description"> - ' + event.description + '</span>'
+            $(element).find('.fc-list-item-title').append(html)
+
+        }
+    })
 
 });
 

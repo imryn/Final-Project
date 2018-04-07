@@ -357,12 +357,12 @@ input[type=radio]:first-child{
 }
 .pick{
     float:left;
-    margin-left:140px;
     margin-top:5%;
 }
 #date{
-    width:27%;
+    width:28%;
     margin-top: 5%;
+    margin-left:90px;
 }
 .addeventatc_icon{
     top:3px !important;
@@ -385,9 +385,27 @@ input[type=radio]:first-child{
     font-family: 'Lato';
     font-weight: 300;
     height: 32px;
-    
+}
+.refresh-button{
+    padding: 5px;
+    width: 175px;
+    display: block;
+    cursor: pointer;
+    border: none;
+    background-color: #e67e22;
+    color: white;
+    border-radius: 5px;
+    font-family: 'Lato';
+    font-weight: 300;
+    text-align: center;
+    margin-left: 280px;
+
 }
 /* END building_schedule design  */
+
+
+
+
 
 /* START building shopping-list design */
 #shopping-list{
