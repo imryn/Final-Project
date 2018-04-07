@@ -90,7 +90,7 @@ h2{
 }
 
  /* inputs */
-.registration-info input, .update-info input, .disabled-input{
+.registration-info input, .update-info input{
     background-color: transparent;
     border: solid 1px rgb(169,169,169);
     color: black;
@@ -208,7 +208,7 @@ input[type=radio]:first-child{
 
 /* buttons */
 .save-1, .save-2, .create-botton,
-.exit, .save-details{
+.exit, .save-details, .update-details{
     padding: 5px;
     width: 75px;
     display: block;
@@ -227,7 +227,7 @@ input[type=radio]:first-child{
     margin-top: 5%;
 }
 
-.save-2{
+.save-2, .update-details{
    margin-top: 5%;
    margin-left: 48%; 
 }

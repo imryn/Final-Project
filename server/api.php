@@ -27,6 +27,10 @@
                     $exceptions = new Exceptions();
                     $exceptions->DetailsUpdate();
                     break;
+                case "update_kid":
+                    $kid = new Kids();
+                    $kid->updateKidbag();
+                    break;
             }
        }
        
