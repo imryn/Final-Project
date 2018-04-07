@@ -64,14 +64,15 @@ function DetailskidUpdate(){
     data['route'] = 'observation_error';
     httpPost("/Sadna/server/api.php",data,function(response){
         if(response.success){
-            bootpopup.alert("The form saved successfully","Success",function(){
-                window.location.assign("/Sadna/index.php");
-            });
+            errorForUser("the observation saved successfully")
         }
     })
 
 }
 
+DetailskidUpdate.error= function(msg){
+    document.querySelector(".success-message2").textContent = msg;
+}
 
 $(document).ready(function(){
     $("#new-observation").click(function(){
@@ -93,13 +94,14 @@ function createKidForm(data,callback){
         httpPost("/Sadna/server/api.php",data,callback);
     }
 }
+
 createKidForm.error= function(msg){
-    document.querySelector(".success-message2").textContent = msg;
+    document.querySelector(".success-message").textContent = msg;
 }
 
 
 function idcheck(idcheck,errorFunction){
-    if(idcheck.toString().length > 9){
+    if(idcheck.toString().length !=9){
         errorFunction.error("ID field must contain 9 digits");
         return false;
     }

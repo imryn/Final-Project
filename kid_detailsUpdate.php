@@ -140,11 +140,11 @@
 
 <section id="kid-observation">
     <form>
-        <p class="success-message2"></p>
+        <p class="success-message"></p>
             <div class="row kid-update1">
                  <div class="col span-1-of-2 box">
                     <div class="update-info">
-                        <label  for="name"> Please choose a new observation: </label> <br>
+                        <label  for="name"> Please enter new observation: </label> <br>
                         <select name="observation" size="1" id="observation"> 
                                 <option value="child argues with another kid" selected>child argues with another kid </option>
                                 <option value="child didn't eat"> child didn't eat </option>

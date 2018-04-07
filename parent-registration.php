@@ -139,9 +139,6 @@
 </section>
 
 
-
-
-
 <!-- kid section -->
 <section id="registration-kid">
     <form>
