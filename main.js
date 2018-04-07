@@ -67,13 +67,27 @@ function createKidForm(data,callback){
 }
 
 createKidForm.error= function(msg){
-    document.querySelector(".success-message").textContent = msg;
+    document.querySelector(".success-message2").textContent = msg;
 }
 
+createParentUser.error = function(msg){
+    document.querySelector(".success-message").textContent = msg;
+}
 
 function idcheck(idcheck,errorFunction){
     if(idcheck.toString().length !=9){
         errorFunction.error("ID field must contain 9 digits");
+        return false;
+    }
+    return true;
+}
+
+function emailcheck(emailcheck,errorFunction){
+    var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    //var address = document.getElementById[email].value;
+    if (reg.test(emailcheck) == false) 
+    {
+        errorFunction.error("email field must contain @ or invalid");
         return false;
     }
     return true;
@@ -90,7 +104,8 @@ function createParentUser(){
     parentData['kidId'] = kidData['kidId'];
     var checkKid = idcheck(kidData['kidId'],createKidForm);
     var checkParent = idcheck(parentData['parentId'],createParentUser);
-    if(!checkKid || !checkParent){
+    var checkEmailParent = emailcheck(parentData['email'],createParentUser);
+    if(!checkKid || !checkParent || !checkEmailParent){
         return;
     }
     createKidForm(kidData,function(response){
@@ -111,7 +126,4 @@ function createParentUser(){
             errorForUser("One of the field is wrong or already used");
         }
     });
-}
-createParentUser.error = function(msg){
-    document.querySelector(".success-message").textContent = msg;
 }
