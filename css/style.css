@@ -412,11 +412,7 @@ input[type=radio]:first-child{
     margin-left: 12%;
 }
 
-#empty{
-    width: 303px;
-}
-
-#artitems,#officeitems,#fooditems{
+#artitems,#officeitems,#fooditems,#empty{
     width: 73%;
     margin-left: 5%;
 }
