@@ -42,13 +42,39 @@
                 </div> 
                 
                 <input type="button" value="Load" class="create-botton" onClick="getReports()"/>
-            </form>
-                <table id="kids-table"></table>
+
+                <table id="attendance-table" border="3px">
+                    <tr>
+                        <th> ID </th>                 
+                        <th> First Name </th>
+                        <th> Last Name </th>
+                        <th> Attendance ? </th>
+                        <th> Send SMS Now </th>
+                    </tr>
+
+                    <tr>
+                        <td> 123 </td>                 
+                        <td> k </td>
+                        <td> hp </td>
+                        <td> <input type="checkbox" checked data-toggle="toggle" data-onstyle="warning" data-offstyle="info"> </td>
+                        <td> <input type="button" value="Send" class="create-botton" onClick="()"/> </td>
+                    </tr>
+                    <tr>
+                        <td> 45 </td>                 
+                        <td> mor </td>
+                        <td> zloof </td>
+                        <td> <input type="checkbox" checked data-toggle="toggle" data-onstyle="warning" data-offstyle="info"> </td>
+                        <td> <input type="button" value="Send" class="create-botton" onClick="()"/> </td>
+                    </tr>
+
+
+                </table>
                 <script src="commons.js"></script>
                 <script src="fill_attendance.js"></script>
+            </form>
         </section>
 
-        <input type="checkbox" data-toggle="toggle" data-onstyle="warning" data-offstyle="info">
+       
 
         <!-- <?php
         echo date("l jS \of F Y h:i:s A") . "<br>";
