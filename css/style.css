@@ -60,6 +60,7 @@ h2{
     background-color: #f0f0f0;
     width: 75%;
     margin-left: 12.5%;
+
 }
 
 #kid-observation{
@@ -334,7 +335,6 @@ input[type=radio]:first-child{
     float:left;
     left:50%;
     width:700px;
-    height:600px;
 }
 
 .schedule_row{
