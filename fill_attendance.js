@@ -1,3 +1,10 @@
+/*  
+
+karin you need to change the name of classes in the getelementByid and fetFromData and also httpGet is not good.
+it is working  with a specific functions in kids.php' you cant just put here the functions and hope it will work.
+also in function foreach you put 3 inputs but in table you put 4 (you forgot attendance)
+
+*/
 function buildThs(array){
     var row = '<tr>'
     array.forEach(function(item){
