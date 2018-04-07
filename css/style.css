@@ -88,7 +88,7 @@ h2{
 }
 
  /* inputs */
-.registration-info input, .update-info input{
+.registration-info input, .update-info input, .disabled-input{
     background-color: transparent;
     border: solid 1px rgb(169,169,169);
     color: black;
@@ -101,6 +101,10 @@ h2{
     font-family: 'Lato';
     font-weight: 300;
     height: 32px;
+}
+
+.disabled-input{
+    opacity: 0.5;
 }
 
 #birth-date{
@@ -427,15 +431,10 @@ input[type=radio]:first-child{
     border-radius: 5px;
     font-family: 'Lato';
     font-weight: 300;
-    height: 32px;
     margin-left: 12%;
 }
 
-#empty{
-    width: 303px;
-}
-
-#artitems,#officeitems,#fooditems{
+#artitems,#officeitems,#fooditems,#empty{
     width: 73%;
     margin-left: 5%;
 }
@@ -450,7 +449,7 @@ input[type=radio]:first-child{
 }
 
 #add{
-     margin-left: 5%; 
+     margin: 2% 0 0 48%; 
      padding: 5px;
      width: 75px;
      display: block;

@@ -44,7 +44,7 @@
                  <div class="col span-1-of-3 box">
                      <div class="registration-info">
                         <label for="id"> <span> * </span> ID: </label> <br>
-                        <input name="kidId" type="text" id="kid-id">
+                        <div class="disabled-input" name="kidId" type="text" id="kid-id" > </div>
                      </div>
                 </div>
                 <div class="col span-1-of-3 box">
@@ -177,6 +177,7 @@
         </form>
 </section>
     <script src="commons.js"></script>
+    <script src="kid_detailsUpdate.js"></script>
     <script src="main.js"></script>
 </body>
 

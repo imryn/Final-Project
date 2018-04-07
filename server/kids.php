@@ -53,7 +53,8 @@
         }
 
         private function getAllallergies(){
-            $sql = "SELECT * FROM kids WHERE allergies <> '' ";
+            $sql = "SELECT kids.fname, kids.genders, kids.celiac ,kids.eggs, kids.fish, kids.kiwis,
+            kids.lactoseintolerance, kids.nuts, kids.soy, kids.strawberries FROM kids <> '' ";
             $result =$this->db->query($sql); 
             if($result){
                 $data= [];
