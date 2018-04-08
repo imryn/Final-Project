@@ -129,7 +129,7 @@
                 <div class="col span-1-of-2 box">
                      <div class="registration-info">
                         <label> Comments and Special Requests </label>
-                        <textarea name="comments" cols="84" rows="4" style="overflow:auto;resize:none"> </textarea>
+                        <textarea name="comments" cols="86" rows="4" style="overflow:auto;resize:none"> </textarea>
                      </div>
                 </div>
             </div>

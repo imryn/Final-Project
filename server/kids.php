@@ -134,13 +134,12 @@
             foreach( $_POST as $key => $value ) {
                 $_POST[$key] = strip_tags($this->db->real_escape_string($value));
              }
-
-                 $values = "'{$_POST['fname']}',{$_POST['bDate']},'{$_POST['genders']}',
-                {$_POST['celiac']},{$_POST['eggs']},{$_POST['fish']},{$_POST['kiwis']},
-                {$_POST['lactoseintolerance']},{$_POST['nuts']},{$_POST['soy']},{$_POST['strawberries']},
-                {$_POST['vegan']},{$_POST['vegetarian']},'{$_POST['comments']}'";
-
-                $sql = "UPDATE kids SET ($values) WHERE kids.kidId=={$_POST['kidId']}";
+                   $sql = "UPDATE kids SET fname='{$_POST['fname']}', bDate={$_POST['bDate']}, genders='{$_POST['genders']}',
+                   celiac={$_POST['celiac']}, eggs={$_POST['eggs']}, fish={$_POST['fish']}, kiwis={$_POST['kiwis']},
+                   lactoseintolerance={$_POST['lactoseintolerance']}, nuts={$_POST['nuts']}, soy={$_POST['soy']},
+                   strawberries={$_POST['strawberries']}, vegan={$_POST['vegan']}, vegetarian={$_POST['vegetarian']},
+                   comments='{$_POST['comments']}'
+                   WHERE kids.kidId={$_POST['kidId']}";
                 
                 $result =$this->db->query($sql);
                 if($result){

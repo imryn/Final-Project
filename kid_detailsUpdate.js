@@ -10,19 +10,20 @@ function DetailskidUpdate(){
     data['route'] = 'observation_error';
     httpPost("/Sadna/server/api.php",data,function(response){
         if(response.success){
-            errorForUser("the observation saved successfully")
+            DetailskidUpdate.error("the observation saved successfully")
         }
     })
 
 }
 
 DetailskidUpdate.error= function(msg){
+    document.querySelector(".success-message").textContent = msg;
+}
+
+savingChangesinKidbag.error=function(msg){
     document.querySelector(".success-message2").textContent = msg;
 }
 
-function errorForUser(msg){
-    document.querySelector(".success-message").textContent = msg;
-}
 
 $(document).ready(function(){
     $("#new-observation").click(function(){
@@ -39,10 +40,10 @@ function savingChangesinKidbag(){
         KiData.bDate = date;
     }
 
-    data['route'] = 'update_kid';
-    httpPost("/Sadna/server/api.php",data,function(response){
+    KiData['route'] = 'update_kid';
+    httpPost("/Sadna/server/api.php",KiData,function(response){
         if(response.success){
-            errorForUser("the kid bag saved successfully");
+            savingChangesinKidbag.error("the kid bag saved successfully");
         }
 
     })
