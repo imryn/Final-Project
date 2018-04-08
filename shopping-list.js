@@ -58,11 +58,25 @@ function createTable(data){
     var tableElement = document.getElementById("item-table");
     var table='';
 
-    table = table + buildThs(['ItemName','Quantity']);
+    table = table + buildThs(['Item_Name','Quantity']);
 
     data.forEach(function(item) {
-        table = table + '<tr><td>'+item.ItemName+'</td><td>' + item.Quantity + '</td></tr>';
+        table = table + '<tr><td>'+item.item+'</td><td>' + item.quantity + '</td></tr>';
     });
     tableElement.innerHTML = table;
     console.log(table)
+}
+
+function getReports(){
+
+    var data = getFormData("#shopping-list form");
+
+   
+    httpGet("/Sadna/server/api.php?route=create_table",data, function(response) {
+        if(response.data instanceof Array){
+            createTable(response.data);
+        }
+
+    })
+
 }

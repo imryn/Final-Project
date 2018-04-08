@@ -3,6 +3,7 @@
        include 'new-user.php';
        include 'kids.php';
        include 'exceptions.php';
+       include 'items.php';
 
        $method = $_SERVER['REQUEST_METHOD'];
 
@@ -31,6 +32,9 @@
                     $kid = new Kids();
                     $kid->updateKidbag();
                     break;
+                case "create_table":
+                    $items = new items();
+                    $items->createItemsTable();
             }
        }
        

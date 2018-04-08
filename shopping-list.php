@@ -62,12 +62,12 @@
                             <option value="Paper-green-A3" > Paper-green-A3 (package of 50)  </option>
                             <option value="Paper-red-A3" > Paper-red-A3 (package of 50)  </option>
                             <option value="Paper-white-A3" > Paper-white-A3 (package of 50)  </option>
-                            <option value="Paper-Yellow-A3" > Paper-Yellow-A3 (package of 50)  </option>
+                            <option value="Paper-yellow-A3" > Paper-Yellow-A3 (package of 50)  </option>
                             <option value="Paper-blue-A4" > Paper-blue-A4 (package of 50)  </option>
                             <option value="Paper-green-A4" > Paper-green-A4 (package of 50)  </option>
                             <option value="Paper-red-A4" > Paper-red-A4 (package of 50)  </option>
                             <option value="Paper-white-A4" > Paper-white-A4 (package of 50)  </option>
-                            <option value="Paper-Yellow-A4" > Paper-Yellow-A4 (package of 50)  </option>
+                            <option value="Paper-yellow-A4" > Paper-Yellow-A4 (package of 50)  </option>
                         </select>
                     
                         <select name="item" size="1" id="officeitems" > 
@@ -78,7 +78,7 @@
                                 <option value="Pens-blue" > Pens-blue (package of 10)  </option>
                                 <option value="Pens-red" > Pens-red (package of 10)  </option>
                                 <option value="perforated"> Perforated  </option>
-                                <option value="rubber bands"> Rubber bands (package of 50)  </option>
+                                <option value="rubber-bands"> Rubber bands (package of 50)  </option>
                                 <option value="stapler"> Stapler  </option>
                                 <option value="staples"> Staples  </option>
                         </select>
@@ -100,7 +100,7 @@
                                 <option value="pepper-red" > Pepper-red (kg) </option>
                                 <option value="pepper-yellow" > Pepper-yellow (kg) </option>
                                 <option value="pickles" > Pickles (can)  </option>
-                                <option value="raspberry juice" > Raspberry juice  </option>
+                                <option value="raspberry-juice" > Raspberry juice  </option>
                                 <option value="tomato" > Tomato (kg)  </option>
                                 <option value="tehina" > Tehina  </option>
                                 <option value="tuna" > Tuna  </option>
