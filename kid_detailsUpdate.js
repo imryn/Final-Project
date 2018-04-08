@@ -34,7 +34,6 @@ $(document).ready(function(){
 
 function savingChangesinKidbag(){
     var KiData = getFormData("#kid-detailsUpdate");
-
     var date = new Date(KiData.bDate).getTime();
     if(!isNaN(date)){
         KiData.bDate = date;

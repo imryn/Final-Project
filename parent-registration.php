@@ -242,9 +242,9 @@
                      <div class="registration-info">
                         <label>  Comments and Special Requests: </label>
                         <textarea name="comments" cols="84" rows="4" style="overflow:auto;resize:none"> </textarea>
+                     </div>
                 </div>
-                </div>
-            </div>
+           </div>
             <button type="button" class="save-2" onClick="createParentUser()"> Save</button>   
      </form>  
 </section>
