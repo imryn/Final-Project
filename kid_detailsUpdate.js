@@ -24,6 +24,20 @@ savingChangesinKidbag.error=function(msg){
     document.querySelector(".success-message2").textContent = msg;
 }
 
+// function namecheck(namecheck,errorFunction){
+//     var check = namecheck.check();
+//     if(isNumeric(check)){
+//         errorFunction.error("name field can't contains numbers");
+//         return false;
+//     }
+//     return true;
+// }
+
+// function isNumeric(n) {
+//     return !isNaN(parseFloat(n)) && isFinite(n);
+//   }
+
+
 
 $(document).ready(function(){
     $("#new-observation").click(function(){
@@ -40,6 +54,10 @@ function savingChangesinKidbag(){
         KiData.bDate = date;
     }
 
+    // var checkKidname = namecheck(kidData['fname'],savingChangesinKidbag);
+    // if(!checkKidname){
+    //     return;
+    // }
     KiData['route'] = 'update_kid';
     httpPost("/Sadna/server/api.php",KiData,function(response){
         if(response.success){
