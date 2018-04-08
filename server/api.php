@@ -33,7 +33,7 @@
                     $kid->updateKidbag();
                     break;
                 case "create_table":
-                    $items = new items();
+                    $items = new Items();
                     $items->createItemsTable();
             }
        }

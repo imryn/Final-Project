@@ -1,7 +1,7 @@
 <?php   
           require_once('db.php');
 
-          class Kids{
+          class Items{
               
               function __construct() {
                   $db =  DB::getInstance();
