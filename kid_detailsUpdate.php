@@ -44,7 +44,7 @@
                  <div class="col span-1-of-3 box">
                      <div class="registration-info">
                         <label for="id"> <span> * </span> ID: </label> <br>
-                        <div class="disabled-input" name="kidId" type="text" id="kid-id" > </div>
+                        <input disabled class="disabled-input" name="kidId" type="text" id="kid-id" />
                      </div>
                 </div>
                 <div class="col span-1-of-3 box">
@@ -129,11 +129,11 @@
                 <div class="col span-1-of-2 box">
                      <div class="registration-info">
                         <label> Comments and Special Requests </label>
-                        <textarea name="comments" cols="84" rows="4" style="overflow:auto;resize:none"> </textarea>
+                        <textarea name="comments" cols="86" rows="4" style="overflow:auto;resize:none"> </textarea>
                      </div>
                 </div>
             </div>
-
+            <button type="button" class="update-details" onClick="savingChangesinKidbag()"> Save</button>
             <button type="button" id="new-observation"> Kindergarten teacher's comments </button>
      </form>  
 </section>
@@ -176,6 +176,7 @@
             <button type="button" class="exit"> <a href="/Sadna/index.php" id="special-link"> Exit </a> </button>
         </form>
 </section>
+    
     <script src="commons.js"></script>
     <script src="kid_detailsUpdate.js"></script>
     <script src="main.js"></script>

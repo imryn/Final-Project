@@ -60,35 +60,35 @@
                 $data= [];
                 while($row = mysqli_fetch_array($result)){
                     
-                    if($row['fathername'] && $row['mothername']){
-                        array_push($data, (object) [
-                        'id' => $row['kidId'],
-                        'name' => $row['fname'],
-                        'last_name' => $row['lname'],
-                        'father_name' => $row['fathername'],
-                        'mother_name' => $row['mothername'],
-                        'allergies' => $row['allergies']
-                        ]);
-                    }
-                    else if(empty($row['futhername']) && $row['mothername']){
-                        array_push($data, (object) [
-                            'id' => $row['kidId'],
-                            'name' => $row['fname'],
-                            'last_name' => $row['lname'],
-                            'mother_name' => $row['mothername'],
-                            'allergies' => $row['allergies']
-                        ]);
-                    }
+                    // if($row['fathername'] && $row['mothername']){
+                    //     array_push($data, (object) [
+                    //     'id' => $row['kidId'],
+                    //     'name' => $row['fname'],
+                    //     'last_name' => $row['lname'],
+                    //     'father_name' => $row['fathername'],
+                    //     'mother_name' => $row['mothername'],
+                    //     'allergies' => $row['allergies']
+                    //     ]);
+                    // }
+                    // else if(empty($row['futhername']) && $row['mothername']){
+                    //     array_push($data, (object) [
+                    //         'id' => $row['kidId'],
+                    //         'name' => $row['fname'],
+                    //         'last_name' => $row['lname'],
+                    //         'mother_name' => $row['mothername'],
+                    //         'allergies' => $row['allergies']
+                    //     ]);
+                    // }
 
-                    else if($row['futhername'] && empty($row['mothername'])){
-                        array_push($data, (object) [
-                            'id' => $row['kidId'],
-                            'name' => $row['fname'],
-                            'last_name' => $row['lname'],
-                            'father_name' => $row['fathername'],
-                            'allergies' => $row['allergies'] 
-                        ]);
-                    }
+                    // else if($row['futhername'] && empty($row['mothername'])){
+                    //     array_push($data, (object) [
+                    //         'id' => $row['kidId'],
+                    //         'name' => $row['fname'],
+                    //         'last_name' => $row['lname'],
+                    //         'father_name' => $row['fathername'],
+                    //         'allergies' => $row['allergies'] 
+                    //     ]);
+                    // }
 
                 }
                 echo json_encode((object) [
@@ -127,6 +127,32 @@
             else{
                 $this->error();
             }
+
+        }
+
+        function updateKidbag(){
+            foreach( $_POST as $key => $value ) {
+                $_POST[$key] = strip_tags($this->db->real_escape_string($value));
+             }
+                   $sql = "UPDATE kids SET fname='{$_POST['fname']}', bDate={$_POST['bDate']}, genders='{$_POST['genders']}',
+                   celiac={$_POST['celiac']}, eggs={$_POST['eggs']}, fish={$_POST['fish']}, kiwis={$_POST['kiwis']},
+                   lactoseintolerance={$_POST['lactoseintolerance']}, nuts={$_POST['nuts']}, soy={$_POST['soy']},
+                   strawberries={$_POST['strawberries']}, vegan={$_POST['vegan']}, vegetarian={$_POST['vegetarian']},
+                   comments='{$_POST['comments']}'
+                   WHERE kids.kidId={$_POST['kidId']}";
+                
+                $result =$this->db->query($sql);
+                if($result){
+                    $id = $this->db->insert_id;
+                     echo json_encode((object) [
+                         'success'=>true
+                    ]);
+
+                    
+                }
+                else{
+                    $this->error();
+                }
 
         }
 
