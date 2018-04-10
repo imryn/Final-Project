@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html>
- <?php 
- $servername = "us-cdbr-gcp-east-01.cleardb.net";
- $username = "b1cecd1cfb136f";
- $password = "7e767b54";
- $dbname = "gcp_69477eab26f5d4ebcd7f";
- 
- // Create connection
- $conn = new mysqli($servername, $username, $password, $dbname);
- // Check connection
- if ($conn->connect_error) {
-     die("Connection failed: " . $conn->connect_error);
- } 
- 
- $sql = "select * from kids
-        join users on kids.parentId=users.parentId;";
- $result = $conn->query($sql);
- 
- $conn->close();
-    ?>
+    <?php 
+    $servername = "us-cdbr-gcp-east-01.cleardb.net";
+    $username = "b1cecd1cfb136f";
+    $password = "7e767b54";
+    $dbname = "gcp_69477eab26f5d4ebcd7f";
+    
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    } 
+    
+    $sql = "select * from kids
+            join users on kids.parentId=users.parentId;";
+    $result = $conn->query($sql);
+
+    $sq2 = "select * from attendance 
+    join users on kids.parentId=attendance.parentId;";
+    $result2 = $conn->query($sq2);
+    
+    $conn->close();
+        ?>
 
     <head>
         <meta charset="UTF-8">
@@ -35,9 +39,10 @@
         <script
             src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin="anonymous"></script>
+            crossorigin="anonymous">
+        </script>
         <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
-
+        <script src="commons.js"></script>
         <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
         <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
@@ -51,18 +56,15 @@
         </header>
         <h1> Daily Attendance </h1>
         
-        <section>
+        <section id="daily-attendance">
             <form>
-                <div class="col span-1-of-2 box">
-                    <div class="report-info">
-                        <label for="start-date"> Pick a date: </label>
-                        <input name="startDate" type="date"/>
-                    </div>
-                </div> 
-                
-                <input type="button" value="Load" class="create-botton" onClick="getReports()"/>
+                <div class="pickDateField">
+                    <label for="pick-date"> Pick a date: </label>
+                    <input name="date" type="date" value="<?php echo date('Y-m-d'); ?>" /> 
+                    <input type="button" value="Load" class="send-button" onClick="loadAtt()"/> 
+                </div>                 
 
-                <table id="attendance-table" border="3px">
+                <table id="attendance-table">
                     <tr>
                         <th> ID </th>                 
                         <th> First Name </th>
@@ -80,15 +82,17 @@
                                 <td> <?php echo $row['fname']; ?> </td>
                                 <td> <?php echo $row['lastname']; ?> </td>
                                 <td> <input type="checkbox" checked data-toggle="toggle" data-onstyle="warning" data-offstyle="info"> </td>
-                                <td> <input type="button" value="Send" class="create-botton" onClick="()"/> </td>
+                                <td> <input type="button" value="Send" class="send-button" onClick="sendSMS()"/> </td>
                             </tr>
                         <?php    
                         }
                     }
                     ?>
 
+
+
                 </table>
-                <script src="commons.js"></script>
+                <input type="button" value="Save Attendance" class="refresh-button" onClick="saveAtt()"/>       
                 <script src="fill_attendance.js"></script>
             </form>
         </section>
