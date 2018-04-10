@@ -22,6 +22,7 @@ $(function() {
             }
             ],
         
+
         header:
             {
                 left: 'prev,next today',
@@ -35,6 +36,12 @@ $(function() {
 
 
         editable: false,
+        eventClick: function(event) {
+            // opens events in a popup window
+            //window.open(event.url, 'gcalevent', 'width=700,height=600');
+            window.open(event.url, '_blank')
+            return false;
+        },
         eventRender: function (event, element) {
             var html = '<span class="description"> - ' + event.description + '</span>'
             $(element).find('.fc-list-item-title').append(html)

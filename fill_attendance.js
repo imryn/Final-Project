@@ -7,8 +7,6 @@ function buildThs(array){
     return row + '</tr>';
 }//
 
-
-
 function createTable(data){
     console.log(data)
     var tableElement = document.getElementById("attendance-table");
