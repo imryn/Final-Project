@@ -5,17 +5,17 @@ function buildThs(array){
         row = row + '<th>'+item+'</th>';
     })
     return row + '</tr>';
-}//
+}
 
-function createTable(data){
+function updateAtt(data){
     console.log(data)
     var tableElement = document.getElementById("attendance-table");
     var table='';
 
-    table = table + buildThs(['ID','First Name','Last Name','Attendance ?','Send SMS now']);
+    table = table + buildThs(['Last Name','Last Name','Last Name','Attendance ?','Send SMS now']);
 
     data.forEach(function(item) {
-        table = table + '<tr><td>'+item.id+'</td><td>' +item.fname+'</td><td>'+item.last_name +'</td></tr>';
+        table = table + '<tr><td>'+item.lastname+'</td><td>' +item.fname+'</td><td>'+item.kidId +'</td></tr>';
     });
     tableElement.innerHTML = table;
     console.log(table)
@@ -23,21 +23,20 @@ function createTable(data){
 
 
 
-function getReports(){
+// function getReports(){
 
-    var data = getFormData("#reports form");
+//     var data = getFormData("#reports form");
 
-    // data.statTime =  functionToTimestamp(data.statTime);
+//     // data.statTime =  functionToTimestamp(data.statTime);
 
-    httpGet("/Sadna/server/api.php?route=create_report",data, function(response) {
-        if(response.data instanceof Array){
-            createTable(response.data);
-        }
+//     httpGet("/Sadna/server/api.php?route=create_report",data, function(response) {
+//         if(response.data instanceof Array){
+//             createTable(response.data);
+//         }
 
-    })
+//     })
 
-}
-// getReports()
+// }
 
 
 

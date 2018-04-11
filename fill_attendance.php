@@ -59,16 +59,15 @@
         <section id="daily-attendance">
             <form>
                 <div class="pickDateField">
-                    <label for="pick-date"> Pick a date: </label>
-                    <input name="date" type="date" value="<?php echo date('Y-m-d'); ?>" /> 
-                    <input type="button" value="Load" class="send-button" onClick="loadAtt()"/> 
+                    <label for="pick-date"> Today date: </label>
+                    <input name="date" type="date" value="<?php echo date('Y-m-d'); ?>" disabled/> 
                 </div>                 
 
                 <table id="attendance-table">
-                    <tr>
-                        <th> ID </th>                 
-                        <th> First Name </th>
+                    <!-- <tr>
                         <th> Last Name </th>
+                        <th> First Name </th>
+                        <th> Last Name </th>                 
                         <th> Attendance ? </th>
                         <th> Send SMS Now </th>
                     </tr>
@@ -78,21 +77,21 @@
                         // output data of each row
                         while($row = $result->fetch_assoc()) {?>
                             <tr>
-                                <td> <?php echo $row['id']; ?> </td>                 
+                                <td> <?php echo $row['lastname']; ?> </td>               
                                 <td> <?php echo $row['fname']; ?> </td>
-                                <td> <?php echo $row['lastname']; ?> </td>
+                                <td> <?php echo $row['kidId']; ?> </td> 
                                 <td> <input type="checkbox" checked data-toggle="toggle" data-onstyle="warning" data-offstyle="info"> </td>
                                 <td> <input type="button" value="Send" class="send-button" onClick="sendSMS()"/> </td>
                             </tr>
                         <?php    
                         }
                     }
-                    ?>
+                    ?> -->
 
 
 
                 </table>
-                <input type="button" value="Save Attendance" class="refresh-button" onClick="saveAtt()"/>       
+                <input type="button" value="Update Attendance" class="refresh-button" onClick="updateAtt()"/>       
                 <script src="fill_attendance.js"></script>
             </form>
         </section>
