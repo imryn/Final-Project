@@ -12,14 +12,14 @@
         <link rel="stylesheet" type="text/css" href="picture-container/picture-container.css">
         <link rel="stylesheet" type="text/css" href="css/queries.css">
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
-        <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
-
-<title>Title of the document</title>
-
-<script
+  <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
+  <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+
+  <title>Title of the document</title>
+
 </head>
 
 <body>
@@ -44,7 +44,7 @@
                 </div>
            </div>
         </div>
-        <div class="row reports-line">
+        <!-- <div class="row reports-line">
               <div class="col span-1-of-2 box">
                   <div class="report-info">
                     <label for="start-date"> start date: </label>
@@ -58,16 +58,39 @@
                       <input name="endDate" type="date"/>
                    </div>
               </div>
-        </div>
-           
-         <input type="button" value="create" class="create-botton" onClick="getReports()"/>
-  </form>
-        <table id="kids-table"></table>
-        <script src="commons.js"></script>
-        <script src="main.js"></script>
+        </div> -->
+
+         <button type="button" id="options_for_report"> Add </button>
+     </form>
 </section>
 
+<section id="alergic-report">
+    <form>
+        <p class="success-message"></p>
+            <div class="row alergic-update">
+                 <div class="col span-1-of-2 box">
+                    <div class="alergic-info">
+                        <label id="alergic-exp"> Please choose kind of alergic </label> <br>
+                        <select name="alergicOptions" size="1" id="alergic"> 
+                                <option value="celiac"> Celiac </option>
+                                <option value="eggs"> Eggs </option>
+                                <option value="fish"> Fish </option>
+                                <option value="kiwis"> Kiwis </option>
+                                <option value="lactoseintolerance"> Lactose intolerance </option>
+                                <option value="nuts"> Nuts </option>
+                                <option value="soy"> Soy </option>
+                                <option value="strawberries">  Strawberries </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <input type="button" value="create" class="create-botton" onClick="getReports()"/>
+        </form>  
+ </section>
 
+         <table id="kids-table"></table>
+        <script src="reports.js"></script>
+        <script src="commons.js"></script>
+        <script src="main.js"></script>
 </body>
-
 </html>

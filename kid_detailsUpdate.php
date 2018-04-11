@@ -146,14 +146,14 @@
                     <div class="update-info">
                         <label  for="name"> Please enter new observation: </label> <br>
                         <select name="observation" size="1" id="observation"> 
-                                <option value="child argues with another kid" selected>child argues with another kid </option>
-                                <option value="child didn't eat"> child didn't eat </option>
-                                <option value="child didn't feel good during the day"> child didn't feel good during the day </option>
-                                <option value="child has been rude to the kindergarten teacher"> child has been rude to the kindergarten teacher </option>
-                                <option value="child enjoyed painting activity "> child enjoyed painting activity </option>
-                                <option value="child enjoyed solving puzzle activity"> child enjoyed solving puzzle activity </option>
-                                <option value="child helped another kid"> child helped another kid </option>
-                                <option value="child likes to hear stories"> child likes to hear stories </option>
+                                <option class="observation-value1" value="child argues with another kid">child argues with another kid </option>
+                                <option class="observation-value1" value="child didn't eat"> child didn't eat </option>
+                                <option class="observation-value1" value="child didn't feel good during the day"> child didn't feel good during the day </option>
+                                <option class="observation-value1" value="child has been rude to the kindergarten teacher"> child has been rude to the kindergarten teacher </option>
+                                <option class="observation-value2" value="child enjoyed painting activity "> child enjoyed painting activity </option>
+                                <option class="observation-value2" value="child enjoyed solving puzzle activity"> child enjoyed solving puzzle activity </option>
+                                <option class="observation-value2" value="child helped another kid"> child helped another kid </option>
+                                <option class="observation-value2" value="child likes to hear stories"> child likes to hear stories </option>
                         </select>
                     </div>
                 </div>
