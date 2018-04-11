@@ -1,5 +1,4 @@
-
-/* defualt styling */
+/* default styling */
 *{
     margin: 0;
     padding: 0;
@@ -41,7 +40,6 @@ h1{
 }
 
 h2, h3{
-
     word-spacing: 5px;
     letter-spacing: 2px;
     text-align: center;
@@ -58,7 +56,6 @@ h2{
     background-color: #f0f0f0;
     width: 75%;
     margin-left: 12.5%;
-
 }
 
 #kid-observation{
@@ -69,8 +66,7 @@ h2{
     margin-left: 3.2%;
  }
 
- /* line in each sections */
-
+ /* line on each sections */
 .parent-form1, .kid-form1, .kid-update1{
     margin-top: 7%;
 }
@@ -147,7 +143,7 @@ h2{
     width: 71%;
 }
 
-/* specific inputs,selects and labeles */
+/* specific inputs,selects and lables */
 #gender{
     width: 112%;
     margin-left: 8%;
@@ -170,7 +166,6 @@ h2{
     height:32px;
 }
 
-
 .allergie-info{
     margin-top: 17%;
     width: 100%; 
@@ -190,7 +185,6 @@ input[type=checkbox]:first-child{
     margin-top: 6%;
     width: 10%;  
 }
-
 
 input[type=radio]:first-child{
     width: 7%;
@@ -280,14 +274,13 @@ input[type=radio]:first-child{
     margin-left: 4%;  
 }
 
-/* worning message for the user in the forms */
+/* warning message for user in the forms */
 .success-message, .success-message2{
    font-weight: bold; 
    margin-left: 11%;
    color: #9b59b6;
    margin-bottom: -4%;
    word-spacing: 2px;
-
 }
 
 /* table in report page */
@@ -306,13 +299,11 @@ input[type=radio]:first-child{
     border: solid 1px #dfe4ea;
 }
 
-
 #kids-table th{
    padding: 0 51.4px 0 51.4px;
    text-align: center;
    border-bottom: solid 1px #dfe4ea;
 }
-
 
 .shop{
 	word-spacing: 5px;
@@ -342,7 +333,6 @@ input[type=radio]:first-child{
     border:1px orange solid;
     font-size:16px;
 }
-
 .schedule_row{
     width:100%;
     margin-top:25px;
@@ -400,10 +390,10 @@ input[type=radio]:first-child{
     background-color: #e67e22;
     color: white;
     border-radius: 5px;
-    font-family: 'Lato';
     font-weight: 300;
     text-align: center;
-    margin-left: 280px;
+   /* margin-left: 280px; */
+  /* left:50%; */
 
 }
 /* END building_schedule design  */
@@ -500,19 +490,18 @@ input[type=radio]:first-child{
     background-color: transparent;
     border: solid 1px rgb(169,169,169);
     color: black;
-    background: white;
+    background: rgba(128, 128, 128, 0.568);
     text-indent: 10px;
-    width: 191;
+    width:200px;
     border-radius: 5px;
     margin-left: 3.5%;
     margin-top: 1%;
-    font-family: 'Lato';
     font-weight: 300;
     height: 32px;
     display: inline-block; 
 }
 .pickDateField label{
-    margin-left:140px;
+    margin-left:160px;
 }
 
 
