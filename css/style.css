@@ -203,7 +203,15 @@ input[type=radio]:first-child{
 
 .report-info select{
     margin-left: 25px;
-} 
+}
+
+.observation-value1{
+    color: red;
+}
+
+.observation-value2{
+    color: green;   
+}
 
 /* buttons */
 .save-1, .save-2, .create-botton,
