@@ -54,14 +54,14 @@ h2{
 
 /* sections */
 #registration-parent,#registration-kid,#reports,#daily-attendance,
-#kid-detailsUpdate,#Weekly-Scheduler,#kid-observation{
+#kid-detailsUpdate,#Weekly-Scheduler,#kid-observation,#alergic-report{
     background-color: #f0f0f0;
     width: 75%;
     margin-left: 12.5%;
 
 }
 
-#kid-observation{
+#kid-observation, #alergic-report{
     display: none;
 }
 
@@ -79,7 +79,7 @@ h2{
     margin-left: 10%;
 }
 
-.kid-form1,.kid-form2,.kid-update1, .kid-update2 {
+.kid-form1,.kid-form2,.kid-update1, .kid-update2{
    margin-left: 10%;
 }
 
@@ -87,8 +87,12 @@ h2{
     margin-left: 11.3%;
 }
 
+.alergic-update{
+    margin-left: 2%; 
+}
+
  /* inputs */
-.registration-info input, .update-info input{
+.registration-info input, .update-info input, .alergic-info input{
     background-color: transparent;
     border: solid 1px rgb(169,169,169);
     color: black;
@@ -132,7 +136,7 @@ h2{
 
 /* selects */
 .registration-info select,.report-info select,
-.update-info select, .list-info select{
+.update-info select, .list-info select, .alergic-info select{
     border-radius: 5px;
     font-family: 'Lato';
     font-weight: 300;
@@ -141,7 +145,7 @@ h2{
  
 }
 
-.registration-info select{
+.registration-info select,.alergic-info select {
     margin-top: 1%;
     margin-left: 4%;
     width: 71%;
@@ -215,7 +219,7 @@ input[type=radio]:first-child{
 
 /* buttons */
 .save-1, .save-2, .create-botton,
-.exit, .save-details, .update-details{
+.exit, .save-details, .update-details, #options_for_report{
     padding: 5px;
     width: 75px;
     display: block;
@@ -234,7 +238,7 @@ input[type=radio]:first-child{
     margin-top: 5%;
 }
 
-.save-2, .update-details{
+.save-2, .update-details,#options_for_report{
    margin-top: 5%;
    margin-left: 48%; 
 }
@@ -284,7 +288,7 @@ input[type=radio]:first-child{
     margin-left: 5%
 }
 
-#form-exp{
+#form-exp, #alergic-exp{
     margin-left: 4%;  
 }
 
