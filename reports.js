@@ -19,10 +19,19 @@ function getAlergicReports(){
     var data = getFormData("#alergic-report form");
     httpGet("/Sadna/server/api.php?route=get_Alergicreport", data,function(response){
         if(response.success && response.data instanceof Array){
-            createTable(response.data);
+            createAlergicTable(response.data);
            }
         });
     }
+
+function getExceptionReports(){
+    var data = getFormData("#exception-report form");
+    httpGet("/Sadna/server/api.php?route=get_Exceptionsreport", data,function(response){
+        if(response.success && response.data instanceof Array){
+            createExceptionTable(response.data);
+           }
+        });
+}
 
 function buildThs(array){
     var row = '<tr>'
@@ -34,15 +43,29 @@ function buildThs(array){
 
 
 
-function createTable(data){
+function createAlergicTable(data){
     console.log(data)
     var tableElement = document.getElementById("kids-table");
     var table='';
 
-    table = table + buildThs(['first_name','last_name','parent_name','phone_number']);
+    table = table + buildThs(['First Name','Last Name','Parent Name','Phone Number']);
 
     data.forEach(function(item) {
         table = table + '<tr><td>'+item.first_name+'</td><td>' +item.last_name+'</td><td>'+item.parent_name +'</td><td>' + item.phone_number +'</td></tr>';
+    });
+    tableElement.innerHTML = table;
+    console.log(table)
+}
+
+function createExceptionTable(data){
+    console.log(data)
+    var tableElement = document.getElementById("kids-table");
+    var table='';
+
+    table = table + buildThs(['Date','First Name','Last Name','Notes']);
+
+    data.forEach(function(item) {
+        table = table + '<tr><td>'+item.observationDate+'</td><td>' +item.first_name+'</td><td>'+item.last_name +'</td><td>' + item.observation +'</td></tr>';
     });
     tableElement.innerHTML = table;
     console.log(table)

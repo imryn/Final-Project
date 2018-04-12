@@ -88,25 +88,24 @@
             <div class="row exception-update">
                 <div class="col span-1-of-2 box">
                     <div class="exception-info">
-                        <label for="start-date"> start date: </label>
+                        <label for="start-date"> Start Date: </label>
                         <input name="startDate" type="date"/>
                     </div>
                 </div> 
             
               <div class="col span-1-of-2 box">
                    <div class="exception-info">
-                      <label for="end-date"> end date: </label>
+                      <label for="end-date"> End Date: </label>
                       <input name="endDate" type="date"/>
                    </div>
               </div>
             </div>
 
-            <input type="button" value="create" class="create-botton" onClick="getAlergicReports()"/>
+            <input type="button" value="create" class="create-botton" onClick="getExceptionReports()"/>
         </form>
         <table id="kids-table"></table>  
  </section>
 
-         
         <script src="reports.js"></script>
         <script src="commons.js"></script>
 </body>
