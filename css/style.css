@@ -297,7 +297,7 @@ input[type=radio]:first-child{
 
 /* table in report page */
 #kids-table{
-    margin-top: 6%;
+    margin: 5% 0 0 8.5%;
     background-color: #3d3d3d;
     color: white;
 }

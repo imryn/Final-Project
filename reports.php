@@ -60,7 +60,7 @@
               </div>
         </div> -->
 
-         <button type="button" id="options_for_report"> Add </button>
+         <button type="button" id="options_for_report" onClick="getReports()"> Add</button>
      </form>
 </section>
 
@@ -84,13 +84,13 @@
                     </div>
                 </div>
             </div>
-            <input type="button" value="create" class="create-botton" onClick="getReports()"/>
-        </form>  
+            <input type="button" value="create" class="create-botton" onClick="getAlergicReports()"/>
+        </form>
+        <table id="kids-table"></table>  
  </section>
 
-         <table id="kids-table"></table>
+         
         <script src="reports.js"></script>
         <script src="commons.js"></script>
-        <script src="main.js"></script>
 </body>
 </html>
