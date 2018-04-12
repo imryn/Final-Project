@@ -35,9 +35,13 @@
                 case "create_table":
                     $items = new Items();
                     $items->createItemsTable();
-                case "create_report":
+                case "create_Alergicreport":
                     $kids= new Kids();
                     $kids -> createKidAlergicreport();
+                    break;
+                case "create_Exceptionsreport":
+                    $kids= new Kids();
+                    $kids -> createKidExceptionReport();
                     break;
             }
        }
@@ -49,9 +53,14 @@
                     $user->getAll();
                     break;
         
-                 case "get_report":
+                 case "get_Alergicreport":
                     $kids= new Kids();
                     $kids -> getAllallergies();
+                    break;
+
+                case "get_Exceptionsreport":
+                    $kids= new Kids();
+                    $kids -> getAllExceptions();
                     break;
 
                  case "getKidInfo":

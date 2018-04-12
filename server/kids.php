@@ -252,6 +252,20 @@
             }
         }
     }
+
+        public function createKidExceptionReport(){
+            if(($_POST['optionsReport'])=='exceptions-report'){
+                $result = $_POST['optionsReport'];
+                if($result){
+                    echo json_encode((object) [
+                        'success'=>true
+                    ]);
+            }
+            else{
+                $this->error();
+            }
+        }
+    }
         function showInfoAboutakid(){
             
            $sql = "SELECT kids.kidId, kids.fname, kids.bDate, kids.genders, kids.celiac,

@@ -4,7 +4,7 @@
 function getReports(){
 
     var data = getFormData("#reports form");
-    data['route'] = 'create_report';
+    data['route'] = 'create_Alergicreport';
     httpPost("/Sadna/server/api.php",data,function(response){
         if(response.success){
             $(document).ready(function(){
@@ -17,7 +17,7 @@ function getReports(){
 
 function getAlergicReports(){
     var data = getFormData("#alergic-report form");
-    httpGet("/Sadna/server/api.php?route=get_report", data,function(response){
+    httpGet("/Sadna/server/api.php?route=get_Alergicreport", data,function(response){
         if(response.success && response.data instanceof Array){
             createTable(response.data);
            }
