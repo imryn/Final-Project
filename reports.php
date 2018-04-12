@@ -60,7 +60,7 @@
               </div>
         </div> -->
 
-         <button type="button" id="options_for_report" onClick="getReports()"> Add</button>
+         <button type="button" id="options_for_report" onClick="getReports()"> add</button>
      </form>
 </section>
 

@@ -8,7 +8,6 @@ function buildThs(array){
 }//
 
 
-
 function createTable(data){
     console.log(data)
     var tableElement = document.getElementById("kids-table");
@@ -22,19 +21,6 @@ function createTable(data){
     tableElement.innerHTML = table;
     console.log(table)
 }
-
-
-    // getNameofReport(data,function(response){
-    //     if(response.success){
-    //         httpPost("/Sadna/server/api.php",alergicdata,function(_response){
-    //                 if(_response.success && _response.alergicdata instanceof Array){
-    //                  createTable(_response.alergicdata);
-    //                 }
-    //          });
-    //     }
-
-    // })
-
 
 function showInfoAboutakid(){
     httpGet("/Sadna/server/api.php?route=getKidInfo",{}, function(response){
