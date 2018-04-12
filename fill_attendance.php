@@ -1,5 +1,28 @@
 <!DOCTYPE html>
 <html>
+    <?php 
+    $servername = "us-cdbr-gcp-east-01.cleardb.net";
+    $username = "b1cecd1cfb136f";
+    $password = "7e767b54";
+    $dbname = "gcp_69477eab26f5d4ebcd7f";
+    
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    } 
+    
+    $sql = "select * from kids
+            join users on kids.parentId=users.parentId;";
+    $result = $conn->query($sql);
+
+    $sq2 = "select * from attendance 
+    join users on kids.parentId=attendance.parentId;";
+    $result2 = $conn->query($sq2);
+    
+    $conn->close();
+        ?>
 
     <head>
         <meta charset="UTF-8">
@@ -16,9 +39,10 @@
         <script
             src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin="anonymous"></script>
+            crossorigin="anonymous">
+        </script>
         <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
-
+        <script src="commons.js"></script>
         <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
         <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
@@ -32,44 +56,42 @@
         </header>
         <h1> Daily Attendance </h1>
         
-        <section>
+        <section id="daily-attendance">
             <form>
-                <div class="col span-1-of-2 box">
-                    <div class="report-info">
-                        <label for="start-date"> Pick a date: </label>
-                        <input name="startDate" type="date"/>
-                    </div>
-                </div> 
-                
-                <input type="button" value="Load" class="create-botton" onClick="getReports()"/>
+                <div class="pickDateField">
+                    <label for="pick-date"> Today date: </label>
+                    <input name="date" type="date" value="<?php echo date('Y-m-d'); ?>" disabled/> 
+                </div>                 
 
-                <table id="attendance-table" border="3px">
-                    <tr>
-                        <th> ID </th>                 
-                        <th> First Name </th>
+                <table id="attendance-table">
+                    <!-- <tr>
                         <th> Last Name </th>
+                        <th> First Name </th>
+                        <th> Last Name </th>                 
                         <th> Attendance ? </th>
                         <th> Send SMS Now </th>
                     </tr>
 
-                    <tr>
-                        <td> 123 </td>                 
-                        <td> k </td>
-                        <td> hp </td>
-                        <td> <input type="checkbox" checked data-toggle="toggle" data-onstyle="warning" data-offstyle="info"> </td>
-                        <td> <input type="button" value="Send" class="create-botton" onClick="()"/> </td>
-                    </tr>
-                    <tr>
-                        <td> 45 </td>                 
-                        <td> mor </td>
-                        <td> zloof </td>
-                        <td> <input type="checkbox" checked data-toggle="toggle" data-onstyle="warning" data-offstyle="info"> </td>
-                        <td> <input type="button" value="Send" class="create-botton" onClick="()"/> </td>
-                    </tr>
+                    <?php if ($result->num_rows > 0) 
+                    {
+                        // output data of each row
+                        while($row = $result->fetch_assoc()) {?>
+                            <tr>
+                                <td> <?php echo $row['lastname']; ?> </td>               
+                                <td> <?php echo $row['fname']; ?> </td>
+                                <td> <?php echo $row['kidId']; ?> </td> 
+                                <td> <input type="checkbox" checked data-toggle="toggle" data-onstyle="warning" data-offstyle="info"> </td>
+                                <td> <input type="button" value="Send" class="send-button" onClick="sendSMS()"/> </td>
+                            </tr>
+                        <?php    
+                        }
+                    }
+                    ?> -->
+
 
 
                 </table>
-                <script src="commons.js"></script>
+                <input type="button" value="Update Attendance" class="refresh-button" onClick="updateAtt()"/>       
                 <script src="fill_attendance.js"></script>
             </form>
         </section>

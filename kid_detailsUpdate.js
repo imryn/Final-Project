@@ -10,19 +10,34 @@ function DetailskidUpdate(){
     data['route'] = 'observation_error';
     httpPost("/Sadna/server/api.php",data,function(response){
         if(response.success){
-            errorForUser("the observation saved successfully")
+            DetailskidUpdate.error("the observation saved successfully")
         }
     })
 
 }
 
 DetailskidUpdate.error= function(msg){
+    document.querySelector(".success-message").textContent = msg;
+}
+
+savingChangesinKidbag.error=function(msg){
     document.querySelector(".success-message2").textContent = msg;
 }
 
-function errorForUser(msg){
-    document.querySelector(".success-message").textContent = msg;
-}
+// function namecheck(namecheck,errorFunction){
+//     var check = namecheck.check();
+//     if(isNumeric(check)){
+//         errorFunction.error("name field can't contains numbers");
+//         return false;
+//     }
+//     return true;
+// }
+
+// function isNumeric(n) {
+//     return !isNaN(parseFloat(n)) && isFinite(n);
+//   }
+
+
 
 $(document).ready(function(){
     $("#new-observation").click(function(){
@@ -34,16 +49,19 @@ $(document).ready(function(){
 
 function savingChangesinKidbag(){
     var KiData = getFormData("#kid-detailsUpdate");
-
     var date = new Date(KiData.bDate).getTime();
     if(!isNaN(date)){
         KiData.bDate = date;
     }
 
-    data['route'] = 'update_kid';
-    httpPost("/Sadna/server/api.php",data,function(response){
+    // var checkKidname = namecheck(kidData['fname'],savingChangesinKidbag);
+    // if(!checkKidname){
+    //     return;
+    // }
+    KiData['route'] = 'update_kid';
+    httpPost("/Sadna/server/api.php",KiData,function(response){
         if(response.success){
-            errorForUser("the kid bag saved successfully");
+            savingChangesinKidbag.error("the kid bag saved successfully");
         }
 
     })

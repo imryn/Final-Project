@@ -1,5 +1,4 @@
-
-/* defualt styling */
+/* default styling */
 *{
     margin: 0;
     padding: 0;
@@ -41,7 +40,6 @@ h1{
 }
 
 h2, h3{
-
     word-spacing: 5px;
     letter-spacing: 2px;
     text-align: center;
@@ -53,15 +51,15 @@ h2{
 }
 
 /* sections */
-#registration-parent,#registration-kid,#reports,
-#kid-detailsUpdate,#Weekly-Scheduler,#kid-observation{
+#registration-parent,#registration-kid,#reports,#daily-attendance,
+#kid-detailsUpdate,#Weekly-Scheduler,#kid-observation,#alergic-report,
+#exception-report{
     background-color: #f0f0f0;
     width: 75%;
     margin-left: 12.5%;
-
 }
 
-#kid-observation{
+#kid-observation, #alergic-report, #exception-report{
     display: none;
 }
 
@@ -69,8 +67,7 @@ h2{
     margin-left: 3.2%;
  }
 
- /* line in each sections */
-
+ /* line on each sections */
 .parent-form1, .kid-form1, .kid-update1{
     margin-top: 7%;
 }
@@ -79,7 +76,7 @@ h2{
     margin-left: 10%;
 }
 
-.kid-form1,.kid-form2,.kid-update1, .kid-update2 {
+.kid-form1,.kid-form2,.kid-update1, .kid-update2{
    margin-left: 10%;
 }
 
@@ -87,8 +84,13 @@ h2{
     margin-left: 11.3%;
 }
 
+.alergic-update, .exception-update{
+    margin-left: 2%; 
+}
+
  /* inputs */
-.registration-info input, .update-info input{
+.registration-info input, .update-info input, .alergic-info input,
+.exception-info input{
     background-color: transparent;
     border: solid 1px rgb(169,169,169);
     color: black;
@@ -132,21 +134,23 @@ h2{
 
 /* selects */
 .registration-info select,.report-info select,
-.update-info select, .list-info select{
+.update-info select, .list-info select, .alergic-info select,
+.exception-info select{
     border-radius: 5px;
     font-family: 'Lato';
     font-weight: 300;
     margin-top: 1%;
+    height: 32px;
  
 }
 
-.registration-info select{
+.registration-info select,.alergic-info select, .exception-info select{
     margin-top: 1%;
     margin-left: 4%;
     width: 71%;
 }
 
-/* specific inputs,selects and labeles */
+/* specific inputs,selects and lables */
 #gender{
     width: 112%;
     margin-left: 8%;
@@ -169,7 +173,6 @@ h2{
     height:32px;
 }
 
-
 .allergie-info{
     margin-top: 17%;
     width: 100%; 
@@ -190,7 +193,6 @@ input[type=checkbox]:first-child{
     width: 10%;  
 }
 
-
 input[type=radio]:first-child{
     width: 7%;
     margin-top: 6%;
@@ -202,11 +204,19 @@ input[type=radio]:first-child{
 
 .report-info select{
     margin-left: 25px;
-} 
+}
+
+.observation-value1{
+    color: red;
+}
+
+.observation-value2{
+    color: green;   
+}
 
 /* buttons */
 .save-1, .save-2, .create-botton,
-.exit, .save-details, .update-details{
+.exit, .save-details, .update-details, #options_for_report{
     padding: 5px;
     width: 75px;
     display: block;
@@ -225,7 +235,7 @@ input[type=radio]:first-child{
     margin-top: 5%;
 }
 
-.save-2, .update-details{
+.save-2, .update-details,#options_for_report{
    margin-top: 5%;
    margin-left: 48%; 
 }
@@ -275,23 +285,22 @@ input[type=radio]:first-child{
     margin-left: 5%
 }
 
-#form-exp{
+#form-exp, #alergic-exp, #exception-exp{
     margin-left: 4%;  
 }
 
-/* worning message for the user in the forms */
+/* warning message for user in the forms */
 .success-message, .success-message2{
    font-weight: bold; 
    margin-left: 11%;
    color: #9b59b6;
    margin-bottom: -4%;
    word-spacing: 2px;
-
 }
 
 /* table in report page */
 #kids-table{
-    margin-top: 6%;
+    margin: 5% 0 0 6.5%;
     background-color: #3d3d3d;
     color: white;
 }
@@ -305,13 +314,13 @@ input[type=radio]:first-child{
     border: solid 1px #dfe4ea;
 }
 
-
 #kids-table th{
    padding: 0 51.4px 0 51.4px;
    text-align: center;
+   word-spacing: 8px;
    border-bottom: solid 1px #dfe4ea;
-}
 
+}
 
 .shop{
 	word-spacing: 5px;
@@ -341,7 +350,6 @@ input[type=radio]:first-child{
     border:1px orange solid;
     font-size:16px;
 }
-
 .schedule_row{
     width:100%;
     margin-top:25px;
@@ -399,10 +407,10 @@ input[type=radio]:first-child{
     background-color: #e67e22;
     color: white;
     border-radius: 5px;
-    font-family: 'Lato';
     font-weight: 300;
     text-align: center;
-    margin-left: 280px;
+   /* margin-left: 280px; */
+  /* left:50%; */
 
 }
 /* END building_schedule design  */
@@ -462,7 +470,56 @@ input[type=radio]:first-child{
      font-weight: 300;
      text-align: center;
  }
-
-
-
 /* END building shopping-list design */
+
+
+/* START building Daily attendance design */
+#attendance-table{
+    border: 2px black solid;
+    text-align:center;
+    margin-left:-350px;
+    position:relative;  
+    left:50%;
+}
+
+#attendance-table th{
+    background:orange;
+    border: 3px black solid;
+    width:150px;
+    padding-left:5px;
+}
+
+.send-button{
+    width: 55px;
+    display: block;
+    cursor: pointer;
+    border: none;
+    background-color: #e67e22;
+    color: white;
+    border-radius: 5px;
+    font-family: 'Lato';
+    font-weight: 300;
+    text-align: center;
+    margin-left:50px;
+} 
+
+.pickDateField input{
+    background-color: transparent;
+    border: solid 1px rgb(169,169,169);
+    color: black;
+    background: rgba(128, 128, 128, 0.568);
+    text-indent: 10px;
+    width:200px;
+    border-radius: 5px;
+    margin-left: 3.5%;
+    margin-top: 1%;
+    font-weight: 300;
+    height: 32px;
+    display: inline-block; 
+}
+.pickDateField label{
+    margin-left:160px;
+}
+
+
+/* END building Daily attendance design */
