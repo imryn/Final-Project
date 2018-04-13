@@ -17,10 +17,6 @@
             join users on kids.parentId=users.parentId;";
     $result = $conn->query($sql);
 
-    $sq2 = "select * from attendance 
-    join users on kids.parentId=attendance.parentId;";
-    $result2 = $conn->query($sq2);
-    
     $conn->close();
         ?>
 
@@ -64,10 +60,10 @@
                 </div>                 
 
                 <table id="attendance-table">
-                    <!-- <tr>
+                    <tr>
                         <th> Last Name </th>
                         <th> First Name </th>
-                        <th> Last Name </th>                 
+                        <th> ID </th>                 
                         <th> Attendance ? </th>
                         <th> Send SMS Now </th>
                     </tr>
@@ -79,20 +75,46 @@
                             <tr>
                                 <td> <?php echo $row['lastname']; ?> </td>               
                                 <td> <?php echo $row['fname']; ?> </td>
-                                <td> <?php echo $row['kidId']; ?> </td> 
-                                <td> <input type="checkbox" checked data-toggle="toggle" data-onstyle="warning" data-offstyle="info"> </td>
+                                <td class='kidId'> <?php echo $row['kidId']; ?> </td> 
+                                <td class='attendance'> <input type="checkbox" checked data-toggle="toggle" data-onstyle="warning" data-offstyle="info"> </td>
                                 <td> <input type="button" value="Send" class="send-button" onClick="sendSMS()"/> </td>
                             </tr>
                         <?php    
                         }
                     }
-                    ?> -->
+                    ?>
 
 
 
                 </table>
-                <input type="button" value="Update Attendance" class="refresh-button" onClick="updateAtt()"/>       
                 <script src="fill_attendance.js"></script>
+                <input type="button" value="Update Attendance" class="refresh-button" onClick="saveInServer()"/>  
+                <script>
+                    function saveInServer(){
+                        var loopLength = $("#attendance-table tr").length 
+                        var updateKids = []
+                        for(var i=0; i<loopLength; i++){//insert all the kids that we need to update to one list
+                            var tr = $('#attendance-table tr:eq(' + i + ')')
+                            var kidId = tr.find('.kidId').text()
+                            var attendance = tr.find('.attendance input').is(':checked')
+                            
+                            if(!attendance && kidId){
+                                updateKids.push(kidId)
+                            }
+                            // updateKids.
+                        }
+
+
+                        var sql = 'DELETE FROM noattendance WHERE date=CURRENT_DATE(); '
+                        for(var i=0; i<updateKids.length; i++){
+                            sql += ' insert into noattendance (date,kidId) values (current_date(),' + updateKids[0] + '); '
+                        }
+
+
+                        location.href = 'updateNoattendance.php?sql=' + sql
+                        
+                    }
+                </script>     
             </form>
         </section>
 
