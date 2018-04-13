@@ -49,7 +49,9 @@
                     $kids= new Kids();
                     $kids -> getAllallergies();
                     break;
-
+                //case "logout":
+                //  session_destroy();
+                //  break;
                 case "get_Exceptionsreport":
                     $kids= new Kids();
                     $kids -> getAllExceptions();

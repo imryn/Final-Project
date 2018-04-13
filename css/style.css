@@ -63,8 +63,12 @@ h2{
     display: none;
 }
 
- .reports-line{
+ .reports-line, .date-label{
     margin-left: 3.2%;
+ }
+
+ .exception-update2{
+    margin-left: 3%;
  }
 
  /* line on each sections */
@@ -87,6 +91,7 @@ h2{
 .alergic-update, .exception-update{
     margin-left: 2%; 
 }
+
 
  /* inputs */
 .registration-info input, .update-info input, .alergic-info input,
