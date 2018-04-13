@@ -7,8 +7,10 @@ function buildThs(array){
     return row + '</tr>';
 }
 
-function updateAtt(data){
+function updateAtt1(data){
     console.log(data)
+    debugger
+    return
     var tableElement = document.getElementById("attendance-table");
     var table='';
 

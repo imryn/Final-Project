@@ -146,14 +146,22 @@
                     <div class="update-info">
                         <label  for="name"> Please enter new observation: </label> <br>
                         <select name="observation" size="1" id="observation"> 
-                                <option class="observation-value1" value="child argues with another kid">child argues with another kid </option>
-                                <option class="observation-value1" value="child didn't eat"> child didn't eat </option>
-                                <option class="observation-value1" value="child didn't feel good during the day"> child didn't feel good during the day </option>
-                                <option class="observation-value1" value="child has been rude to the kindergarten teacher"> child has been rude to the kindergarten teacher </option>
-                                <option class="observation-value2" value="child enjoyed painting activity "> child enjoyed painting activity </option>
-                                <option class="observation-value2" value="child enjoyed solving puzzle activity"> child enjoyed solving puzzle activity </option>
-                                <option class="observation-value2" value="child helped another kid"> child helped another kid </option>
-                                <option class="observation-value2" value="child likes to hear stories"> child likes to hear stories </option>
+                        <!-- זה לא טוב שהאופצייה הראשונה היא הדיפולטית -->
+                                <option value="child argued with another kid" selected> Child argued with another kid </option>\\argued שיניתי ל
+                                <option value="child didn't eat breakfest"> Your child didn't eat breakfest </option> // עשיתי פה תיקון
+                                <option value="child didn't eat lunch"> Your child didn't eat lunch </option> //חדש 
+                                <option value="please call the kindergarten teacher as soon as possible"> Please call the kindergarten teacher as soon as possible </option> //חדש 
+                                <option value="child didn't feel good during the day"> Your child didn't feel good during the day </option>
+                                <option value="child did not sleep well"> Your child didn't sleep well </option> //חדש  
+                                <option value="child did not drink enough water"> Your child did not drink enough water </option> //חדש  
+                                <option value="child has been rude to the kindergarten teacher"> Your child has been rude to the kindergarten teacher </option>
+                                <option value="child enjoyed painting activity "> Your child enjoyed painting activity </option>
+                                <option value="child enjoyed solving puzzle activity"> Your child enjoyed solving puzzle activity </option>
+                                <option value="child helped another kid"> Your child helped another kid </option>
+                                <option value="child likes to hear stories"> Your child likes to hear stories </option>
+                                <option value="child took part in the activities"> Your child took part in the activities </option> //חדש  
+                                <option value="please bring a new set of clothes"> Please bring a new set of clothes </option> //חדש 
+                                <option value="child behaved very well today"> Chils behaved very well today </option> //חדש
                         </select>
                     </div>
                 </div>
