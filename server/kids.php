@@ -52,43 +52,48 @@
             
         }
 
-        private function getAllallergies(){
-            $sql = "SELECT kids.fname, kids.genders, kids.celiac ,kids.eggs, kids.fish, kids.kiwis,
-            kids.lactoseintolerance, kids.nuts, kids.soy, kids.strawberries FROM kids <> '' ";
+
+
+
+        public function getAllallergies(){
+            $sql = "SELECT kids.fname, users.lastname, users.firstname, users.mobilephone, kids.eggs FROM kids
+            INNER JOIN users ON kids.parentId=users.parentId AND kids.{$_GET['alergicOptions']}=1 <> '' ";
             $result =$this->db->query($sql); 
             if($result){
                 $data= [];
                 while($row = mysqli_fetch_array($result)){
-                    
-                    // if($row['fathername'] && $row['mothername']){
-                    //     array_push($data, (object) [
-                    //     'id' => $row['kidId'],
-                    //     'name' => $row['fname'],
-                    //     'last_name' => $row['lname'],
-                    //     'father_name' => $row['fathername'],
-                    //     'mother_name' => $row['mothername'],
-                    //     'allergies' => $row['allergies']
-                    //     ]);
-                    // }
-                    // else if(empty($row['futhername']) && $row['mothername']){
-                    //     array_push($data, (object) [
-                    //         'id' => $row['kidId'],
-                    //         'name' => $row['fname'],
-                    //         'last_name' => $row['lname'],
-                    //         'mother_name' => $row['mothername'],
-                    //         'allergies' => $row['allergies']
-                    //     ]);
-                    // }
+                    array_push($data, (object) [
+                        'first_name' => $row['fname'],
+                        'last_name' => $row['lastname'],
+                        'parent_name' => $row['firstname'],
+                        'phone_number' => $row['mobilephone']
+                    ]);  
+                }
+        
+            }
+            echo json_encode((object) [
+                'data' => $data,
+                'success'=>true
+            ]);
+ 
 
-                    // else if($row['futhername'] && empty($row['mothername'])){
-                    //     array_push($data, (object) [
-                    //         'id' => $row['kidId'],
-                    //         'name' => $row['fname'],
-                    //         'last_name' => $row['lname'],
-                    //         'father_name' => $row['fathername'],
-                    //         'allergies' => $row['allergies'] 
-                    //     ]);
-                    // }
+        }
+
+        public function getAllExceptions(){
+            if($_GET['alergicOptions']=='celiac'){
+                $sql = "SELECT kids.fname, users.lastname, users.firstname, users.mobilephone, kids.celiac FROM kids
+                INNER JOIN users ON kids.parentId=users.parentId AND kids.celiac=1 <> '' ";
+                $result =$this->db->query($sql); 
+                if($result){
+                    $data= [];
+                    while($row = mysqli_fetch_array($result)){
+                        array_push($data, (object) [
+                            'first_name' => $row['fname'],
+                            'last_name' => $row['lastname'],
+                            'parent_name' => $row['firstname'],
+                            'phone_number' => $row['mobilephone']
+                        ]);  
+            }
 
                 }
                 echo json_encode((object) [
@@ -96,20 +101,14 @@
                     'success'=>true
                 ]);
             }
+
             else{
                  echo json_encode((object) [
                     'error'=>true
                 ]);
             }
         }
-
-        public function createKidAlergicReport(){
-             if($_GET['optionsReport'] == 'allergies-report'){
-                $this->getAllallergies();
-             }
-        }
-    
-
+  
         function showInfoAboutakid(){
             
            $sql = "SELECT kids.kidId, kids.fname, kids.bDate, kids.genders, kids.celiac,

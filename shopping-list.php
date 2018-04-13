@@ -38,8 +38,9 @@
                             <select name="Category" size="1" id="itemcategory" onchange="SelectCategory(this.value);" > 
                                 <option value="Empty" > --Select Category--  </option>
                                 <option value="Artmaterials"> Art materials  </option>
-                                <option value="Food" > Food  </option>
                                 <option value="Office" > Office  </option>
+                                <option value="Food" > Food  </option>
+                                
                             </select>
                         </div>
                      </div>
@@ -57,17 +58,17 @@
                             <option value="Glue-stick" > Glue-stick (package of 5)  </option>
                             <option value="Glue-liquid-100ml" > Glue-liquid-100ml (package of 3)  </option>
                             <option value="Glue-liquid-300ml" > Glue-liquid-300ml  </option>
-                            <option value="Glue-liquid-1kg" > Glue-liquid-1kg  </option>
-                            <option value="Paper-blue-A3" > Paper-blue-A3 (package of 50)  </option>
-                            <option value="Paper-green-A3" > Paper-green-A3 (package of 50)  </option>
-                            <option value="Paper-red-A3" > Paper-red-A3 (package of 50)  </option>
-                            <option value="Paper-white-A3" > Paper-white-A3 (package of 50)  </option>
-                            <option value="Paper-yellow-A3" > Paper-Yellow-A3 (package of 50)  </option>
-                            <option value="Paper-blue-A4" > Paper-blue-A4 (package of 50)  </option>
-                            <option value="Paper-green-A4" > Paper-green-A4 (package of 50)  </option>
-                            <option value="Paper-red-A4" > Paper-red-A4 (package of 50)  </option>
-                            <option value="Paper-white-A4" > Paper-white-A4 (package of 50)  </option>
-                            <option value="Paper-yellow-A4" > Paper-Yellow-A4 (package of 50)  </option>
+                            <option value="Glue-liquid-1liter" > Glue-liquid-1liter  </option>
+                            <option value="Paper-blue-A3" > Paper-blue-A3 (package of 500)  </option>
+                            <option value="Paper-green-A3" > Paper-green-A3 (package of 500)  </option>
+                            <option value="Paper-red-A3" > Paper-red-A3 (package of 500)  </option>
+                            <option value="Paper-white-A3" > Paper-white-A3 (package of 500)  </option>
+                            <option value="Paper-yellow-A3" > Paper-Yellow-A3 (package of 500)  </option>
+                            <option value="Paper-blue-A4" > Paper-blue-A4 (package of 500)  </option>
+                            <option value="Paper-green-A4" > Paper-green-A4 (package of 500)  </option>
+                            <option value="Paper-red-A4" > Paper-red-A4 (package of 500)  </option>
+                            <option value="Paper-white-A4" > Paper-white-A4 (package of 500)  </option>
+                            <option value="Paper-yellow-A4" > Paper-Yellow-A4 (package of 500)  </option>
                         </select>
                     
                         <select name="item" size="1" id="officeitems" > 
@@ -85,25 +86,26 @@
             
                         <select name="item" size="1" id="fooditems" > 
                                 <option value="" > --Select Item--  </option>
-                                <option value="apples"> Apples  </option>
+                                <option value="apples"> Apples (kg)  </option>
                                 <option value="bread" > Bread  </option>
                                 <option value="butter" > Butter spread  </option>
-                                <option value="wh-cheese-5%"> Cheese-white-5%  </option>
-                                <option value="ye-cheese" > Cheese-yellow  </option>
-                                <option value="chocolate" > Chocolate spread  </option>
-                                <option value="cucumber"> Cucumber  </option>
-                                <option value="grape-juice" > Grape juice  </option>
-                                <option value="lettuce" > Lettuce  </option>
+                                <option value="wh-cheese-5%"> Cheese-white-5%-500gram  </option>
+                                <option value="ye-cheese" > Cheese-yellow-400gram  </option>
+                                <option value="chocolate" > Chocolate spread-500gram  </option>
+                                <option value="cucumber"> Cucumber (kg)  </option>
+                                <option value="grape-juice" > Grape juice syrup 1 liter  </option>
+                                <option value="tehina" > Hummus-500gram (kg)  </option>
+                                <option value="lettuce" > Lettuce (kg) </option>
                                 <option value="olives"> Olives (can)  </option>
                                 <option value="onion" > Onion (kg)  </option>
                                 <option value="pepper-green" > Pepper-green (kg)  </option>
                                 <option value="pepper-red" > Pepper-red (kg) </option>
                                 <option value="pepper-yellow" > Pepper-yellow (kg) </option>
                                 <option value="pickles" > Pickles (can)  </option>
-                                <option value="raspberry-juice" > Raspberry juice  </option>
+                                <option value="raspberry-juice" > Raspberry juice syrup 1 liter  </option>
                                 <option value="tomato" > Tomato (kg)  </option>
-                                <option value="tehina" > Tehina  </option>
-                                <option value="tuna" > Tuna  </option>
+                                <option value="tehina" > Tehina-500gram (kg)  </option>
+                                <option value="tuna" > Tuna (package of 4)  </option>
                         </select>
                     </div>
                 </div>

@@ -52,13 +52,14 @@ h2{
 
 /* sections */
 #registration-parent,#registration-kid,#reports,#daily-attendance,
-#kid-detailsUpdate,#Weekly-Scheduler,#kid-observation,#alergic-report{
+#kid-detailsUpdate,#Weekly-Scheduler,#kid-observation,#alergic-report,
+#exception-report{
     background-color: #f0f0f0;
     width: 75%;
     margin-left: 12.5%;
 }
 
-#kid-observation, #alergic-report{
+#kid-observation{
     display: none;
 }
 
@@ -83,12 +84,13 @@ h2{
     margin-left: 11.3%;
 }
 
-.alergic-update{
+.alergic-update, .exception-update{
     margin-left: 2%; 
 }
 
  /* inputs */
-.registration-info input, .update-info input, .alergic-info input{
+.registration-info input, .update-info input, .alergic-info input,
+.exception-info input{
     background-color: transparent;
     border: solid 1px rgb(169,169,169);
     color: black;
@@ -132,7 +134,8 @@ h2{
 
 /* selects */
 .registration-info select,.report-info select,
-.update-info select, .list-info select, .alergic-info select{
+.update-info select, .list-info select, .alergic-info select,
+.exception-info select{
     border-radius: 5px;
     font-family: 'Lato';
     font-weight: 300;
@@ -141,7 +144,7 @@ h2{
  
 }
 
-.registration-info select,.alergic-info select {
+.registration-info select,.alergic-info select, .exception-info select{
     margin-top: 1%;
     margin-left: 4%;
     width: 71%;
@@ -282,7 +285,7 @@ input[type=radio]:first-child{
     margin-left: 5%
 }
 
-#form-exp, #alergic-exp{
+#form-exp, #alergic-exp, #exception-exp{
     margin-left: 4%;  
 }
 
@@ -297,7 +300,7 @@ input[type=radio]:first-child{
 
 /* table in report page */
 #kids-table{
-    margin-top: 6%;
+    margin: 5% 0 0 6.5%;
     background-color: #3d3d3d;
     color: white;
 }
@@ -314,7 +317,9 @@ input[type=radio]:first-child{
 #kids-table th{
    padding: 0 51.4px 0 51.4px;
    text-align: center;
+   word-spacing: 8px;
    border-bottom: solid 1px #dfe4ea;
+
 }
 
 .shop{

@@ -40,14 +40,19 @@
        
        else if($method == "GET" &&  isSet($_GET['route']) ){
            switch ($_GET['route']) {
-                  case "get_users":
+                 case "get_users":
                     $user = new Users();
                     $user->getAll();
                     break;
         
-                 case "create_report":
+                 case "get_Alergicreport":
                     $kids= new Kids();
-                    $kids -> createKidAlergicreport();
+                    $kids -> getAllallergies();
+                    break;
+
+                case "get_Exceptionsreport":
+                    $kids= new Kids();
+                    $kids -> getAllExceptions();
                     break;
 
                  case "getKidInfo":

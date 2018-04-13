@@ -38,59 +38,22 @@
                   <label  for="report"> choose report: </label>
                     <select name="optionsReport" size="1" id="report-choosing"> 
                             <option value="allergies-report" selected> Allergies Report </option>
-                            <option value="shopping-report"> Shopping Report </option>
+                            <option value="exceptions-report"> Exceptions Report </option>
                             <option value="presence-report"> Presence Report </option>
                     </select>
                 </div>
            </div>
         </div>
-        <!-- <div class="row reports-line">
-              <div class="col span-1-of-2 box">
-                  <div class="report-info">
-                    <label for="start-date"> start date: </label>
-                    <input name="startDate" type="date"/>
-                  </div>
-              </div> 
-            
-              <div class="col span-1-of-2 box">
-                   <div class="report-info">
-                      <label for="end-date"> end date: </label>
-                      <input name="endDate" type="date"/>
-                   </div>
-              </div>
-        </div> -->
 
-         <button type="button" id="options_for_report"> Add </button>
+         <button type="button" id="options_for_report" onClick="getReports()"> add</button>
      </form>
 </section>
 
-<section id="alergic-report">
-    <form>
-        <p class="success-message"></p>
-            <div class="row alergic-update">
-                 <div class="col span-1-of-2 box">
-                    <div class="alergic-info">
-                        <label id="alergic-exp"> Please choose kind of alergic </label> <br>
-                        <select name="alergicOptions" size="1" id="alergic"> 
-                                <option value="celiac"> Celiac </option>
-                                <option value="eggs"> Eggs </option>
-                                <option value="fish"> Fish </option>
-                                <option value="kiwis"> Kiwis </option>
-                                <option value="lactoseintolerance"> Lactose intolerance </option>
-                                <option value="nuts"> Nuts </option>
-                                <option value="soy"> Soy </option>
-                                <option value="strawberries">  Strawberries </option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <input type="button" value="create" class="create-botton" onClick="getReports()"/>
-        </form>  
- </section>
 
-         <table id="kids-table"></table>
-        <script src="reports.js"></script>
-        <script src="commons.js"></script>
-        <script src="main.js"></script>
+    <div class="report-data-container"></div>
+ 
+
+    <script src="reports/reports.js"></script>
+    <script src="commons.js"></script>
 </body>
 </html>
