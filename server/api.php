@@ -35,14 +35,6 @@
                 case "create_table":
                     $items = new Items();
                     $items->createItemsTable();
-                case "create_Alergicreport":
-                    $kids= new Kids();
-                    $kids -> createKidAlergicreport();
-                    break;
-                case "create_Exceptionsreport":
-                    $kids= new Kids();
-                    $kids -> createKidExceptionReport();
-                    break;
             }
        }
        

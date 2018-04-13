@@ -52,189 +52,31 @@
             
         }
 
+
+
+
         public function getAllallergies(){
-            if($_GET['alergicOptions']=='celiac'){
-                $sql = "SELECT kids.fname, users.lastname, users.firstname, users.mobilephone, kids.celiac FROM kids
-                INNER JOIN users ON kids.parentId=users.parentId AND kids.celiac=1 <> '' ";
-                $result =$this->db->query($sql); 
-                if($result){
-                    $data= [];
-                    while($row = mysqli_fetch_array($result)){
-                        array_push($data, (object) [
-                            'first_name' => $row['fname'],
-                            'last_name' => $row['lastname'],
-                            'parent_name' => $row['firstname'],
-                            'phone_number' => $row['mobilephone']
-                        ]);  
-            }
-                    //kids.eggs, kids.fish, kids.kiwis, kids.lactoseintolerance, kids.nuts, kids.soy, kids.strawberries
-
+            $sql = "SELECT kids.fname, users.lastname, users.firstname, users.mobilephone, kids.eggs FROM kids
+            INNER JOIN users ON kids.parentId=users.parentId AND kids.{$_GET['alergicOptions']}=1 <> '' ";
+            $result =$this->db->query($sql); 
+            if($result){
+                $data= [];
+                while($row = mysqli_fetch_array($result)){
+                    array_push($data, (object) [
+                        'first_name' => $row['fname'],
+                        'last_name' => $row['lastname'],
+                        'parent_name' => $row['firstname'],
+                        'phone_number' => $row['mobilephone']
+                    ]);  
                 }
-                echo json_encode((object) [
-                    'data' => $data,
-                    'success'=>true
-                ]);
+        
             }
+            echo json_encode((object) [
+                'data' => $data,
+                'success'=>true
+            ]);
+ 
 
-            else if($_GET['alergicOptions']=='eggs'){
-                $sql = "SELECT kids.fname, users.lastname, users.firstname, users.mobilephone, kids.eggs FROM kids
-                INNER JOIN users ON kids.parentId=users.parentId AND kids.eggs=1 <> '' ";
-                $result =$this->db->query($sql); 
-                if($result){
-                    $data= [];
-                    while($row = mysqli_fetch_array($result)){
-                        array_push($data, (object) [
-                            'first_name' => $row['fname'],
-                            'last_name' => $row['lastname'],
-                            'parent_name' => $row['firstname'],
-                            'phone_number' => $row['mobilephone']
-                        ]);  
-            }
-            
-                }
-                echo json_encode((object) [
-                    'data' => $data,
-                    'success'=>true
-                ]);
-            }
-
-            else if($_GET['alergicOptions']=='fish'){
-                $sql = "SELECT kids.fname, users.lastname, users.firstname, users.mobilephone, kids.fish FROM kids
-                INNER JOIN users ON kids.parentId=users.parentId AND kids.fish=1 <> '' ";
-                $result =$this->db->query($sql); 
-                if($result){
-                    $data= [];
-                    while($row = mysqli_fetch_array($result)){
-                        array_push($data, (object) [
-                            'first_name' => $row['fname'],
-                            'last_name' => $row['lastname'],
-                            'parent_name' => $row['firstname'],
-                            'phone_number' => $row['mobilephone']
-                        ]);  
-            }
-            
-                }
-                echo json_encode((object) [
-                    'data' => $data,
-                    'success'=>true
-                ]);
-            }
-
-            else if($_GET['alergicOptions']=='kiwis'){
-                $sql = "SELECT kids.fname, users.lastname, users.firstname, users.mobilephone, kids.fish FROM kids
-                INNER JOIN users ON kids.parentId=users.parentId AND kids.kiwis=1 <> '' ";
-                $result =$this->db->query($sql); 
-                if($result){
-                    $data= [];
-                    while($row = mysqli_fetch_array($result)){
-                        array_push($data, (object) [
-                            'first_name' => $row['fname'],
-                            'last_name' => $row['lastname'],
-                            'parent_name' => $row['firstname'],
-                            'phone_number' => $row['mobilephone']
-                        ]);  
-            }
-            
-                }
-                echo json_encode((object) [
-                    'data' => $data,
-                    'success'=>true
-                ]);
-            }
-
-            else if($_GET['alergicOptions']=='lactoseintolerance'){
-                $sql = "SELECT kids.fname, users.lastname, users.firstname, users.mobilephone, kids.fish FROM kids
-                INNER JOIN users ON kids.parentId=users.parentId AND kids.lactoseintolerance=1 <> '' ";
-                $result =$this->db->query($sql); 
-                if($result){
-                    $data= [];
-                    while($row = mysqli_fetch_array($result)){
-                        array_push($data, (object) [
-                            'first_name' => $row['fname'],
-                            'last_name' => $row['lastname'],
-                            'parent_name' => $row['firstname'],
-                            'phone_number' => $row['mobilephone']
-                        ]);  
-            }
-            
-                }
-                echo json_encode((object) [
-                    'data' => $data,
-                    'success'=>true
-                ]);
-            }
-
-            else if($_GET['alergicOptions']=='nuts'){
-                $sql = "SELECT kids.fname, users.lastname, users.firstname, users.mobilephone, kids.fish FROM kids
-                INNER JOIN users ON kids.parentId=users.parentId AND kids.nuts=1 <> '' ";
-                $result =$this->db->query($sql); 
-                if($result){
-                    $data= [];
-                    while($row = mysqli_fetch_array($result)){
-                        array_push($data, (object) [
-                            'first_name' => $row['fname'],
-                            'last_name' => $row['lastname'],
-                            'parent_name' => $row['firstname'],
-                            'phone_number' => $row['mobilephone']
-                        ]);  
-            }
-            
-                }
-                echo json_encode((object) [
-                    'data' => $data,
-                    'success'=>true
-                ]);
-            }
-
-            else if($_GET['alergicOptions']=='soy'){
-                $sql = "SELECT kids.fname, users.lastname, users.firstname, users.mobilephone, kids.fish FROM kids
-                INNER JOIN users ON kids.parentId=users.parentId AND kids.soy=1 <> '' ";
-                $result =$this->db->query($sql); 
-                if($result){
-                    $data= [];
-                    while($row = mysqli_fetch_array($result)){
-                        array_push($data, (object) [
-                            'first_name' => $row['fname'],
-                            'last_name' => $row['lastname'],
-                            'parent_name' => $row['firstname'],
-                            'phone_number' => $row['mobilephone']
-                        ]);  
-            }
-            
-                }
-                echo json_encode((object) [
-                    'data' => $data,
-                    'success'=>true
-                ]);
-            }
-
-            else if($_GET['alergicOptions']=='strawberries'){
-                $sql = "SELECT kids.fname, users.lastname, users.firstname, users.mobilephone, kids.fish FROM kids
-                INNER JOIN users ON kids.parentId=users.parentId AND kids.strawberries=1 <> '' ";
-                $result =$this->db->query($sql); 
-                if($result){
-                    $data= [];
-                    while($row = mysqli_fetch_array($result)){
-                        array_push($data, (object) [
-                            'first_name' => $row['fname'],
-                            'last_name' => $row['lastname'],
-                            'parent_name' => $row['firstname'],
-                            'phone_number' => $row['mobilephone']
-                        ]);  
-            }
-            
-                }
-                echo json_encode((object) [
-                    'data' => $data,
-                    'success'=>true
-                ]);
-            }
-
-            else{
-                 echo json_encode((object) [
-                    'error'=>true
-                ]);
-            }
         }
 
         public function getAllExceptions(){
@@ -266,36 +108,7 @@
                 ]);
             }
         }
-
-      
-    
-        public function createKidAlergicReport(){
-            if(($_POST['optionsReport'])=='allergies-report'){
-                $result = $_POST['optionsReport'];
-                if($result){
-                     echo json_encode((object) [
-                         'success'=>true
-                    ]);
-            }
-            else{
-                $this->error();
-            }
-        }
-    }
-
-        public function createKidExceptionReport(){
-            if(($_POST['optionsReport'])=='exceptions-report'){
-                $result = $_POST['optionsReport'];
-                if($result){
-                    echo json_encode((object) [
-                        'success'=>true
-                    ]);
-            }
-            else{
-                $this->error();
-            }
-        }
-    }
+  
         function showInfoAboutakid(){
             
            $sql = "SELECT kids.kidId, kids.fname, kids.bDate, kids.genders, kids.celiac,

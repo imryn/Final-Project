@@ -59,7 +59,7 @@ h2{
     margin-left: 12.5%;
 }
 
-#kid-observation, #alergic-report, #exception-report{
+#kid-observation{
     display: none;
 }
 

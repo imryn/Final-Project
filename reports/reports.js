@@ -2,17 +2,12 @@
 
 
 function getReports(){
-
     var data = getFormData("#reports form");
-    data['route'] = 'create_Alergicreport';
-    httpPost("/Sadna/server/api.php",data,function(response){
-        if(response.success){
-            $(document).ready(function(){
-                $("#alergic-report").fadeToggle(2000);  
-            });
-        }
 
+    $.get("reports/" + data.optionsReport + ".html",function(response){
+        document.querySelector(".report-data-container").innerHTML = response;
     })
+
 }
 
 function getAlergicReports(){
@@ -23,6 +18,8 @@ function getAlergicReports(){
            }
         });
     }
+
+ 
 
 function getExceptionReports(){
     var data = getFormData("#exception-report form");
