@@ -61,6 +61,11 @@
                     $kids= new Kids();
                     $kids -> showInfoAboutakid();
                     break;
+                
+                 case "getKindergartenkidList":
+                    $kids= new Kids();
+                    $kids -> showKindergartenkidList();
+                    break;
             }
        }
 ?>

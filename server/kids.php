@@ -100,9 +100,23 @@
         //     }
 
         public function showKindergartenkidList(){
-            $sql = "SELECT kids.fname, users.lastname, users.kindergartenid FROM kids INNER JOIN users,crew
-            ON kids.parentId=users.parentId AND users.kindergartenid= "
-        }
+            $sql = "SELECT kids.fname, users.lastname FROM kids INNER JOIN users
+            ON kids.parentId=users.parentId INNER JOIN kindergarten ON users.kindergartenid=kindergarten.kindergartenId";
+
+            $result =$this->db->query($sql);
+            if($result){
+                while ($row  = $result->fetch_assoc() ) {
+                    $data[] = $row;
+                }
+                echo json_encode((object) [
+                    'data' => $data,
+                    'success'=>true
+                ]);
+            }
+            else{
+                 $this->error();
+             }
+     }
   
         function showInfoAboutakid(){
             

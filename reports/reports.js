@@ -6,6 +6,7 @@ function getReports(){
 
     $.get("reports/" + data.optionsReport + ".html",function(response){
         document.querySelector(".report-data-container").innerHTML = response;
+        showKindergartenkidList();
     })
 
 }
@@ -28,6 +29,18 @@ function getExceptionReports(){
             createExceptionTable(response.data);
            }
         });
+}
+
+function showKindergartenkidList(){
+    httpGet("/Sadna/server/api.php?route=getKindergartenkidList",{}, function(response){
+        if(response.success){
+            var flatData = response.data.map(function(item){
+                return item.fname + " " + item.lastname;
+            })
+            
+            putInfoInsideSelector("#exception-report #exception" ,flatData);
+        }
+    });
 }
 
 function buildThs(array){
