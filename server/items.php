@@ -29,7 +29,7 @@
 
                 // $sql = "INSERT INTO kids (fname,kidId,bDate,genders,celiac,eggs,fish,
                 // kiwis,lactoseintolerance,nuts,soy,strawberries,vegan,vegetarian,comments,parentId) VALUES ($values)";
-        $sql = "INSERT INTO itemsitem, items.quantity  <> '' ";
+                $sql = "INSERT INTO items.item, items.quantity  <> '' ";
                 $result =$this->db->query($sql); 
                 if($result){
                     $data= [];
