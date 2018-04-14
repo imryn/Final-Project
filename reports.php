@@ -22,7 +22,7 @@
 
 </head>
 
-<body>
+<body onload="getReports()">
        <header>
             <templateHtml src="picture-container/picture-container.html"></templateHtml>
             <?php include "nav-menu/nav-menu-container.php" ?>

@@ -111,14 +111,11 @@ function httpPost(url,data,callback){
 
 
 function putInfoInsideSelector(selectorId, data){
-    console.log(data);
-    
     var optionsString="";
 
     for(var i=0; i < data.length; i++){
       optionsString = optionsString + "<option>" + data[i] + "</option>";
     }
-
 
     document.querySelector(selectorId).innerHTML = optionsString;
 }
