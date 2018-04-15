@@ -310,16 +310,22 @@ input[type=radio]:first-child{
     color: white;
 }
 
-#kids-table td:first-child{
+#item-table{
+    margin: 5% 0 0 10.5%;
+    background-color: #9b59b6;
+    color: white;
+}
+
+#kids-table td:first-child, #item-table td:first-child{
    padding: 0 8px 0 8px;
 }
 
-#kids-table td{
+#kids-table td, #item-table td{
     text-align: center;
     border: solid 1px #dfe4ea;
 }
 
-#kids-table th{
+#kids-table th, #item-table th{
    padding: 0 51.4px 0 51.4px;
    text-align: center;
    word-spacing: 8px;

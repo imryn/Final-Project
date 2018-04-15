@@ -54,7 +54,6 @@ function buildThs(array){
 
 
 function createAlergicTable(data){
-    console.log(data)
     var tableElement = document.getElementById("kids-table");
     var table='';
 
@@ -68,7 +67,6 @@ function createAlergicTable(data){
 }
 
 function createExceptionTable(data){
-    console.log(data)
     var tableElement = document.getElementById("kids-table");
     var table='';
 

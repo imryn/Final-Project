@@ -35,7 +35,7 @@
                     <div class="col span-1-of-3 box">
                         <div class="list-info">
                             <label>Category: </label> 
-                            <select name="Category" size="1" id="itemcategory" onchange="SelectCategory(this.value);" > 
+                            <select name="itemCategory" size="1" id="itemcategory" onchange="SelectCategory(this.value);" > 
                                 <option value="Empty" > --Select Category--  </option>
                                 <option value="Artmaterials"> Art materials  </option>
                                 <option value="Office" > Office  </option>
@@ -51,7 +51,7 @@
 
                         <select disabled name="item" size="0" id="empty">  </select>
 
-                        <select name="item" size="1" id="artitems" > 
+                        <select name="itemName" size="1" id="artitems"> 
                             <option value="" > --Select Item--  </option>
                             <option value="Crayons (package of 24)"> Crayons (package of 24)</option>
                             <option value="Crayons (package of 200)" > Crayons (package of 200)  </option>
@@ -71,7 +71,7 @@
                             <option value="Paper-yellow-A4 (package of 500)" > Paper-Yellow-A4 (package of 500)  </option>
                         </select>
                     
-                        <select name="item" size="1" id="officeitems" > 
+                        <select name="itemName1" size="1" id="officeitems" > 
                                 <option value="" > --Select Item--  </option>
                                 <option value="Folder"> Folder  </option>
                                 <option value="Notebook"> Notebook </option>
@@ -84,7 +84,7 @@
                                 <option value="Staples"> Staples  </option>
                         </select>
             
-                        <select name="item" size="1" id="fooditems" > 
+                        <select name="itemName2" size="1" id="fooditems" > 
                                 <option value="" > --Select Item--  </option>
                                 <option value="Apples"> Apples (kg)  </option>
                                 <option value="Bread" > Bread  </option>
@@ -116,13 +116,9 @@
                             </div>
                         </div>
                 </div>
-            
-          
-                <!-- <input type="button"  value="Add" id="add"  onClick="getItemList()"> -->
-                 <button type="button" id="add" onClick="getItemList()"> Add</button>
+                    <input type="button" value="Add" id="add" onClick="getItemList()"/>
             </form>  
-
-            <table id="item-table"> 
+            <table id="item-table"> </table >
             <!-- <tr>
                 <th>Category</th>
                 <th>Item Name</th> 
@@ -130,8 +126,6 @@
                 <th>Unit Price</th>
                 <th>Total</th>
             </tr> -->
-            
-            </table >
     </section>
 
             
@@ -162,15 +156,8 @@
             // }
 
             // $conn->close(); ?> -->
-             
-        
            
         <script src="shopping-list.js"></script>
         <script src="commons.js"></script>
-
-        
-
-    
 </body>
-
 </html>

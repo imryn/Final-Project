@@ -73,8 +73,6 @@
                 'data' => $data,
                 'success'=>true
             ]);
- 
-
         }
 
         // public function getAllExceptions(){

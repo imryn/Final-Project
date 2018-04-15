@@ -20,46 +20,44 @@
                   ]);
               }
 
-    private function getTotalItems(){
-                // $sql = "INSERT INTO kids (fname,kidId,bDate,genders,celiac,eggs,fish,
-                // kiwis,lactoseintolerance,nuts,soy,strawberries,vegan,vegetarian,comments,parentId) VALUES ($values)";
+    public function getTotalItems(){
                 $this->allowSpecialCharacters($_GET);
-                
-                $sql = "SELECT itemCategory, itemName, unitPrice FROM items WHERE itemCategory='{$_GET['Category']}' 
-                AND itemName='{$_GET['item']}' AND '{$_GET['quantity']}' <> '' ";
+
+                $sql = "SELECT items.itemCategory, items.itemName, items.unitPrice FROM items WHERE items.itemCategory='{$_GET['itemCategory']}' 
+                AND items.itemName='{$_GET['itemName']}' AND '{$_GET['quantity']}'  <> '' ";
                 $result =$this->db->query($sql); 
                 if($result){
-                    $data= [];
-                    while($row = mysqli_fetch_array($result)){
-                        
-                       
-                            array_push($data, (object) [
-                            'category' => $row['itemCategory'],
-                            'Item_Name' => $row['itemName'],
-                            'Quantity' => $row['quantity'],
-                            'unitPrice' => $row['unitPrice'],
-                            ]);
-                      
-                    }
+                    // $data= [];
+                    // while($row = mysqli_fetch_array($result)){
+                    //         array_push($data, (object) [
+                    //         'category' => $row['items.itemCategory'],
+                    //         'Item_Name' => $row['items.itemName'],
+                    //         'Quantity' => $row['quantity'],
+                    //         'unitPrice' => $row['items.unitPrice'],
+                    //         ]);
+                    //     }
+                        while ($row  = $result->fetch_assoc() ) {
+                            $data[] = $row;
+                        }
+                    
                     echo json_encode((object) [
                         'data' => $data,
                         'success'=>true
                     ]);
                 }
+
                 else{
-                    echo json_encode((object) [
-                        'error'=>true
-                    ]);
+                    $this->error();
                 }
-    }
+            }       
 
     // public function createItemsTable(){
     //     if($_GET['optionsReport'] == 'allergies-report'){
     //         $this->getItems();
     //     }
     // }
-
-}
+    
+} 
 ?>
                 
 

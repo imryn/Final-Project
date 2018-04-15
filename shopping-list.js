@@ -54,14 +54,13 @@ function buildThs(array){
 }
 
 function createItemsTable(data){
-    console.log(data)
     var tableElement = document.getElementById("item-table");
     var table='';
 
     table = table + buildThs(['Category', 'Item Name','Quantity', 'Price']);
 
     data.forEach(function(item) {
-        table = table + '<tr><td>'+item.category+'</td><td>' + item.Item_Name + '</td><td>'+item.Quantity+'</td><td>'+item.unitPrice+'</td></tr>';
+        table = table + '<tr><td>'+item.itemCategory+'</td><td>' + item.itemName + '</td><td>'+item.quantity+'</td><td>'+item.unitPrice+'</td></tr>';
     });
     tableElement.innerHTML = table;
     console.log(table)
@@ -70,7 +69,7 @@ function createItemsTable(data){
 function getItemList(){
 
     var data = getFormData("#shopping-list form");
-
+    console.log(data)
     httpGet("/Sadna/server/api.php?route=getItems",data, function(response) {
         if(response.success && response.data instanceof Array){
             createItemsTable(response.data);
