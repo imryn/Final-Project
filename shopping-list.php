@@ -118,10 +118,10 @@
                 </div>
             
           
-                 <button type="button"  id="add"  onClick="getItemList()" > Add</button> 
+                 <input type="button"  value="add" id="add"  onClick="getItemList()"/> 
             </form>  
 
-            <table id="item-table" style="width:100%; border: 1px solid black" > 
+            <table id="item-table"> 
             <!-- <tr>
                 <th>Category</th>
                 <th>Item Name</th> 
