@@ -7,6 +7,12 @@
                   $db =  DB::getInstance();
                   $this->db = $db->getConnection();
               }
+
+              private function allowSpecialCharacters($method){
+                foreach( $method as $key => $value ) {
+                         $method[$key] = strip_tags($this->db->real_escape_string($value));
+                }
+            }
       
               private function error(){
                   echo json_encode((object) [
@@ -17,6 +23,8 @@
     private function getTotalItems(){
                 // $sql = "INSERT INTO kids (fname,kidId,bDate,genders,celiac,eggs,fish,
                 // kiwis,lactoseintolerance,nuts,soy,strawberries,vegan,vegetarian,comments,parentId) VALUES ($values)";
+                $this->allowSpecialCharacters($_GET);
+                
                 $sql = "SELECT itemCategory, itemName, unitPrice FROM items WHERE itemCategory='{$_GET['Category']}' 
                 AND itemName='{$_GET['item']}' AND '{$_GET['quantity']}' <> '' ";
                 $result =$this->db->query($sql); 

@@ -56,25 +56,25 @@
                             <option value="Crayons (package of 24)"> Crayons (package of 24)</option>
                             <option value="Crayons (package of 200)" > Crayons (package of 200)  </option>
                             <option value="Glue-stick (package of 5)" > Glue-stick (package of 5)  </option>
-                            <option value="Glue-liquid-100ml" > Glue-liquid-100ml (package of 3)  </option>
+                            <option value="Glue-liquid-100ml (package of 3)" > Glue-liquid-100ml (package of 3)  </option>
                             <option value="Glue-liquid-300ml" > Glue-liquid-300ml  </option>
                             <option value="Glue-liquid-1liter" > Glue-liquid-1liter  </option>
                             <option value="Paper-blue-A3 (package of 500)" > Paper-blue-A3 (package of 500)  </option>
                             <option value="Paper-green-A3 (package of 500)" > Paper-green-A3 (package of 500)  </option>
                             <option value="Paper-red-A3 (package of 500)" > Paper-red-A3 (package of 500)  </option>
                             <option value="Paper-white-A3 (package of 500)" > Paper-white-A3 (package of 500)  </option>
-                            <option value="Paper-Yellow-A3 (package of 500)" > Paper-Yellow-A3 (package of 500)  </option>
+                            <option value="Paper-yellow-A3 (package of 500)" > Paper-Yellow-A3 (package of 500)  </option>
                             <option value="Paper-blue-A4 (package of 500)" > Paper-blue-A4 (package of 500)  </option>
                             <option value="Paper-green-A4 (package of 500)" > Paper-green-A4 (package of 500)  </option>
                             <option value="Paper-red-A4 (package of 500)" > Paper-red-A4 (package of 500)  </option>
                             <option value="Paper-white-A4 (package of 500)" > Paper-white-A4 (package of 500)  </option>
-                            <option value="Paper-Yellow-A4 (package of 500)" > Paper-Yellow-A4 (package of 500)  </option>
+                            <option value="Paper-yellow-A4 (package of 500)" > Paper-Yellow-A4 (package of 500)  </option>
                         </select>
                     
                         <select name="item" size="1" id="officeitems" > 
                                 <option value="" > --Select Item--  </option>
                                 <option value="Folder"> Folder  </option>
-                                <option value="Notebook (package of 5)" > Notebook (package of 5)  </option>
+                                <option value="Notebook"> Notebook </option>
                                 <option value="Pens-black (package of 10)" > Pens-black (package of 10)  </option>
                                 <option value="Pens-blue (package of 10)" > Pens-blue (package of 10)  </option>
                                 <option value="Pens-red (package of 10)" > Pens-red (package of 10)  </option>
@@ -94,7 +94,7 @@
                                 <option value="Chocolate spread-500gram" > Chocolate spread-500gram  </option>
                                 <option value="Cucumber (kg)"> Cucumber (kg)  </option>
                                 <option value="Grape juice syrup 1 liter" > Grape juice syrup 1 liter  </option>
-                                <option value="Hummus-500gram (kg)" > Hummus-500gram (kg)  </option>
+                                <option value="Hummus-500gram" > Hummus-500gram (kg)  </option>
                                 <option value="Lettuce (kg)" > Lettuce (kg) </option>
                                 <option value="Olives (can)"> Olives (can)  </option>
                                 <option value="Onion (kg)" > Onion (kg)  </option>
