@@ -122,13 +122,13 @@
             </form>  
 
             <table id="item-table" style="width:100%; border: 1px solid black" > 
-            <tr>
+            <!-- <tr>
                 <th>Category</th>
                 <th>Item Name</th> 
                 <th>Quantity</th>
                 <th>Unit Price</th>
                 <th>Total</th>
-            </tr>
+            </tr> -->
             
             </table >
     </section>
