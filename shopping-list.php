@@ -131,43 +131,38 @@
             </tr>
             
             </table >
+    </section>
 
-
-            <?php
-            $servername = "us-cdbr-gcp-east-01.cleardb.net";
-            $username = "b1cecd1cfb136f";
-            $password = "7e767b54";
-            $dbname = "gcp_69477eab26f5d4ebcd7f";
             
-            // Create connection
-            $conn = new mysqli($servername, $username, $password, $dbname);
-            // Check connection
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-            } 
+            <!-- // $servername = "us-cdbr-gcp-east-01.cleardb.net"; //
+            // $username = "b1cecd1cfb136f";
+            // $password = "7e767b54";
+            // $dbname = "gcp_69477eab26f5d4ebcd7f";
+            
+            // // Create connection
+            // $conn = new mysqli($servername, $username, $password, $dbname);
+            // // Check connection
+            // if ($conn->connect_error) {
+            //     die("Connection failed: " . $conn->connect_error);
+            // } 
 
-            $sql = "SELECT unitPrice FROM items";
-            $result = $conn->query($sql);
+            // $sql = "SELECT unitPrice FROM items";
+            // $result = $conn->query($sql);
 
-            if ($result->num_rows > 0) {
-                echo "<table><tr>  
-                        <th>Category</th>
-                        <th>Item Name</th> 
-                        <th>Quantity</th>
-                        <th>Unit Price</th>
-                        <th>Total</th></tr>";
-                // output data of each row
-                while($row = $result->fetch_assoc()) {
-                    echo "<tr><td>" . $row["itemCategory"]. "</td><td>" . $row["ItemName"]. "</td><td>" . $row[" "]. "</td><td>" . $row["unitPrice"]. " </td><td>" . $row[" "]. "</td></tr>";
-                }
-                echo "</table>";
-            } else {
-                echo "0 results";
-            }
+            // if ($result->num_rows > 0) {
+                
+            //     // output data of each row
+            //     while($row = $result->fetch_assoc()) {
+            //         echo "<tr><td>" . $row["itemCategory"]. "</td><td>" . $row["ItemName"]. "</td><td>" . $row[" "]. "</td><td>" . $row["unitPrice"]. " </td><td>" . $row[" "]. "</td></tr>";
+            //     }
+            //     echo "</table>";
+            // } else {
+            //     echo "0 results";
+            // }
 
-            $conn->close();
-            ?>
-        </section>
+            // $conn->close(); ?> -->
+             
+        
            
         <script src="shopping-list.js"></script>
         <script src="commons.js"></script>
