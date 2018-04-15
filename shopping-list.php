@@ -118,7 +118,8 @@
                 </div>
             
           
-                 <input type="button"  value="Add" id="add"  onClick="getItemList()"> 
+                <!-- <input type="button"  value="Add" id="add"  onClick="getItemList()"> -->
+                 <button type="button" id="add" onClick="getItemList()"> Add</button>
             </form>  
 
             <table id="item-table"> 
