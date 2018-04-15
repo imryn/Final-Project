@@ -53,59 +53,59 @@
 
                         <select name="item" size="1" id="artitems" > 
                             <option value="" > --Select Item--  </option>
-                            <option value="Crayons-24"> Crayons (package of 24)</option>
-                            <option value="Crayons-200" > Crayons (package of 200)  </option>
-                            <option value="Glue-stick" > Glue-stick (package of 5)  </option>
+                            <option value="Crayons (package of 24)"> Crayons (package of 24)</option>
+                            <option value="Crayons (package of 200)" > Crayons (package of 200)  </option>
+                            <option value="Glue-stick (package of 5)" > Glue-stick (package of 5)  </option>
                             <option value="Glue-liquid-100ml" > Glue-liquid-100ml (package of 3)  </option>
                             <option value="Glue-liquid-300ml" > Glue-liquid-300ml  </option>
                             <option value="Glue-liquid-1liter" > Glue-liquid-1liter  </option>
-                            <option value="Paper-blue-A3" > Paper-blue-A3 (package of 500)  </option>
-                            <option value="Paper-green-A3" > Paper-green-A3 (package of 500)  </option>
-                            <option value="Paper-red-A3" > Paper-red-A3 (package of 500)  </option>
-                            <option value="Paper-white-A3" > Paper-white-A3 (package of 500)  </option>
-                            <option value="Paper-yellow-A3" > Paper-Yellow-A3 (package of 500)  </option>
-                            <option value="Paper-blue-A4" > Paper-blue-A4 (package of 500)  </option>
-                            <option value="Paper-green-A4" > Paper-green-A4 (package of 500)  </option>
-                            <option value="Paper-red-A4" > Paper-red-A4 (package of 500)  </option>
-                            <option value="Paper-white-A4" > Paper-white-A4 (package of 500)  </option>
-                            <option value="Paper-yellow-A4" > Paper-Yellow-A4 (package of 500)  </option>
+                            <option value="Paper-blue-A3 (package of 500)" > Paper-blue-A3 (package of 500)  </option>
+                            <option value="Paper-green-A3 (package of 500)" > Paper-green-A3 (package of 500)  </option>
+                            <option value="Paper-red-A3 (package of 500)" > Paper-red-A3 (package of 500)  </option>
+                            <option value="Paper-white-A3 (package of 500)" > Paper-white-A3 (package of 500)  </option>
+                            <option value="Paper-Yellow-A3 (package of 500)" > Paper-Yellow-A3 (package of 500)  </option>
+                            <option value="Paper-blue-A4 (package of 500)" > Paper-blue-A4 (package of 500)  </option>
+                            <option value="Paper-green-A4 (package of 500)" > Paper-green-A4 (package of 500)  </option>
+                            <option value="Paper-red-A4 (package of 500)" > Paper-red-A4 (package of 500)  </option>
+                            <option value="Paper-white-A4 (package of 500)" > Paper-white-A4 (package of 500)  </option>
+                            <option value="Paper-Yellow-A4 (package of 500)" > Paper-Yellow-A4 (package of 500)  </option>
                         </select>
                     
                         <select name="item" size="1" id="officeitems" > 
                                 <option value="" > --Select Item--  </option>
-                                <option value="folder"> Folder  </option>
-                                <option value="notebook" > Notebook (package of 5)  </option>
-                                <option value="Pens-black" > Pens-black (package of 10)  </option>
-                                <option value="Pens-blue" > Pens-blue (package of 10)  </option>
-                                <option value="Pens-red" > Pens-red (package of 10)  </option>
-                                <option value="perforated"> Perforated  </option>
-                                <option value="rubber-bands"> Rubber bands (package of 50)  </option>
-                                <option value="stapler"> Stapler  </option>
-                                <option value="staples"> Staples  </option>
+                                <option value="Folder"> Folder  </option>
+                                <option value="Notebook (package of 5)" > Notebook (package of 5)  </option>
+                                <option value="Pens-black (package of 10)" > Pens-black (package of 10)  </option>
+                                <option value="Pens-blue (package of 10)" > Pens-blue (package of 10)  </option>
+                                <option value="Pens-red (package of 10)" > Pens-red (package of 10)  </option>
+                                <option value="Perforated"> Perforated  </option>
+                                <option value="Rubber bands (package of 50)"> Rubber bands (package of 50)  </option>
+                                <option value="Stapler"> Stapler  </option>
+                                <option value="Staples"> Staples  </option>
                         </select>
             
                         <select name="item" size="1" id="fooditems" > 
                                 <option value="" > --Select Item--  </option>
-                                <option value="apples"> Apples (kg)  </option>
-                                <option value="bread" > Bread  </option>
-                                <option value="butter" > Butter spread  </option>
-                                <option value="wh-cheese-5%"> Cheese-white-5%-500gram  </option>
-                                <option value="ye-cheese" > Cheese-yellow-400gram  </option>
-                                <option value="chocolate" > Chocolate spread-500gram  </option>
-                                <option value="cucumber"> Cucumber (kg)  </option>
-                                <option value="grape-juice" > Grape juice syrup 1 liter  </option>
-                                <option value="tehina" > Hummus-500gram (kg)  </option>
-                                <option value="lettuce" > Lettuce (kg) </option>
-                                <option value="olives"> Olives (can)  </option>
-                                <option value="onion" > Onion (kg)  </option>
-                                <option value="pepper-green" > Pepper-green (kg)  </option>
-                                <option value="pepper-red" > Pepper-red (kg) </option>
-                                <option value="pepper-yellow" > Pepper-yellow (kg) </option>
-                                <option value="pickles" > Pickles (can)  </option>
-                                <option value="raspberry-juice" > Raspberry juice syrup 1 liter  </option>
-                                <option value="tomato" > Tomato (kg)  </option>
-                                <option value="tehina" > Tehina-500gram (kg)  </option>
-                                <option value="tuna" > Tuna (package of 4)  </option>
+                                <option value="Apples"> Apples (kg)  </option>
+                                <option value="Bread" > Bread  </option>
+                                <option value="Butter spread" > Butter spread  </option>
+                                <option value="Cheese-white-5%-500gram"> Cheese-white-5%-500gram  </option>
+                                <option value="Cheese-yellow-400gram" > Cheese-yellow-400gram  </option>
+                                <option value="Chocolate spread-500gram" > Chocolate spread-500gram  </option>
+                                <option value="Cucumber (kg)"> Cucumber (kg)  </option>
+                                <option value="Grape juice syrup 1 liter" > Grape juice syrup 1 liter  </option>
+                                <option value="Hummus-500gram (kg)" > Hummus-500gram (kg)  </option>
+                                <option value="Lettuce (kg)" > Lettuce (kg) </option>
+                                <option value="Olives (can)"> Olives (can)  </option>
+                                <option value="Onion (kg)" > Onion (kg)  </option>
+                                <option value="Pepper-green (kg)" > Pepper-green (kg)  </option>
+                                <option value="Pepper-red (kg)" > Pepper-red (kg) </option>
+                                <option value="Pepper-yellow (kg)" > Pepper-yellow (kg) </option>
+                                <option value="Pickles (can)" > Pickles (can)  </option>
+                                <option value="Raspberry juice syrup 1 liter" > Raspberry juice syrup 1 liter  </option>
+                                <option value="Tomato (kg)" > Tomato (kg)  </option>
+                                <option value="Tehina-500gram (kg)" > Tehina-500gram (kg)  </option>
+                                <option value="Tuna (package of 4)" > Tuna (package of 4)  </option>
                         </select>
                     </div>
                 </div>
