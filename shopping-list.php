@@ -118,7 +118,7 @@
                 </div>
             
           
-                 <button type="button"  id="add"  onClick="createTable()" > Add</button> 
+                 <button type="button"  id="add"  onClick="getItemList()" > Add</button> 
             </form>  
 
             <table id="item-table" style="width:100%; border: 1px solid black" > 

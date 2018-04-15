@@ -66,6 +66,11 @@
                     $kids= new Kids();
                     $kids -> showKindergartenkidList();
                     break;
+                case "getItems":
+                    $items=new Items(); 
+                    $items->getTotalItems();
+                    break;
+
             }
        }
 ?>
