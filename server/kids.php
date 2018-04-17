@@ -27,10 +27,10 @@
                 $values = "'{$_POST['fname']}',{$_POST['kidId']},{$_POST['bDate']},'{$_POST['genders']}',
                 {$_POST['celiac']},{$_POST['eggs']},{$_POST['fish']},{$_POST['kiwis']},
                 {$_POST['lactoseintolerance']},{$_POST['nuts']},{$_POST['soy']},{$_POST['strawberries']},
-                {$_POST['vegan']},{$_POST['vegetarian']},'{$_POST['comments']}',{$_POST['parentId']}";
+                {$_POST['vegan']},{$_POST['vegetarian']},'{$_POST['comments']}',{$_POST['parentId']}, '{$_POST['lastname']}'";
 
                 $sql = "INSERT INTO kids (fname,kidId,bDate,genders,celiac,eggs,fish,
-                kiwis,lactoseintolerance,nuts,soy,strawberries,vegan,vegetarian,comments,parentId) VALUES ($values)";
+                kiwis,lactoseintolerance,nuts,soy,strawberries,vegan,vegetarian,comments,parentId,lastname) VALUES ($values)";
                 
                 $result =$this->db->query($sql);
                 if($result){
@@ -96,9 +96,10 @@
         //             'success'=>true
         //         ]);
         //     }
+        
 
         public function showKindergartenkidList(){
-            $sql = "SELECT kids.fname, users.lastname FROM kids INNER JOIN users
+            $sql = "SELECT kids.fname, kids.lastname FROM kids INNER JOIN users
             ON kids.parentId=users.parentId INNER JOIN kindergarten ON users.kindergartenid=kindergarten.kindergartenId";
 
             $result =$this->db->query($sql);
@@ -118,7 +119,7 @@
   
         function showInfoAboutakid(){
             
-           $sql = "SELECT kids.kidId, kids.fname, kids.bDate, kids.genders, kids.celiac,
+           $sql = "SELECT kids.kidId, kids.fname, kids.lastname, kids.bDate, kids.genders, kids.celiac,
            kids.eggs, kids.fish, kids.kiwis, kids.lactoseintolerance, kids.nuts, kids.soy,
            kids.strawberries, kids.vegan, kids.vegetarian, kids.comments FROM kids INNER JOIN users ON kids.parentId=users.parentId
            WHERE users.parentId={$_SESSION['parentId']}";
@@ -140,7 +141,7 @@
             foreach( $_POST as $key => $value ) {
                 $_POST[$key] = strip_tags($this->db->real_escape_string($value));
              }
-                   $sql = "UPDATE kids SET fname='{$_POST['fname']}', bDate={$_POST['bDate']}, genders='{$_POST['genders']}',
+                   $sql = "UPDATE kids SET fname='{$_POST['fname']}',lastname='{$_POST['lastname']}', bDate={$_POST['bDate']}, genders='{$_POST['genders']}',
                    celiac={$_POST['celiac']}, eggs={$_POST['eggs']}, fish={$_POST['fish']}, kiwis={$_POST['kiwis']},
                    lactoseintolerance={$_POST['lactoseintolerance']}, nuts={$_POST['nuts']}, soy={$_POST['soy']},
                    strawberries={$_POST['strawberries']}, vegan={$_POST['vegan']}, vegetarian={$_POST['vegetarian']},

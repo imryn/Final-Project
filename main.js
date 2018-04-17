@@ -82,6 +82,8 @@ function createParentUser(){
     var kidData = getFormData("#registration-kid");
     kidData['parentId'] = parentData['parentId'];
     parentData['kidId'] = kidData['kidId'];
+    kidData['lastname'] = parentData['lastname'];
+    parentData['lastname'] = kidData['lastname'];
     var checkKid = idcheck(kidData['kidId'],createKidForm);
     var checkParent = idcheck(parentData['parentId'],createParentUser);
     var checkEmailParent = emailcheck(parentData['email'],createParentUser);
