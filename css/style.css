@@ -63,8 +63,12 @@ h2{
     display: none;
 }
 
- .reports-line{
+ .reports-line, .date-label{
     margin-left: 3.2%;
+ }
+
+ .exception-update2{
+    margin-left: 3%;
  }
 
  /* line on each sections */
@@ -87,6 +91,7 @@ h2{
 .alergic-update, .exception-update{
     margin-left: 2%; 
 }
+
 
  /* inputs */
 .registration-info input, .update-info input, .alergic-info input,
@@ -300,21 +305,27 @@ input[type=radio]:first-child{
 
 /* table in report page */
 #kids-table{
-    margin: 5% 0 0 6.5%;
-    background-color: #3d3d3d;
+    margin: 5% 0 0 5.5%;
+    background-color: #9b59b6;
     color: white;
 }
 
-#kids-table td:first-child{
+#item-table{
+    margin: 5% 0 0 10.5%;
+    background-color: #9b59b6;
+    color: white;
+}
+
+#kids-table td:first-child, #item-table td:first-child{
    padding: 0 8px 0 8px;
 }
 
-#kids-table td{
+#kids-table td, #item-table td{
     text-align: center;
     border: solid 1px #dfe4ea;
 }
 
-#kids-table th{
+#kids-table th, #item-table th{
    padding: 0 51.4px 0 51.4px;
    text-align: center;
    word-spacing: 8px;

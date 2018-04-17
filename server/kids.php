@@ -53,8 +53,6 @@
         }
 
 
-
-
         public function getAllallergies(){
             $sql = "SELECT kids.fname, users.lastname, users.firstname, users.mobilephone, kids.eggs FROM kids
             INNER JOIN users ON kids.parentId=users.parentId AND kids.{$_GET['alergicOptions']}=1 <> '' ";
@@ -75,39 +73,48 @@
                 'data' => $data,
                 'success'=>true
             ]);
- 
-
         }
 
-        public function getAllExceptions(){
-            if($_GET['alergicOptions']=='celiac'){
-                $sql = "SELECT kids.fname, users.lastname, users.firstname, users.mobilephone, kids.celiac FROM kids
-                INNER JOIN users ON kids.parentId=users.parentId AND kids.celiac=1 <> '' ";
-                $result =$this->db->query($sql); 
-                if($result){
-                    $data= [];
-                    while($row = mysqli_fetch_array($result)){
-                        array_push($data, (object) [
-                            'first_name' => $row['fname'],
-                            'last_name' => $row['lastname'],
-                            'parent_name' => $row['firstname'],
-                            'phone_number' => $row['mobilephone']
-                        ]);  
-            }
+        // public function getAllExceptions(){
+        //         $sql = "SELECT kids.fname, users.lastname, users.firstname, users.mobilephone, kids.celiac FROM kids
+        //         INNER JOIN users ON kids.parentId=users.parentId AND kids.celiac=1 <> '' ";
+        //         $result =$this->db->query($sql); 
+        //         if($result){
+        //             $data= [];
+        //             while($row = mysqli_fetch_array($result)){
+        //                 array_push($data, (object) [
+        //                     'first_name' => $row['fname'],
+        //                     'last_name' => $row['lastname'],
+        //                     'parent_name' => $row['firstname'],
+        //                     'phone_number' => $row['mobilephone']
+        //                 ]);  
+        //     }
 
+        //         }
+        //         echo json_encode((object) [
+        //             'data' => $data,
+        //             'success'=>true
+        //         ]);
+        //     }
+
+        public function showKindergartenkidList(){
+            $sql = "SELECT kids.fname, users.lastname FROM kids INNER JOIN users
+            ON kids.parentId=users.parentId INNER JOIN kindergarten ON users.kindergartenid=kindergarten.kindergartenId";
+
+            $result =$this->db->query($sql);
+            if($result){
+                while ($row  = $result->fetch_assoc() ) {
+                    $data[] = $row;
                 }
                 echo json_encode((object) [
                     'data' => $data,
                     'success'=>true
                 ]);
             }
-
             else{
-                 echo json_encode((object) [
-                    'error'=>true
-                ]);
-            }
-        }
+                 $this->error();
+             }
+     }
   
         function showInfoAboutakid(){
             

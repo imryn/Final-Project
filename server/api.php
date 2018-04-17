@@ -49,7 +49,9 @@
                     $kids= new Kids();
                     $kids -> getAllallergies();
                     break;
-
+                //case "logout":
+                //  session_destroy();
+                //  break;
                 case "get_Exceptionsreport":
                     $kids= new Kids();
                     $kids -> getAllExceptions();
@@ -59,6 +61,16 @@
                     $kids= new Kids();
                     $kids -> showInfoAboutakid();
                     break;
+                
+                 case "getKindergartenkidList":
+                    $kids= new Kids();
+                    $kids -> showKindergartenkidList();
+                    break;
+                case "getItems":
+                    $items=new Items(); 
+                    $items->getTotalItems();
+                    break;
+
             }
        }
 ?>

@@ -53,28 +53,26 @@ function buildThs(array){
     return row + '</tr>';
 }
 
-function createTable(data){
-    console.log(data)
+function createItemsTable(data){
     var tableElement = document.getElementById("item-table");
     var table='';
 
-    table = table + buildThs(['Item_Name','Quantity']);
+    table = table + buildThs(['Category', 'Item Name','Quantity', 'Price']);
 
     data.forEach(function(item) {
-        table = table + '<tr><td>'+item.item+'</td><td>' + item.quantity + '</td></tr>';
+        table = table + '<tr><td>'+item.itemCategory+'</td><td>' + item.itemName + '</td><td>'+item.quantity+'</td><td>'+item.unitPrice+'</td></tr>';
     });
     tableElement.innerHTML = table;
     console.log(table)
 }
 
-function getReports(){
+function getItemList(){
 
     var data = getFormData("#shopping-list form");
-
-   
-    httpGet("/Sadna/server/api.php?route=create_table",data, function(response) {
-        if(response.data instanceof Array){
-            createTable(response.data);
+    console.log(data)
+    httpGet("/Sadna/server/api.php?route=getItems",data, function(response) {
+        if(response.success && response.data instanceof Array){
+            createItemsTable(response.data);
         }
 
     })

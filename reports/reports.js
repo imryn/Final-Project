@@ -6,6 +6,7 @@ function getReports(){
 
     $.get("reports/" + data.optionsReport + ".html",function(response){
         document.querySelector(".report-data-container").innerHTML = response;
+        showKindergartenkidList();
     })
 
 }
@@ -30,6 +31,18 @@ function getExceptionReports(){
         });
 }
 
+function showKindergartenkidList(){
+    httpGet("/Sadna/server/api.php?route=getKindergartenkidList",{}, function(response){
+        if(response.success){
+            var flatData = response.data.map(function(item){
+                return item.fname + " " + item.lastname;
+            })
+            
+            putInfoInsideSelector("#exception-report #exception" ,flatData);
+        }
+    });
+}
+
 function buildThs(array){
     var row = '<tr>'
     array.forEach(function(item){
@@ -41,7 +54,6 @@ function buildThs(array){
 
 
 function createAlergicTable(data){
-    console.log(data)
     var tableElement = document.getElementById("kids-table");
     var table='';
 
@@ -55,7 +67,6 @@ function createAlergicTable(data){
 }
 
 function createExceptionTable(data){
-    console.log(data)
     var tableElement = document.getElementById("kids-table");
     var table='';
 
