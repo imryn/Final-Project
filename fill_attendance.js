@@ -1,50 +1,29 @@
 
-function buildThs(array){
-    var row = '<tr>'
-    array.forEach(function(item){
-        row = row + '<th>'+item+'</th>';
-    })
-    return row + '</tr>';
+function saveInServer(){
+    var loopLength = $("#attendance-table tr").length 
+    var updateKids = []
+    for(var i=0; i<loopLength; i++){//insert all the kids that we need to update to one list
+        var tr = $('#attendance-table tr:eq(' + i + ')')
+        var kidId = tr.find('.kidId').text()
+        var parentId = tr.find('.parentId').text() 
+        var kindergartenid = tr.find('.kindergartenid').text() 
+        var attendance = tr.find('.attendance input').is(':checked')
+        
+        if(!attendance && kidId){
+            updateKids.push({kidId:kidId,parentId:parentId,kindergartenid:kindergartenid})
+        }
+        // updateKids.
+    }
+
+
+    var sql = 'DELETE FROM noattendance WHERE date=CURRENT_DATE(); '
+    for(var i=0; i<updateKids.length; i++){
+        sql += ' insert into noattendance (date,parentId,kidId,kindergartenid) values (current_date(),' + updateKids[0].parentId + ',' + updateKids[0].kidId + ',' + updateKids[0].kindergartenid + '); '
+    }
+
+
+    alert("Attendance updated successfully!!");
+    location.href = 'updateNoattendance.php?sql=' + sql
+
 }
-
-function updateAtt1(data){
-    console.log(data)
-    debugger
-    return
-    var tableElement = document.getElementById("attendance-table");
-    var table='';
-
-    table = table + buildThs(['Last Name','Last Name','Last Name','Attendance ?','Send SMS now']);
-
-    data.forEach(function(item) {
-        table = table + '<tr><td>'+item.lastname+'</td><td>' +item.fname+'</td><td>'+item.kidId +'</td></tr>';
-    });
-    tableElement.innerHTML = table;
-    console.log(table)
-}
-
-
-
-// function getReports(){
-
-//     var data = getFormData("#reports form");
-
-//     // data.statTime =  functionToTimestamp(data.statTime);
-
-//     httpGet("/Sadna/server/api.php?route=create_report",data, function(response) {
-//         if(response.data instanceof Array){
-//             createTable(response.data);
-//         }
-
-//     })
-
-// }
-
-
-
-
-
-
-
-
-
+  

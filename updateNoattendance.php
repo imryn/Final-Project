@@ -1,32 +1,3 @@
-<?php 
-//  $servername = "us-cdbr-gcp-east-01.cleardb.net";
-//  $username = "b1cecd1cfb136f";
-//  $password = "7e767b54";
-//  $dbname = "gcp_69477eab26f5d4ebcd7f";
- 
-//  // Create connection
-//  $conn = new mysqli($servername, $username, $password, $dbname);
-//  // Check connection
-//  if ($conn->connect_error) {
-//      die("Connection failed: " . $conn->connect_error);
-//  } 
- 
-//  $sql = "DELETE FROM noattendance WHERE date=CURRENT_DATE(); insert into noattendance (date,kidId) values (current_date(), 300043312 ); insert into noattendance (date,kidId) values (current_date(), 300043312 );";
-//  $sql = "insert into noattendance (date,kidId) values (current_date(), 300043312 ); insert into noattendance (date,kidId) values (current_date(), 300043312 );";
-// // $updateIds = array(explode(",", $_GET["updateIds"]));
-// //  foreach ($updateIds as &$value) {
-//     // echo $value;
-//     // echo 55555;
-// // }
-//  echo $_GET['sql'];
-// //  $result = $conn->query($_GET['sql']);
-//  $result = $conn->query($sql);
-
-//  $conn->close();
-?>
-
-
-
 
 <?php
 $con=mysqli_connect("us-cdbr-gcp-east-01.cleardb.net","b1cecd1cfb136f","7e767b54","gcp_69477eab26f5d4ebcd7f");
