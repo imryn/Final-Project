@@ -38,7 +38,7 @@
             crossorigin="anonymous">
         </script>
         <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
-        <script src="commons.js"></script>
+
         <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
         <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
@@ -55,8 +55,8 @@
         <section id="daily-attendance">
             <form>
                 <div class="pickDateField">
-                    <label for="pick-date"> Today date: </label>
-                    <input name="date" type="date" value="<?php echo date('Y-m-d'); ?>" disabled/> 
+                    <label for="pick-date"> Today Attendance: </label>
+                    <input name="date" type="text" value="<?php echo date('Y-m-d'); ?>" disabled/> 
                 </div>                 
 
                 <table id="attendance-table">
@@ -74,58 +74,24 @@
                         while($row = $result->fetch_assoc()) {?>
                             <tr>
                                 <td> <?php echo $row['lastname']; ?> </td>               
-                                <td> <?php echo $row['fname']; ?> </td>
+                                <td> <?php echo $row['fname']; ?> </td>                                                              
                                 <td class='kidId'> <?php echo $row['kidId']; ?> </td> 
                                 <td class='attendance'> <input type="checkbox" checked data-toggle="toggle" data-onstyle="warning" data-offstyle="info"> </td>
                                 <td> <input type="button" value="Send" class="send-button" onClick="sendSMS()"/> </td>
+                                <td style="display:none;" class='parentId'> <?php echo $row['parentId']; ?> </td>
+                                <td style="display:none;" class='kindergartenid'> <?php echo $row['kindergartenid']; ?> </td>                             
                             </tr>
                         <?php    
                         }
                     }
                     ?>
-
-
-
                 </table>
-                <script src="fill_attendance.js"></script>
-                <input type="button" value="Update Attendance" class="refresh-button" onClick="saveInServer()"/>  
-                <script>
-                    function saveInServer(){
-                        var loopLength = $("#attendance-table tr").length 
-                        var updateKids = []
-                        for(var i=0; i<loopLength; i++){//insert all the kids that we need to update to one list
-                            var tr = $('#attendance-table tr:eq(' + i + ')')
-                            var kidId = tr.find('.kidId').text()
-                            var attendance = tr.find('.attendance input').is(':checked')
-                            
-                            if(!attendance && kidId){
-                                updateKids.push(kidId)
-                            }
-                            // updateKids.
-                        }
 
-
-                        var sql = 'DELETE FROM noattendance WHERE date=CURRENT_DATE(); '
-                        for(var i=0; i<updateKids.length; i++){
-                            sql += ' insert into noattendance (date,kidId) values (current_date(),' + updateKids[0] + '); '
-                        }
-
-
-                        location.href = 'updateNoattendance.php?sql=' + sql
-                        
-                    }
-                </script>     
+                <input type="button" value="Update Attendance" class="refresh-button" onClick="saveInServer()"/>             
             </form>
         </section>
-
-       
-
-        <!-- <?php
-        echo date("l jS \of F Y h:i:s A") . "<br>";
-            $today = date("F j, Y, g:i a");      
-        ?> -->
-
-      
+        <script src="commons.js"></script>
+        <script src="fill_attendance.js"></script>        
     </body>
 
 </html>
