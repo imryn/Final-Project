@@ -54,7 +54,7 @@
 
 
         public function getAllallergies(){
-            $sql = "SELECT kids.fname, users.lastname, users.firstname, users.mobilephone, kids.eggs FROM kids
+            $sql = "SELECT kids.fname, kids.lastname, users.firstname, users.mobilephone, kids.eggs FROM kids
             INNER JOIN users ON kids.parentId=users.parentId AND kids.{$_GET['alergicOptions']}=1 <> '' ";
             $result =$this->db->query($sql); 
             if($result){
