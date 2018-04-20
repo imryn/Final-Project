@@ -13,8 +13,30 @@
         die("Connection failed: " . $conn->connect_error);
     } 
     
-    $sql = "select * from kids
-            join users on kids.parentId=users.parentId;";
+    $sql = "select 
+                fname,
+                users.kindergartenid as kindergartenid,
+                users.lastname as lastname,
+                kids.kidId as kidId,
+                kids.parentId as parentId,
+                'true' as comeToClass 
+            from kids
+            join users on kids.parentId=users.parentId
+            where kids.parentId not in (select parentId from noattendance where date=current_date())
+
+            union 
+
+            select 
+                fname,
+                users.kindergartenid as kindergartenid,
+                users.lastname as lastname,
+                kids.kidId as kidId,
+                kids.parentId as parentId,
+                'false' as comeToClass 
+            from kids
+            join users on kids.parentId=users.parentId
+            where kids.parentId in (select parentId from noattendance where date=current_date())
+";
     $result = $conn->query($sql);
 
     $conn->close();
@@ -76,8 +98,12 @@
                                 <td> <?php echo $row['lastname']; ?> </td>               
                                 <td> <?php echo $row['fname']; ?> </td>                                                              
                                 <td class='kidId'> <?php echo $row['kidId']; ?> </td> 
-                                <td class='attendance'> <input type="checkbox" checked data-toggle="toggle" data-onstyle="warning" data-offstyle="info"> </td>
-                                <td> <input type="button" value="Send" class="send-button" onClick="sendSMS()"/> </td>
+                                <td class='attendance'>
+                                    <input id="toggle-status" data-height="15" <?php if($row['comeToClass']=='true'){echo 'checked';}else{echo '';}; ?> type="checkbox" data-toggle="toggle">
+                                </td>
+                                
+                                <!-- <input type="checkbox" checked data-toggle="toggle" data-onstyle="warning" data-offstyle="info">  -->
+                                <td> <input type="button" checked value="Send" class="send-button" onClick="sendSMS()"/> </td>
                                 <td style="display:none;" class='parentId'> <?php echo $row['parentId']; ?> </td>
                                 <td style="display:none;" class='kindergartenid'> <?php echo $row['kindergartenid']; ?> </td>                             
                             </tr>
