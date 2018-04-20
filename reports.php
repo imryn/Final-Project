@@ -18,7 +18,7 @@
   crossorigin="anonymous"></script>
   <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
 
-  <title>Title of the document</title>
+  <title>Reports</title>
 
 </head>
 
@@ -30,7 +30,7 @@
 
 <section id="reports">
         <form>
-            <h1> reports </h1>
+            <h1> Reports </h1>
             <p id="form-exp"> Please choose the report you want to produce <p>
         <div class="row reports-line">
            <div class="col span-1-of-1 box">
