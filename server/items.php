@@ -24,32 +24,29 @@
                 $this->allowSpecialCharacters($_GET);
 
                 $sql = "SELECT items.itemCategory, items.itemName, items.unitPrice FROM items WHERE items.itemCategory='{$_GET['itemCategory']}' 
-                AND items.itemName='{$_GET['itemName']}' AND '{$_GET['quantity']}'  <> '' ";
+                AND items.itemName='{$_GET['itemName']}' OR items.itemName='{$_GET['itemName1']}' OR
+                items.itemName='{$_GET['itemName2']}' AND '{$_GET['quantity']}' <> '' ";
                 $result =$this->db->query($sql); 
                 if($result){
-                    // $data= [];
-                    // while($row = mysqli_fetch_array($result)){
-                    //         array_push($data, (object) [
-                    //         'category' => $row['items.itemCategory'],
-                    //         'Item_Name' => $row['items.itemName'],
-                    //         'Quantity' => $row['quantity'],
-                    //         'unitPrice' => $row['items.unitPrice'],
-                    //         ]);
-                    //     }
-                        while ($row  = $result->fetch_assoc() ) {
-                            $data[] = $row;
-                        }
-                    
-                    echo json_encode((object) [
-                        'data' => $data,
-                        'success'=>true
-                    ]);
-                }
-
-                else{
-                    $this->error();
-                }
-            }       
+                  $data= [];
+                  while($row = mysqli_fetch_array($result)){
+                      array_push($data, (object) [
+                          'itemCategory' => $row['itemCategory'],
+                          'itemName' => $row['itemName'],
+                          'quantity' => $row['quantity'],
+                          'unitPrice' => $row['unitPrice']
+                      ]);  
+                  }
+                  echo json_encode((object) [
+                      'data' => $data,
+                      'success'=>true
+                  ]);
+              }
+              else{
+                  $this->error();
+              }
+            
+          }      
 
     // public function createItemsTable(){
     //     if($_GET['optionsReport'] == 'allergies-report'){
