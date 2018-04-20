@@ -53,8 +53,8 @@
                 //  session_destroy();
                 //  break;
                 case "get_Exceptionsreport":
-                    $kids= new Kids();
-                    $kids -> getAllExceptions();
+                    $exceptions= new Exceptions();
+                    $exceptions -> getAllExceptions();
                     break;
 
                  case "getKidInfo":

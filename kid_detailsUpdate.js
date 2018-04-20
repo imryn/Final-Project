@@ -3,6 +3,7 @@ function DetailskidUpdate(){
     var kidData = getFormData("#kid-detailsUpdate");
     data["kidId"] = kidData['kidId'];
     data["fname"] = kidData['fname'];
+    data["lastname"] = kidData['lastname'];
     var date = new Date(data.observationDate).getTime();
     if(!isNaN(date)){
         data.observationDate = date;
