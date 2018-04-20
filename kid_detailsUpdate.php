@@ -41,29 +41,35 @@
                         <input name="fname" type="name" id="name"/>
                     </div>
                 </div>
+                  <div class="col span-1-of-3 box">
+                    <div class="registration-info">
+                        <label  for="name"> <span> * </span>  Last Name: </label> <br>
+                        <input name="lastname" type="name" id="kidlastname"/>
+                    </div>
+                </div>
                  <div class="col span-1-of-3 box">
                      <div class="registration-info">
                         <label for="id"> <span> * </span> ID: </label> <br>
                         <input disabled class="disabled-input" name="kidId" type="text" id="kid-id" />
                      </div>
                 </div>
-                <div class="col span-1-of-3 box">
-                    <div class="registration-info">
-                        <label for="data"> <span> * </span> Date of birth: </label>
-                        <input name="bDate" type="date" id="birth-date">
-                    </div>
-                </div> 
            </div>
            <div class="row kid-form2">
-                   <div class="col span-1-of-1 box">
+                   <div class="col span-1-of-3 box">
                         <div class="registration-info">
                             <label> <span> * </span> Gender: </label>
-                            <select name="genders" size="1" id="gender"> 
+                            <select name="genders" size="1"> 
                                 <option value="boy" selected> Boy  </option>
                                 <option value="Girl"> Girl </option>
                             </select>
                         </div>
                    </div>
+                   <div class="col span-1-of-3 box">
+                    <div class="registration-info">
+                        <label for="data"> <span> * </span> Date of birth: </label>
+                        <input name="bDate" type="date" id="birth-date">
+                    </div>
+                </div> 
            </div>
 
            <div class="row kid-form3">
@@ -129,7 +135,7 @@
                 <div class="col span-1-of-2 box">
                      <div class="registration-info">
                         <label> Comments and Special Requests </label>
-                        <textarea name="comments" cols="86" rows="4" style="overflow:auto;resize:none"> </textarea>
+                        <textarea name="comments" cols="83" rows="4" style="overflow:auto;resize:none"> </textarea>
                      </div>
                 </div>
             </div>

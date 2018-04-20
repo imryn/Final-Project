@@ -18,7 +18,7 @@
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous"></script>
         <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
-        <title>Title of the document</title>
+        <title>Kidin Touch</title>
     </head>
 
 <body>

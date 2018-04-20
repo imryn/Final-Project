@@ -2,6 +2,7 @@
 
        include 'new-user.php';
        include 'kids.php';
+       include 'crew.php';
        include 'exceptions.php';
        include 'items.php';
 
@@ -21,8 +22,14 @@
                      $kid->createKidbag();
                      break;
                 case "login":
-                    $user = new Users();
-                    $user->login();
+                    if($_POST['usertype'] == 'parent'){
+                        $user = new Users();
+                        $user->login();
+                    }
+                    else if($_POST['usertype'] == 'crew'){
+                        $crew = new Crew();
+                        $crew->loginForkindergartenTeacher();
+                    }
                     break;
                 case "observation_error":
                     $exceptions = new Exceptions();
@@ -49,12 +56,19 @@
                     $kids= new Kids();
                     $kids -> getAllallergies();
                     break;
-                //case "logout":
-                //  session_destroy();
-                //  break;
+                case "signout":
+                 if(isset( $_SESSION['parentId'])){
+                    session_destroy();
+                    header("Location: /Sadna/login_page.php?usertype=parent");
+                 }
+                 else{
+                    session_destroy();
+                    header("Location: /Sadna/login_page.php?usertype=crew");
+                 }
+                 break;
                 case "get_Exceptionsreport":
-                    $kids= new Kids();
-                    $kids -> getAllExceptions();
+                    $exceptions= new Exceptions();
+                    $exceptions -> getAllExceptions();
                     break;
 
                  case "getKidInfo":
@@ -72,6 +86,9 @@
                     break;
 
             }
+       }
+       else{
+           echo "no find any route";
        }
 ?>
 

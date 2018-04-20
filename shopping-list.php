@@ -18,7 +18,7 @@
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous"></script>
         <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
-        <title> Shooping List</title>
+        <title> Shopping List</title>
     </head>
 
     <body>

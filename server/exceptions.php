@@ -23,9 +23,9 @@
             }
 
             $values = "'{$_POST['observation']}','{$_POST['observationDate']}','{$_POST['SpecialRequests']}',
-            {$_POST['kidId']},'{$_POST['fname']}'";
+            {$_POST['kidId']},'{$_POST['fname']}','{$_POST['lastname']}'";
     
-            $sql = "INSERT INTO exceptions (observation,observationDate,SpecialRequests,kidId,fname) VALUES($values)";
+            $sql = "INSERT INTO exceptions (observation,observationDate,SpecialRequests,kidId,fname,lastname) VALUES($values)";
             $result =$this->db->query($sql);
             if($result){
              echo json_encode((object) [
@@ -36,6 +36,32 @@
              $this->error();
            }
         }
+
+        public function getAllExceptions(){
+            $sql = "SELECT exceptions.observation, exceptions.observationDate,exceptions.fname,exceptions.lastname FROM exceptions WHERE exceptions.observationDate>={$_GET['startDate']}
+            AND exceptions.observationDate<={$_GET['endDate']} AND exceptions.fname='{$_GET['kidFname']}' AND exceptions.lastname='{$_GET['kidLname']}'" ;
+ 
+            $result =$this->db->query($sql); 
+            if($result){
+                $data= [];
+                while($row = mysqli_fetch_array($result)){
+                    array_push($data, (object) [
+                        'first_name' => $row['fname'],
+                        'last_name' => $row['lastname'],
+                        'note' => $row['observation'],
+                        'date' => $row['observationDate']
+                    ]);  
+                }
+                echo json_encode((object) [
+                    'data' => $data,
+                    'success'=>true
+                ]);
+            }
+            else{
+                $this->error();
+            }
+          
+        }   
 
         public function __destruct(){
             $this->db->close();

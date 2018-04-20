@@ -4,24 +4,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css">
-        <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
-        <link rel="stylesheet" type="text/css" href="vendors/css/ionicons.min.css">
-        <link rel="stylesheet" type="text/css" href="vendors/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="css/login.css">
-        <link rel="stylesheet" type="text/css" href="css/nav-menu.css">
-        <link rel="stylesheet" type="text/css" href="picture-container/picture-container.css">
-        <link rel="stylesheet" type="text/css" href="css/queries.css">
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
-        <script
-            src="https://code.jquery.com/jquery-3.3.1.min.js"
-            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin="anonymous"></script>
-        <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css">
+            <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
+            <link rel="stylesheet" type="text/css" href="vendors/css/ionicons.min.css">
+            <link rel="stylesheet" type="text/css" href="vendors/bootstrap/css/bootstrap.min.css">
+            <link rel="stylesheet" type="text/css" href="css/login.css">
+            <link rel="stylesheet" type="text/css" href="css/nav-menu.css">
+            <link rel="stylesheet" type="text/css" href="picture-container/picture-container.css">
+            <link rel="stylesheet" type="text/css" href="css/queries.css">
+            <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
+            <script
+                src="https://code.jquery.com/jquery-3.3.1.min.js"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+                crossorigin="anonymous"></script>
+            <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
 
-<title>Title of the document</title>
+    <title>Login</title>
 </head>
 
 <body>
@@ -51,6 +51,7 @@
 
         <div class="text-xs-center">
             <input type="hidden" name="route" value="login" >
+            <input type="hidden" name="usertype" value="<?php if(isset($_GET['usertype'])) { echo  $_GET['usertype'];}  ?>" >
             <input type="hidden" name="token" value="<?php echo createToken()  ?>" >
             <button class="btn btn-deep-purple" type="submit" >Login</button>
         </div>

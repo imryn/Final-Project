@@ -106,14 +106,13 @@
                     
                 }
                 else{
-                    header("Location: /Sadna/login_page.php");
+                    header("Location: /Sadna/login_page.php?usertype=parent");
                 }
             }
             else{
-                header("Location: /Sadna/login_page.php");
+                header("Location: /Sadna/login_page.php?usertype=parent");
             }
-        }
-   
+        } 
         
         public function __destruct(){
             $this->db->close();
