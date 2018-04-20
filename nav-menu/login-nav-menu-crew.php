@@ -27,7 +27,7 @@
             <li><a href="Building_Schedule.php">schedule </a></li>
             <li><a href="reports.php"> reports </a></li>
             <li><a href="shopping-list.php"> shopping list </a></li>
-            <li><a href="server/api.php?route=signout"> Sign Out </a></li>
+            <li><a href="server/api.php?route=signout"> Sign out </a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
