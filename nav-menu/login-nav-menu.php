@@ -25,7 +25,7 @@
               <!--</div>-->
             <!--</li>-->
             
-            <li><a href="view_schedule.php"> Weekly Schedule </a></li>
+            <li><a href="view_schedule.php"> Weekly schedule </a></li>
             <li><a href="reports.php"> reports </a></li>
             <li><a href="server/api.php?route=signout"> Sign out </a></li>
       </ul>
