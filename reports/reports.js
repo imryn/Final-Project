@@ -6,7 +6,10 @@ function getReports(){
 
     $.get("reports/" + data.optionsReport + ".html",function(response){
         document.querySelector(".report-data-container").innerHTML = response;
-        showKindergartenkidList();
+        console.log(data);
+        
+        showKindergartenkid();
+
     })
 
 }
@@ -66,8 +69,9 @@ function getExceptionReports(){
 
 var kinderGarten;
 
-function showKindergartenkidList(){
-    httpGet("/Sadna/server/api.php?route=getKindergartenkidList",{}, function(response){
+
+function showKindergartenkid(){
+    httpGet("/Sadna/server/api.php?route=getKindergartenkid",{}, function(response){
         if(response.success){
             kinderGarten = response.data;
             var flatData = response.data.map(function(item){

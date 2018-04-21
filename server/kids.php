@@ -74,7 +74,7 @@
                 'success'=>true
             ]);
         }
-
+        
         public function showKindergartenkidsList(){
             $sql = "SELECT kids.fname, kids.lastname FROM kids INNER JOIN users
             ON kids.parentId=users.parentId INNER JOIN kindergarten ON users.kindergartenid=kindergarten.kindergartenId";
@@ -132,6 +132,26 @@
             }
 
         }
+
+    function showInfoAboutchoosenkid(){
+        $sql = "SELECT kids.kidId, kids.fname, kids.lastname, kids.bDate, kids.genders, kids.celiac,
+        kids.eggs, kids.fish, kids.kiwis, kids.lactoseintolerance, kids.nuts, kids.soy,
+        kids.strawberries, kids.vegan, kids.vegetarian, kids.comments FROM kids WHERE kids.fname='{$_GET['kidFname']}' AND
+        kids.lastname='{$_GET['kidLname']}'";
+        
+        $result =$this->db->query($sql);
+        if($result){
+             $data = $result->fetch_assoc();
+             echo json_encode((object) [
+                 'data' => $data,
+                 'success'=>true
+             ]);
+         }
+         else{
+             $this->error();
+         }
+
+      }
 
         function updateKidbag(){
             foreach( $_POST as $key => $value ) {

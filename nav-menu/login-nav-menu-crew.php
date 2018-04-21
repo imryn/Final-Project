@@ -14,6 +14,7 @@
       <ul class="nav navbar-nav">
             <li><a href="index.php"> home </a></li>
             <li><a href="#"> about </a></li>
+            <li><a href="kidsList_detailsUpdates.php"> Child file </a></li>
             <!--<li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 registration 

@@ -17,10 +17,12 @@
                     $user = new Users();
                     $user->createUser();
                     break;
+
                 case "create_kid":
                      $kid = new Kids();
                      $kid->createKidbag();
                      break;
+
                 case "login":
                     if($_POST['usertype'] == 'parent'){
                         $user = new Users();
@@ -31,17 +33,21 @@
                         $crew->loginForkindergartenTeacher();
                     }
                     break;
+
                 case "observation_error":
                     $exceptions = new Exceptions();
                     $exceptions->DetailsUpdate();
                     break;
+
                 case "update_kid":
                     $kid = new Kids();
                     $kid->updateKidbag();
                     break;
+
                 case "create_table":
                     $items = new Items();
                     $items->createItemsTable();
+                    break;
             }
        }
        
@@ -56,6 +62,7 @@
                     $kids= new Kids();
                     $kids -> getAllallergies();
                     break;
+
                 case "signout":
                  if(isset( $_SESSION['parentId'])){
                     session_destroy();
@@ -66,6 +73,7 @@
                     header("Location: /Sadna/login_page.php?usertype=crew");
                  }
                  break;
+
                 case "get_Exceptionsreport":
                     $exceptions= new Exceptions();
                     $exceptions -> getAllExceptions();
@@ -76,10 +84,21 @@
                     $kids -> showInfoAboutakid();
                     break;
                 
-                 case "getKindergartenkidList":
-                    $kids= new Kids();
-                    $kids -> showKindergartenkidList();
+                case "getKidListInfo":
+                    $kids = new Kids();
+                    $kids -> showInfoAboutchoosenkid();
                     break;
+
+                case "getKindergartenkid":
+                    $kids= new Kids();
+                    if(isSet($_SESSION['kTeacherId'])){
+                        $kids -> showKindergartenkidsList();
+                    }
+                    else{
+                        $kids -> showkid();
+                    }
+                    break;
+
                 case "getItems":
                     $items=new Items(); 
                     $items->getTotalItems();

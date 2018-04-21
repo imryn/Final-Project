@@ -44,7 +44,6 @@
                 </div>
            </div>
         </div>
-
          <button type="button" id="options_for_report" onClick="getReports()"> add</button>
      </form>
 </section>

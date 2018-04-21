@@ -30,8 +30,6 @@ function showInfoAboutakid(){
             setFormData("#kid-detailsUpdate form",response.data);
         }
     });
-    
-
 }
 
 function createKidForm(data,callback){

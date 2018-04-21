@@ -53,7 +53,7 @@ h2{
 /* sections */
 #registration-parent,#registration-kid,#reports,#daily-attendance,
 #kid-detailsUpdate,#Weekly-Scheduler,#kid-observation,#alergic-report,
-#exception-report{
+#exception-report, #kidList-detailsUpdate{
     background-color: #f0f0f0;
     width: 75%;
     margin-left: 12.5%;
@@ -216,7 +216,8 @@ input[type=radio]:first-child{
 
 /* buttons */
 .save-1, .save-2, .create-botton,
-.exit, .save-details, .update-details, #options_for_report{
+.exit, .save-details, .update-details, #options_for_report,
+.show-kid-details{
     padding: 5px;
     width: 75px;
     display: block;
@@ -233,6 +234,11 @@ input[type=radio]:first-child{
 .save-1, .save-details{
     margin-left: 56%;
     margin-top: 5%;
+}
+
+.show-kid-details{
+    margin-top: 1%;
+    margin-left: 12.5%;
 }
 
 .save-2, .update-details,#options_for_report{

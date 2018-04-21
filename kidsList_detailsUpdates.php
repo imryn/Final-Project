@@ -22,18 +22,28 @@
 <title>Update Child File </title>
 </head>
 
-<body onload="showInfoAboutakid()">
+<body onload="showKindergartenkid()">
     <header>
         <templateHtml src="picture-container/picture-container.html"></templateHtml>
         <?php include "nav-menu/nav-menu-container.php" ?>
      </header>
 
 <!-- kid section -->
-<section id="kid-detailsUpdate">
+<section id="kidList-detailsUpdate">
     <form>
         <h2> Kid </h2>
         <p class="describe-info"> Update your child details: </p>
         <p class="success-message2"></p>
+        <div class="row kid-form1">
+             <div class="col span-1-of-2 box">
+                 <div class="registration-info">
+                    <label for="kidname"> Kid Name: </label> <br>
+                        <select name="kidOptions" size="1" id="kidname"></select>
+                 </div>
+            </div>
+        </div>
+        <button type="button" class="show-kid-details" onClick="showInfoAboutakidList()"> choose </button>
+
             <div class="row kid-form1">
                  <div class="col span-1-of-3 box">
                     <div class="registration-info">
@@ -139,12 +149,12 @@
                      </div>
                 </div>
             </div>
-            <button type="button" class="update-details" onClick="savingChangesinKidbag()"> Save</button>
-            <!-- <button type="button" id="new-observation"> Kindergarten teacher's comments </button> -->
+            <button type="button" class="update-details" onClick="savingChangesinListKidbag()"> Save</button>
+            <button type="button" id="new-observation"> Kindergarten teacher's comments </button>
      </form>  
 </section>
 
-<!-- <section id="kid-observation">
+<section id="kid-observation">
     <form>
         <p class="success-message"></p>
             <div class="row kid-update1">
@@ -188,7 +198,7 @@
             <button type="button" class="save-details" onClick="DetailskidUpdate()"> Save</button>
             <button type="button" class="exit"> <a href="/Sadna/index.php" id="special-link"> Exit </a> </button>
         </form>
-</section> -->
+</section>
     
     <script src="commons.js"></script>
     <script src="kid_detailsUpdate.js"></script>

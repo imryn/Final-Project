@@ -25,6 +25,10 @@ savingChangesinKidbag.error=function(msg){
     document.querySelector(".success-message2").textContent = msg;
 }
 
+savingChangesinListKidbag.error= function(msg){
+    document.querySelector(".success-message").textContent = msg;
+}
+
 // function namecheck(namecheck,errorFunction){
 //     var check = namecheck.check();
 //     if(isNumeric(check)){
@@ -59,6 +63,59 @@ function savingChangesinKidbag(){
     // if(!checkKidname){
     //     return;
     // }
+
+    KiData['route'] = 'update_kid';
+    httpPost("/Sadna/server/api.php",KiData,function(response){
+        if(response.success){
+            savingChangesinKidbag.error("the kid bag saved successfully");
+        }
+
+    })
+}
+
+function showKindergartenkid(){
+    httpGet("/Sadna/server/api.php?route=getKindergartenkid",{}, function(response){
+        if(response.success){
+            kinderGarten = response.data;
+            var flatData = response.data.map(function(item){
+                return item.fname + " " + item.lastname;
+            })
+
+            putInfoInsideSelector("#kidList-detailsUpdate #kidname" ,flatData);
+        }
+    });
+}
+
+function showInfoAboutakidList(){
+    
+
+    var selectedKid = kinderGarten[data.kidOptions];
+    data.kidFname = selectedKid.fname;
+    data.kidLname = selectedKid.lastname;
+    
+    var KiData = document.getElementById("kidname").value;
+    
+    httpGet("/Sadna/server/api.php?route=getKidListInfo",data, function(response){
+        if(response.success){
+            console.log(response.data);
+            response.data.bDate = timestampToDate(response.data.bDate);
+
+            setFormData("#kidList-detailsUpdate form",response.data);
+        }
+    });
+}
+
+
+var kinderGarten;
+
+function savingChangesinListKidbag(){
+    var KiData = getFormData("#kidList-detailsUpdate");
+
+    var date = new Date(KiData.bDate).getTime();
+    if(!isNaN(date)){
+        KiData.bDate = date;
+    }
+
     KiData['route'] = 'update_kid';
     httpPost("/Sadna/server/api.php",KiData,function(response){
         if(response.success){
