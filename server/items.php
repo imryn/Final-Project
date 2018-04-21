@@ -24,8 +24,8 @@
                 $this->allowSpecialCharacters($_GET);
 
                 $sql = "SELECT items.itemCategory, items.itemName, items.unitPrice FROM items WHERE items.itemCategory='{$_GET['itemCategory']}' 
-                AND items.itemName='{$_GET['itemName']}' OR items.itemName='{$_GET['itemName1']}' OR
-                items.itemName='{$_GET['itemName2']}' AND '{$_GET['quantity']}' <> '' ";
+                AND items.itemName='{$_GET['itemName']}' OR items.itemName='{$_GET['itemName1']}' OR items.itemName='{$_GET['itemName2']}' 
+                AND '{$_GET['quantity']}' <> '' ";
                 $result =$this->db->query($sql); 
                 if($result){
                   $data= [];

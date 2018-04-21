@@ -60,7 +60,8 @@ function createItemsTable(data){
     table = table + buildThs(['Category', 'Item Name','Quantity', 'Price']);
 
     data.forEach(function(item) {
-        table = table + '<tr><td>'+item.itemCategory+'</td><td>' + item.itemName + '</td><td>'+item.quantity+'</td><td>'+item.unitPrice+'</td></tr>';
+        table = table + '<tr><td>'+item.itemCategory+'</td><td>' + item.itemName + '</td><td>'+item.quantity+'</td><td>'
+        +item.unitPrice+'</td></tr>';
     });
     tableElement.innerHTML = table;
     console.log(table)
