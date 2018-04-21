@@ -53,7 +53,7 @@ h2{
 /* sections */
 #registration-parent,#registration-kid,#reports,#daily-attendance,
 #kid-detailsUpdate,#Weekly-Scheduler,#kid-observation,#alergic-report,
-#exception-report, #kidList-detailsUpdate{
+#exception-report, #kidList-detailsUpdate, #kid-choosen{
     background-color: #f0f0f0;
     width: 75%;
     margin-left: 12.5%;

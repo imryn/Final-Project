@@ -29,7 +29,7 @@
      </header>
 
 <!-- kid section -->
-<section id="kidList-detailsUpdate">
+<section id="kid-choosen">
     <form>
         <h2> Kid </h2>
         <p class="describe-info"> Update your child details: </p>
@@ -43,8 +43,12 @@
             </div>
         </div>
         <button type="button" class="show-kid-details" onClick="showInfoAboutakidList()"> choose </button>
+    </form>
+</section>
 
-            <div class="row kid-form1">
+<section id="kidList-detailsUpdate">
+        <form>
+                <div class="row kid-form1">
                  <div class="col span-1-of-3 box">
                     <div class="registration-info">
                         <label  for="name"> <span> * </span>  First Name: </label> <br>

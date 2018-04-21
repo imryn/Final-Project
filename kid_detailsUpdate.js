@@ -81,21 +81,19 @@ function showKindergartenkid(){
                 return item.fname + " " + item.lastname;
             })
 
-            putInfoInsideSelector("#kidList-detailsUpdate #kidname" ,flatData);
+            putInfoInsideSelector("#kid-choosen #kidname" ,flatData);
         }
     });
 }
 
 function showInfoAboutakidList(){
-    
+    var data = getFormData("#kid-choosen form");
 
     var selectedKid = kinderGarten[data.kidOptions];
     data.kidFname = selectedKid.fname;
     data.kidLname = selectedKid.lastname;
-    
-    var KiData = document.getElementById("kidname").value;
-    
-    httpGet("/Sadna/server/api.php?route=getKidListInfo",data, function(response){
+        
+    httpGet("/Sadna/server/api.php?route=getKidListInfo",{}, function(response){
         if(response.success){
             console.log(response.data);
             response.data.bDate = timestampToDate(response.data.bDate);
