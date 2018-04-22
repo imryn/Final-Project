@@ -133,7 +133,7 @@ h2{
     height: 32px;
 }
 
-#address, #city, #phone{
+#address, #city, #phone, #kidname-label{
     margin-left: 4%;
 }
 

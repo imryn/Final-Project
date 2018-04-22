@@ -31,13 +31,12 @@
 <!-- kid section -->
 <section id="kid-choosen">
     <form>
-        <h2> Kid </h2>
-        <p class="describe-info"> Update your child details: </p>
+        <h2> Kid File </h2>
         <p class="success-message2"></p>
         <div class="row kid-form1">
              <div class="col span-1-of-2 box">
                  <div class="registration-info">
-                    <label for="kidname"> Kid Name: </label> <br>
+                    <label for="kidname" id="kidname-label"> Kid Name: </label> <br>
                         <select name="kidOptions" size="1" id="kidname"></select>
                  </div>
             </div>
