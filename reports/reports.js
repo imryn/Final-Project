@@ -85,7 +85,7 @@ function showKindergartenkid(){
 function buildThs(array){
     var row = '<tr>'
     array.forEach(function(item){
-        row = row + '<th>'+item+'</th>';
+        row = row +'<th scope="row">'+item+'</th>';
     })
     return row + '</tr>';
 }//
@@ -99,7 +99,7 @@ function createAlergicTable(data){
     table = table + buildThs(['First Name','Last Name','Parent Name','Phone Number']);
 
     data.forEach(function(item) {
-        table = table + '<tr><td>'+item.first_name+'</td><td>' +item.last_name+'</td><td>'+item.parent_name +'</td><td>' + item.phone_number +'</td></tr>';
+        table = table + '<tr class="table-info"><td>'+item.first_name+'</td><td>' +item.last_name+'</td><td>'+item.parent_name +'</td><td>' + item.phone_number +'</td></tr>';
     });
     tableElement.innerHTML = table;
     console.log(table)
@@ -112,7 +112,7 @@ function createExceptionTable(data){
     table = table + buildThs(['First Name','Last Name','Notes','Date']);
 
     data.forEach(function(item) {
-        table = table + '<tr><td>' +item.first_name +'</td><td>'+item.last_name +'</td><td>' +item.note +'</td><td>' + item.date + '</td></tr>';
+        table = table + '<tr class="table-info"><td>' +item.first_name +'</td><td>'+item.last_name +'</td><td>' +item.note +'</td><td>' + item.date + '</td></tr>';
     });
     tableElement.innerHTML = table;
     console.log(table)
