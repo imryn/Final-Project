@@ -51,19 +51,19 @@
                  <div class="col span-1-of-3 box">
                     <div class="registration-info">
                         <label  for="name"> <span> * </span>  First Name: </label> <br>
-                        <input name="fname" type="name" id="name"/>
+                        <input name="fname" type="name" id="name" class="disabled-input"/>
                     </div>
                 </div>
                   <div class="col span-1-of-3 box">
                     <div class="registration-info">
                         <label  for="name"> <span> * </span>  Last Name: </label> <br>
-                        <input name="lastname" type="name" id="kidlastname"/>
+                        <input name="lastname" type="name" id="kidlastname" class="disabled-input"/>
                     </div>
                 </div>
                  <div class="col span-1-of-3 box">
                      <div class="registration-info">
                         <label for="id"> <span> * </span> ID: </label> <br>
-                        <input disabled class="disabled-input" name="kidId" type="text" id="kid-id" />
+                        <input name="kidId" type="text" id="kid-id" class="disabled-input"/>
                      </div>
                 </div>
            </div>
@@ -71,7 +71,7 @@
                    <div class="col span-1-of-3 box">
                         <div class="registration-info">
                             <label> <span> * </span> Gender: </label>
-                            <select name="genders" size="1"> 
+                            <select name="genders" size="1" class="disabled-input"> 
                                 <option value="boy" selected> Boy  </option>
                                 <option value="Girl"> Girl </option>
                             </select>
@@ -80,7 +80,7 @@
                    <div class="col span-1-of-3 box">
                     <div class="registration-info">
                         <label for="data"> <span> * </span> Date of birth: </label>
-                        <input name="bDate" type="date" id="birth-date">
+                        <input name="bDate" type="date" id="birth-date" class="disabled-input">
                     </div>
                 </div> 
            </div>
@@ -89,44 +89,44 @@
                 <div class="col span-1-of-4 box">
                     <div class="registration-info">
                         <label for="name"> Allergies: </label>   
-                        <p> <input type="checkbox" name="celiac"> Celiac </p>
+                        <p> <input type="checkbox" name="celiac" class="disabled-input"> Celiac </p>
                     </div>
                 </div>
                 <div class="col span-1-of-4 box">
                     <div class="registration-info">
-                        <p class="allergie-info"> <input type="checkbox" name="eggs"> Eggs </p>                  
+                        <p class="allergie-info"> <input type="checkbox" name="eggs" class="disabled-input"> Eggs </p>                  
                     </div>
                 </div>
                 <div class="col span-1-of-4 box">
                     <div class="registration-info">
-                        <p class="allergie-info"> <input type="checkbox" name="fish"> Fish </p>                  
+                        <p class="allergie-info"> <input type="checkbox" name="fish" class="disabled-input"> Fish </p>                  
                     </div>
                 </div>
                 <div class="col span-1-of-4 box">
                     <div class="registration-info">
-                        <p class="allergie-info"> <input type="checkbox" name="kiwis"> Kiwis </p>                  
+                        <p class="allergie-info"> <input type="checkbox" name="kiwis" class="disabled-input"> Kiwis </p>                  
                     </div>
                 </div>
            </div>
            <div class="row kid-form3">
                 <div class="col span-1-of-4 box"> 
                      <div class="registration-info"> 
-                        <p> <input type="checkbox" name="lactoseintolerance"> Lactose intolerance </p>                  
+                        <p> <input type="checkbox" name="lactoseintolerance" class="disabled-input"> Lactose intolerance </p>                  
                      </div>
                 </div>
            <div class="col span-1-of-4 box">
                     <div class="registration-info">
-                        <p> <input type="checkbox" name="nuts"> Nuts </p>
+                        <p> <input type="checkbox" name="nuts" class="disabled-input"> Nuts </p>
                     </div>
            </div>
            <div class="col span-1-of-4 box">
                     <div class="registration-info">   
-                         <p> <input type="checkbox" name="soy"> Soy </p>                  
+                         <p> <input type="checkbox" name="soy" class="disabled-input"> Soy </p>                  
                     </div>
            </div>
            <div class="col span-1-of-4 box">
                     <div class="registration-info"> 
-                        <p> <input type="checkbox" name="strawberries"> Strawberries </p>                  
+                        <p> <input type="checkbox" name="strawberries" class="disabled-input"> Strawberries </p>                  
                     </div>
            </div>
            </div>
@@ -134,13 +134,13 @@
                 <div class="col span-1-of-3 box">
                     <div class="registration-info">
                         <label for="food"> Food Preference: </label>   
-                        <p> <input type="radio" name="vegan"> Vegan </p>                  
+                        <p> <input type="radio" name="vegan" class="disabled-input"> Vegan </p>                  
                     </div>
                 </div>
                 <div class="col span-1-of-3 box">
                     <div class="registration-info">
                         <label for="food"> </label>   
-                        <p class="food-pref"> <input type="radio" name="vegetarian"> Vegetarian </p>                  
+                        <p class="food-pref"> <input type="radio" name="vegetarian" class="disabled-input"> Vegetarian </p>                  
                     </div>
                 </div>
            </div>
@@ -148,11 +148,10 @@
                 <div class="col span-1-of-2 box">
                      <div class="registration-info">
                         <label> Comments and Special Requests </label>
-                        <textarea name="comments" cols="83" rows="4" style="overflow:auto;resize:none"> </textarea>
+                        <textarea name="comments" cols="83" rows="4" style="overflow:auto;resize:none" class="disabled-input"> </textarea>
                      </div>
                 </div>
             </div>
-            <button type="button" class="update-details" onClick="savingChangesinListKidbag()"> Save</button>
             <button type="button" id="new-observation"> Kindergarten teacher's comments </button>
      </form>  
 </section>

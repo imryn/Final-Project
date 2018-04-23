@@ -22,16 +22,6 @@ function createTable(data){
     console.log(table)
 }
 
-function showInfoAboutakid(){
-    httpGet("/Sadna/server/api.php?route=getKidInfo",{}, function(response){
-        if(response.success){
-            response.data.bDate = timestampToDate(response.data.bDate);
-
-            setFormData("#kid-detailsUpdate form",response.data);
-        }
-    });
-}
-
 function createKidForm(data,callback){
     var date = new Date(data.bDate).getTime();
     if(!isNaN(date)){

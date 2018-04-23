@@ -109,8 +109,6 @@ function httpPost(url,data,callback){
     })
 }
 
-
-
 function putInfoInsideSelector(selectorId, data){
     var optionsString="";
 
