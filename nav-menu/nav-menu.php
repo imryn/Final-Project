@@ -14,8 +14,8 @@
       <ul class="nav navbar-nav">
             <!-- <li><a href="login_page.php?usertype=crew"> Login For Crew </a></li>
             <li><a href="login_page.php?usertype=parent"> Login For Parents </a></li> -->
-            <li><a href="index.php"> home </a></li>
-            <li><a href="#"> about </a></li>
+            <li class="links"><a href="index.php"> home </a></li>
+            <li class="links"><a href="#"> about </a></li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Login 
@@ -25,7 +25,7 @@
                 <a class="dropdown-item" href="login_page.php?usertype=parent"> Login for parents </a>
               </div>
             </li>
-            <li><a href="parent-registration.php"> registration </a></li>
+            <li class="links"><a href="parent-registration.php"> registration </a></li>
             <!-- <li><a href="reports.html"> reports </a></li> -->
             <!-- <li><a href="Building_Schedule.html">schedule </a></li>
       </ul>

@@ -7,29 +7,36 @@
     margin-left: 12.5%;
 }
 
-.navbar li{
+.links{
     margin-left: 0.8em;
 }
 
-.navbar li a{
+.links a, #navbarDropdownMenuLink{
     overflow: hidden;
     background-color: #e67e22;
     word-spacing: 2px;
+    color: white !important;
 }
 
 .navbar a,
 .navbar button{
     text-transform: capitalize;
     font-family: Lato;
-    font-weight: 300;
-    color: white !important;
+    font-weight: 300;   
 }
 
-
-.navbar li a:hover,
 .navbar li:hover,
-.dropdown.open > a{
+.dropdown.open > a, #navbarDropdownMenuLink:hover{
     background-color:orange;
-    color: black;
 }
 
+.dropdown-item{
+    color: black;
+    display: inherit;
+    margin-bottom: 4%;
+}
+
+.dropdown-item:hover{
+    text-decoration: none;
+    background-color:orange;  
+}
