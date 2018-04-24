@@ -21,8 +21,8 @@
                 Login 
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="login_page.php?usertype=crew"> Login for crew </a>
-                <a class="dropdown-item" href="login_page.php?usertype=parent"> Login for parents </a>
+                <a class="dropdown-item" href="login_page.php?usertype=crew"> Login as crew </a>
+                <a class="dropdown-item" href="login_page.php?usertype=parent"> Login as parents </a>
               </div>
             </li>
             <li class="links"><a href="parent-registration.php"> registration </a></li>

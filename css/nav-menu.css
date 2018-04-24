@@ -35,6 +35,11 @@
     display: inherit;
     margin-bottom: 4%;
 }
+.dropdown-menu{
+    min-width: 118px;
+    font-size: 16px;
+}
+
 
 .dropdown-item:hover{
     text-decoration: none;
