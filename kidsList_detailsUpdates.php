@@ -31,7 +31,7 @@
 <!-- kid section -->
 <section id="kid-choosen">
     <form>
-        <h2> Kid File </h2>
+        <h2> Child File </h2>
         <p class="success-message2"></p>
         <div class="row kid-form1">
              <div class="col span-1-of-2 box">
@@ -147,12 +147,12 @@
            <div class="row kid-form4">
                 <div class="col span-1-of-2 box">
                      <div class="registration-info">
-                        <label> Comments and Special Requests </label>
+                        <label> Comments and Special Requests: </label>
                         <textarea name="comments" cols="83" rows="4" style="overflow:auto;resize:none" class="disabled-input"> </textarea>
                      </div>
                 </div>
             </div>
-            <button type="button" id="new-observation"> Kindergarten teacher's comments </button>
+            <button type="button" id="new-observation"> Add observation to child file </button>
      </form>  
 </section>
 
@@ -162,9 +162,10 @@
             <div class="row kid-update1">
                  <div class="col span-1-of-2 box">
                     <div class="update-info">
-                        <label  for="name"> Please enter new observation: </label> <br>
+                        <label  for="name"> Observations list: </label> <br>
                         <select name="observation" size="1" id="observation"> 
-                                <option class="observation-value1" value="child argued with another kid"> Child argued with another kid </option>
+                                <option class="observation-value1" value="" selected> Please pick from list... </option>
+                                <option class="observation-value1" value="child argued with another kid"> Your child argued with another kid </option>
                                 <option class="observation-value1" value="child didn't eat breakfest"> Your child didn't eat breakfest </option>
                                 <option class="observation-value1" value="child didn't eat lunch"> Your child didn't eat lunch </option>
                                 <option class="observation-value1" value="please call the kindergarten teacher as soon as possible"> Please call the kindergarten teacher as soon as possible </option>
@@ -178,13 +179,13 @@
                                 <option class="observation-value2" value="child likes to hear stories"> Your child likes to hear stories </option>
                                 <option class="observation-value2" value="child took part in the activities"> Your child took part in the activities </option> 
                                 <option class="observation-value2" value="please bring a new set of clothes"> Please bring a new set of clothes </option> 
-                                <option class="observation-value2" value="child behaved very well today"> Child behaved very well today </option>
+                                <option class="observation-value2" value="child behaved very well today"> Your child behaved very well today </option>
                         </select>
                     </div>
                 </div>
                 <div class="col span-1-of-2 box">
                     <div class="update-info">
-                        <label id="pickDate"> <span> * </span> Pick The Date: </label>
+                        <label id="pickDate"> <span> * </span> Pick date: </label>
                         <input name="observationDate" type="date" id="upDate" />
                     </div>
                 </div>
@@ -192,7 +193,7 @@
            <div class="row kid-update2">
                 <div class="col span-1-of-2 box">
                      <div class="update-info">
-                        <label>  Comments </label>
+                        <label>  Comments: </label>
                         <textarea name="SpecialRequests" cols="76" rows="4" style="overflow:auto;resize:none"> </textarea>
                      </div>
                 </div>

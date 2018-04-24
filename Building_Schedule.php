@@ -16,7 +16,7 @@
                 <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
                 <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
 
-        <title>Update Weekly Scheduler</title>
+        <title>Update Weekly Schedule</title>
         
     </head>
 
@@ -29,7 +29,7 @@
         <section id="Weekly-Scheduler">
  
             <form>
-                <h1> Update Weekly Scheduler </h1>
+                <h1> Update Weekly Schedule </h1>
 
 
                 <div class="calendar_row">
@@ -58,7 +58,7 @@
                                 <span class="start" id="startb"><!-- start from jquery --></span>
                                 <span class="end" id="endb"><!-- end from jquery --></span>
                                 <span class="timezone">Asia/Jerusalem</span>
-                                <span class="title">Breakfast Menu</span>
+                                <span class="title">Breakfast</span>
                                 <span class="description"><!-- description from jquery --></span>
                             </div>                    
                         </div>
@@ -75,7 +75,7 @@
                                 <span class="start" id="starte"><!-- start from jquery --></span>
                                 <span class="end" id="ende"><!-- end from jquery --></span>
                                 <span class="timezone">Asia/Jerusalem</span>
-                                <span class="title">Educational Activities</span>
+                                <span class="title">Educational Activity</span>
                                 <span class="description"><!-- description from jquery --></span>
                             </div>                        
                         </div>
@@ -92,7 +92,24 @@
                                 <span class="start" id="startl"><!-- start from jquery --></span>
                                 <span class="end" id="endl"><!-- end from jquery --></span>
                                 <span class="timezone">Asia/Jerusalem</span>
-                                <span class="title">Lunch Menu</span>
+                                <span class="title">Lunch</span>
+                                <span class="description"><!-- description from jquery --></span>
+                            </div>
+                         </div>
+                    </div>    
+
+                    <div class="schedule_row">
+                        <div class="scheduler-description" id="se">                            
+                            <label for="Lunch">  Special Event: </label>
+                            <input name="Lunch" id='seInput' type="text" /> 
+
+                            <!-- Button code -->
+                            <div title="Add to Calendar" class="addeventatc"> 
+                                Add  
+                                <span class="start" id="startse"><!-- start from jquery --></span>
+                                <span class="end" id="endse"><!-- end from jquery --></span>
+                                <span class="timezone">Asia/Jerusalem</span>
+                                <span class="title">Special Event</span>
                                 <span class="description"><!-- description from jquery --></span>
                             </div>
                          </div>

@@ -31,7 +31,7 @@
 <!-- kid section -->
 <section id="kid-detailsUpdate">
     <form>
-        <h2> Kid </h2>
+        <h2> Child File</h2>
         <p class="describe-info"> Update your child details: </p>
         <p class="success-message2"></p>
             <div class="row kid-form1">
@@ -134,12 +134,12 @@
            <div class="row kid-form4">
                 <div class="col span-1-of-2 box">
                      <div class="registration-info">
-                        <label> Comments and Special Requests </label>
+                        <label> Comments and Special Requests: </label>
                         <textarea name="comments" cols="83" rows="4" style="overflow:auto;resize:none"> </textarea>
                      </div>
                 </div>
             </div>
-            <button type="button" class="update-details" onClick="savingChangesinKidbag()"> Save</button>
+            <button type="button" class="update-details" onClick="savingChangesinKidbag()"> Update </button>
             <!-- <button type="button" id="new-observation"> Kindergarten teacher's comments </button> -->
      </form>  
 </section>

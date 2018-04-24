@@ -94,13 +94,13 @@
                 <div class="row parent-form4">
                     <div class="col span-1-of-3 box">
                             <div class="registration-info">
-                                <label for="phone" id="phone"> Phone No: </label> <br>
+                                <label for="phone" id="phone"> Phone No.: </label> <br>
                                 <input name="phone" type="phone" /> 
                             </div>
                     </div>
                     <div class="col span-1-of-3 box">
                             <div class="registration-info">
-                                <label for="phone" id="parent-phone"> <span> * </span> Cell Phone No: </label>
+                                <label for="phone" id="parent-phone"> <span> * </span> Cell Phone No.: </label>
                                 <input name="mobilephone" type="phone" id="phone" required/> 
                             </div>
                     </div>
@@ -130,7 +130,7 @@
                 </div> 
                 <div class="col span-1-of-3 box">
                         <div class="registration-info">
-                            <label for="phone"> <span> * </span> Cell Phone No: </label>
+                            <label for="phone"> <span> * </span> Cell Phone No.: </label>
                             <input name="mobilephone2" type="phone" required/> 
                         </div>
                 </div>    
