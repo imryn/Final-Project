@@ -60,7 +60,7 @@ function getExceptionReports(){
                 getExceptionReports.error("");
             }
             else{
-                getExceptionReports.error("No comments on the selected date");
+                getExceptionReports.error("No comments for selected date");
             }
         }
         

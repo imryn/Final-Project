@@ -117,7 +117,7 @@
             </form>
         </section>
         <script src="commons.js"></script>
-        <script src="fill_attendance.js"></script>        
+        <script src="js/fill_attendance.js"></script>        
     </body>
 
 </html>
