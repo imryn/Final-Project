@@ -38,7 +38,7 @@
 
                 <div id="viewCalendar">
                 </div>
-                <script src="view_schedule.js"> </script>
+                <script src="js/view_schedule.js"> </script>
                 <script src="commons.js"></script>      
         </section>        
         

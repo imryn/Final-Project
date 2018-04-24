@@ -119,7 +119,7 @@
         </section>
 
 
-        <script src="Building_Schedule.js"> </script>
+        <script src="js/Building_Schedule.js"> </script>
         <script src="commons.js"></script>
 
     </body>
