@@ -21,7 +21,7 @@
                 <script src='lib/fullcalendar.js'></script>
                 <script type='text/javascript' src='lib/gcal.js'></script>
 
-        <title> Weekly Scheduler</title>
+        <title> Weekly Schedule </title>
      
     </head>
 
@@ -33,7 +33,7 @@
 
         <section id="Weekly-Scheduler">
  
-            <h1> Weekly Scheduler </h1>
+            <h1> Weekly Schedule </h1>
             <p class="describe-list-info"> Just click on event and add it to your private calendar</p> <br>
 
                 <div id="viewCalendar">

@@ -40,12 +40,12 @@
 		
 <div class="form">
         <div class="form-group">
-		    <label for="form2">Your ID</label>
+		    <label for="form2">Your ID: </label>
             <input class= "form-control input-lg" name="parentId" type="text" id="form2" placeholder="id" required>
         </div>
 
         <div class="form-group">
-		    <label for="form4">Your password</label>
+		    <label for="form4">Your password: </label>
             <input name="password" id="form4"  class="form-control input-lg" type="password" placeholder="password" required>
         </div>
 

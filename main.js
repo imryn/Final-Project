@@ -55,7 +55,7 @@ function emailcheck(emailcheck,errorFunction){
     //var address = document.getElementById[email].value;
     if (reg.test(emailcheck) == false) 
     {
-        errorFunction.error("email field must contain @ or invalid");
+        errorFunction.error("Email field must contain @ and . or is invalid");
         return false;
     }
     return true;
@@ -83,17 +83,17 @@ function createParentUser(){
             parentData['route'] = 'create_user';
             httpPost("/Sadna/server/api.php",parentData,function(_response){
                 if(_response.success){
-                    bootpopup.alert("The form saved successfully","Success",function(){
+                    bootpopup.alert("Form was saved successfully !!","Success",function(){
                         window.location.assign("/Sadna/index.php");
                     });
                 }
                 else{
-                    errorForUser("One of the field is wrong or already used");
+                    errorForUser("One of the fields is wrong or already used");
                 }
             })
         }
         else{
-            errorForUser("One of the field is wrong or already used");
+            errorForUser("One of the fields is wrong or already used");
         }
     });
 }

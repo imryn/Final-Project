@@ -8,7 +8,7 @@ window.addeventasync = function(){
     });
 };      
 
-$("#bfInput, #eaInput, #lInput").blur(function(e){
+$("#bfInput, #eaInput, #lInput, #seInput").blur(function(e){
     var newText = $(this).val();
 
     $(this).parent().find('.description').text(newText);
@@ -25,4 +25,7 @@ $("#date").blur(function(){
 
     $("#ln #startl").text(newDate + ' 13:45')
     $("#ln #endl").text(newDate + ' 14:15')
+
+    $("#se #startse").text(newDate + ' 9:00 AM')
+    $("#se #endse").text(newDate + ' 10:30 AM')
 })

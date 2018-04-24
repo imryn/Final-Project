@@ -11,7 +11,7 @@ function DetailskidUpdate(){
     data['route'] = 'observation_error';
     httpPost("/Sadna/server/api.php",data,function(response){
         if(response.success){
-            DetailskidUpdate.error("the observation saved successfully")
+            DetailskidUpdate.error("Observation was added successfully !!")
         }
        
     })
@@ -65,7 +65,7 @@ function savingChangesinKidbag(){
     KiData['route'] = 'update_kid';
     httpPost("/Sadna/server/api.php",KiData,function(response){
         if(response.success){
-            savingChangesinKidbag.error("the kid bag saved successfully");
+            savingChangesinKidbag.error("Child file was updated successfully !!");
         }
 
     })
