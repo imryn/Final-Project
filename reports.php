@@ -17,6 +17,8 @@
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
   <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+ 
 
   <title>Reports</title>
 
@@ -48,11 +50,13 @@
      </form>
 </section>
 
+    <div id="visualization" style="width:400; height:300"> </div>
 
     <div class="report-data-container"></div>
  
 
     <script src="reports/reports.js"></script>
     <script src="commons.js"></script>
+    <script src="charts.js"> </script>
 </body>
 </html>
