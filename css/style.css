@@ -215,7 +215,7 @@ input[type=radio]:first-child{
 }
 
 /* buttons */
-.save-1, .save-2, .create-botton,
+.save-1, .save-2, .create-botton ,.create-botton1, .create-botton2,
 .exit, .save-details, .update-details, #options_for_report,
 .show-kid-details{
     padding: 5px;
@@ -234,6 +234,26 @@ input[type=radio]:first-child{
 .save-1, .save-details{
     margin-left: 56%;
     margin-top: 5%;
+}
+
+.create-botton1, .create-botton2{
+    width: 127px;
+    
+}
+
+.create-botton{
+    margin-left: 48%;
+    margin-top: 5%;
+}
+
+.create-botton1{
+    margin-left: 52%;
+    margin-top: 5%;
+}
+ 
+.create-botton2{
+    margin-left: 36%;
+    margin-top: -3.7%;
 }
 
 .show-kid-details{
@@ -271,10 +291,6 @@ input[type=radio]:first-child{
     font-weight: 300;
     word-spacing: 4px;
     text-align: center; 
-}
-.create-botton{
-   margin-top: 5%;
-   margin-left: 48%;  
 }
 
 /* instruction at the beginning of forms */
