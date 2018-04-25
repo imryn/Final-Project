@@ -50,13 +50,12 @@
      </form>
 </section>
 
-    <div id="visualization" style="width:400; height:300"> </div>
-
     <div class="report-data-container"></div>
- 
+    <div id="chart_div" style="width:400; height:300"> </div>
+
 
     <script src="reports/reports.js"></script>
     <script src="commons.js"></script>
-    <script src="charts.js"> </script>
+    <script src="reports/charts.js"> </script>
 </body>
 </html>
