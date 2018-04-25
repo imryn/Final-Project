@@ -514,7 +514,7 @@ input[type=radio]:first-child{
 
 
 /* START building Daily attendance design */
-#attendance-table{
+/* #attendance-table{
     border: 2px black solid;
     text-align:center;
     margin-left: 13%;  
@@ -525,7 +525,7 @@ input[type=radio]:first-child{
     border: 3px black solid;
     width:150px;
     padding-left:5px;
-}
+} */
 
 .send-button{
     width: 55px;

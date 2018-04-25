@@ -82,13 +82,13 @@
                     <input name="date" type="text" value="<?php echo date('Y-m-d'); ?>" disabled/> 
                 </div>                 
 
-                <table id="attendance-table">
+                <table id="attendance-table" class="table table-striped">
                     <tr>
-                        <th> Last Name </th>
-                        <th> First Name </th>
-                        <th> ID </th>                 
-                        <th> Attendance ? </th>
-                        <th> Send SMS Now </th>
+                        <th scope="col"> Last Name </th>
+                        <th scope="col"> First Name </th>
+                        <th scope="col"> ID </th>                 
+                        <th scope="col"> Attendance ? </th>
+                        <th scope="col"> Send SMS Now </th>
                     </tr>
 
                     <?php if ($result->num_rows > 0) 
