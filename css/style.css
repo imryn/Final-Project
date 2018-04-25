@@ -449,8 +449,8 @@ input[type=radio]:first-child{
     border-radius: 5px;
     font-weight: 300;
     text-align: center;
-   /* margin-left: 280px; */
-  /* left:50%; */
+    margin: 2% 0 0 13%; 
+  
 
 }
 /* END building_schedule design  */
@@ -517,9 +517,7 @@ input[type=radio]:first-child{
 #attendance-table{
     border: 2px black solid;
     text-align:center;
-    margin-left:-350px;
-    position:relative;  
-    left:50%;
+    margin-left: 13%;  
 }
 
 #attendance-table th{
@@ -543,6 +541,10 @@ input[type=radio]:first-child{
     margin-left:50px;
 } 
 
+.pickDateField{
+    text-align: center;
+}
+
 .pickDateField input{
     background-color: transparent;
     border: solid 1px rgb(169,169,169);
@@ -558,6 +560,7 @@ input[type=radio]:first-child{
     display: inline-block; 
 }
 .pickDateField label{
-    margin-left:160px;
+    margin-bottom: 2%;
 }
+
 /* END building Daily attendance design */
