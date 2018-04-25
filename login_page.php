@@ -31,7 +31,7 @@
 	    
 		<div class="col-md-10 col-md-offset-1 main" >
 		    <div class="col-md-6 left-side" >
-		        <h3>Kidin Touch</h3>
+                <img src="vendors/pictures/logo.png" alt="logo" id="login-logo">
 		        <br>
 		    </div>
 		
