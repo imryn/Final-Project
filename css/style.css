@@ -149,15 +149,10 @@ h2{
  
 }
 
-.registration-info select,{
+.registration-info select,.alergic-info select, .exception-info select{
     margin-top: 1%;
     margin-left: 4%;
     width: 71%;
-}
-
-.exception-info select, .alergic-info select{
-    width: 51%;
-    margin-left: 4%;
 }
 
 /* specific inputs,selects and lables */
@@ -208,8 +203,7 @@ input[type=radio]:first-child{
 }
 
 .report-info select{
-    margin-left: 0.9%;
-    width: 74%;
+    margin-left: 25px;
 }
 
 .observation-value1{
