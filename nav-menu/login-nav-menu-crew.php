@@ -25,6 +25,7 @@
               <!--</div>-->
             <!--</li>-->
             
+            <li class="links"><a href="fill_attendance.php"> Daily Attendance </a></li>
             <li class="links"><a href="Building_Schedule.php">Weekly schedule </a></li>
             <li class="links"><a href="reports.php"> reports </a></li>
             <li class="links"><a href="shopping-list.php"> shopping list </a></li>

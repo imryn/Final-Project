@@ -79,6 +79,12 @@
                     $exceptions -> getAllExceptions();
                     break;
 
+                case "get_Presencereport":
+                    $presence= new Presence();
+                    $presence -> getPresence();
+                    break;
+                    
+
                  case "getKidInfo":
                     $kids= new Kids();
                     $kids -> showInfoAboutakid();
