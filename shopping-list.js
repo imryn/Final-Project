@@ -48,12 +48,13 @@ function SelectCategory(){
 function buildThs(array){
     var row = '<tr>'
     array.forEach(function(item){
-        row = row + '<th>'+item+'</th>';
+        row = row + '<th scope="row">'+item+'</th>';
     })
     return row + '</tr>';
 }
 
 var tableElement = document.getElementById("item-table").tableElement.length;
+
 function createItemsTable(data){
     
     var table='';
@@ -61,7 +62,7 @@ function createItemsTable(data){
     table = table + buildThs(['Category', 'Item Name','Quantity', 'Price']);
     
     data.forEach(function(item) {
-        table = table + '<tr><td>'+item.itemCategory+'</td><td>' + item.itemName + '</td><td>'+item.quantity+'</td><td>'
+        table = table + '<tr class="table-info"><td>'+item.itemCategory+'</td><td>' + item.itemName + '</td><td>'+item.quantity+'</td><td>'
         +item.unitPrice+'</td></tr>';
         $('#item-table').prepend(table);
     });

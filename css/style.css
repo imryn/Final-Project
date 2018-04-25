@@ -328,14 +328,8 @@ input[type=radio]:first-child{
 }
 
 /* table in report page */
-#kids-table, #kids-observation-table{
+#kids-table, #kids-observation-table, #item-table{
     margin: 6% auto 0 auto;
-}
-
-#item-table{
-    margin: 8% auto 0 auto;
-    background-color: #9b59b6;
-    color: white;
 }
 
 /* {
@@ -345,22 +339,6 @@ input[type=radio]:first-child{
     width: calc(100% - 82px);
 } */
 
-#item-table td:first-child{
-   padding: 0 8px 0 8px;
-}
-
-#item-table td{
-    text-align: center;
-    border: solid 1px #dfe4ea;
-}
-
-#item-table th{
-   padding: 0 51.4px 0 51.4px;
-   text-align: center;
-   word-spacing: 8px;
-   border-bottom: solid 1px #dfe4ea;
-
-}
 
 .shop{
 	word-spacing: 5px;
