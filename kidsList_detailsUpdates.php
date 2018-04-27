@@ -194,7 +194,7 @@
                 <div class="col span-1-of-2 box">
                      <div class="update-info">
                         <label>  Comments: </label>
-                        <textarea name="SpecialRequests" cols="76" rows="4" style="overflow:auto;resize:none"> </textarea>
+                        <textarea name="SpecialRequests" cols="88" rows="4" style="overflow:auto;resize:none"> </textarea>
                      </div>
                 </div>
             </div>
