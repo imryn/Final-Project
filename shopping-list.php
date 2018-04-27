@@ -157,7 +157,7 @@
 
             // $conn->close(); ?> -->
            
-        <script src="shopping-list.js"></script>
+        <script src="js/shopping-list.js"></script>
         <script src="commons.js"></script>
 </body>
 </html>
