@@ -102,7 +102,11 @@
                                 <td> <?php echo $row['fname']; ?> </td>                                                              
                                 <td style="display:none;" class='kidId'> <?php echo $row['kidId']; ?> </td> 
                                 <td class='attendance'>
-                                    <input id="toggle-status" data-height="15" <?php if($row['comeToClass']=='true'){echo 'checked';}else{echo '';}; ?> type="checkbox" data-toggle="toggle">
+                                    <input id="toggle-status" data-height="15" 
+                                    <?php if($row['comeToClass']=='true')
+                                    {echo 'checked';}
+                                    else{echo '';}; ?>
+                                    type="checkbox" data-toggle="toggle">
                                 </td>
                                 <td> <input type="button" checked value="Send" class="send-button" onClick="sendSMS()"/> </td>
                                 <td style="display:none;" class='parentId'> <?php echo $row['parentId']; ?> </td>

@@ -18,7 +18,7 @@ function saveInServer(){
 
     var sql = 'DELETE FROM noattendance WHERE date=CURRENT_DATE(); '
     for(var i=0; i<updateKids.length; i++){
-        sql += ' insert into noattendance (date,parentId,kidId,kindergartenid) values (current_date(),' + updateKids[0].parentId + ',' + updateKids[0].kidId + ',' + updateKids[0].kindergartenid + '); '
+        sql += ' insert into noattendance (date,parentId,kidId,kindergartenid) values (current_date(),' + updateKids[i].parentId + ',' + updateKids[i].kidId + ',' + updateKids[i].kindergartenid + '); '
     }
 
 
