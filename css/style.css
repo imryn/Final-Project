@@ -149,17 +149,23 @@ h2{
  
 }
 
-.registration-info select,.alergic-info select{
+.registration-info select, .alergic-info select, .exception-info select{
     margin-top: 1%;
     margin-left: 4%;
+}
+
+.alergic-info select{
+    width: 59%;
+}
+
+.registration-info select{
     width: 71%;
 }
 
 .exception-info select{
-    margin-top: 1%;
-    margin-left: 4%;
-    width:51%;
+    width: 51%;
 }
+
 /* specific inputs,selects and lables */
 
 #observation{
@@ -208,8 +214,8 @@ input[type=radio]:first-child{
 }
 
 .report-info select{
-    margin-left: 0.9%;
-    width: 74%;
+    margin-left: 0.7%;
+    width: 85%;
 }
 
 .observation-value1{
@@ -334,14 +340,8 @@ input[type=radio]:first-child{
 }
 
 /* table in report page */
-#kids-table, #kids-observation-table{
+#kids-table, #kids-observation-table, #item-table{
     margin: 6% auto 0 auto;
-}
-
-#item-table{
-    margin: 8% auto 0 auto;
-    background-color: #9b59b6;
-    color: white;
 }
 
 /* {
@@ -351,22 +351,6 @@ input[type=radio]:first-child{
     width: calc(100% - 82px);
 } */
 
-#item-table td:first-child{
-   padding: 0 8px 0 8px;
-}
-
-#item-table td{
-    text-align: center;
-    border: solid 1px #dfe4ea;
-}
-
-#item-table th{
-   padding: 0 51.4px 0 51.4px;
-   text-align: center;
-   word-spacing: 8px;
-   border-bottom: solid 1px #dfe4ea;
-
-}
 
 .shop{
 	word-spacing: 5px;
@@ -455,8 +439,8 @@ input[type=radio]:first-child{
     border-radius: 5px;
     font-weight: 300;
     text-align: center;
-   /* margin-left: 280px; */
-  /* left:50%; */
+    margin: 2% 0 0 42%; 
+  
 
 }
 /* END building_schedule design  */
@@ -520,12 +504,10 @@ input[type=radio]:first-child{
 
 
 /* START building Daily attendance design */
-#attendance-table{
+/* #attendance-table{
     border: 2px black solid;
     text-align:center;
-    margin-left:-350px;
-    position:relative;  
-    left:50%;
+    margin-left: 13%;  
 }
 
 #attendance-table th{
@@ -533,7 +515,7 @@ input[type=radio]:first-child{
     border: 3px black solid;
     width:150px;
     padding-left:5px;
-}
+} */
 
 .send-button{
     width: 55px;
@@ -548,6 +530,10 @@ input[type=radio]:first-child{
     text-align: center;
     margin-left:50px;
 } 
+
+.pickDateField{
+    text-align: center;
+}
 
 .pickDateField input{
     background-color: transparent;
@@ -564,6 +550,7 @@ input[type=radio]:first-child{
     display: inline-block; 
 }
 .pickDateField label{
-    margin-left:160px;
+    margin-bottom: 2%;
 }
+
 /* END building Daily attendance design */

@@ -72,16 +72,17 @@
                 <templateHtml src="picture-container/picture-container.html"></templateHtml>
                 <?php include "nav-menu/nav-menu-container.php" ?>
         </header>
-        <h1> Daily Attendance </h1>
+       
         
         <section id="daily-attendance">
+          <h1> Daily Attendance </h1>
             <form>
                 <div class="pickDateField">
                     <label for="pick-date"> Today Attendance: </label>
                     <input name="date" type="text" value="<?php echo date('Y-m-d'); ?>" disabled/> 
                 </div>                 
 
-                <table id="attendance-table">
+                <table id="attendance-table" class="table table-striped">
                     <tr>
                         <th> Last Name </th>
                         <th> First Name </th>               

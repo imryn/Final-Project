@@ -118,7 +118,7 @@
                 </div>
                     <input type="button" value="Add" id="add" onClick="getItemList()"/>
             </form>  
-            <table id="item-table"> </table >
+            <table id="item-table" class="table table-striped table-responsive w-auto"> </table >
             <!-- <tr>
                 <th>Category</th>
                 <th>Item Name</th> 
