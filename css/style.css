@@ -227,30 +227,13 @@ input[type=radio]:first-child{
 }
 
 /* buttons */
-.save-1, .save-2, .create-botton ,.create-botton1, .create-botton2,
-.exit, .save-details, .update-details, #options_for_report,
-.show-kid-details{
-    padding: 5px;
-    width: 75px;
-    display: block;
-    cursor: pointer;
-    border: none;
-    background-color: #e67e22;
-    color: white;
-    border-radius: 5px;
-    font-family: 'Lato';
-    font-weight: 300;
-    text-align: center;
-}
-
-.save-1, .save-details{
+.save-details{
     margin-left: 56%;
     margin-top: 5%;
 }
 
 .create-botton1, .create-botton2{
     width: 127px;
-    
 }
 
 .create-botton{
@@ -265,22 +248,45 @@ input[type=radio]:first-child{
  
 .create-botton2{
     margin-left: 36%;
-    margin-top: -3.7%;
+    margin-top: -7.1%;
+}
+
+.show-kid-details, .save-2, #new-observation, .save-details,
+.exit, #options_for_report, .create-botton ,.create-botton1,
+.create-botton2, .update-details{
+    background-color: #e67e22;
+    border-color: white;
+    padding: 8px 18px;
 }
 
 .show-kid-details{
     margin-top: 1%;
     margin-left: 12.5%;
+    
+}
+.show-kid-details:hover, .save-2:hover,
+#new-observation:hover, .save-details:hover,
+exit:hover, #options_for_report:hover, .create-botton:hover,
+.create-botton1:hover, .create-botton2:hover,
+.update-details:hover{
+  background-color: #f39c12;
+  border-color: white;
+  padding: 8px 18px;
 }
 
-.save-2, .update-details,#options_for_report{
+.update-details,#options_for_report{
    margin-top: 5%;
-   margin-left: 48%; 
+   margin-left: 48%;
+}
+
+.save-2{
+  margin-top: 5%;
+  margin-left: 48%; 
 }
 
 .exit{
     margin-left: 37%;
-    margin-top: -3.7%; 
+    margin-top: -6.7%; 
 }
 
 #special-link{
@@ -289,20 +295,9 @@ input[type=radio]:first-child{
 }
 
 #new-observation{
-    padding: 8px;
     width: 42%;
     margin-top: 5%;
     margin-left: 30%; 
-    display: block;
-    cursor: pointer;
-    border: none;
-    background-color: #e67e22;
-    color: white;
-    border-radius: 5px;
-    font-family: 'Lato';
-    font-weight: 300;
-    word-spacing: 4px;
-    text-align: center; 
 }
 
 /* instruction at the beginning of forms */
@@ -451,7 +446,7 @@ input[type=radio]:first-child{
 #shopping-list{
     background-color: #f0f0f0;
     width: 75.2%;
-    margin-left: 12.4%;
+    margin-left: 12.5%;
 }
 
 #quantity{

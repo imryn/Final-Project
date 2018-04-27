@@ -139,7 +139,7 @@
                      </div>
                 </div>
             </div>
-            <button type="button" class="update-details" onClick="savingChangesinKidbag()"> Update </button>
+            <button type="button" class="update-details btn btn-warning" onClick="savingChangesinKidbag()"> Update </button>
             <!-- <button type="button" id="new-observation"> Kindergarten teacher's comments </button> -->
      </form>  
 </section>
@@ -191,7 +191,7 @@
 </section> -->
     
     <script src="commons.js"></script>
-    <script src="kid_detailsUpdate.js"></script>
+    <script src="js/kid_detailsUpdate.js"></script>
     <script src="main.js"></script>
 </body>
 

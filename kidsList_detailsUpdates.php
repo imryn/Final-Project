@@ -41,7 +41,7 @@
                  </div>
             </div>
         </div>
-        <button type="button" class="show-kid-details" onClick="showInfoAboutakidList()"> choose </button>
+        <button type="button" class="show-kid-details btn btn-warning" onClick="showInfoAboutakidList()"> choose </button>
     </form>
 </section>
 
@@ -152,7 +152,7 @@
                      </div>
                 </div>
             </div>
-            <button type="button" id="new-observation"> Add observation to child file </button>
+            <button type="button" id="new-observation" class="btn btn-primary btn-lg btn-block"> Add observation to child file </button>
      </form>  
 </section>
 
@@ -198,13 +198,13 @@
                      </div>
                 </div>
             </div>
-            <button type="button" class="save-details" onClick="DetailskidUpdate()"> Save</button>
-            <button type="button" class="exit"> <a href="/Sadna/index.php" id="special-link"> Exit </a> </button>
+            <button type="button" class="save-details btn btn-warning" onClick="DetailskidUpdate()"> Save</button>
+            <button type="button" class="exit btn btn-warning"> <a href="/Sadna/index.php" id="special-link"> Exit </a> </button>
         </form>
 </section>
     
     <script src="commons.js"></script>
-    <script src="kid_detailsUpdate.js"></script>
+    <script src="js/kid_detailsUpdate.js"></script>
     <script src="main.js"></script>
 </body>
 
