@@ -84,8 +84,7 @@
                 <table id="attendance-table">
                     <tr>
                         <th> Last Name </th>
-                        <th> First Name </th>
-                        <th> ID </th>                 
+                        <th> First Name </th>               
                         <th> Attendance ? </th>
                         <th> Send SMS Now </th>
                     </tr>
@@ -97,7 +96,7 @@
                             <tr>
                                 <td> <?php echo $row['lastname']; ?> </td>               
                                 <td> <?php echo $row['fname']; ?> </td>                                                              
-                                <td class='kidId'> <?php echo $row['kidId']; ?> </td> 
+                                <td style="display:none;" class='kidId'> <?php echo $row['kidId']; ?> </td> 
                                 <td class='attendance'>
                                     <input id="toggle-status" data-height="15" <?php if($row['comeToClass']=='true'){echo 'checked';}else{echo '';}; ?> type="checkbox" data-toggle="toggle">
                                 </td>
