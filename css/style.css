@@ -504,18 +504,17 @@ input[type=radio]:first-child{
 
 
 /* START building Daily attendance design */
-/* #attendance-table{
-    border: 2px black solid;
+#attendance-table{
+    width:75%;
     text-align:center;
     margin-left: 13%;  
 }
 
 #attendance-table th{
-    background:orange;
-    border: 3px black solid;
+    background:#e67e22;
+    text-align:center;
     width:150px;
-    padding-left:5px;
-} */
+}
 
 .send-button{
     width: 55px;
@@ -529,6 +528,7 @@ input[type=radio]:first-child{
     font-weight: 300;
     text-align: center;
     margin-left:50px;
+    height:35px;
 } 
 
 .pickDateField{

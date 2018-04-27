@@ -22,7 +22,7 @@ function saveInServer(){
     }
 
 
-    alert("Attendance updated successfully!!");
+    alert("Attendance was updated successfully!!");
     location.href = 'updateNoattendance.php?sql=' + sql
 
 }

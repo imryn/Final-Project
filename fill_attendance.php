@@ -84,28 +84,30 @@
 
                 <table id="attendance-table" class="table table-striped">
                     <tr>
+                        <th> No. </th>
                         <th> Last Name </th>
                         <th> First Name </th>               
                         <th> Attendance ? </th>
-                        <th> Send SMS Now </th>
+                        <th> Send Reminder </th>
                     </tr>
 
                     <?php if ($result->num_rows > 0) 
                     {
                         // output data of each row
+                        $counter=1;
                         while($row = $result->fetch_assoc()) {?>
                             <tr>
+                                <td> <?php echo $counter; ?></td>
                                 <td> <?php echo $row['lastname']; ?> </td>               
                                 <td> <?php echo $row['fname']; ?> </td>                                                              
                                 <td style="display:none;" class='kidId'> <?php echo $row['kidId']; ?> </td> 
                                 <td class='attendance'>
                                     <input id="toggle-status" data-height="15" <?php if($row['comeToClass']=='true'){echo 'checked';}else{echo '';}; ?> type="checkbox" data-toggle="toggle">
                                 </td>
-                                
-                                <!-- <input type="checkbox" checked data-toggle="toggle" data-onstyle="warning" data-offstyle="info">  -->
                                 <td> <input type="button" checked value="Send" class="send-button" onClick="sendSMS()"/> </td>
                                 <td style="display:none;" class='parentId'> <?php echo $row['parentId']; ?> </td>
                                 <td style="display:none;" class='kindergartenid'> <?php echo $row['kindergartenid']; ?> </td>                             
+                                <?php $counter++; ?>
                             </tr>
                         <?php    
                         }
