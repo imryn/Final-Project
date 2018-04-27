@@ -5,7 +5,8 @@
        include 'crew.php';
        include 'exceptions.php';
        include 'items.php';
-
+       include 'presence.php';
+       
        $method = $_SERVER['REQUEST_METHOD'];
 
 
@@ -78,6 +79,10 @@
                     $exceptions= new Exceptions();
                     $exceptions -> getAllExceptions();
                     break;
+                
+                case "get_Exceptionsgraph":
+                    $exceptions= new Exceptions();
+                    $exceptions -> getAllExceptionsinGraph();
 
                 case "get_Presencereport":
                     $presence= new Presence();
