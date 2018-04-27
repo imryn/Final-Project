@@ -41,7 +41,7 @@
                  </div>
             </div>
         </div>
-        <button type="button" class="show-kid-details btn btn-warning" onClick="showInfoAboutakidList()"> choose </button>
+        <button type="button" class="show-kid-details btn btn-warning" onClick="showInfoAboutakidList()"> Load File </button>
     </form>
 </section>
 

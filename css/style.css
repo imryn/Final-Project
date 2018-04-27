@@ -169,13 +169,18 @@ h2{
 /* specific inputs,selects and lables */
 
 #observation{
-    width: 116%;
+    width: 126%;
     margin-left: 0;
 }
 
-#upDate, #pickDate{
+#pickDate{
     margin-left: 28%;
     width: 60%;
+}
+
+#upDate{
+    margin-left: 28%;
+    width: 50%;
 }
 
 #f-member-select{
