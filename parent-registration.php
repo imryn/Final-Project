@@ -245,7 +245,7 @@
                      </div>
                 </div>
            </div>
-            <button type="button" class="save-2" onClick="createParentUser()"> Save</button>   
+            <button type="button" class="save-2 btn btn-warning" onClick="createParentUser()"> Save</button>   
      </form>  
 </section>
     <script src="commons.js"></script>
