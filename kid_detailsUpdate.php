@@ -191,7 +191,7 @@
 </section> -->
     
     <script src="commons.js"></script>
-    <script src="kid_detailsUpdate.js"></script>
+    <script src="js/kid_detailsUpdate.js"></script>
     <script src="main.js"></script>
 </body>
 

@@ -250,7 +250,7 @@
 </section>
     <script src="commons.js"></script>
     <script src="main.js"></script>
-    <script src="location.js"> </script>
+    <script src="js/location.js"> </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBheLjhOReAW-Y5Ki1P3MxNHVRW5K6yY-8
     &libraries=places&callback=initMap"
         async defer></script>
