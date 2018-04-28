@@ -522,18 +522,11 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
 }
 
 .send-button{
-    width: 55px;
-    display: block;
-    cursor: pointer;
-    border: none;
     background-color: #e67e22;
-    color: white;
-    border-radius: 5px;
-    font-family: 'Lato';
-    font-weight: 300;
-    text-align: center;
+    border-color: white;
+    padding: 8px 18px;
     margin-left:50px;
-    height:35px;
+
 } 
 
 .pickDateField{
