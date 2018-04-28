@@ -119,7 +119,7 @@
                     ?>
                 </table>
 
-                <input type="button" value="Update Attendance" class="refresh-button" onClick="saveInServer()"/>             
+                <input type="button" value="Update Attendance" class="refresh-button btn btn-warning" onClick="saveInServer()"/>             
             </form>
         </section>
         <script src="commons.js"></script>
