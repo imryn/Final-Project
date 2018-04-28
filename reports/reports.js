@@ -68,8 +68,8 @@ function getPresenceReport(){
     }
     
 
-function getExceptionReports(){
-    var data = getFormData("#exception-report form");
+function getExceptionReports(data){
+    // var data = getFormData("#exception-report form");
 
     var selectedKid = kinderGarten[data.exceptionOptions];
     data.kidFname = selectedKid.fname;
@@ -107,20 +107,18 @@ function getExceptionReports(){
     });
 }
 
-// function genrateKidReport(){
-//     var data = getFormData("#exception-report form");
-//     if(data.kidFname == "All"){
-//         getExceptionGraph(data);
-//     }
-//     else{
-
-//     }
-// }
-
-function getExceptionGraph(){
- 
-    
+function genrateKidReport(){
     var data = getFormData("#exception-report form");
+    if(data.exceptionOptions == 0){
+        getExceptionGraph(data);
+    }
+    else{
+        getExceptionReports(data);
+    }
+}
+
+function getExceptionGraph(data){   
+    // var data = getFormData("#exception-report form");
 
     var selectedKid = kinderGarten[data.exceptionOptions];
     data.kidFname = selectedKid.fname;
@@ -147,7 +145,7 @@ function getExceptionGraph(){
                 response.data.forEach(function(item){
                     item.date = timestampToDate(item.date);
                 })
-                if(data.kidFname == "All"){
+                // if(data.kidFname == "All")
                     var namesData = {};
                     response.data.forEach(function(row){
                         var key = row.first_name + " " + row.last_name;
@@ -159,11 +157,6 @@ function getExceptionGraph(){
                     })
                     console.log(chartData)
                     drawChart(chartData);
-                }
-                else{
-
-                }
-               
                 
                 getExceptionReports.error("");
             }

@@ -53,22 +53,23 @@ function buildThs(array){
     return row + '</tr>';
 }
 
-var tableElement = document.getElementById("item-table").tableElement.length;
+
+var onStartCreateTable = true;
 
 function createItemsTable(data){
     
-    var table='';
-
-    table = table + buildThs(['Category', 'Item Name','Quantity', 'Price']);
+    if(onStartCreateTable){
+        var table = buildThs(['Category', 'Item Name','Quantity', 'Price']);
+        onStartCreateTable =  false;
+        $('#item-table').append(table);
+    }
+    
     
     data.forEach(function(item) {
-        table = table + '<tr class="table-info"><td>'+item.itemCategory+'</td><td>' + item.itemName + '</td><td>'+item.quantity+'</td><td>'
-        +item.unitPrice+'</td></tr>';
-        $('#item-table').prepend(table);
+        var table = '<tr class="table-info"><td>'+item.itemCategory+'</td><td>' + item.itemName + '</td><td>'+item.quantity+'</td><td>'
+        + item.unitPrice+'</td></tr>';
+        $('#item-table').append(table);
     });
-    
-    
-    tableElement.innerHTML = table;
     console.log(table)
 }
 
