@@ -345,8 +345,13 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
 }
 
 #kids-table th, #kids-table tr,
-#kids-observation-table th, #kids-observation-table tr{
+#kids-observation-table th, #kids-observation-table tr,
+#item-table th, #item-table tr{
     text-align: center;
+}
+
+#item-table th{
+    background-color: #e67e22;
 }
 
 #chart_div{
