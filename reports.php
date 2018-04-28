@@ -51,7 +51,6 @@
 </section>
 
     <div class="report-data-container"></div>
-tyt
     <script src="reports/reports.js"></script>
     <script src="commons.js"></script>
     <script src="reports/charts.js"> </script>
