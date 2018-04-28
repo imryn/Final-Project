@@ -344,6 +344,11 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
     margin: 6% auto 0 auto;
 }
 
+#kids-table th, #kids-table tr,
+#kids-observation-table th, #kids-observation-table tr{
+    text-align: center;
+}
+
 #chart_div{
     margin-left: 30%;
 }
