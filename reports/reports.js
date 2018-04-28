@@ -109,8 +109,10 @@ function genrateKidReport(){
     var data = getFormData("#exception-report form");
     if(data.exceptionOptions == 0){
         getExceptionGraph(data);
+        document.getElementById('kids-observation-table').innerHTML = "";
     }
     else{
+        document.getElementById('chart_div').innerHTML = "";
         getExceptionReports(data);
     }
 }
