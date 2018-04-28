@@ -9,6 +9,12 @@
             $this->db = $db->getConnection();
         }
 
+        private function allowSpecialCharacters($method){
+            foreach( $method as $key => $value ) {
+                     $method[$key] = strip_tags($this->db->real_escape_string($value));
+            }
+        }
+
         private function error(){
             echo json_encode((object) [
                 'error'=>true
@@ -61,14 +67,42 @@
                 $this->error();
             }
           
-        }   
-
-        public function __destruct(){
-            $this->db->close();
         }
+
+    public function getAllExceptionsInGraph(){
+        $selectedKid = "";
+        if($_GET['kidFname'] != 'All'){
+            $selectedKid = "AND exceptions.fname='{$_GET['kidFname']}' AND exceptions.lastname='{$_GET['kidLname']}'";
+        }
+        $sql = "SELECT exceptions.observation,exceptions.fname,exceptions.lastname FROM exceptions WHERE exceptions.observationDate>={$_GET['startDate']}
+        AND exceptions.observationDate<={$_GET['endDate']} {$selectedKid}" ;
+
+        $result =$this->db->query($sql); 
+        if($result){
+            $data= [];
+            while($row = mysqli_fetch_array($result)){
+                array_push($data, (object) [
+                    'first_name' => $row['fname'],
+                    'last_name' => $row['lastname'],
+                    'note' => $row['observation'],
+                ]);  
+            }
+            echo json_encode((object) [
+                'data' => $data,
+                'success'=>true
+            ]);
+        }
+          else{
+              $this->error();
+           }
       
     }
 
+            public function __destruct(){
+                $this->db->close();
+        }
+  
+    }
 ?>
 
     

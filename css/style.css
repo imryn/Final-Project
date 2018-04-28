@@ -344,6 +344,10 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
     margin: 6% auto 0 auto;
 }
 
+#chart_div{
+    margin-left: 30%;
+}
+
 /* {
     margin: 8% auto 0 auto;
     background-color: #9b59b6;

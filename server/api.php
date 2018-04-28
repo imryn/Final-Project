@@ -82,7 +82,8 @@
                 
                 case "get_Exceptionsgraph":
                     $exceptions= new Exceptions();
-                    $exceptions -> getAllExceptionsinGraph();
+                    $exceptions -> getAllExceptionsInGraph();
+                    break;
 
                 case "get_Presencereport":
                     $presence= new Presence();

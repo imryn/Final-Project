@@ -107,6 +107,74 @@ function getExceptionReports(){
     });
 }
 
+// function genrateKidReport(){
+//     var data = getFormData("#exception-report form");
+//     if(data.kidFname == "All"){
+//         getExceptionGraph(data);
+//     }
+//     else{
+
+//     }
+// }
+
+function getExceptionGraph(){
+ 
+    
+    var data = getFormData("#exception-report form");
+
+    var selectedKid = kinderGarten[data.exceptionOptions];
+    data.kidFname = selectedKid.fname;
+    data.kidLname = selectedKid.lastname;
+
+    var startDate = new Date(data.startDate).getTime();
+    if(!isNaN(startDate)){
+        data.startDate = startDate;
+    }
+    else{
+        return
+    }
+    var endDate = new Date(data.endDate).getTime();
+    if(!isNaN(endDate)){
+        data.endDate = endDate;
+    }
+    else{
+        return;
+    }
+    
+    httpGet("/Sadna/server/api.php?route=get_Exceptionsgraph", data,function(response){
+        if(response.success && response.data instanceof Array){
+            if(response.data.length){
+                response.data.forEach(function(item){
+                    item.date = timestampToDate(item.date);
+                })
+                if(data.kidFname == "All"){
+                    var namesData = {};
+                    response.data.forEach(function(row){
+                        var key = row.first_name + " " + row.last_name;
+                        namesData[key] = namesData[key] || [];
+                        namesData[key].push(row);
+                    })
+                    var chartData = Object.keys(namesData).map(function(name){
+                        return [name,namesData[name].length];
+                    })
+                    console.log(chartData)
+                    drawChart(chartData);
+                }
+                else{
+
+                }
+               
+                
+                getExceptionReports.error("");
+            }
+            else{
+                getExceptionReports.error("No comments for selected date");
+            }
+        }
+        
+    });
+}
+
 var kinderGarten;
 
 
@@ -114,6 +182,7 @@ function showKindergartenkid(){
     httpGet("/Sadna/server/api.php?route=getKindergartenkid",{}, function(response){
         if(response.success){
             kinderGarten = response.data;
+            response.data.unshift({fname:"All",lastname:""});
             var flatData = response.data.map(function(item){
                 return item.fname + " " + item.lastname;
             })
