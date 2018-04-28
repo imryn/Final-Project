@@ -33,9 +33,10 @@
                       array_push($data, (object) [
                           'itemCategory' => $row['itemCategory'],
                           'itemName' => $row['itemName'],
-                        //   'quantity' => $row['quantity'],
+                          'quantity' => $_GET['quantity'],
                           'unitPrice' => $row['unitPrice']
                       ]);  
+                      $_SESSION[ 'cart_item_'.$row['id'] ] = $data;
                   }
                   echo json_encode((object) [
                       'data' => $data,
