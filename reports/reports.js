@@ -69,8 +69,6 @@ function getPresenceReport(){
     
 
 function getExceptionReports(data){
-    // var data = getFormData("#exception-report form");
-
     var selectedKid = kinderGarten[data.exceptionOptions];
     data.kidFname = selectedKid.fname;
     data.kidLname = selectedKid.lastname;
@@ -118,8 +116,6 @@ function genrateKidReport(){
 }
 
 function getExceptionGraph(data){   
-    // var data = getFormData("#exception-report form");
-
     var selectedKid = kinderGarten[data.exceptionOptions];
     data.kidFname = selectedKid.fname;
     data.kidLname = selectedKid.lastname;
@@ -145,7 +141,6 @@ function getExceptionGraph(data){
                 response.data.forEach(function(item){
                     item.date = timestampToDate(item.date);
                 })
-                // if(data.kidFname == "All")
                     var namesData = {};
                     response.data.forEach(function(row){
                         var key = row.first_name + " " + row.last_name;
