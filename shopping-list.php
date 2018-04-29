@@ -116,7 +116,7 @@
                             </div>
                         </div>
                 </div>
-                    <input type="button" value="Add" id="add" onClick="getItemList()"/>
+                    <input type="button" value="Add" id="add" class="btn btn-warning" onClick="getItemList()"/>
             </form>  
             <table id="item-table" class="table table-striped table-responsive w-auto">
                 <tr>
