@@ -25,6 +25,7 @@
         <header>
             <templateHtml src="picture-container/picture-container.html"></templateHtml>
             <?php include "nav-menu/nav-menu-container.php" ?>
+           
         </header>
         <section id="shopping-list">
             <form>
@@ -114,7 +115,7 @@
                             </div>
                         </div>
                 </div>
-                    <input type="button" value="Add" id="add" class="btn btn-warning" onClick="getItemList()"/>
+                    <input type="button" value="Add" id="add" onClick="getItemList()"/>
             </form>  
             <table id="item-table" class="table table-striped table-responsive w-auto">
                 <tr>
@@ -145,7 +146,7 @@
                 ?>
             </table>
 
-		</section>
+    </section>
 
             
             <!-- // $servername = "us-cdbr-gcp-east-01.cleardb.net"; //

@@ -1,4 +1,4 @@
-// Start conditions for the selects
+  // Start - conditions for the selects
   document.getElementById("artitems").style.display = "none";
   document.getElementById("officeitems").style.display = "none";
   document.getElementById("fooditems").style.display = "none";
@@ -59,7 +59,7 @@ function SelectCategory(){
     }*/
 }
   
-// End of conditions for the selects
+  // End - conditions for the selects
 
 $('.delete-from-cart').on('click', function(){
     var item_id = $(this).data('id');
@@ -73,28 +73,6 @@ function buildThs(array){
     })
     return row + '</tr>';
 }
-
-
-/*
-var onStartCreateTable = true;
-
-function createItemsTable(data){
-    
-    if(onStartCreateTable){
-        var table = buildThs(['Category', 'Item Name','Quantity', 'Price']);
-        onStartCreateTable =  false;
-        $('#item-table').append(table);
-    }
-    
-    
-    data.forEach(function(item) {
-        var table = '<tr class="table-info"><td>'+item.itemCategory+'</td><td>' + item.itemName + '</td><td>'+item.quantity+'</td><td>'
-        + item.unitPrice+'</td></tr>';
-        $('#item-table').append(table);
-    });
-    console.log(table)
-}
-*/
 
 var tableElement = document.getElementById("item-table").tableElement.length;
 
@@ -132,3 +110,26 @@ function getItemList(){
     })
 
 }
+
+
+/*
+var onStartCreateTable = true;
+
+function createItemsTable(data){
+    
+    if(onStartCreateTable){
+        var table = buildThs(['Category', 'Item Name','Quantity', 'Price']);
+        onStartCreateTable =  false;
+        $('#item-table').append(table);
+    }
+    
+    
+    data.forEach(function(item) {
+        var table = '<tr class="table-info"><td>'+item.itemCategory+'</td><td>' + item.itemName + '</td><td>'+item.quantity+'</td><td>'
+        + item.unitPrice+'</td></tr>';
+        $('#item-table').append(table);
+    });
+    console.log(table)
+}
+*/
+
