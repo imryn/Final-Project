@@ -1,4 +1,4 @@
-<?php   
+<?php
           require_once('db.php');
 
           class Items{
@@ -23,19 +23,19 @@
     public function getTotalItems(){
                 $this->allowSpecialCharacters($_GET);
 
-                $sql = "SELECT items.itemCategory, items.itemName, items.unitPrice FROM items WHERE items.itemCategory='{$_GET['itemCategory']}' 
+                $sql = "SELECT items.id, items.itemCategory, items.itemName, items.unitPrice FROM items WHERE items.itemCategory='{$_GET['itemCategory']}' 
                 AND items.itemName='{$_GET['itemName']}' OR items.itemName='{$_GET['itemName1']}' OR items.itemName='{$_GET['itemName2']}' <> '' ";
-                // '{$_GET['quantity']}' 
+                // '{}'
                 $result =$this->db->query($sql); 
                 if($result){
-                  $data= [];
+                  $data = [];
                   while($row = mysqli_fetch_array($result)){
-                      array_push($data, (object) [
+                      array_push( $data, (object) [
                           'itemCategory' => $row['itemCategory'],
                           'itemName' => $row['itemName'],
                           'quantity' => $_GET['quantity'],
                           'unitPrice' => $row['unitPrice']
-                      ]);  
+                      ]);
                       $_SESSION[ 'cart_item_'.$row['id'] ] = $data;
                   }
                   echo json_encode((object) [
