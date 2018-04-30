@@ -47,7 +47,7 @@
                 </div>
            </div>
         </div>
-         <button type="button" id="options_for_report" class="btn btn-warning" onClick="getReports()"> add</button>
+         <button type="button" id="options_for_report" class="btn btn-warning" onClick="getReports()"> Add</button>
      </form>
 </section>
 
