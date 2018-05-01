@@ -108,7 +108,7 @@
                                     else{echo '';}; ?>
                                     type="checkbox" data-toggle="toggle">
                                 </td>
-                                <td> <input type="button" checked value="Send" class="send-button" onClick="sendSMS()"/> </td>
+                                <td> <input type="button" checked value="Send" class="send-button" onClick="sendEmail()"/> </td>
                                 <td style="display:none;" class='parentId'> <?php echo $row['parentId']; ?> </td>
                                 <td style="display:none;" class='kindergartenid'> <?php echo $row['kindergartenid']; ?> </td>                             
                                 <?php $counter++; ?>
@@ -122,7 +122,9 @@
                 <input type="button" value="Update Attendance" class="refresh-button" onClick="saveInServer()"/>             
             </form>
         </section>
-        <script src="commons.js"></script>
+
+
+        <script src="js/commons.js"></script>
         <script src="js/fill_attendance.js"></script>        
     </body>
 
