@@ -13,29 +13,32 @@
         die("Connection failed: " . $conn->connect_error);
     } 
     
-    $sql = "select 
-                fname,
-                users.kindergartenid as kindergartenid,
-                users.lastname as lastname,
-                kids.kidId as kidId,
-                kids.parentId as parentId,
-                'true' as comeToClass 
-            from kids
-            join users on kids.parentId=users.parentId
-            where kids.parentId not in (select parentId from noattendance where date=current_date())
+    $sql = "select * from 
+            (select 
+                    fname,
+                    users.kindergartenid as kindergartenid,
+                    users.lastname as lastname,
+                    kids.kidId as kidId,
+                    kids.parentId as parentId,
+                    'true' as comeToClass 
+                from kids
+                join users on kids.parentId=users.parentId
+                where kids.parentId not in (select parentId from noattendance where date=current_date())
 
-            union 
+                union 
 
-            select 
-                fname,
-                users.kindergartenid as kindergartenid,
-                users.lastname as lastname,
-                kids.kidId as kidId,
-                kids.parentId as parentId,
-                'false' as comeToClass 
-            from kids
-            join users on kids.parentId=users.parentId
-            where kids.parentId in (select parentId from noattendance where date=current_date())
+                select 
+                    fname,
+                    users.kindergartenid as kindergartenid,
+                    users.lastname as lastname,
+                    kids.kidId as kidId,
+                    kids.parentId as parentId,
+                    'false' as comeToClass 
+                from kids
+                join users on kids.parentId=users.parentId
+                where kids.parentId in (select parentId from noattendance where date=current_date())
+            )a order by lastname 
+
 ";
     $result = $conn->query($sql);
 
@@ -108,7 +111,7 @@
                                     else{echo '';}; ?>
                                     type="checkbox" data-toggle="toggle">
                                 </td>
-                                <td> <input type="button" checked value="Send" class="send-button btn btn-warning" onClick="sendSMS()"/> </td>
+                                <td> <input type="button" checked value="Send" class="send-button" onClick="sendEmail()"/> </td>
                                 <td style="display:none;" class='parentId'> <?php echo $row['parentId']; ?> </td>
                                 <td style="display:none;" class='kindergartenid'> <?php echo $row['kindergartenid']; ?> </td>                             
                                 <?php $counter++; ?>
@@ -124,7 +127,7 @@
         </section>
 
 
-        <script src="js/commons.js"></script>
+        <script src="commons.js"></script>
         <script src="js/fill_attendance.js"></script>        
     </body>
 
