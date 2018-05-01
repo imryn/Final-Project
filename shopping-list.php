@@ -23,10 +23,10 @@
 
     <body>
         <header>
-            <templateHtml src="picture-container/picture-container.html"></templateHtml>
+            <templateHtml src="logo-container/logo-container.html"></templateHtml>
             <?php include "nav-menu/nav-menu-container.php" ?>
+           
         </header>
-
         <section id="shopping-list">
             <form>
                  <h1> Shopping List</h1>
@@ -40,7 +40,6 @@
                                 <option value="Artmaterials"> Art materials  </option>
                                 <option value="Office" > Office  </option>
                                 <option value="Food" > Food  </option>
-                                
                             </select>
                         </div>
                      </div>
@@ -116,16 +115,37 @@
                             </div>
                         </div>
                 </div>
-                    <input type="button" value="Add" id="add" onClick="getItemList()"/>
+                    <input type="button" value="Add" id="add" class="btn btn-warning" onClick="getItemList()"/>
             </form>  
-            <table id="item-table" class="table table-striped table-responsive w-auto"> </table >
-            <!-- <tr>
-                <th>Category</th>
-                <th>Item Name</th> 
-                <th>Quantity</th>
-                <th>Unit Price</th>
-                <th>Total</th>
-            </tr> -->
+            <table id="item-table" class="table table-striped table-responsive w-auto">
+                <tr>
+                    <th>Category</th>
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Total</th>
+                    <th>Delete</th>
+                </tr>
+                <?php
+                foreach ($_SESSION as $item_id => $item ){
+                    if( strpos($item_id, 'cart_item_' ) !== false ) {
+                        $arr = explode( '_', $item_id );
+                        $id = end( $arr );
+                        ?>
+                        <tr id="item_cart_row_<?php echo $id; ?>">
+                            <td><?php echo $item[0]->itemCategory; ?></td>
+                            <td><?php echo $item[0]->itemName; ?></td>
+                            <td><?php echo $item[0]->quantity; ?></td>
+                            <td><?php echo $item[0]->unitPrice; ?></td>
+                            <td><?php echo $item[0]->unitPrice * $item[0]->quantity; ?></td>
+                            <td><button class="btn btn-warning delete-from-cart" data-id="<?php echo $id; ?>">DELETE</button></td>
+                        </tr>
+                        <?php
+                    }
+                }
+                ?>
+            </table>
+
     </section>
 
             

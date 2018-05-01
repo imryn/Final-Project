@@ -247,7 +247,7 @@ input[type=radio]:first-child{
 }
 
 .create-botton1{
-    margin-left: 52%;
+    margin-left: 48%;
     margin-top: 5%;
 }
  
@@ -258,7 +258,7 @@ input[type=radio]:first-child{
 
 .show-kid-details, .save-2, #new-observation, .save-details,
 .exit, #options_for_report, .create-botton ,.create-botton1,
-.create-botton2, .update-details{
+.create-botton2, .update-details, #add{
     background-color: #e67e22;
     border-color: white;
     padding: 8px 18px;
@@ -273,7 +273,7 @@ input[type=radio]:first-child{
 #new-observation:hover, .save-details:hover,
 exit:hover, #options_for_report:hover, .create-botton:hover,
 .create-botton1:hover, .create-botton2:hover,
-.update-details:hover{
+.update-details:hover, #add:hover{
   background-color: #f39c12;
   border-color: white;
   padding: 8px 18px;
@@ -342,6 +342,20 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
 /* table in report page */
 #kids-table, #kids-observation-table, #item-table{
     margin: 6% auto 0 auto;
+}
+
+#kids-table th, #kids-table tr,
+#kids-observation-table th, #kids-observation-table tr,
+#item-table th, #item-table tr{
+    text-align: center;
+}
+
+#item-table th{
+    background-color: #e67e22;
+}
+
+#chart_div{
+    margin-left: 30%;
 }
 
 /* {
@@ -429,16 +443,9 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
     height: 32px;
 }
 .refresh-button{
-    padding: 5px;
-    width: 175px;
-    display: block;
-    cursor: pointer;
-    border: none;
     background-color: #e67e22;
-    color: white;
-    border-radius: 5px;
-    font-weight: 300;
-    text-align: center;
+    border-color: white;
+    padding: 8px 18px;
     margin: 2% 0 0 42%; 
 }
 /* END building_schedule design  */
@@ -486,17 +493,6 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
 
 #add{
      margin: 2% 0 0 48%; 
-     padding: 5px;
-     width: 75px;
-     display: block;
-     cursor: pointer;
-     border: none;
-     background-color: #e67e22;
-     color: white;
-     border-radius: 5px;
-     font-family: 'Lato';
-     font-weight: 300;
-     text-align: center;
  }
 /* END building shopping-list design */
 
@@ -515,18 +511,11 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
 }
 
 .send-button{
-    width: 55px;
-    display: block;
-    cursor: pointer;
-    border: none;
     background-color: #e67e22;
-    color: white;
-    border-radius: 5px;
-    font-family: 'Lato';
-    font-weight: 300;
-    text-align: center;
+    border-color: white;
+    padding: 8px 18px;
     margin-left:50px;
-    height:35px;
+
 } 
 
 .pickDateField{

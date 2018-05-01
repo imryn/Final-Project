@@ -26,8 +26,6 @@
               </div>
             </li>
             <li class="links"><a href="parent-registration.php"> registration </a></li>
-            <!-- <li><a href="reports.html"> reports </a></li> -->
-            <!-- <li><a href="Building_Schedule.html">schedule </a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

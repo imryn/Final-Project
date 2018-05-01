@@ -5,6 +5,12 @@ function DetailskidUpdate(){
     data["fname"] = kidData['fname'];
     data["lastname"] = kidData['lastname'];
     var date = new Date(data.observationDate).getTime();
+    // var checkdate = isValidDate(date ,DetailskidUpdate);
+
+    // if(!checkdate){
+    //     return;
+    // }
+
     if(!isNaN(date)){
         data.observationDate = date;
     }
@@ -27,19 +33,23 @@ savingChangesinKidbag.error=function(msg){
     document.querySelector(".success-message2").textContent = msg;
 }
 
-// function namecheck(namecheck,errorFunction){
-//     var check = namecheck.check();
-//     if(isNumeric(check)){
-//         errorFunction.error("name field can't contains numbers");
-//         return false;
+// function isValidDate(datecheck,errorFunction) {
+//     var status = false;
+//     console.log(datecheck);
+//     if (!datecheck || datecheck.length <= 0) {
+//       status = false;
+//     } else {
+//       var result = new Date(datecheck);
+//       if (result == 'Invalid Date') {
+//         status = false;
+//         errorFunction.error("You can't put new observation without choosing A date");
+
+//       } else {
+//         status = true;
+//       }
 //     }
-//     return true;
-// }
-
-// function isNumeric(n) {
-//     return !isNaN(parseFloat(n)) && isFinite(n);
+//     return status;
 //   }
-
 
 
 $(document).ready(function(){
@@ -56,11 +66,6 @@ function savingChangesinKidbag(){
     if(!isNaN(date)){
         KiData.bDate = date;
     }
-
-    // var checkKidname = namecheck(kidData['fname'],savingChangesinKidbag);
-    // if(!checkKidname){
-    //     return;
-    // }
 
     KiData['route'] = 'update_kid';
     httpPost("/Sadna/server/api.php",KiData,function(response){

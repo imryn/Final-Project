@@ -26,7 +26,7 @@
 
     <body>
        <header>
-            <templateHtml src="picture-container/picture-container.html"></templateHtml>
+            <templateHtml src="logo-container/logo-container.html"></templateHtml>
             <?php include "nav-menu/nav-menu-container.php" ?>
      </header>
 
@@ -46,13 +46,11 @@
                 </div>
            </div>
         </div>
-         <button type="button" id="options_for_report" class="btn btn-warning" onClick="getReports()"> add</button>
+         <button type="button" id="options_for_report" class="btn btn-warning" onClick="getReports()"> Add</button>
      </form>
 </section>
 
     <div class="report-data-container"></div>
-
-
     <script src="reports/reports.js"></script>
     <script src="commons.js"></script>
     <script src="reports/charts.js"> </script>

@@ -68,9 +68,7 @@ function getPresenceReport(){
     }
     
 
-function getExceptionReports(){
-    var data = getFormData("#exception-report form");
-
+function getExceptionReports(data){
     var selectedKid = kinderGarten[data.exceptionOptions];
     data.kidFname = selectedKid.fname;
     data.kidLname = selectedKid.lastname;
@@ -107,6 +105,66 @@ function getExceptionReports(){
     });
 }
 
+function genrateKidReport(){
+    var data = getFormData("#exception-report form");
+    if(data.exceptionOptions == 0){
+        getExceptionGraph(data);
+        document.getElementById('kids-observation-table').innerHTML = "";
+    }
+    else{
+        document.getElementById('chart_div').innerHTML = "";
+        getExceptionReports(data);
+    }
+}
+
+function getExceptionGraph(data){   
+    var selectedKid = kinderGarten[data.exceptionOptions];
+    data.kidFname = selectedKid.fname;
+    data.kidLname = selectedKid.lastname;
+
+    var startDate = new Date(data.startDate).getTime();
+    if(!isNaN(startDate)){
+        data.startDate = startDate;
+    }
+    else{
+        return
+    }
+    var endDate = new Date(data.endDate).getTime();
+    if(!isNaN(endDate)){
+        data.endDate = endDate;
+    }
+    else{
+        return;
+    }
+    
+    httpGet("/Sadna/server/api.php?route=get_Exceptionsgraph", data,function(response){
+        if(response.success && response.data instanceof Array){
+            if(response.data.length){
+                response.data.forEach(function(item){
+                    item.date = timestampToDate(item.date);
+                })
+                    var namesData = {};
+                    response.data.forEach(function(row){
+                        var key = row.first_name + " " + row.last_name;
+                        namesData[key] = namesData[key] || [];
+                        namesData[key].push(row);
+                    })
+                    var chartData = Object.keys(namesData).map(function(name){
+                        return [name,namesData[name].length];
+                    })
+                    console.log(chartData)
+                    drawChart(chartData);
+                
+                getExceptionReports.error("");
+            }
+            else{
+                getExceptionReports.error("No comments for selected date");
+            }
+        }
+        
+    });
+}
+
 var kinderGarten;
 
 
@@ -114,6 +172,7 @@ function showKindergartenkid(){
     httpGet("/Sadna/server/api.php?route=getKindergartenkid",{}, function(response){
         if(response.success){
             kinderGarten = response.data;
+            response.data.unshift({fname:"All",lastname:""});
             var flatData = response.data.map(function(item){
                 return item.fname + " " + item.lastname;
             })
