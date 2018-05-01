@@ -108,11 +108,7 @@
                                     else{echo '';}; ?>
                                     type="checkbox" data-toggle="toggle">
                                 </td>
-<<<<<<< HEAD
-                                <td> <input type="button" checked value="Send" class="send-button" onClick="sendEmail()"/> </td>
-=======
                                 <td> <input type="button" checked value="Send" class="send-button btn btn-warning" onClick="sendSMS()"/> </td>
->>>>>>> 4e20e5f3749c42417a4a542101847532e011b9b5
                                 <td style="display:none;" class='parentId'> <?php echo $row['parentId']; ?> </td>
                                 <td style="display:none;" class='kindergartenid'> <?php echo $row['kindergartenid']; ?> </td>                             
                                 <?php $counter++; ?>
