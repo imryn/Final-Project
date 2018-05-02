@@ -508,6 +508,8 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
     background:#e67e22;
     text-align:center;
     width:150px;
+    color:white;
+    font-weight:normal;
 }
 
 .send-button{
@@ -515,7 +517,7 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
     border-color: white;
     padding: 8px 18px;
     margin-left:50px;
-
+    color:white;
 } 
 
 .pickDateField{
