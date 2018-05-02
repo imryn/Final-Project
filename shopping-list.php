@@ -121,7 +121,7 @@
             <table id="item-table" class="table table-striped table-responsive w-auto">
                 <tr>
                     <th>Category</th>
-                    <th>Item Name</th>
+                    <th>Item</th>
                     <th>Quantity</th>
                     <th>Unit Price</th>
                     <th>Total</th>
