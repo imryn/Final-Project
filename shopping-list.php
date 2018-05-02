@@ -24,6 +24,7 @@
     <body>
         <header>
             <templateHtml src="logo-container/logo-container.html"></templateHtml>
+            
             <?php include "nav-menu/nav-menu-container.php" ?>
            
         </header>
@@ -120,7 +121,7 @@
             <table id="item-table" class="table table-striped table-responsive w-auto">
                 <tr>
                     <th>Category</th>
-                    <th>Item Name</th>
+                    <th>Item</th>
                     <th>Quantity</th>
                     <th>Unit Price</th>
                     <th>Total</th>
