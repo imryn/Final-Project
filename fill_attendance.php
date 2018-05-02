@@ -91,7 +91,7 @@
                         <th> Last Name </th>
                         <th> First Name </th>               
                         <th> Attendance ? </th>
-                        <th> Send Reminder </th>
+                        <th> Reminder </th>
                     </tr>
 
                     <?php if ($result->num_rows > 0) 
@@ -105,7 +105,7 @@
                                 <td> <?php echo $row['fname']; ?> </td>                                                              
                                 <td style="display:none;" class='kidId'> <?php echo $row['kidId']; ?> </td> 
                                 <td class='attendance'>
-                                    <input id="toggle-status" data-height="15" 
+                                    <input data-height="15" 
                                     <?php if($row['comeToClass']=='true')
                                     {echo 'checked';}
                                     else{echo '';}; ?>
