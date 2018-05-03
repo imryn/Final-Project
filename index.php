@@ -37,7 +37,7 @@
       <img class="card-img-top" src="pictures/shopping-bg-2.jpg" alt="shopping-carts">
       <div class="card-body">
         <h4 class="card-title">
-          <h3 class="template-header"> shopping list <h3>
+          <h3 class="template-header"> Shopping List <h3>
         </h4>
         <p class="card-text" id="first-temp-p"> as a kindergarten teacher you can make a shopping list
           includes art materials, foods and office supplies in order to 
@@ -50,7 +50,7 @@
       <img class="card-img-top" src="pictures/schedule.png" alt="">
       <div class="card-body">
         <h4 class="card-title">
-        <h3 class="template-header"> weekly schedule </h3>
+        <h3 class="template-header"> Weekly Schedule </h3>
         </h4>
         <p class="card-text"> you can see the kindergarten schedule activities
           and as a kindergarten teacher you can also manage it. </p>
