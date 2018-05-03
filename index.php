@@ -34,7 +34,7 @@
 <div class="row template-row">
   <div class="col-lg-4 col-sm-6 portfolio-item">
     <div class="card h-100">
-      <img class="card-img-top" src="pictures/shopping-bg-2.jpg" alt="shopping-carts">
+      <img class="card-img-top" src="pictures/initiative-shopping-lists.jpg" alt="shopping-carts">
       <div class="card-body">
         <h4 class="card-title">
           <h3 class="template-header"> Shopping List <h3>
