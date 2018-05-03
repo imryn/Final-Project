@@ -112,6 +112,20 @@
 </div>
 <section id="index-section">
 
+    <!-- <footer class="page-footer font-small stylish-color-dark pt-4 mt-4">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Karin Haim Poor, Imry Noy And Daniel Ben Moshe </p>
+      </div>
+      <!-- /.container 
+    </footer> -->
+
+    <footer class="container-fluid text-center bg-lightgray">
+      <div class="copyrights" style="margin-top:25px;">
+          <p>Copyright &copy; Karin Haim Poor, Imry Noy And Daniel Ben Moshe
+              <br>
+      </div>
+    </footer>
+
        <script src="commons.js"></script>
 </body>
 

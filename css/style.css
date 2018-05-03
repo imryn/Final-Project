@@ -65,6 +65,12 @@ h2{
     margin-top: -3%;
 }
 
+.bg-lightgray
+{
+    background-color:#e67e22;
+    width: 80%;
+}
+
 /* sections */
 #registration-parent,#registration-kid,#reports,#daily-attendance,
 #kid-detailsUpdate,#Weekly-Scheduler,#kid-observation,#alergic-report,
