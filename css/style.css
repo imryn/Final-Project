@@ -50,6 +50,21 @@ h2{
     font-weight: bold;
 }
 
+/* index template styling */
+.template-header{
+    word-spacing: 5px;
+    letter-spacing: 2px;
+    text-align: left;
+}
+
+.template-row{
+    margin-top: 5%;
+}
+
+#first-temp-p{
+    margin-top: -3%;
+}
+
 /* sections */
 #registration-parent,#registration-kid,#reports,#daily-attendance,
 #kid-detailsUpdate,#Weekly-Scheduler,#kid-observation,#alergic-report,

@@ -50,6 +50,14 @@ function idcheck(idcheck,errorFunction){
     return true;
 }
 
+function kindercodecheck(kindercodecheck,errorFunction){
+    if(kindercodecheck.toString().length !=5){
+        errorFunction.error("Kindergarten code field must contain 5 digits");
+        return false;
+    }
+    return true;
+}
+
 function emailcheck(emailcheck,errorFunction){
     var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
     //var address = document.getElementById[email].value;
@@ -72,10 +80,11 @@ function createParentUser(){
     parentData['kidId'] = kidData['kidId'];
     kidData['lastname'] = parentData['lastname'];
     parentData['lastname'] = kidData['lastname'];
+    var checkkindercode = kindercodecheck(parentData['kindergartenid'],createParentUser);
     var checkKid = idcheck(kidData['kidId'],createKidForm);
     var checkParent = idcheck(parentData['parentId'],createParentUser);
     var checkEmailParent = emailcheck(parentData['email'],createParentUser);
-    if(!checkKid || !checkParent || !checkEmailParent){
+    if(!checkkindercode || !checkKid || !checkParent || !checkEmailParent){
         return;
     }
     createKidForm(kidData,function(response){
