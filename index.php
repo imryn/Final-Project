@@ -110,7 +110,7 @@
   </div>
 </div>
 </div>
-<section id="index-section">
+</section>
 
     <!-- <footer class="page-footer font-small stylish-color-dark pt-4 mt-4">
       <div class="container">

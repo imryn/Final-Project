@@ -76,8 +76,14 @@ h2{
 #kid-detailsUpdate,#Weekly-Scheduler,#kid-observation,#alergic-report,
 #exception-report, #kidList-detailsUpdate, #kid-choosen{
     background-color: #f0f0f0;
-    width: 75%;
-    margin-left: 12.5%;
+    width: 80%;
+    margin-left: 10%;
+}
+
+#index-section{
+    background-color:  #f0f0f0;
+    margin-left: -1.7%;
+    width: 103.4%;
 }
 
 #kid-observation{
@@ -478,8 +484,8 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
 /* START building shopping-list design */
 #shopping-list{
     background-color: #f0f0f0;
-    width: 75.2%;
-    margin-left: 12.5%;
+    width: 80%;
+    margin-left: 10%;
 }
 
 #quantity{
