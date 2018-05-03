@@ -182,7 +182,7 @@ h2{
 }
 
 .alergic-info select{
-    width: 59%;
+    width: 52%;
 }
 
 .registration-info select{
@@ -190,7 +190,7 @@ h2{
 }
 
 .exception-info select{
-    width: 51%;
+    width: 40%;
 }
 
 /* specific inputs,selects and lables */
@@ -247,7 +247,7 @@ input[type=radio]:first-child{
 
 .report-info select{
     margin-left: 0.7%;
-    width: 85%;
+    width: 66%;
 }
 
 .observation-value1{
@@ -256,6 +256,11 @@ input[type=radio]:first-child{
 
 .observation-value2{
     color: green;   
+}
+
+#start-date, #end-date{
+    width: 79%;
+    margin-left: 3%;
 }
 
 /* buttons */
