@@ -1,38 +1,38 @@
 <!DOCTYPE html>
-<html>
-<head> </head>
-<body>
-<section id="exception-report">
-        <form>
-                <div class="row exception-update">
-                     <div class="col span-1-of-2 box">
-                        <div class="exception-info">
-                            <label id="exception-exp"> Child: </label> <br>
-                            <select name="exceptionOptions" size="1" id="exception">
-                            </select>
+    <html>
+        <head> </head>
+    <body>
+        <section id="exception-report">
+            <form>
+                    <div class="row exception-update">
+                        <div class="col span-1-of-2 box">
+                            <div class="exception-info">
+                                <label id="exception-exp"> Child: </label> <br>
+                                <select name="exceptionOptions" size="1" id="exception">
+                                </select>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row exception-update2">
+                    <div class="row exception-update2">
+                        <div class="col span-1-of-3 box">
+                            <div class="exception-info">
+                                <label for="start-date" class="date-label"> Start date: </label>
+                                <input name="startDate" type="date"/>
+                            </div>
+                        </div> 
+                    
                     <div class="col span-1-of-3 box">
                         <div class="exception-info">
-                            <label for="start-date" class="date-label"> Start date: </label>
-                            <input name="startDate" type="date"/>
+                            <label for="end-date" class="date-label"> End date: </label>
+                            <input name="endDate" type="date"/>
                         </div>
-                    </div> 
-                
-                  <div class="col span-1-of-3 box">
-                       <div class="exception-info">
-                          <label for="end-date" class="date-label"> End date: </label>
-                          <input name="endDate" type="date"/>
-                       </div>
-                  </div>
-                </div>
+                    </div>
+                    </div>
 
-                <input type="button" value="create" class="create-botton" onClick="getExceptionReports()"/>
+                    <input type="button" value="create" class="create-botton" onClick="getPresenceReport()"/>
             </form>
             <table id="kids-table"></table>  
-</section>
+        </section>
 
-</body>
+    </body>
 </html>

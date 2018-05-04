@@ -41,7 +41,7 @@
                     <select name="optionsReport" size="1" id="report-choosing"> 
                             <option value="allergies-report" selected> Allergies Report </option>
                             <option value="exceptions-report"> Exceptions Report </option>
-                            <option value="presence-report"> Presence Report </option>
+                            <option value="presence-report"> Non Presence Report </option>
                     </select>
                 </div>
            </div>

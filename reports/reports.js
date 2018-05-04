@@ -60,7 +60,7 @@ function getPresenceReport(){
                     getPresenceReport.error("");
                 }
                 else{
-                    getPresenceReport.error("No /// for selected date");
+                    getPresenceReport.error("No attendance was recorded on selected date range");
                 }
             }
             
