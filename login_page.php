@@ -53,7 +53,7 @@
             <input type="hidden" name="route" value="login" >
             <input type="hidden" name="usertype" value="<?php if(isset($_GET['usertype'])) { echo  $_GET['usertype'];}  ?>" >
             <input type="hidden" name="token" value="<?php echo createToken()  ?>" >
-            <button class="btn btn-deep-purple" type="submit" >Login</button>
+            <button class="btn btn-warning" type="submit" >Login</button>
         </div>
 
 </div>
