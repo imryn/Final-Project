@@ -77,7 +77,8 @@ h2{
 }
 
 .card:hover img{
-    filter:blur(2px);
+     filter:blur(8px); 
+     border:7px solid black;
 }
 
 .card{

@@ -5,7 +5,7 @@ function buildThs(array){
         row = row + '<th>'+item+'</th>';
     })
     return row + '</tr>';
-}//
+}
 
 
 function createTable(data){
