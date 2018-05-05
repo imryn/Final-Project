@@ -54,6 +54,5 @@
     <script src="reports/reports.js"></script>
     <script src="commons.js"></script>
     <script src="reports/charts.js"> </script>
-
 </body>
 </html>
