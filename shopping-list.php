@@ -137,8 +137,8 @@
                             <td><?php echo $item[0]->itemCategory; ?></td>
                             <td><?php echo $item[0]->itemName; ?></td>
                             <td><?php echo $item[0]->quantity; ?></td>
-                            <td><?php echo $item[0]->unitPrice; ?></td>
-                            <td><?php echo $item[0]->unitPrice * $item[0]->quantity; ?></td>
+                            <td><?php echo "₪"; echo $item[0]->unitPrice; ?></td>
+                            <td><?php echo "₪"; echo $item[0]->unitPrice * $item[0]->quantity; ?></td>
                             <td><button class="btn btn-warning delete-from-cart" data-id="<?php echo $id; ?>">DELETE</button></td>
                         </tr>
                         <?php
