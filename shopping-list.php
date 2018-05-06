@@ -122,7 +122,7 @@
                 <tr>
                     <th>Category</th>
                     <th>Item</th>
-                    <th>Quantity</th>
+                    <th>Qty</th>
                     <th>Unit Price</th>
                     <th>Total</th>
                     <th>Done</th>
