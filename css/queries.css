@@ -12,7 +12,22 @@
 }
 /* small phones: from 0 to 480px */
 @media only screen and (max-width: 480px){
-   
 
+    #index-section{
+        width: 86.4%;
+        margin-left: 7%;
+    }
+
+    .card-img-top{
+      width: 320px;
+      height: 180px;
+    }
+
+    .card{
+        margin-left: 4%;
+    }
    
+    #logo-to-pages{
+        margin-left: 5%;
+    }
 }
