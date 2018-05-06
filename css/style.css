@@ -107,8 +107,8 @@ h2{
 
 #index-section{
     background-color:  #f0f0f0;
-    margin-left: -1.7%;
-    width: 103.4%;
+    margin-left: 3.4%;
+    width: 93.1%;
 }
 
 #kid-observation{
@@ -475,7 +475,6 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
 #date{
     width:28%;
     margin-top: 5%;
-    margin-left:90px;
 }
 .addeventatc_icon{
     top:3px !important;
@@ -535,13 +534,11 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
 }
 
 #artitems,#officeitems,#fooditems,#empty{
-    width: 73%;
-    margin-left: 5%;
+    width: 180%;
 }
 
 #itemcategory{
-    width: 62%;
-    margin-left: 5%;
+    width: 87%;
 }
 
 .shoppinglist-form3{

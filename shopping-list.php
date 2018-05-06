@@ -33,9 +33,9 @@
                  <h1> Shopping List</h1>
                  <p class="describe-list-info"> Add item to shopping list:</p>      
                  <div class="row shoppinglist-form3">
-                    <div class="col span-1-of-3 box">
+                    <div class="col span-1-of-4 box">
                         <div class="list-info">
-                            <label>Category: </label> 
+                            <label id="category">Category: </label> 
                             <select name="itemCategory" size="1" id="itemcategory" onchange="SelectCategory(this.value);" > 
                                 <option value="Empty" > --Select Category--  </option>
                                 <option value="Artmaterials"> Art materials  </option>
@@ -45,9 +45,9 @@
                         </div>
                      </div>
                 
-                <div class="col span-1-of-2 box">
+                <div class="col span-1-of-5 box">
                     <div class="list-info">
-                        <label> Item: </label>  
+                        <label id="item"> Item: </label>  
 
                         <select disabled name="item" size="0" id="empty">  </select>
 

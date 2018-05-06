@@ -37,7 +37,7 @@
         <div class="row reports-line">
            <div class="col span-1-of-1 box">
                <div class="report-info">
-                  <label  for="report"> Reports list: </label>
+                  <label  for="report" id="report-describing"> Reports list: </label>
                     <select name="optionsReport" size="1" id="report-choosing"> 
                             <option value="allergies-report" selected> Allergies Report </option>
                             <option value="exceptions-report"> Exceptions Report </option>

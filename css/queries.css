@@ -13,6 +13,7 @@
 /* small phones: from 0 to 480px */
 @media only screen and (max-width: 480px){
 
+    /* index page */
     #index-section{
         width: 86.4%;
         margin-left: 7%;
@@ -30,4 +31,89 @@
     #logo-to-pages{
         margin-left: 5%;
     }
+
+  /*  kidsList_detailsUpdates page */
+
+  textarea{
+      width: 88%;
+  }
+
+  #kidname-label, #pickDate{
+      margin-left: -3%;
+  }
+
+  #kidname{
+    margin-left: -1%;
+  }
+
+
+/* buttons */
+  #new-observation{
+    width: 60%;
+    margin-left: 20%;
+  }
+
+  .exit{
+    margin-left: 25%;
+    margin-top: -21.7%;
+  }
+
+  .show-kid-details{
+      margin-left: 9.8%;
+  }
+
+/* labels */
+
+  #birth-date{
+    width: 72%;
+  }
+
+  #observation{
+    width: 90%;
+  }
+
+  label{
+      margin-left: -4%;
+  }
+
+  #upDate{
+      margin-left: 0;
+      width: 90%;
+  }
+
+
+/* weekly schedule page */
+   .schedule_row{
+        margin-left: -48%;   
+    }
+
+   #date{
+       margin-left: -11%;
+       width: 25%;
+   }
+
+   /* report page */
+
+   #report-describing{
+       margin-left: 0;
+   }
+
+   #options_for_report, .create-botton, .create-botton1{
+       margin-left: 37%;
+   }
+
+   #kids-table{
+       width: 80% ;
+   }
+
+   #chart_div{
+       margin-left: 4%;
+   }
+
+   /* shopping list page */
+
+   #category, #item , #quantity{
+       margin-left: 0; 
+   }
+
 }
