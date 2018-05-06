@@ -125,6 +125,7 @@
                     <th>Quantity</th>
                     <th>Unit Price</th>
                     <th>Total</th>
+                    <th>Done</th>
                     <th>Delete</th>
                 </tr>
                 <?php
@@ -139,7 +140,9 @@
                             <td><?php echo $item[0]->quantity; ?></td>
                             <td><?php echo "₪"; echo $item[0]->unitPrice; ?></td>
                             <td><?php echo "₪"; echo $item[0]->unitPrice * $item[0]->quantity; ?></td>
-                            <td><button class="btn btn-warning delete-from-cart" data-id="<?php echo $id; ?>">DELETE</button></td>
+                            <td><button class="" data-id="<?php echo $id; ?>">Done</button></td>
+                            <td><button class="btn btn-warning delete-from-cart" data-id="<?php echo $id; ?>">Delete</button></td>
+                            
                         </tr>
                         <?php
                     }
