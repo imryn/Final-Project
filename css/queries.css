@@ -107,7 +107,9 @@
    }
 
    #chart_div{
-       margin-left: 4%;
+       margin-left: 2%;
+       width: 320px;
+       height: 200px;
    }
 
    /* shopping list page */

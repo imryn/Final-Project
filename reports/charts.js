@@ -10,8 +10,8 @@ google.charts.load('current', {packages: ['corechart']});
       data.addRows(chartData);
       var options = {
                       'title':'How Much Notes For Each Child',
-                      'width':400,
-                      'height':300
+                      // 'width':400,
+                      // 'height':300
                     };
 
       var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
