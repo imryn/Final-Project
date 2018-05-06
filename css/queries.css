@@ -116,4 +116,23 @@
        margin-left: 0; 
    }
 
+   #artitems, #officeitems,
+   #fooditems, #empty{
+       width: 87%;
+   }
+
+   #quantity-input{
+       margin-left: 6%;
+   }
+
+   #item-table{
+        width: 80%;
+   }
+
+   /* child file for parent user */
+
+   .update-details{
+       margin-left: 40%;
+   }
+
 }
