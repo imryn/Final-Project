@@ -198,6 +198,9 @@ h2{
     font-weight: 300;
     margin-top: 1%;
     height: 32px;
+    color: black;
+    background: white;
+    border: solid 1px rgb(169,169,169);
  
 }
 
