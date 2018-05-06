@@ -109,7 +109,7 @@
                         </select>
                     </div>
                 </div>
-                        <div class="col span-1-of-1 box">
+                        <div class="col span-1-of-2 box">
                             <div class="list-info">
                                 <label id="quantity"> Quantity: </label> 
                                 <input type="number" name="quantity" min="1" max="10" id="quantity-input">

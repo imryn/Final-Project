@@ -518,7 +518,7 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
 }
 
 #quantity{
-    margin-left: -20%;
+    margin-left: 70%;
 }
 
 #quantity-input{
@@ -530,7 +530,8 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
     border-radius: 5px;
     font-family: 'Lato';
     font-weight: 300;
-    margin-left: 12%;
+    width: 40%;
+    margin: 0.7% 0 0 70%;
 }
 
 #artitems,#officeitems,#fooditems,#empty{
