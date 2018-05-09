@@ -116,7 +116,7 @@
                             </div>
                         </div>
                 </div>
-                    <input type="button" value="Add" id="add" class="btn btn-warning" onClick="getItemList()"/>
+                    <input type="button" value="Add" id="add" class="btn btn-warning add-to-cart" disabled onClick="getItemList()"/>
             </form>  
             <table id="item-table" class="table table-striped table-responsive w-auto">
                 <tr>
@@ -134,15 +134,14 @@
                         $arr = explode( '_', $item_id );
                         $id = end( $arr );
                         ?>
-                        <tr id="item_cart_row_<?php echo $id; ?>">
+                        <tr class="table-info" id="item_cart_row_<?php echo $id; ?>">
                             <td><?php echo $item[0]->itemCategory; ?></td>
                             <td><?php echo $item[0]->itemName; ?></td>
                             <td><?php echo $item[0]->quantity; ?></td>
-                            <td><?php echo "₪"; echo $item[0]->unitPrice; ?></td>
-                            <td><?php echo "₪"; echo $item[0]->unitPrice * $item[0]->quantity; ?></td>
-                            <td><button class="" data-id="<?php echo $id; ?>">Done</button></td>
-                            <td><button class="btn btn-warning delete-from-cart" data-id="<?php echo $id; ?>">Delete</button></td>
-                            
+                            <td><?php echo $item[0]->unitPrice; ?> &#x20AA;</td>
+                            <td><?php echo $item[0]->unitPrice * $item[0]->quantity; ?> &#x20AA;</td>
+                            <td><button class="btn btn-success save-item-to-sl-history" data-id="<?php echo $id; ?>" data-quantity="<?php echo $item[0]->quantity; ?>">Done</button></td>
+                            <td><button class="btn btn-danger delete-from-cart" data-id="<?php echo $id; ?>">Delete</button></td>
                         </tr>
                         <?php
                     }
