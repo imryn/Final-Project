@@ -22,7 +22,7 @@
             $sql = "SELECT noattendance.date, noattendance.kidId 
                     FROM noattendance 
                     WHERE noattendance.date>=DATE('{$_GET['startDate']}')
-                    AND noattendance.date<=Date('{$_GET['endDate']}')" ;
+                    AND noattendance.date<=DATE('{$_GET['endDate']}')" ;
 
             $result =$this->db->query($sql); 
             if($result){
