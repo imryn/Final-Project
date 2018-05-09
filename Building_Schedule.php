@@ -40,7 +40,7 @@
      
                 <div class="row schduler_holder">
             
-                    <div class="registration-info">
+                    <div class="schedule_row">
                         <div class="scheduler-description">
                             <label for="data" class="pick"> Pick a date: </label>
                             <input name="Date" type="date" id="date"/>

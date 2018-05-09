@@ -33,9 +33,9 @@
                  <h1> Shopping List</h1>
                  <p class="describe-list-info"> Add item to shopping list:</p>      
                  <div class="row shoppinglist-form3">
-                    <div class="col span-1-of-3 box">
+                    <div class="col span-1-of-4 box">
                         <div class="list-info">
-                            <label>Category: </label> 
+                            <label id="category">Category: </label> 
                             <select name="itemCategory" size="1" id="itemcategory" onchange="SelectCategory(this.value);" > 
                                 <option value="Empty" > --Select Category--  </option>
                                 <option value="Artmaterials"> Art materials  </option>
@@ -45,9 +45,9 @@
                         </div>
                      </div>
                 
-                <div class="col span-1-of-2 box">
+                <div class="col span-1-of-5 box">
                     <div class="list-info">
-                        <label> Item: </label>  
+                        <label id="item"> Item: </label>  
 
                         <select disabled name="item" size="0" id="empty">  </select>
 
@@ -109,22 +109,23 @@
                         </select>
                     </div>
                 </div>
-                        <div class="col span-1-of-1 box">
+                        <div class="col span-1-of-2 box">
                             <div class="list-info">
                                 <label id="quantity"> Quantity: </label> 
                                 <input type="number" name="quantity" min="1" max="10" id="quantity-input">
                             </div>
                         </div>
                 </div>
-                    <input type="button" value="Add" id="add" class="btn btn-warning" onClick="getItemList()"/>
+                    <input type="button" value="Add" id="add" class="btn btn-warning add-to-cart" disabled onClick="getItemList()"/>
             </form>  
             <table id="item-table" class="table table-striped table-responsive w-auto">
                 <tr>
                     <th>Category</th>
                     <th>Item</th>
-                    <th>Quantity</th>
+                    <th>Qty</th>
                     <th>Unit Price</th>
                     <th>Total</th>
+                    <th>Done</th>
                     <th>Delete</th>
                 </tr>
                 <?php
@@ -133,13 +134,14 @@
                         $arr = explode( '_', $item_id );
                         $id = end( $arr );
                         ?>
-                        <tr id="item_cart_row_<?php echo $id; ?>">
+                        <tr class="table-info" id="item_cart_row_<?php echo $id; ?>">
                             <td><?php echo $item[0]->itemCategory; ?></td>
                             <td><?php echo $item[0]->itemName; ?></td>
                             <td><?php echo $item[0]->quantity; ?></td>
-                            <td><?php echo "₪"; echo $item[0]->unitPrice; ?></td>
-                            <td><?php echo "₪"; echo $item[0]->unitPrice * $item[0]->quantity; ?></td>
-                            <td><button class="btn btn-warning delete-from-cart" data-id="<?php echo $id; ?>">DELETE</button></td>
+                            <td><?php echo $item[0]->unitPrice; ?> &#x20AA;</td>
+                            <td><?php echo $item[0]->unitPrice * $item[0]->quantity; ?> &#x20AA;</td>
+                            <td><button class="btn btn-success save-item-to-sl-history" data-id="<?php echo $id; ?>" data-quantity="<?php echo $item[0]->quantity; ?>">Done</button></td>
+                            <td><button class="btn btn-danger delete-from-cart" data-id="<?php echo $id; ?>">Delete</button></td>
                         </tr>
                         <?php
                     }
