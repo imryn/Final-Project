@@ -77,7 +77,9 @@
         
         public function showKindergartenkidsList(){
             $sql = "SELECT kids.fname, kids.lastname FROM kids INNER JOIN users
-            ON kids.parentId=users.parentId INNER JOIN kindergarten ON users.kindergartenid=kindergarten.kindergartenId";
+            ON kids.parentId=users.parentId
+            INNER JOIN crew 
+            ON users.kindergartenid=crew.kindergartenId AND crew.kTeacherId={$_SESSION['kTeacherId']}";
 
             $result =$this->db->query($sql);
             if($result){
