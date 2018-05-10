@@ -115,6 +115,15 @@
                     $items=new Items(); 
                     $items->getTotalItems();
                     break;
+                
+                case "removeItemFromCart":
+                   $items = new Items();
+                   $items->removeItemFromCart( $_GET['item_id'] );
+                   break;
+                case "addItemToShoppingListHistory":
+                   $items = new Items();
+                   $items->addItemToShoppingListHistory( $_GET['item_id'], $_GET['quantity'] );
+                   break;
 
             }
        }

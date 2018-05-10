@@ -61,11 +61,36 @@ function SelectCategory(){
   
   // End - conditions for the selects
 
-$('.delete-from-cart').on('click', function(){
+$( document ).on('click', '.delete-from-cart', function(){
     var item_id = $(this).data('id');
-    $('#item_cart_row_'+item_id).remove();
+    httpGet("/Sadna/server/api.php?route=removeItemFromCart&item_id="+item_id , [], function(response) {
+        if( response.success ){
+            $('#item_cart_row_'+item_id).remove();
+        }
+    })
+
 });
-  
+
+$( document ).on('click', '.save-item-to-sl-history', function(){
+  var item_id = $(this).data('id');
+  var quantity = $(this).data('quantity');
+  $this = $(this);
+  httpGet("/Sadna/server/api.php?route=addItemToShoppingListHistory&item_id="+item_id+"&quantity="+quantity , [], function(response) {
+      if( response.success ){
+          $this.attr('disabled','disabled');
+          $this.html( 'Saved' );
+      }
+  })
+
+});
+
+$('#quantity-input').on( 'change', function(){
+    if( parseInt( $( this ).val() ) > 0 ) {
+        // enable the "add" button when the quantity is greater than 0
+        $('.add-to-cart').attr( 'disabled', false );
+    }
+});
+
 function buildThs(array){
     var row = '<tr>'
     array.forEach(function(item){
@@ -83,13 +108,25 @@ function createItemsTable(data){
     //table = table + buildThs(['Category', 'Item Name','Quantity', 'Price']);
     var total = 0;
     data.forEach(function(item) {
+        var average = Math.floor( parseFloat( item.average ) );
+        var quantity = parseInt( item.quantity);
+        var range = 2;
+        //
+        if( average > (  quantity + range ) || average < ( quantity - range ) ){
+            if( confirm( "The average quantity purchased for this item is " + average + ". Would you like to update quantity?") ) {
+                item.quantity = Math.floor( average );
+            }
+        }
+
         total = item.quantity * item.unitPrice;
-        table = '<tr class="table-info">' +
+        table = '<tr class="table-info" id="item_cart_row_' + item.itemId + '">' +
                     '<td>' + item.itemCategory + '</td>' +
                     '<td>' + item.itemName + '</td>' +
                     '<td>' + item.quantity + '</td>' +
-                    '<td>' + item.unitPrice + '</td>' +
-                    '<td>' + total + '</td>' +
+                    '<td>' + item.unitPrice + ' &#x20AA;</td>' +
+                    '<td>' + total + ' &#x20AA;</td>' +
+                    '<td><button class="btn btn-success save-item-to-sl-history" data-id="' +  item.itemId + '" data-quantity="' + item.quantity + '">Done</button></td>' +
+                    '<td><button class="btn btn-danger delete-from-cart" data-id="' +  item.itemId + '">Delete</button></td>' +
                 '</tr>';
         $('#item-table').append(table);
     });
@@ -101,14 +138,12 @@ function createItemsTable(data){
 
 function getItemList(){
     var data = getFormData("#shopping-list form");
-    console.log(data);
-    httpGet("/Sadna/server/api.php?route=getItems",data, function(response) {
-        if(response.success && response.data instanceof Array){
-            createItemsTable( response.data );
+    //console.log(data);
+    httpGet("/Sadna/server/api.php?route=getItems", data, function (response) {
+        if (response.success && response.data instanceof Array) {
+            createItemsTable(response.data);
         }
-
     })
-
 }
 
 
