@@ -100,8 +100,9 @@
                         while($row = $result->fetch_assoc()) {?>
                             <tr>
                                 <td> <?php echo $counter; ?></td>
-                                <td> <?php echo $row['lastname']; 
-                                        echo $row['fname']; ?> 
+                                <td> <?php echo $row['lastname'];  ?> 
+                                        &nbsp;
+                                      <?php  echo $row['fname']; ?> 
                                 </td>                                                              
                                 <td style="display:none;" class='kidId'> <?php echo $row['kidId']; ?> </td> 
                                 <td class='attendance'>
