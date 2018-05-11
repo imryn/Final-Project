@@ -88,8 +88,7 @@
                 <table id="attendance-table" class="table table-striped">
                     <tr>
                         <th> No. </th>
-                        <th> Last Name </th>
-                        <th> First Name </th>               
+                        <th> Child Name </th>               
                         <th> Attendance ? </th>
                         <th> Reminder </th>
                     </tr>
@@ -101,8 +100,9 @@
                         while($row = $result->fetch_assoc()) {?>
                             <tr>
                                 <td> <?php echo $counter; ?></td>
-                                <td> <?php echo $row['lastname']; ?> </td>               
-                                <td> <?php echo $row['fname']; ?> </td>                                                              
+                                <td> <?php echo $row['lastname']; 
+                                        echo $row['fname']; ?> 
+                                </td>                                                              
                                 <td style="display:none;" class='kidId'> <?php echo $row['kidId']; ?> </td> 
                                 <td class='attendance'>
                                     <input data-height="15" 
