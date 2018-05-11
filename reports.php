@@ -54,5 +54,12 @@
     <script src="reports/reports.js"></script>
     <script src="commons.js"></script>
     <script src="reports/charts.js"> </script>
+
+        <footer class="container-fluid text-center bg-lightgray">
+            <div class="copyrights" style="margin-top:18px;">
+                <p>Copyright &copy; Karin Haim Poor, Imry Noy And Daniel Ben-Moshe
+                    <br>
+            </div>
+        </footer>   
 </body>
 </html>
