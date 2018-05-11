@@ -143,8 +143,7 @@
                             <td><button class="btn btn-success save-item-to-sl-history" data-id="<?php echo $id; ?>" data-quantity="<?php echo $item[0]->quantity; ?>">Done</button></td>
                             <td><button class="btn btn-danger delete-from-cart" data-id="<?php echo $id; ?>">Delete</button></td>
                         </tr>
-                        <tr>   <?php  $sumTotal=$sumTotal + ($item[0]->unitPrice * $item[0]->quantity); ?>
-                       
+                        <tr>   <?php  $sumTotal=$sumTotal + ($item[0]->unitPrice * $item[0]->quantity); ?>                
                         </tr>
                         <?php
                     }
@@ -158,7 +157,6 @@
                     <label for="pick-date"> Kindergaten shopping budget: </label>
                     <input name="date" type="text" value="&#x20AA;  <?php echo $sumTotal; ?>" disabled/> 
                 </div>
-            &#x20AA;  <?php echo $sumTotal; ?> 
     </section>
 
             
