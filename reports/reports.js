@@ -26,7 +26,7 @@ function getAlergicReports(){
  
 
 function getPresenceReport(){
-        var data = getFormData("#presence-report form");
+        var data = getFormData("#exception-report form");
     
         var selectedKid = kinderGarten[data.presenceOptions];
         // data.kidFname = selectedKid.fname;
