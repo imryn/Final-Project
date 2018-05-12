@@ -84,7 +84,7 @@
   </div>
   <div class="col-lg-4 col-sm-6 portfolio-item">
     <div class="card h-100">
-      <img class="card-img-top" src="pictures/portfolio2.jpg" alt="">
+      <img class="card-img-top" src="pictures/portfolio.jpg" alt="">
       <div class="card-body">
         <h4 class="card-title">
         <h3 class="template-header"> User Management </h3>
