@@ -52,7 +52,7 @@ function SelectCategory(){
         $('#empty').prop('disabled', true);
     }
 
-    function myFunction() {
+    function refreshTotal() {
         location.reload();
     }
     /*if(category == "Empty"){
@@ -70,6 +70,7 @@ $( document ).on('click', '.delete-from-cart', function(){
     httpGet("/Sadna/server/api.php?route=removeItemFromCart&item_id="+item_id , [], function(response) {
         if( response.success ){
             $('#item_cart_row_'+item_id).remove();
+            location.reload();
         }
     })
 
@@ -83,6 +84,7 @@ $( document ).on('click', '.save-item-to-sl-history', function(){
       if( response.success ){
           $this.attr('disabled','disabled');
           $this.html( 'Saved' );
+          location.reload();
       }
   })
 
@@ -147,6 +149,8 @@ function getItemList(){
             createItemsTable(response.data);
         }
     })
+
+    location.reload();
 }
 
 

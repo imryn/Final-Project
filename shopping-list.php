@@ -115,7 +115,7 @@
                             </div>
                         </div>
                 </div>
-                    <input type="button" value="Add" id="add" class="btn btn-warning add-to-cart" disabled onClick="getItemList()"/>
+                    <input type="button" value="Add" id="add" class="btn btn-warning add-to-cart" disabled onClick="getItemList()" />
             </form>  
             <table id="item-table" class="table table-striped table-responsive w-auto">
                 <tr>
@@ -140,11 +140,11 @@
                             <td><?php echo $item[0]->quantity; ?></td>
                             <td> &#x20AA; <?php echo $item[0]->unitPrice; ?> </td>
                             <td> &#x20AA; <?php echo $item[0]->unitPrice * $item[0]->quantity; ?></td>
-                            <td><button class="btn btn-success save-item-to-sl-history" data-id="<?php echo $id; ?>" data-quantity="<?php echo $item[0]->quantity; ?>">Done</button></td>
-                            <td><button class="btn btn-danger delete-from-cart" data-id="<?php echo $id; ?>" onclick="myFunction()" >Delete</button></td>
+                            <td><button class="btn btn-success save-item-to-sl-history" data-id="<?php echo $id; ?>" data-quantity="<?php echo $item[0]->quantity; ?>" onclick="refreshTotal()"> Done</button></td>
+                            <td><button class="btn btn-danger delete-from-cart" data-id="<?php echo $id; ?>" onclick="refreshTotal()"> Delete </button></td>
                         </tr>
-                        <tr>   <?php  $sumTotal=$sumTotal + ($item[0]->unitPrice * $item[0]->quantity); ?>                
-                        </tr>
+                        <!-- <tr>   <?php  $sumTotal=$sumTotal + ($item[0]->unitPrice * $item[0]->quantity); ?>                
+                        </tr> -->
                         <?php
                     }
                  
@@ -157,6 +157,7 @@
                     <label for="pick-date"> Total: </label>
                     <input name="date" type="text" value="&#x20AA;  <?php echo $sumTotal; ?>" disabled/> 
                 </div>
+            </form>
     </section>
 
             
@@ -196,6 +197,7 @@
                     <br>
             </div>
         </footer>
+
         <script src="js/shopping-list.js"></script>
         <script src="commons.js"></script>       
 </body>
