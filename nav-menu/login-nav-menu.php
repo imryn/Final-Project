@@ -27,7 +27,7 @@
             
             <li class="links"><a href="view_schedule.php"> Weekly schedule </a></li>
             <li class="links"><a href="reports.php"> reports </a></li>
-            <li class="links"><a href="server/api.php?route=signout"> Sign out </a></li>
+            <li class="links"><a href="server/api.php?route=signout"> Log out </a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
