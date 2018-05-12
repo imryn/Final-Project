@@ -6,7 +6,7 @@
 function SelectCategory(){
     var category =  $('#itemcategory').val();
     
-    if(category == "Artmaterials") {
+    if(category == "Art materials") {
         $('#artitems').css('display', "inline-block");
         $('#artitems').prop('disabled', false);
 
@@ -124,13 +124,12 @@ function createItemsTable(data){
 
         total = item.quantity * item.unitPrice;
         table = '<tr class="table-info" id="item_cart_row_' + item.itemId + '">' +
-                    '<td>' + item.itemCategory + '</td>' +
-                    '<td>' + item.itemName + '</td>' +
+                    '<td>' + item.itemCategory + '-' + item.itemName +'</td>' +
                     '<td>' + item.quantity + '</td>' +
-                    '<td>' + item.unitPrice + ' &#x20AA;</td>' +
-                    '<td>' + total + ' &#x20AA;</td>' +
-                    '<td><button class="btn btn-success save-item-to-sl-history" data-id="' +  item.itemId + '" data-quantity="' + item.quantity + '">Done</button></td>' +
-                    '<td><button class="btn btn-danger delete-from-cart" data-id="' +  item.itemId + '">Delete</button></td>' +
+                    '<td>&#x20AA;' + item.unitPrice + '</td>' +
+                    '<td>&#x20AA;' + total + '</td>' +
+                    '<td> <button class="btn btn-success save-item-to-sl-history" data-id="' +  item.itemId + '" data-quantity="' + item.quantity + '"> Done </button></td>' +
+                    '<td> <button class="btn btn-danger delete-from-cart" data-id="' +  item.itemId + '"> Delete </button></td>' +
                 '</tr>';
         $('#item-table').append(table);
     });

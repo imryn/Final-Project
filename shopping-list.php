@@ -37,7 +37,7 @@
                             <label id="category">Category: </label> 
                             <select name="itemCategory" size="1" id="itemcategory" onchange="SelectCategory(this.value);" > 
                                 <option value="Empty" > --Select Category--  </option>
-                                <option value="Artmaterials"> Art materials  </option>
+                                <option value="Art materials"> Art materials  </option>
                                 <option value="Office" > Office  </option>
                                 <option value="Food" > Food  </option>
                             </select>
