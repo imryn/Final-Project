@@ -37,7 +37,8 @@
                 from kids
                 join users on kids.parentId=users.parentId
                 where kids.parentId in (select parentId from noattendance where date=current_date())
-            )a order by lastname 
+            )a 
+            where order by lastname 
 
 ";
     $result = $conn->query($sql);

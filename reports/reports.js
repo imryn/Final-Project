@@ -1,6 +1,3 @@
-
-
-
 function getReports(){
     var data = getFormData("#reports form");
 
@@ -29,7 +26,7 @@ function getAlergicReports(){
  
 
 function getPresenceReport(){
-        var data = getFormData("#exception-report form");
+        var data = getFormData("#presence-report form");
     
         var selectedKid = kinderGarten[data.presenceOptions];
         // data.kidFname = selectedKid.fname;
@@ -58,7 +55,7 @@ function getPresenceReport(){
                     response.data.forEach(function(item){
                         item.date = timestampToDate(item.date);
                     })
-                    createExceptionTable(response.data);
+                    createPresenceTable(response.data);
                     getPresenceReport.error("");
                 }
                 else{
@@ -214,6 +211,19 @@ function createExceptionTable(data){
 
     data.forEach(function(item) {
         table = table + '<tr class="table-info"><td>' +item.first_name +'</td><td>'+item.last_name +'</td><td>' +item.note +'</td><td>' + item.date + '</td></tr>';
+    });
+    tableElement.innerHTML = table;
+    console.log(table)
+}
+
+function createPresenceTable(data){
+    var tableElement = document.getElementById("kids-presence-table");
+    var table='';
+
+    table = table + buildThs(['Date','First Name','Last Name']);
+
+    data.forEach(function(item) {
+        table = table + '<tr class="table-info"><td>'+item.date+'</td><td>'+item.first_name+'</td><td>' +item.last_name+'</td></tr>';
     });
     tableElement.innerHTML = table;
     console.log(table)
