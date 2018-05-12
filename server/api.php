@@ -77,7 +77,12 @@
 
                 case "get_Exceptionsreport":
                     $exceptions= new Exceptions();
-                    $exceptions -> getAllExceptions();
+                    if(isSet($_SESSION['kTeacherId'])){
+                        $exceptions -> getAllExceptions();
+                    }
+                    else{
+                        $exceptions -> getkidExceptions();
+                    }
                     break;
                 
                 case "get_Exceptionsgraph":

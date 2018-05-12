@@ -207,10 +207,10 @@ function createExceptionTable(data){
     var tableElement = document.getElementById("kids-observation-table");
     var table='';
 
-    table = table + buildThs(['First Name','Last Name','Notes','Date']);
+    table = table + buildThs(['Date','First Name','Last Name','Notes']);
 
     data.forEach(function(item) {
-        table = table + '<tr class="table-info"><td>' +item.first_name +'</td><td>'+item.last_name +'</td><td>' +item.note +'</td><td>' + item.date + '</td></tr>';
+        table = table + '<tr class="table-info"><td>' + item.date + '</td><td>' +item.first_name +'</td><td>'+item.last_name +'</td><td>' +item.note +'</td></tr>';
     });
     tableElement.innerHTML = table;
     console.log(table)
