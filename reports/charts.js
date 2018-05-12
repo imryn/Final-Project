@@ -14,7 +14,7 @@ google.charts.load('current', {packages: ['corechart']});
                       // 'height':300
                     };
 
-      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+      var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
       chart.draw(data, options);
 
 

@@ -44,7 +44,7 @@
         }
 
         public function getAllExceptions(){
-            $sql = "SELECT exceptions.observation, exceptions.observationDate,exceptions.fname,exceptions.lastname FROM exceptions WHERE exceptions.observationDate>={$_GET['startDate']}
+            $sql = "SELECT exceptions.observation, exceptions.specialRequests ,exceptions.observationDate,exceptions.fname,exceptions.lastname FROM exceptions WHERE exceptions.observationDate>={$_GET['startDate']}
             AND exceptions.observationDate<={$_GET['endDate']} AND exceptions.fname='{$_GET['kidFname']}' AND exceptions.lastname='{$_GET['kidLname']}'" ;
  
             $result =$this->db->query($sql); 
@@ -55,7 +55,8 @@
                         'first_name' => $row['fname'],
                         'last_name' => $row['lastname'],
                         'note' => $row['observation'],
-                        'date' => $row['observationDate']
+                        'date' => $row['observationDate'],
+                        'specialReq' => $row['specialRequests']
                     ]);  
                 }
                 echo json_encode((object) [
@@ -70,7 +71,7 @@
         }
 
         public function getkidExceptions(){
-            $sql = "SELECT exceptions.observation, exceptions.observationDate,exceptions.fname,exceptions.lastname
+            $sql = "SELECT exceptions.observation, exceptions.specialRequests, exceptions.observationDate,exceptions.fname,exceptions.lastname
             FROM exceptions INNER JOIN kids ON exceptions.kidId=kids.kidId WHERE
             exceptions.observationDate>={$_GET['startDate']} AND exceptions.observationDate<={$_GET['endDate']}
             AND exceptions.fname='{$_GET['kidFname']}' AND exceptions.lastname='{$_GET['kidLname']}'" ;
@@ -83,6 +84,7 @@
                         'first_name' => $row['fname'],
                         'last_name' => $row['lastname'],
                         'note' => $row['observation'],
+                        'specialReq' => $row['specialRequests'],
                         'date' => $row['observationDate']
                     ]);  
                 }
