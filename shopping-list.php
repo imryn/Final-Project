@@ -154,7 +154,7 @@
 
             <form>
                 <div class="pickDateField">
-                    <label for="pick-date"> Kindergaten shopping budget: </label>
+                    <label for="pick-date"> Total: </label>
                     <input name="date" type="text" value="&#x20AA;  <?php echo $sumTotal; ?>" disabled/> 
                 </div>
     </section>
