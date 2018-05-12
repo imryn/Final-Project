@@ -141,7 +141,7 @@
                             <td> &#x20AA; <?php echo $item[0]->unitPrice; ?> </td>
                             <td> &#x20AA; <?php echo $item[0]->unitPrice * $item[0]->quantity; ?></td>
                             <td><button class="btn btn-success save-item-to-sl-history" data-id="<?php echo $id; ?>" data-quantity="<?php echo $item[0]->quantity; ?>">Done</button></td>
-                            <td><button class="btn btn-danger delete-from-cart" data-id="<?php echo $id; ?>">Delete</button></td>
+                            <td><button class="btn btn-danger delete-from-cart" data-id="<?php echo $id; ?>" onclick="myFunction()" >Delete</button></td>
                         </tr>
                         <tr>   <?php  $sumTotal=$sumTotal + ($item[0]->unitPrice * $item[0]->quantity); ?>                
                         </tr>

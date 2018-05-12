@@ -51,6 +51,10 @@ function SelectCategory(){
         $('#empty').css('display', "none");
         $('#empty').prop('disabled', true);
     }
+
+    function myFunction() {
+        location.reload();
+    }
     /*if(category == "Empty"){
         aitem.style.display = "none";
         oitem.style.display = "none";
