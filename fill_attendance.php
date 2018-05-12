@@ -14,32 +14,34 @@
     } 
     
     $sql = "select * from 
-            (select 
-                    fname,
-                    users.kindergartenid as kindergartenid,
-                    users.lastname as lastname,
-                    kids.kidId as kidId,
-                    kids.parentId as parentId,
-                    'true' as comeToClass 
-                from kids
-                join users on kids.parentId=users.parentId
-                where kids.parentId not in (select parentId from noattendance where date=current_date())
+                    (select 
+                            kids.fname as fname,
+                            users.kindergartenid as kindergartenid,
+                            users.lastname as lastname,
+                            kids.kidId as kidId,
+                            kids.parentId as parentId,
+                            'true' as comeToClass 
+                        from kids
+                        join users on kids.parentId=users.parentId
+                        INNER JOIN crew ON users.kindergartenid=crew.kindergartenId
+                        where kids.parentId not in (select parentId from noattendance where date=current_date()) and crew.kTeacherId={$_SESSION['kTeacherId']}
 
-                union 
+                        union 
 
-                select 
-                    fname,
-                    users.kindergartenid as kindergartenid,
-                    users.lastname as lastname,
-                    kids.kidId as kidId,
-                    kids.parentId as parentId,
-                    'false' as comeToClass 
-                from kids
-                join users on kids.parentId=users.parentId
-                where kids.parentId in (select parentId from noattendance where date=current_date())
-            )a order by lastname 
+                        select 
+                            kids.fname as fname,
+                            users.kindergartenid as kindergartenid,
+                            users.lastname as lastname,
+                            kids.kidId as kidId,
+                            kids.parentId as parentId,
+                            'false' as comeToClass 
+                        from kids
+                        join users on kids.parentId=users.parentId
+                        INNER JOIN crew ON users.kindergartenid=crew.kindergartenId
+                        where kids.parentId in (select parentId from noattendance where date=current_date()) and crew.kTeacherId={$_SESSION['kTeacherId']}
+                    )a order by lastname 
 
-";
+            ";
     $result = $conn->query($sql);
 
     $conn->close();
