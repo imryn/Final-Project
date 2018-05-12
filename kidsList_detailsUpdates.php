@@ -9,7 +9,6 @@
         <link rel="stylesheet" type="text/css" href="vendors/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="css/nav-menu.css">
-        <link rel="stylesheet" type="text/css" href="picture-container/picture-container.css">
         <link rel="stylesheet" type="text/css" href="css/queries.css">
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
         <script
