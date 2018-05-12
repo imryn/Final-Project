@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
     <?php 
+     
+     session_start();
     $servername = "us-cdbr-gcp-east-01.cleardb.net";
     $username = "b1cecd1cfb136f";
     $password = "7e767b54";
@@ -13,7 +15,7 @@
         die("Connection failed: " . $conn->connect_error);
     } 
     
-    $sql = "select * from 
+    $sql = "SELECT * from 
                     (select 
                             kids.fname as fname,
                             users.kindergartenid as kindergartenid,
