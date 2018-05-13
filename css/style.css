@@ -417,6 +417,11 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
     text-align: center;
 }
 
+#kids-table th, #kids-observation-table th{
+    background: #e67e22;
+    color: white;
+}
+
 #item{
     margin-left: 25%;
 }
