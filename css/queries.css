@@ -39,13 +39,20 @@
   }
 
   #kidname-label, #pickDate{
-      margin-left: -3%;
+      margin-left: 1%;
   }
 
   #kidname{
-    margin-left: -1%;
+    margin-left: 1%;
   }
 
+  .registration-info input{
+      margin-left: 3.5%;
+  }
+
+  #genders-input{
+      margin-left: 5%;
+  }
 
 /* buttons */
   #new-observation{
@@ -59,7 +66,7 @@
   }
 
   .show-kid-details{
-      margin-left: 9.8%;
+      margin-left: 7.8%;
   }
 
 /* labels */
@@ -72,13 +79,17 @@
     width: 90%;
   }
 
-  label{
-      margin-left: -4%;
-  }
-
   #upDate{
       margin-left: 0;
       width: 90%;
+  }
+
+  #allergies-label, #food-label{
+      margin-left: 2%;
+  }
+
+  .date-label{
+      margin-left: 10%;
   }
 
 
@@ -95,11 +106,23 @@
    /* report page */
 
    #report-describing{
-       margin-left: 0;
+       margin-left: 4%;
    }
 
-   #options_for_report, .create-botton, .create-botton1{
+   .report-info select{
+       margin-left: 3.7%;
+   }
+
+   #start-date, #end-date{
+      margin-left: 9%;
+   }
+
+   #options_for_report, .create-botton{
        margin-left: 37%;
+   }
+
+   .create-botton1{
+       margin-left: 34%;
    }
 
    #kids-table{
@@ -121,10 +144,12 @@
    #artitems, #officeitems,
    #fooditems, #empty{
        width: 87%;
+       margin-left: -2%;
    }
 
    #quantity-input{
-       margin-left: 6%;
+       margin-left: -1%;
+       display: block;
    }
 
    #item-table{

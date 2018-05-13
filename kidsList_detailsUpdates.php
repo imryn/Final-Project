@@ -70,7 +70,7 @@
                    <div class="col span-1-of-3 box">
                         <div class="registration-info">
                             <label> <span> * </span> Gender: </label>
-                            <select name="genders" size="1" class="disabled-input"> 
+                            <select name="genders" size="1" class="disabled-input" id="genders-input"> 
                                 <option value="boy" selected> Boy  </option>
                                 <option value="Girl"> Girl </option>
                             </select>
@@ -87,7 +87,7 @@
            <div class="row kid-form3">
                 <div class="col span-1-of-4 box">
                     <div class="registration-info">
-                        <label for="name"> Allergies: </label>   
+                        <label for="name" id="allergies-label"> Allergies: </label>   
                         <p> <input type="checkbox" name="celiac" class="disabled-input"> Celiac </p>
                     </div>
                 </div>
@@ -132,7 +132,7 @@
            <div class="row kid-form3">
                 <div class="col span-1-of-3 box">
                     <div class="registration-info">
-                        <label for="food"> Food Preference: </label>   
+                        <label for="food" id="food-label"> Food Preference: </label>   
                         <p> <input type="radio" name="vegan" class="disabled-input"> Vegan </p>                  
                     </div>
                 </div>
