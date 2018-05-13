@@ -115,8 +115,12 @@ h2{
     display: none;
 }
 
- .reports-line, .date-label{
-    margin-left: 3.2%;
+ .reports-line{
+    margin-left: 6%;
+ }
+
+ .date-label{
+     margin-left: 17%;
  }
 
  .exception-update2{
@@ -129,15 +133,15 @@ h2{
 }
 
 .parent-form1, .parent-form2, .parent-form3, .parent-form4 {
-    margin-left: 10%;
+    margin-left: 7%;
 }
 
 .kid-form1,.kid-form2,.kid-update1, .kid-update2{
-   margin-left: 10%;
+   margin-left: 6%;
 }
 
 .kid-form3, .kid-form4{
-    margin-left: 11.3%;
+    margin-left: 7.3%;
 }
 
 .alergic-update, .exception-update{
@@ -204,9 +208,9 @@ h2{
  
 }
 
-.registration-info select, .alergic-info select, .exception-info select{
+.alergic-info select, .exception-info select{
     margin-top: 1%;
-    margin-left: 4%;
+    margin-left: 10%;
 }
 
 .alergic-info select{
@@ -215,6 +219,7 @@ h2{
 
 .registration-info select{
     width: 71%;
+    margin-left: 4%;
 }
 
 .exception-info select{
@@ -288,7 +293,7 @@ input[type=radio]:first-child{
 
 #start-date, #end-date{
     width: 86%;
-    margin-left: 3%;
+    margin-left: 17%;
 }
 
 /* buttons */
@@ -326,7 +331,7 @@ input[type=radio]:first-child{
 
 .show-kid-details{
     margin-top: 1%;
-    margin-left: 12.5%;
+    margin-left: 8.5%;
     
 }
 .show-kid-details:hover, .save-2:hover,
@@ -372,17 +377,19 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
     word-spacing: 2px;
 }
 .describe-info{
-    margin-left: 11%;
+    margin-left: 7%;
 }
 
 .describe-list-info{
-    margin-left: 5%
+    margin-left: 6%
 }
 
-#form-exp, #alergic-exp, #exception-exp{
-    margin-left: 4%;  
+#form-exp{
+    margin-left: 7%;  
 }
-
+#alergic-exp, #exception-exp{
+    margin-left: 10%;
+}
 /* warning message for user in the forms */
 .success-message, .success-message2{
    font-weight: bold; 
@@ -408,6 +415,10 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
 #kids-observation-table th, #kids-observation-table tr,
 #item-table th, #item-table tr{
     text-align: center;
+}
+
+#item{
+    margin-left: 25%;
 }
 
 #item-table{
@@ -549,6 +560,7 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
 
 #artitems,#officeitems,#fooditems,#empty{
     width: 180%;
+    margin-left: 25%;
 }
 
 #itemcategory{
@@ -556,7 +568,7 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
 }
 
 .shoppinglist-form3{
-    margin-left: 4.3%;
+    margin-left: 5.3%;
 }
 
 #add{
