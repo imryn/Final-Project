@@ -126,7 +126,7 @@
                     ?>
                 </table>
 
-                <input type="button" value="Update Attendance" class="refresh-button btn btn-warning" onClick="saveInServer()"/>             
+                <input type="button" value="Update Attendance" id="Update-Attendance" class="refresh-button btn btn-warning" onClick="saveInServer()"/>             
             </form>
         </section>
 

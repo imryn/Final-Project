@@ -171,4 +171,14 @@
    .colDisplay{
        display: none;
    }
+
+   /* attendance page */
+
+   #attendance-table{
+       margin-left: 1%;
+   }
+
+   #Update-Attendance{
+       margin-left: 28%;
+   }
 }
