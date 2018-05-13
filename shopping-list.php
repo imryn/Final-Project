@@ -121,9 +121,9 @@
                 <tr>
                     <th>Category - Item</th>
                     <th>Qty</th>
-                    <th>Unit Price</th>
-                    <th>Total</th>
-                    <th>Done</th>
+                    <th class="colDisplay">Unit Price</th>
+                    <th class="colDisplay">Total</th>
+                    <th>Purchased</th>
                     <th>Delete</th>
                 </tr>
                 <?php
@@ -138,9 +138,9 @@
                         <tr class="table-info" id="item_cart_row_<?php echo $id; ?>">
                             <td><?php echo $item[0]->itemCategory; ?> - <?php echo $item[0]->itemName; ?></td>
                             <td><?php echo $item[0]->quantity; ?></td>
-                            <td> &#x20AA; <?php echo $item[0]->unitPrice; ?> </td>
-                            <td> &#x20AA; <?php echo $item[0]->unitPrice * $item[0]->quantity; ?></td>
-                            <td><button class="btn btn-success save-item-to-sl-history" data-id="<?php echo $id; ?>" data-quantity="<?php echo $item[0]->quantity; ?>" onclick="refreshTotal()"> Done</button></td>
+                            <td class="colDisplay"> &#x20AA; <?php echo $item[0]->unitPrice; ?> </td>
+                            <td class="colDisplay"> &#x20AA; <?php echo $item[0]->unitPrice * $item[0]->quantity; ?></td>
+                            <td><button class="btn btn-success save-item-to-sl-history" data-id="<?php echo $id; ?>" data-quantity="<?php echo $item[0]->quantity; ?>" onclick="refreshTotal()"> Yes</button></td>
                             <td><button class="btn btn-danger delete-from-cart" data-id="<?php echo $id; ?>" onclick="refreshTotal()"> Delete </button></td>
                         </tr>
                         <!-- <tr>   <?php  $sumTotal=$sumTotal + ($item[0]->unitPrice * $item[0]->quantity); ?>                
