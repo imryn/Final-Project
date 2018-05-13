@@ -154,11 +154,17 @@
 
    #item-table{
         width: 80%;
-        margin-left: 0;
+        margin-left: 10%;
    }
 
    .table>tbody>tr>th{
-       padding: 7px;
+       padding: 6px;
+       font-size: 16px;
+   }
+
+   .table>tbody>tr>td{
+       font-size: 16px;
+       padding: 0;
    }
 
    /* child file for parent user */
@@ -175,7 +181,7 @@
    /* attendance page */
 
    #attendance-table{
-       margin-left: 1%;
+       margin-left: 11%;
    }
 
    #Update-Attendance{
