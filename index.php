@@ -38,9 +38,11 @@
         <h4 class="card-title">
           <h3 class="template-header"> Shopping List <h3>
         </h4>
-        <p class="card-text" id="first-temp-p"> as a kindergarten teacher you can make a shopping list
-          includes art materials, foods and office supplies in order to 
-          save money, improve efficiency, bring more quality equipment to the kindergarten.</p>
+        <p class="card-text" id="first-temp-p"> 
+          As a kindergarten worker, you will be able to manage a shopping list
+          by adding art materials, food and office supplies in order to 
+          save money, improve efficiency and bring more quality equipment to the kindergarten.
+        </p>
       </div>
     </div>
   </div>
@@ -51,8 +53,10 @@
         <h4 class="card-title">
         <h3 class="template-header"> Weekly Schedule </h3>
         </h4>
-        <p class="card-text"> you can see the kindergarten schedule activities
-          and as a kindergarten teacher you can also manage it. </p>
+        <p class="card-text"> 
+          As a kindergarten worker, you can manage your kindergarten schedule, so the parents will be able
+          to trace it and add the planned meals and activities to their private google calendar.
+        </p>
       </div>
     </div>
   </div>
@@ -63,8 +67,10 @@
         <h4 class="card-title">
         <h3 class="template-header"> Reports </h3>
         </h4>
-        <p class="card-text"> you can see information about your child allergies, see notes
-          that the kindergarten teacher gave to your child, and make presence report.</p>
+        <p class="card-text"> 
+          As a kindergarten worker/parent,you will be able to track any information about the children
+          such as allergies and observations given by the kindergarten teacher - our reports will do that for you.
+        </p>
       </div>
     </div>
   </div>
@@ -77,8 +83,10 @@
         <h4 class="card-title">
         <h3 class="template-header"> Daily Attendance </h3>
         </h4>
-        <p class="card-text">as a kindergarten teacher you can fill out a attendance page
-        on the kid's kindergarten </p>
+        <p class="card-text">
+          As a kindergarten worker, you can fill out a daily attendance and to follow each 
+          morning which of the children is missing and send Email to child' parent in order to request an update.
+      </p>
       </div>
     </div>
   </div>
@@ -89,9 +97,10 @@
         <h4 class="card-title">
         <h3 class="template-header"> User Management </h3>
         </h4>
-        <p class="card-text">you can see basic information about your kid after registration,
-          update it if you need to.
-          As a kindergarten teacher you can also give notes (behavior errors) for the kids.
+        <p class="card-text">
+          As a kindergarten worker, you can add observations about child behaviour, 
+          good or bad, in order to get his parent more informed.
+          Parent will be able to update his "Child file" and also inform kindergarten teacher about a new issue.
         </p>
       </div>
     </div>
@@ -103,7 +112,12 @@
         <h4 class="card-title">
         <h3 class="template-header"> Project Two</h3>
         </h4>
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
+        <p class="card-text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+          Itaque earum nostrum suscipit ducimus nihil provident, 
+          perferendis rem illo, voluptate atque, sit eius in voluptates, 
+          nemo repellat fugiat excepturi! Nemo, esse.
+        </p>
       </div>
     </div>
   </div>
