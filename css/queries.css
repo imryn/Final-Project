@@ -32,6 +32,24 @@
         margin-left: 5%;
     }
 
+    .template-row{
+        margin-left: -0.7%
+    }
+
+    /* registration page */
+
+    #f-member-select{
+        width: 138%;
+    }
+
+    .save-2{
+        margin-left: 40%;
+    }
+
+    #gender{
+        width: 130%;
+    }
+
   /*  kidsList_detailsUpdates page */
 
   textarea{
