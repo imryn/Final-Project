@@ -78,7 +78,7 @@
                     </div>
                     <div class="col span-1-of-3 box">
                         <div class="registration-info">
-                            <label id="city"> City: </label> <br>
+                            <label id="city"> City, Country: </label> <br>
                                 <div id="pac-container">
                                     <input id="pac-input" name="city" type="text">
                                 </div>
