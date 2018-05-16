@@ -24,6 +24,10 @@
       height: 180px;
     }
 
+    .card-text{
+        font-size: 14px;
+    }
+
     .card{
         margin-left: 4%;
     }
