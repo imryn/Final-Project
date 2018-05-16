@@ -76,19 +76,6 @@ $( document ).on('click', '.delete-from-cart', function(){
 
 });
 
-$( document ).on('click', '.save-item-to-sl-history', function(){
-  var item_id = $(this).data('id');
-  var quantity = $(this).data('quantity');
-  $this = $(this);
-  httpGet("/Sadna/server/api.php?route=addItemToShoppingListHistory&item_id="+item_id+"&quantity="+quantity , [], function(response) {
-      if( response.success ){
-          $this.attr('disabled','disabled');
-          $this.html( 'Saved' );
-          location.reload();
-      }
-  })
-
-});
 
 $('#quantity-input').on( 'change', function(){
     if( parseInt( $( this ).val() ) > 0 ) {
@@ -105,15 +92,16 @@ function buildThs(array){
     return row + '</tr>';
 }
 
-var tableElement = document.getElementById("item-table").tableElement.length;
+//var tableElement = document.getElementById("item-table").tableElement.length;
 
 function createItemsTable(data){
     
     var table='';
-
+    console.log( data );
     //table = table + buildThs(['Category', 'Item Name','Quantity', 'Price']);
     var total = 0;
     data.forEach(function(item) {
+        console.log( item );
         var average = Math.floor( parseFloat( item.average ) );
         var quantity = parseInt( item.quantity);
         var range = 2;
@@ -130,7 +118,8 @@ function createItemsTable(data){
                     '<td>' + item.quantity + '</td>' +
                     '<td>&#x20AA;' + item.unitPrice + '</td>' +
                     '<td>&#x20AA;' + total + '</td>' +
-                    '<td> <button class="btn btn-success save-item-to-sl-history" data-id="' +  item.itemId + '" data-quantity="' + item.quantity + '"> Done </button></td>' +
+                    /********************* continue with purchase action **************/
+                    '<td> <button class="btn btn-success" data-id="' +  item.itemId + '" data-quantity="' + item.quantity + '"> Purchase </button></td>' +
                     '<td> <button class="btn btn-danger delete-from-cart" data-id="' +  item.itemId + '"> Delete </button></td>' +
                 '</tr>';
         $('#item-table').append(table);
@@ -150,7 +139,7 @@ function getItemList(){
         }
     })
 
-    location.reload();
+    //  location.reload();
 }
 
 
