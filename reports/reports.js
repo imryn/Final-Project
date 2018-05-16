@@ -15,9 +15,21 @@ function getAlergicReports(){
     var data = getFormData("#alergic-report form");
     httpGet("/Sadna/server/api.php?route=get_Alergicreport", data,function(response){
         if(response.success && response.data instanceof Array){
-            createAlergicTable(response.data);
+            if(response.data.length){
+                createAlergicTable(response.data);
+                getAlergicReports.error("");
+             }
+            
+             else{
+                document.getElementById('kids-table').innerHTML = "";
+                getAlergicReports.error("No alergic was recorded on selected");
+              }
            }
         });
+    }
+
+    getAlergicReports.error = function (msg){
+        document.querySelector(".unsuccess-message").textContent = msg;
     }
 
     getExceptionReports.error=function(msg){
