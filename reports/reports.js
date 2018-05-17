@@ -109,6 +109,7 @@ function getExceptionReports(data){
                 getExceptionReports.error("");
             }
             else{
+                document.getElementById('kids-observation-table').innerHTML = "";
                 getExceptionReports.error("No comments for selected date");
             }
         }
