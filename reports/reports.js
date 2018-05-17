@@ -169,6 +169,7 @@ function getExceptionGraph(data){
                 getExceptionReports.error("");
             }
             else{
+                document.getElementById('chart_div').innerHTML = "";
                 getExceptionReports.error("No comments for selected date");
             }
         }
