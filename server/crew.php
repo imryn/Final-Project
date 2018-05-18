@@ -32,6 +32,7 @@
                     $_SESSION['login'] = $_POST['token'];
                     $_SESSION['kTeacherId'] = $_POST['parentId'];
                     $_SESSION['kindergartenid'] = $row['kindergartenid'];
+                    setcookie("loginType",'crew',time() + 86400000,"/"); 
                     header("Location: /Sadna/index.php");
                     
                 }

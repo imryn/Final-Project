@@ -9,9 +9,6 @@
        
        $method = $_SERVER['REQUEST_METHOD'];
 
-
-  
-
        if( $method == "POST" && isSet($_POST['route']) ){
            switch ($_POST['route']) {
                 case "create_user":
@@ -73,6 +70,7 @@
                     session_destroy();
                     header("Location: /Sadna/login_page.php?usertype=crew");
                  }
+                 setcookie("loginType", "", time()-3600,"/"); 
                  break;
 
                 case "get_Exceptionsreport":

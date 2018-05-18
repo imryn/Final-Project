@@ -182,10 +182,13 @@ var kinderGarten;
 
 
 function showKindergartenkid(){
-    httpGet("/Sadna/server/api.php?route=getKindergartenkid",{}, function(response){
+    httpGet("/Sadna/server/api.php?route=getKindergartenkid",function(response){
         if(response.success){
             kinderGarten = response.data;
-            response.data.unshift({fname:"All",lastname:""});
+            var cookie = document.cookie.match("(loginType=)(.*)");
+            if(cookie && cookie[2] && cookie[2] == 'crew'){
+                response.data.unshift({fname:"All",lastname:""});
+            }
             var flatData = response.data.map(function(item){
                 return item.fname + " " + item.lastname;
             })

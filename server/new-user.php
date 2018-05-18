@@ -102,6 +102,7 @@
                 if(mysqli_num_rows($result) > 0 ){
                     $_SESSION['login'] = $_POST['token'];
                     $_SESSION['parentId'] = $_POST['parentId'];
+                    setcookie("loginType",'parent',time() + 86400000,"/"); 
                     header("Location: /Sadna/index.php");
                     
                 }

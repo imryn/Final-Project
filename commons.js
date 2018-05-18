@@ -83,7 +83,21 @@ function timestampToDate(timestamp){
     return date.getFullYear() + "-" + month + "-" + day;
 }
 
-function httpGet(url,params,callback){
+function httpGet(){
+    var url,params,callback;
+    for(var i in arguments){
+        switch (typeof(arguments[i])) {
+            case 'string':
+                url = arguments[i];
+                break;
+            case 'object': 
+                params = arguments[i];
+                break;
+            default:
+                callback = arguments[i];
+                break;
+        }
+    }
     $.get(url,params,function(response) {
         if(response){
             try {
