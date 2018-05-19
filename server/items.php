@@ -28,22 +28,34 @@ class Items{
         $result = $this->db->query($sql);
         if( $result ) {
             $data = [];
-            while($row = mysqli_fetch_array($result)){
-                $average = $this->getItemsAverageFromShoppingListHistory($row['id'] );
-                array_push( $data, (object) [
-                    'itemId' => $row['id'],
+            $row = mysqli_fetch_array($result);
+            $itemTotal = $_GET['quantity'] * $row['unitPrice'];
+            // add item only if not exceed total budget
+            if ( $_SESSION['shopping_total'] + $itemTotal <= $_SESSION['shoppingbudget']) {
+                $_SESSION['shopping_total'] += $itemTotal;
+                $average = $this->getItemsAverageFromShoppingListHistory($row['id']);
+                // add item to shopping cart table
+                $shopping_list_id = $this->addItemToShoppingListHistory($row['id'], $_GET['quantity']);
+                array_push($data, (object)[
+                    'id' => $shopping_list_id,
+                    'itemID' => $row['id'],
                     'itemCategory' => $row['itemCategory'],
                     'itemName' => $row['itemName'],
                     'quantity' => $_GET['quantity'],
                     'unitPrice' => $row['unitPrice'],
                     'average' => $average
                 ]);
-                $this->addItemToShoppingListHistory( $row['id'], $_GET['quantity']);
+                echo json_encode((object) [
+                    'data' => $data,
+                    'success'=>true
+                ]);
+            } else {
+                echo json_encode((object) [
+                    'data' => array(),
+                    'success'=>false
+                ]);
             }
-            echo json_encode((object) [
-                'data' => $data,
-                'success'=>true
-            ]);
+
         }
         else {
             $this->error();
@@ -51,11 +63,39 @@ class Items{
     }
 
 
-    public function removeItemFromCart( $item_id ) {
-        //unset( $_SESSION[ 'cart_item_'.$item_id ] );
+    public function removeItemFromCart( $id, $itemTotal, $send_response = true ) {
+        $_SESSION['shopping_total'] -= $itemTotal;
+        $sql = "DELETE FROM shoppinghistory WHERE id=$id";
+        $this->db->query( $sql );
+        if( $send_response ) {
+            echo json_encode((object)[
+                'success' => true
+            ]);
+        }
+    }
+
+    public function updateItemStatus( $id ) {
+        $sql = "UPDATE shoppinghistory SET purchased=1 WHERE id=$id";
+        $this->db->query( $sql );
         echo json_encode((object) [
             'success' => true
         ]);
+    }
+
+    public function updateQuantity( $id, $quantity, $unitPrice ) {
+        $itemTotal = $quantity * $unitPrice;
+        if ( $_SESSION['shopping_total'] + $itemTotal <= $_SESSION['shoppingbudget']) {
+            $sql = "UPDATE shoppinghistory SET quantity=$quantity WHERE id=$id";
+            $this->db->query($sql);
+            echo json_encode((object)[
+                'success' => true
+            ]);
+        } else {
+            $this->removeItemFromCart( $id,  $itemTotal, false );
+            echo json_encode((object)[
+                'success' => false
+            ]);
+        }
     }
 
     public function addItemToShoppingListHistory( $item_id, $quantity ) {
@@ -63,8 +103,11 @@ class Items{
         $kindergartenid = $_SESSION[ 'kindergartenid' ];
         $sql = "INSERT INTO shoppinghistory (itemID, quantity, kindergartenid) VALUES ( $item_id, $quantity, $kindergartenid )";
         $this->db->query( $sql );
+        return $this->db->insert_id;
 
     }
+
+
 
     public function getItemsFromShoppingListHistory(  ) {
         $kindergartenid = $_SESSION[ 'kindergartenid' ];
@@ -85,7 +128,8 @@ class Items{
 
     // return the average quantity from last shopping
     public function getItemsAverageFromShoppingListHistory( $item_id ) {
-        $select = " SELECT quantity FROM shoppinghistory WHERE itemID={$item_id}";
+        $kindergartenid = $_SESSION[ 'kindergartenid' ];
+        $select = "SELECT quantity FROM shoppinghistory WHERE itemID={$item_id} AND purchased=1 AND kindergartenid=$kindergartenid";
         $result = $this->db->query( $select );
         $average = 0;
         $counter = 0;

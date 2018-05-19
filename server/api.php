@@ -121,13 +121,20 @@
                 
                 case "removeItemFromCart":
                    $items = new Items();
-                   $items->removeItemFromCart( $_GET['item_id'] );
+                   $items->removeItemFromCart( $_GET['id'], $_GET['itemTotal'] );
+                   break;
+               case "updateItemStatus":
+                   $items = new Items();
+                   $items->updateItemStatus( $_GET['id'] );
                    break;
                 case "addItemToShoppingListHistory":
                    $items = new Items();
                    $items->addItemToShoppingListHistory( $_GET['item_id'], $_GET['quantity'] );
                    break;
-
+               case "updateItemQuantity":
+                   $items = new Items();
+                   $items->updateQuantity( $_GET['id'], $_GET['quantity'], $_GET['unitPrice'] );
+                   break;
             }
        }
        else{

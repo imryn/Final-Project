@@ -5,12 +5,10 @@ $crew = new Crew();
 if( !$crew->isLogin() ) {
     header('location:login_page.php?usertype=crew');
 }
-
 include 'server/items.php';
 $items = new Items();
 $shoppingitems = $items->getItemsFromShoppingListHistory();
 ?>
-
 <!DOCTYPE html>
 <html>
 
@@ -142,34 +140,38 @@ $shoppingitems = $items->getItemsFromShoppingListHistory();
                 </tr>
                 <?php
 
-                $sumTotal=0;
+                $sumTotal = 0;
                 foreach ( $shoppingitems as $item_id => $item ){
-                    $btn_txt = "Purchase";
-                    if( $item['purchased'] == 1 ) {
-                        $btn_txt = "Yes";
-                    }
-                    ?>
-                    <tr class="table-info" id="item_cart_row_<?php echo $item['itemID']; ?>">
-                        <td><?php echo $item['itemCategory']; ?> - <?php echo $item['itemName']; ?></td>
-                        <td><?php echo $item['quantity']; ?></td>
-                        <td class="colDisplay"> &#x20AA; <?php echo $item['unitPrice']; ?> </td>
-                        <td class="colDisplay"> &#x20AA; <?php echo $item['unitPrice'] * $item['quantity']; ?></td>
-                        <?php
-                        /********************* continue with purchase action **************/
+                    $itemTotal = $item['unitPrice'] * $item['quantity'];
+                    if( $item['purchased'] == 0 ) {
                         ?>
-                        <td><button class="btn btn-success set-item-purchased" data-id="<?php echo $item['id']; ?>"><?php echo $btn_txt; ?></button></td>
-                        <td><button class="btn btn-danger delete-from-cart" data-id="<?php echo $item['itemID']; ?>" onclick="refreshTotal()"> Delete </button></td>
-                    </tr>
-                    <?php
-                    $sumTotal=$sumTotal + ($item['unitPrice'] * $item['quantity']);
+                        <tr class="table-info" id="item_cart_row_<?php echo $item['id']; ?>">
+                            <td><?php echo $item['itemCategory']; ?> - <?php echo $item['itemName']; ?></td>
+                            <td><?php echo $item['quantity']; ?></td>
+                            <td class="colDisplay"> &#x20AA; <?php echo $item['unitPrice']; ?> </td>
+                            <td class="colDisplay"> &#x20AA; <?php echo $item['unitPrice'] * $item['quantity']; ?></td>
+                            <td>
+                                <button title="Purchase this item" class="btn btn-success purchase-item"
+                                        data-id="<?php echo $item['id']; ?>">Purchase</button>
+                            </td>
+                            <td>
+                                <button class="btn btn-danger delete-from-cart"
+                                        data-id="<?php echo $item['id']; ?>"
+                                        data-item-total="<?php echo $itemTotal;?>">Delete</button>
+                            </td>
+                        </tr>
+                        <?php
+                    }
+                    $sumTotal = $sumTotal + $itemTotal;
+                    $_SESSION['shopping_total'] = $sumTotal;
                 }
                 ?>
             </table>
 
             <form>
                 <div class="pickDateField">
-                    <label for="pick-date"> Total: </label>
-                    <input name="date" type="text" value="&#x20AA;  <?php echo $sumTotal; ?>" disabled/> 
+                    <span> Total: </span>
+                    <strong class="total_shopping_cart"><?php echo $sumTotal; ?></strong> ₪
                 </div>
             </form>
     </section>
