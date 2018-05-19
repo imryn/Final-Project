@@ -27,3 +27,8 @@ function saveInServer(){
 
 }
   
+function sendEmail(id)
+{
+    alert()
+    location.href('http://localhost/Sadna/fill_attendance_email.php?id=' +id)
+}

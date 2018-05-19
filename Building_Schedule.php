@@ -40,13 +40,13 @@
      
                 <div class="row schduler_holder">
             
-                    <div class="schedule_row">
+                    <div class="col span-1-of-4 box" class="schedule_row">
                         <div class="scheduler-description">
                             <label for="data" class="pick"> Pick a date: </label>
-                            <input name="Date" type="date" id="date"/>
+                            <input name="Date" type="date" id="date" />
                         </div>
                     </div>
-                    <div class="schedule_row">
+                    <div class="col span-1-of-4 box" class="schedule_row">
                         <div class="scheduler-description" id="bf">
                         
                             <label for="Breakfast">  Breakfast: </label> 
@@ -64,7 +64,7 @@
                         </div>
                     </div>
 
-                    <div class="schedule_row">
+                    <div class="col span-1-of-4 box" class="schedule_row">
                           <div class="scheduler-description" id="ea">
                             <label for="Educational">  Educational Activity: </label>
                             <input name="Educational" id='eaInput' type="text" /> 
@@ -81,7 +81,7 @@
                         </div>
                     </div>
 
-                    <div class="schedule_row">
+                    <div class="col span-1-of-4 box" class="schedule_row">
                         <div class="scheduler-description" id="ln">                            
                             <label for="Lunch">  Lunch: </label>
                             <input name="Lunch" id='lInput' type="text" /> 
@@ -98,7 +98,7 @@
                          </div>
                     </div>    
 
-                    <div class="schedule_row">
+                    <div class="col span-1-of-4 box" class="schedule_row">
                         <div class="scheduler-description" id="se">                            
                             <label for="Lunch">  Special Event: </label>
                             <input name="Lunch" id='seInput' type="text" /> 
@@ -111,17 +111,17 @@
                                 <span class="timezone">Asia/Jerusalem</span>
                                 <span class="title">Special Event</span>
                                 <span class="description"><!-- description from jquery --></span>
+                                <!-- <span class="all_day_event">true</span> -->
                             </div>
                          </div>
                     </div>                    
                 </div>
             </form>
         </section>
-
+    <script src="js/Building_Schedule.js"></script>
     <footer class="container-fluid text-center bg-lightgray">
       <div class="copyrights" style="margin-top:18px;">
-          <p>Copyright &copy; Karin Haim Poor, Imry Noy And Daniel Ben-Moshe
-              <br>
+      <p>Copyright &copy; 2018 Karin Haim Pour, Imry Noy And Daniel Ben-Moshe . All rights reserved </p>
       </div>
     </footer>
     </body>

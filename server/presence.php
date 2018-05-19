@@ -17,20 +17,35 @@
       
 
         public function getPresence(){
-            // $sql = "SELECT noattendance.date, noattendance.kidId FROM noattendance WHERE noattendance.date>={$_GET['startDate']}
-            // AND noattendance.date<={$_GET['endDate']} AND noattendance.kidId='{$_GET['kidId']}'" ;
-            $sql = "SELECT noattendance.date, noattendance.kidId 
-                    FROM noattendance 
-                    WHERE noattendance.date>=DATE('{$_GET['startDate']}')
-                    AND noattendance.date<=DATE('{$_GET['endDate']}')" ;
-
+            if($_GET['lastname']){
+                $sql = "SELECT noattendance.date as date, noattendance.kidId,kids.fname as fname,kids.lastname as lastname
+                        FROM noattendance 
+                        join kids on noattendance.kidId=kids.kidId
+                        WHERE noattendance.date>=DATE('{$_GET['startDate']}')
+                            AND noattendance.date<=DATE('{$_GET['endDate']}')
+                            and kids.fname='{$_GET['fname']}'
+                            and kids.lastname='{$_GET['lastname']}'
+                            order by noattendance.date
+                        " ;
+            }
+            else{
+                $sql = "SELECT noattendance.date as date, noattendance.kidId,kids.fname as fname,kids.lastname as lastname
+                FROM noattendance 
+                join kids on noattendance.kidId=kids.kidId
+                WHERE noattendance.date>=DATE('{$_GET['startDate']}')
+                    AND noattendance.date<=DATE('{$_GET['endDate']}')
+                    order by noattendance.date
+                " ;
+            }
+            
             $result =$this->db->query($sql); 
             if($result){
                 $data= [];
                 while($row = mysqli_fetch_array($result)){
                     array_push($data, (object) [
-                        'Child ID' => $row['kidId']//,
-                        // 'date' => $row['date']
+                        'date' => $row['date'],
+                        'fname'  => $row['fname'],
+                        'lastname'  => $row['lastname']
                     ]);  
                 }
                 echo json_encode((object) [

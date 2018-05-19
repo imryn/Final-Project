@@ -91,9 +91,9 @@
                 <table id="attendance-table" class="table table-striped">
                     <tr>
                         <th> No. </th>
-                        <th> Child Name </th>               
-                        <th> Attendance ? </th>
-                        <th> Reminder </th>
+                        <th> Child </th>               
+                        <th> Attendance </th>
+                        <th> Email </th>
                     </tr>
 
                     <?php if ($result->num_rows > 0) 
@@ -115,7 +115,7 @@
                                     else{echo '';}; ?>
                                     type="checkbox" data-toggle="toggle">
                                 </td>
-                                <td> <input type="button" checked value="Send" class="send-button btn btn-warning" onClick="sendEmail()"/> </td>
+                                <td> <input type="button" checked value="Send" class="send-button btn btn-warning" onClick="sendEmail(<?php $row['kidId'] ?>)"/> </td>
                                 <td style="display:none;" class='parentId'> <?php echo $row['parentId']; ?> </td>
                                 <td style="display:none;" class='kindergartenid'> <?php echo $row['kindergartenid']; ?> </td>                             
                                 <?php $counter++; ?>
@@ -136,7 +136,7 @@
         
         <footer class="container-fluid text-center bg-lightgray">
             <div class="copyrights" style="margin-top:18px;">
-                <p>Copyright &copy; Karin Haim Poor, Imry Noy And Daniel Ben-Moshe
+                <p>Copyright &copy; 2018 Karin Haim Pour, Imry Noy And Daniel Ben-Moshe . All rights reserved </p>
                     <br>
             </div>
         </footer>        

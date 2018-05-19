@@ -28,7 +28,7 @@ function getAlergicReports(){
 function getPresenceReport(){
         var data = getFormData("#exception-report form");
     
-        var selectedKid = kinderGarten[data.presenceOptions];
+        var selectedKid = kinderGarten[data.nopresenceoptions];
         // data.kidFname = selectedKid.fname;
         // data.kidLname = selectedKid.lastname;
     
@@ -47,14 +47,13 @@ function getPresenceReport(){
         // else{
         //     return;
         // }
-        
+        data.fname = $("#exception option:selected").text().split(' ')[0]
+        if(data.fname){
+            data.lastname = $("#exception option:selected").text().split(' ')[1]
+        }
         httpGet("../Sadna/server/api.php?route=get_Presencereport", data,function(response){
-            
             if(response.success && response.data instanceof Array){
                 if(response.data.length){
-                    response.data.forEach(function(item){
-                        item.date = timestampToDate(item.date);
-                    })
                     createPresenceTable(response.data);
                     getPresenceReport.error("");
                 }
@@ -223,8 +222,7 @@ function createPresenceTable(data){
     table = table + buildThs(['Date','First Name','Last Name']);
 
     data.forEach(function(item) {
-        table = table + '<tr class="table-info"><td>'+item.date+'</td><td>'+item.first_name+'</td><td>' +item.last_name+'</td></tr>';
+        table = table + '<tr class="table-info"><td>'+item.date+'</td><td>'+item.fname+'</td><td>' +item.lastname+'</td></tr>';
     });
     tableElement.innerHTML = table;
-    console.log(table)
 }

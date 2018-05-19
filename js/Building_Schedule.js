@@ -1,3 +1,22 @@
+$("#date").keyup(function(){
+   activateAddButton();
+});
+$("#date").focusout(function(){
+    activateAddButton();
+});
+
+$(".addeventatc").css('display','none')
+
+var showButton = false
+function activateAddButton()
+{
+    var value = $("#date").val()
+    if(value && !showButton){
+        showButton=true
+        $(".addeventatc").css('display','inline-block')
+    }
+}
+
 window.addeventasync = function(){
     addeventatc.settings({
         appleical  : {show:false, text:"Apple Calendar"},
@@ -12,6 +31,10 @@ $("#bfInput, #eaInput, #lInput, #seInput").blur(function(e){
     var newText = $(this).val();
 
     $(this).parent().find('.description').text(newText);
+
+    // setTimeout(function(){
+    //     location.reload();
+    // },7000)
 })
 
 $("#date").blur(function(){

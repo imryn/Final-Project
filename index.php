@@ -127,8 +127,7 @@
 
     <footer class="container-fluid text-center bg-lightgray">
       <div class="copyrights" style="margin-top:18px;">
-          <p>Copyright &copy; Karin Haim Poor, Imry Noy And Daniel Ben-Moshe
-              <br>
+      <p>Copyright &copy; 2018 Karin Haim Pour, Imry Noy And Daniel Ben-Moshe . All rights reserved </p>
       </div>
     </footer>
 

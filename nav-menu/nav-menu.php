@@ -22,7 +22,7 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="login_page.php?usertype=crew"> Log in as crew </a>
-                <a class="dropdown-item" href="login_page.php?usertype=parent"> Log in as parents </a>
+                <a class="dropdown-item" href="login_page.php?usertype=parent"> Log in as parent </a>
               </div>
             </li>
             <li class="links"><a href="parent-registration.php"> Registration </a></li>
