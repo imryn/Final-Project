@@ -56,6 +56,10 @@ h2{
 }
 
 /* index template styling */
+
+.container{
+    width: 86.8%;
+}
 .template-header{
     word-spacing: 5px;
     letter-spacing: 2px;

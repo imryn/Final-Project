@@ -1,3 +1,16 @@
+<?php
+session_start();
+include 'server/crew.php';
+$crew = new Crew();
+if( !$crew->isLogin() ) {
+    header('location:login_page.php?usertype=crew');
+}
+
+include 'server/items.php';
+$items = new Items();
+$shoppingitems = $items->getItemsFromShoppingListHistory();
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -116,6 +129,7 @@
                         </div>
                 </div>
                     <input type="button" value="Add" id="add" class="btn btn-warning add-to-cart" disabled onClick="getItemList()" />
+                <input type="hidden" name="kindergardenid" value="<?php  echo $_SESSION['kindergardenid']; ?>">
             </form>  
             <table id="item-table" class="table table-striped table-responsive w-auto">
                 <tr>
@@ -129,25 +143,25 @@
                 <?php
 
                 $sumTotal=0;
-                foreach ($_SESSION as $item_id => $item ){
-                    if( strpos($item_id, 'cart_item_' ) !== false ) 
-                    {
-                        $arr = explode( '_', $item_id );
-                        $id = end( $arr );
-                        ?>
-                        <tr class="table-info" id="item_cart_row_<?php echo $id; ?>">
-                            <td><?php echo $item[0]->itemCategory; ?> - <?php echo $item[0]->itemName; ?></td>
-                            <td><?php echo $item[0]->quantity; ?></td>
-                            <td class="colDisplay"> &#x20AA; <?php echo $item[0]->unitPrice; ?> </td>
-                            <td class="colDisplay"> &#x20AA; <?php echo $item[0]->unitPrice * $item[0]->quantity; ?></td>
-                            <td><button class="btn btn-success save-item-to-sl-history" data-id="<?php echo $id; ?>" data-quantity="<?php echo $item[0]->quantity; ?>" onclick="refreshTotal()"> Yes</button></td>
-                            <td><button class="btn btn-danger delete-from-cart" data-id="<?php echo $id; ?>" onclick="refreshTotal()"> Delete </button></td>
-                        </tr>
-                        <!-- <tr>   <?php  $sumTotal=$sumTotal + ($item[0]->unitPrice * $item[0]->quantity); ?>                
-                        </tr> -->
-                        <?php
+                foreach ( $shoppingitems as $item_id => $item ){
+                    $btn_txt = "Purchase";
+                    if( $item['purchased'] == 1 ) {
+                        $btn_txt = "Yes";
                     }
-                 
+                    ?>
+                    <tr class="table-info" id="item_cart_row_<?php echo $item['itemID']; ?>">
+                        <td><?php echo $item['itemCategory']; ?> - <?php echo $item['itemName']; ?></td>
+                        <td><?php echo $item['quantity']; ?></td>
+                        <td class="colDisplay"> &#x20AA; <?php echo $item['unitPrice']; ?> </td>
+                        <td class="colDisplay"> &#x20AA; <?php echo $item['unitPrice'] * $item['quantity']; ?></td>
+                        <?php
+                        /********************* continue with purchase action **************/
+                        ?>
+                        <td><button class="btn btn-success set-item-purchased" data-id="<?php echo $item['id']; ?>"><?php echo $btn_txt; ?></button></td>
+                        <td><button class="btn btn-danger delete-from-cart" data-id="<?php echo $item['itemID']; ?>" onclick="refreshTotal()"> Delete </button></td>
+                    </tr>
+                    <?php
+                    $sumTotal=$sumTotal + ($item['unitPrice'] * $item['quantity']);
                 }
                 ?>
             </table>
@@ -159,7 +173,6 @@
                 </div>
             </form>
     </section>
-        
         <footer class="container-fluid text-center bg-lightgray">
             <div class="copyrights" style="margin-top:18px;">
                 <p>Copyright &copy; Karin Haim Poor, Imry Noy And Daniel Ben-Moshe

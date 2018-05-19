@@ -15,9 +15,21 @@ function getAlergicReports(){
     var data = getFormData("#alergic-report form");
     httpGet("/Sadna/server/api.php?route=get_Alergicreport", data,function(response){
         if(response.success && response.data instanceof Array){
-            createAlergicTable(response.data);
+            if(response.data.length){
+                createAlergicTable(response.data);
+                getAlergicReports.error("");
+             }
+            
+             else{
+                document.getElementById('kids-table').innerHTML = "";
+                getAlergicReports.error("No alergic was recorded on selected");
+              }
            }
         });
+    }
+
+    getAlergicReports.error = function (msg){
+        document.querySelector(".unsuccess-message").textContent = msg;
     }
 
     getExceptionReports.error=function(msg){
@@ -96,6 +108,7 @@ function getExceptionReports(data){
                 getExceptionReports.error("");
             }
             else{
+                document.getElementById('kids-observation-table').innerHTML = "";
                 getExceptionReports.error("No comments for selected date");
             }
         }
@@ -156,6 +169,7 @@ function getExceptionGraph(data){
                 getExceptionReports.error("");
             }
             else{
+                document.getElementById('chart_div').innerHTML = "";
                 getExceptionReports.error("No comments for selected date");
             }
         }
@@ -167,10 +181,13 @@ var kinderGarten;
 
 
 function showKindergartenkid(){
-    httpGet("/Sadna/server/api.php?route=getKindergartenkid",{}, function(response){
+    httpGet("/Sadna/server/api.php?route=getKindergartenkid",function(response){
         if(response.success){
             kinderGarten = response.data;
-            response.data.unshift({fname:"All",lastname:""});
+            var cookie = document.cookie.match("(loginType=)(.*)");
+            if(cookie && cookie[2] && cookie[2] == 'crew'){
+                response.data.unshift({fname:"All",lastname:""});
+            }
             var flatData = response.data.map(function(item){
                 return item.fname + " " + item.lastname;
             })

@@ -38,7 +38,7 @@ class Items{
                     'unitPrice' => $row['unitPrice'],
                     'average' => $average
                 ]);
-                $_SESSION[ 'cart_item_'.$row['id'] ] = $data;
+                $this->addItemToShoppingListHistory( $row['id'], $_GET['quantity']);
             }
             echo json_encode((object) [
                 'data' => $data,
@@ -52,19 +52,35 @@ class Items{
 
 
     public function removeItemFromCart( $item_id ) {
-        unset( $_SESSION[ 'cart_item_'.$item_id ] );
+        //unset( $_SESSION[ 'cart_item_'.$item_id ] );
         echo json_encode((object) [
             'success' => true
         ]);
     }
 
     public function addItemToShoppingListHistory( $item_id, $quantity ) {
-        unset( $_SESSION[ 'cart_item_'.$item_id ] );
-        $sql = "INSERT INTO shoppinghistory (itemID, quantity) VALUES ( $item_id, $quantity )";
+        //unset( $_SESSION[ 'cart_item_'.$item_id ] );
+        $kindergartenid = $_SESSION[ 'kindergartenid' ];
+        $sql = "INSERT INTO shoppinghistory (itemID, quantity, kindergartenid) VALUES ( $item_id, $quantity, $kindergartenid )";
         $this->db->query( $sql );
-        echo json_encode((object) [
-            'success' => true
-        ]);
+
+    }
+
+    public function getItemsFromShoppingListHistory(  ) {
+        $kindergartenid = $_SESSION[ 'kindergartenid' ];
+        $sql = "SELECT 
+                shoppinghistory.id,
+                shoppinghistory.itemID,
+                shoppinghistory.quantity,
+                shoppinghistory.purchased,
+                items.itemCategory,
+                items.itemName,
+                items.unitPrice
+                FROM shoppinghistory LEFT JOIN items
+                ON shoppinghistory.itemID = items.id
+                WHERE shoppinghistory.kindergartenid=$kindergartenid";
+        $results = $this->db->query( $sql );
+        return $results->fetch_all( MYSQLI_ASSOC );
     }
 
     // return the average quantity from last shopping
