@@ -49,7 +49,7 @@
                     <div class="col span-1-of-4 box schedule_row">
                         <div class="scheduler-description" id="bf">
                         
-                            <label for="Breakfast">  Breakfast: </label> 
+                            <label for="Breakfast" class="schedule_row_label">  Breakfast: </label> 
                             <input name="Breakfast" id="bfInput" type="text" /> 
                             
                             <!-- Button code -->
@@ -66,7 +66,7 @@
 
                     <div class="col span-1-of-4 box schedule_row">
                           <div class="scheduler-description" id="ea">
-                            <label for="Educational">  Educational Activity: </label>
+                            <label for="Educational" class="schedule_row_label">  Educational Activity: </label>
                             <input name="Educational" id='eaInput' type="text" /> 
 
                             <!-- Button code -->
@@ -83,7 +83,7 @@
 
                     <div class="col span-1-of-4 box schedule_row">
                         <div class="scheduler-description" id="ln">                            
-                            <label for="Lunch">  Lunch: </label>
+                            <label for="Lunch" class="schedule_row_label">  Lunch: </label>
                             <input name="Lunch" id='lInput' type="text" /> 
 
                             <!-- Button code -->
@@ -100,7 +100,7 @@
 
                     <div class="col span-1-of-4 box schedule_row">
                         <div class="scheduler-description" id="se">                            
-                            <label for="Lunch">  Special Event: </label>
+                            <label for="Lunch" class="schedule_row_label">  Special Event: </label>
                             <input name="Lunch" id='seInput' type="text" /> 
 
                             <!-- Button code -->

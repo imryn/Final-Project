@@ -494,29 +494,30 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
 }
 .schedule_row{
     width:100%;
-    margin-top:25px;
-    float:left;
 }
+
 .schedule_row label{
     width:190px;
-    float:left;
 }
+
 .schduler_holder{
     padding:20px;
     margin-left:120px; 
 }
 .scheduler-description{
     width:720px;
-    float:left;
 }
+
 .pick{
-    float:left;
     margin-top:5%;
+    margin-left: 1.7%;
 }
+
 #date{
     width:28%;
     margin-top: 5%;
 }
+
 .addeventatc_icon{
     top:3px !important;
 }
@@ -533,7 +534,6 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
     background: white;
     text-indent: 10px;
     width: 430px;
-    float:left;
     border-radius: 5px;
     font-family: 'Lato';
     font-weight: 300;
