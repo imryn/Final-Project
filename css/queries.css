@@ -125,6 +125,18 @@
        width: 25%;
    }
 
+   .schedule_row_label{
+     margin-left: -6%;
+   }
+
+   .pick{
+    margin-left: -18%;
+   }
+
+   .scheduler-description input{
+       width: 14%;
+   }
+
    /* report page */
 
    #report-describing{
