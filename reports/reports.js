@@ -39,33 +39,17 @@ function getAlergicReports(){
 
 function getPresenceReport(){
         var data = getFormData("#exception-report form");
-    
         var selectedKid = kinderGarten[data.nopresenceoptions];
-        // data.kidFname = selectedKid.fname;
-        // data.kidLname = selectedKid.lastname;
-    
-        var startDate = data.startDate//new Date(data.startDate).getTime();
-        // if(!isNaN(startDate)){
-        //     data.startDate = startDate;
-        // }
-        // else{
-        //     return
-        // }
-        
+        var startDate = data.startDate//new Date(data.startDate).getTime();       
         var endDate = data.endDate//new Date(data.endDate).getTime();
-        // if(!isNaN(endDate)){
-        //     data.endDate = endDate;
-        // }
-        // else{
-        //     return;
-        // }
+     
         data.fname = $("#exception option:selected").text().split(' ')[0]
-        if(data.fname){
+        if(data.fname && data.fname!='All'){
             data.lastname = $("#exception option:selected").text().split(' ')[1]
         }
         httpGet("../Sadna/server/api.php?route=get_Presencereport", data,function(response){
             if(response.success && response.data instanceof Array){
-                if(response.data.length){
+                if(response.data){
                     createPresenceTable(response.data);
                     getPresenceReport.error("");
                 }

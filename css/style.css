@@ -430,6 +430,7 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
 #kids-table th, #kids-observation-table th{
     background: #e67e22;
     color: white;
+    font-weight: normal;
 }
 
 #item{
