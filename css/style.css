@@ -269,7 +269,7 @@ h2{
     width: 100%;  
 }
 
-input[type=checkbox]:first-child{
+input[type=checkbox]{
     background-color: transparent;
     border: solid 1px rgb(169,169,169);
     color: black;
