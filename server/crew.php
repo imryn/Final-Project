@@ -31,7 +31,16 @@
                     $row = $result->fetch_assoc();
                     $_SESSION['login'] = $_POST['token'];
                     $_SESSION['kTeacherId'] = $_POST['parentId'];
-                    $_SESSION['kindergartenid'] = $row['kindergartenid'];
+                    $kindergartenid = $row['kindergartenid'];
+                    $_SESSION['kindergartenid'] = $kindergartenid;
+                                        
+                    // get and save the budget in session
+                    $sql = "SELECT shoppingbudget FROM kindergarten WHERE kindergartenid=$kindergartenid";
+                    $result = $this->db->query( $sql );
+                    $row = $result->fetch_assoc();
+                    $_SESSION['shoppingbudget'] = $row['shoppingbudget'];
+                    $_SESSION['shopping_total'] = 0;
+
                     setcookie("loginType",'crew',time() + 86400000,"/"); 
                     header("Location: /Sadna/index.php");
                     

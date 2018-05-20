@@ -64,17 +64,27 @@ function SelectCategory(){
 }
   
   // End - conditions for the selects
-
 $( document ).on('click', '.delete-from-cart', function(){
-    var item_id = $(this).data('id');
-    httpGet("/Sadna/server/api.php?route=removeItemFromCart&item_id="+item_id , [], function(response) {
+    var id = $(this).data('id');
+    var itemTotal = parseInt( $(this).data('item-total') );
+    httpGet("/Sadna/server/api.php?route=removeItemFromCart",  { 'id': id, 'itemTotal': itemTotal }, function(response) {
         if( response.success ){
-            $('#item_cart_row_'+item_id).remove();
-            location.reload();
+            $('#item_cart_row_'+id).remove();
+            var currentVal = parseInt( $('.total_shopping_cart').html() );
+            $('.total_shopping_cart').html( "" + ( currentVal - itemTotal ) );
         }
     })
 
 });
+
+  $( document ).on('click', '.purchase-item', function(){
+      var id = $(this).data('id');
+      httpGet("/Sadna/server/api.php?route=updateItemStatus", { 'id': id } , function(response) {
+          if( response.success ){
+              $('#item_cart_row_'+id).remove();
+          }
+      })
+  });
 
 
 $('#quantity-input').on( 'change', function(){
@@ -96,8 +106,7 @@ function buildThs(array){
 
 function createItemsTable(data){
     
-    var table='';
-    console.log( data );
+    var table = '';
     //table = table + buildThs(['Category', 'Item Name','Quantity', 'Price']);
     var total = 0;
     data.forEach(function(item) {
@@ -105,24 +114,39 @@ function createItemsTable(data){
         var average = Math.floor( parseFloat( item.average ) );
         var quantity = parseInt( item.quantity);
         var range = 2;
-        //
-        if( average > (  quantity + range ) || average < ( quantity - range ) ){
+        var is_vail = false;
+        if( average > 0 && ( average > (  quantity + range ) || average < ( quantity - range ) ) ){
             if( confirm( "The average quantity purchased for this item is " + average + ". Would you like to update quantity?") ) {
                 item.quantity = Math.floor( average );
+                httpGet("/Sadna/server/api.php?route=updateItemQuantity", { 'id': item.id, 'quantity': item.average, 'unitPrice': item.unitPrice }, function ( response ) {
+                    if (response.success === true ) {
+                        is_vail = true;
+                    } else {
+                        alert("You exceeded budget");
+                    }
+                })
+            } else {
+                is_vail = true;
             }
+        }  else {
+            is_vail = true;
         }
 
-        total = item.quantity * item.unitPrice;
-        table = '<tr class="table-info" id="item_cart_row_' + item.itemId + '">' +
-                    '<td>' + item.itemCategory + '-' + item.itemName +'</td>' +
-                    '<td>' + item.quantity + '</td>' +
-                    '<td>&#x20AA;' + item.unitPrice + '</td>' +
-                    '<td>&#x20AA;' + total + '</td>' +
-                    /********************* continue with purchase action **************/
-                    '<td> <button class="btn btn-success" data-id="' +  item.itemId + '" data-quantity="' + item.quantity + '"> Purchase </button></td>' +
-                    '<td> <button class="btn btn-danger delete-from-cart" data-id="' +  item.itemId + '"> Delete </button></td>' +
+        if( is_vail === true ) {
+            itemTotal = item.quantity * item.unitPrice;
+            table = '<tr class="table-info" id="item_cart_row_' + item.id + '">' +
+                '<td>' + item.itemCategory + '-' + item.itemName + '</td>' +
+                '<td>' + item.quantity + '</td>' +
+                '<td>&#x20AA;' + item.unitPrice + '</td>' +
+                '<td>&#x20AA;' + itemTotal + '</td>' +
+                /********************* continue with purchase action **************/
+                '<td> <button title="Purchase this item" class="btn btn-success purchase-item" data-id="' + item.id + '" data-quantity="' + item.quantity + '"> Purchase </button></td>' +
+                '<td> <button class="btn btn-danger delete-from-cart" data-id="' + item.id + '" data-item-total="' + itemTotal + '">Delete</button></td>' +
                 '</tr>';
-        $('#item-table').append(table);
+            $('#item-table').append(table);
+            var currentVal = parseInt($('.total_shopping_cart').html());
+            $('.total_shopping_cart').html("" + (currentVal + itemTotal));
+        }
     });
     
     
@@ -134,8 +158,12 @@ function getItemList(){
     var data = getFormData("#shopping-list form");
     //console.log(data);
     httpGet("/Sadna/server/api.php?route=getItems", data, function (response) {
-        if (response.success && response.data instanceof Array) {
-            createItemsTable(response.data);
+        if ( response.data instanceof Array) {
+            if( response.success === true ) {
+                createItemsTable(response.data);
+            } else {
+                alert("You exceeded budget");
+            }
         }
     })
 

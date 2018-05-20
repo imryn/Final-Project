@@ -417,17 +417,19 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
 }
 
 /* table in report page */
-#kids-table, #kids-observation-table{
+#kids-table, #kids-observation-table, #kids-presence-table{
     margin: 6% auto 0 auto;
 }
 
 #kids-table th, #kids-table tr,
 #kids-observation-table th, #kids-observation-table tr,
-#item-table th, #item-table tr{
+#item-table th, #item-table tr, 
+#kids-presence-table tr, #kids-presence-table th{
     text-align: center;
 }
 
-#kids-table th, #kids-observation-table th{
+#kids-table th, #kids-observation-table th,
+#kids-presence-table th{
     background: #e67e22;
     color: white;
     font-weight: normal;
@@ -493,29 +495,30 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
 }
 .schedule_row{
     width:100%;
-    margin-top:25px;
-    float:left;
 }
+
 .schedule_row label{
     width:190px;
-    float:left;
 }
+
 .schduler_holder{
     padding:20px;
     margin-left:120px; 
 }
 .scheduler-description{
     width:720px;
-    float:left;
 }
+
 .pick{
-    float:left;
     margin-top:5%;
+    margin-left: 1.7%;
 }
+
 #date{
     width:28%;
     margin-top: 5%;
 }
+
 .addeventatc_icon{
     top:3px !important;
 }
@@ -532,7 +535,6 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
     background: white;
     text-indent: 10px;
     width: 430px;
-    float:left;
     border-radius: 5px;
     font-family: 'Lato';
     font-weight: 300;
