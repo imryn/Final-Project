@@ -432,6 +432,7 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
 #kids-presence-table th{
     background: #e67e22;
     color: white;
+    font-weight: normal;
 }
 
 #item{

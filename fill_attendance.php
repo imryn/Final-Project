@@ -52,6 +52,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/x-icon" href="/logo-container/favicon.ico">
         <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css">
         <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
         <link rel="stylesheet" type="text/css" href="vendors/css/ionicons.min.css">
@@ -137,7 +138,6 @@
         <footer class="container-fluid text-center bg-lightgray">
             <div class="copyrights" style="margin-top:18px;">
                 <p>Copyright &copy; 2018 Karin Haim Pour, Imry Noy And Daniel Ben-Moshe . All rights reserved </p>
-                    <br>
             </div>
         </footer>        
     </body>
