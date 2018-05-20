@@ -478,7 +478,7 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
     width:100%;
     float:left;
 }
-#calendar{
+#calendar,#smartphonecalendar{
     margin-left:-350px;
     position:relative;
     float:left;  

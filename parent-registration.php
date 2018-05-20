@@ -39,7 +39,7 @@
                 <div class="row parent-form1">
                     <div class="col span-1-of-3 box">
                         <div class="registration-info">
-                            <label for="kindergarten"> <span> * </span> Kindergarten Code </label>
+                            <label for="kindergarten"> <span> * </span> Kindergarten Code: </label>
                             <input name="kindergartenid" type="text" required/> 
                         </div>
                     </div>
