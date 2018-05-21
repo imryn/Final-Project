@@ -13,7 +13,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
             <li class="links"><a href="index.php"> home </a></li>
-            <li class="links"><a href="#"> about </a></li>
+            <li class="links"><a href="about.php"> about </a></li>
             <li class="links"><a href="kidsList_detailsUpdates.php"> Child file </a></li>
             <!--<li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
