@@ -226,5 +226,19 @@
        margin-left: 28%;
    }
 
-    /*  Building schedule page */
+    /*  Building/view schedule page */
+    #calendar{
+        display:none;
+    }
+    #smartphonecalendar{
+        display:block;
+    }
+
+    #viewCalendar{
+        display:none;
+    }
+    #smartphoneviewCalendar{
+        display:block;
+    }
+
 }

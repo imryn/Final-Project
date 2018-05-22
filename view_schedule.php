@@ -39,6 +39,10 @@
 
                 <div id="viewCalendar">
                 </div>
+                <div id="smartphoneviewCalendar">
+                </div>
+
+                
                 <script src="js/view_schedule.js"> </script>
                 <script src="commons.js"></script>      
         </section> 

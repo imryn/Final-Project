@@ -473,7 +473,7 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
 }
 
 
-/* START building schedule design */
+/* START view/building schedule design */
 .calendar_row{
     width:100%;
     float:left;
@@ -493,6 +493,17 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
     border:1px orange solid;
     font-size:16px;
 }
+#smartphoneviewCalendar{
+    margin-left:-350px;
+    position:relative;
+    left:50%; 
+    width:460px;
+    background-color:white;
+    border:1px orange solid;
+    font-size:12px;
+    display:none;
+}
+
 .schedule_row{
     width:100%;
 }
@@ -545,6 +556,9 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
     border-color: white;
     padding: 8px 18px;
     margin: 2% 0 0 42%; 
+}
+#smartphonecalendar{
+    display:none;
 }
 /* END building_schedule design  */
 
