@@ -109,7 +109,7 @@ h2{
 /* sections */
 #registration-parent,#registration-kid,#reports,#daily-attendance,
 #kid-detailsUpdate,#Weekly-Scheduler,#kid-observation,#alergic-report,
-#exception-report, #kidList-detailsUpdate, #kid-choosen{
+#exception-report, #kidList-detailsUpdate, #kid-choosen, #about-section{
     background-color: #f0f0f0;
     width: 80%;
     margin-left: 10%;
@@ -654,3 +654,18 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
 }
 
 /* END building Daily attendance design */
+
+
+/* START building about design */
+
+#about-picture{
+    width: 500px;
+}
+
+.about-form{
+    margin: 1% 0 0 5%;
+}
+
+#about-exp{
+    margin: 35% 0 0 1.5%;
+}

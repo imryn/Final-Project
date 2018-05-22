@@ -103,12 +103,15 @@ function showInfoAboutakid(){
 
 var kinderGarten;
 
+
 function showInfoAboutakidList(){
     var data = getFormData("#kid-choosen");
 
     var selectedKid = kinderGarten[data.kidOptions];
     data.kidFname = selectedKid.fname;
     data.kidLname = selectedKid.lastname;
+    
+    $('#new-observation').prop('disabled', false);
         
     httpGet("/Sadna/server/api.php?route=getKidListInfo",data, function(response){
         if(response.success){

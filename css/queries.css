@@ -1,5 +1,3 @@
-
-
 /* big tablt to 1200px */
 @media only screen and (max-width: 1200px){
     
@@ -13,37 +11,48 @@
 /* small phones: from 0 to 480px */
 @media only screen and (max-width: 480px){
 
+  .navbar,   #shopping-list, .bg-lightgray,
+  #reports, #alergic-report, #exception-report,
+  #Weekly-Scheduler, #daily-attendance, #kid-choosen, 
+  #kidList-detailsUpdate, #kid-observation,  #index-section,
+  #registration-parent, #registration-kid, #kid-detailsUpdate{
+     width: 100%;
+     margin-left: 0;
+  }
+
+   .logo-container{
+      margin-left: -10%;
+  } 
+
     /* index page */
-    #index-section{
-        width: 86.4%;
-        margin-left: 7%;
-    }
 
-    .card-img-top{
-      width: 320px;
-      height: 180px;
-    }
-
-    .card-text{
-        font-size: 14px;
+   .container{
+      width: 100%;
+      padding: 0;
     }
 
     .card{
         margin-left: 4%;
     }
-   
+
+   .card-text{ 
+       font-size: 14px; 
+       top: 2px;
+       left: 0;
+    }
+
     #logo-to-pages{
         margin-left: 5%;
     }
 
     .template-row{
-        margin-left: -0.7%
+        margin-left: 3.3%
     }
 
     /* registration page */
 
     #f-member-select{
-        width: 138%;
+        width: 118%;
     }
 
     .save-2{
@@ -51,25 +60,41 @@
     }
 
     #gender{
-        width: 130%;
+        width: 112%;
+         
     }
 
-    input[type=checkbox]{
+   input[type=radio]{
         margin-top: 0;
-    }
+   }
+
+  */ kid_detailsUpdates page */
+
+   .describe-info{
+     margin-left: 9%;
+   }
 
   /*  kidsList_detailsUpdates page */
 
   textarea{
       width: 88%;
+      margin-left: 4%;
   }
 
-  #kidname-label, #pickDate{
-      margin-left: 1%;
+  #kidname-label{
+      margin-left: 3%;
+  }
+
+  #pickDate{
+     margin-left: -2%;
   }
 
   #kidname{
-    margin-left: 1%;
+    margin-left: 3%;
+  }
+
+  .kid-form1, .kid-form2, .kid-update1, .kid-update2{
+     margin-left: 9%;
   }
 
   .registration-info input{
@@ -77,22 +102,26 @@
   }
 
   #genders-input{
-      margin-left: 5%;
+      margin-left: 4%;
   }
+
+ #com_and_req{
+    margin-left: 4%;
+ }
 
 /* buttons */
   #new-observation{
-    width: 60%;
-    margin-left: 20%;
+    width: 72%;
+    margin-left: 14%;
   }
 
   .exit{
     margin-left: 25%;
-    margin-top: -21.7%;
+    margin-top: -19.3%;
   }
 
   .show-kid-details{
-      margin-left: 7.8%;
+      margin-left: 12%;
   }
 
 /* labels */
@@ -111,7 +140,7 @@
   }
 
   #allergies-label, #food-label{
-      margin-left: 2%;
+    margin-left: 4.5%;
   }
 
   .date-label{
@@ -129,42 +158,52 @@
        width: 25%;
    }
 
-   .schedule_row_label{
-     margin-left: -6%;
+    .schedule_row_label{
+       margin-left: -1.5%;
    }
 
    .pick{
-    margin-left: -18%;
+    margin-left: -15%;
    }
 
    .scheduler-description input{
        width: 14%;
-   }
+    }
 
    /* report page */
 
    #report-describing{
-       margin-left: 4%;
+       margin-left: 5%;
    }
 
    .report-info select{
-       margin-left: 3.7%;
+       margin-left: 4.7%;
+       width: 77%;
    }
 
+   #alergic-exp{
+      margin-left: 10.5%;
+   }
+
+   .alergic-info select{
+        width: 69%;
+    }
+
+   .exception-info select{
+         width: 68%;
+    }
+
    #start-date, #end-date{
+      width: 69%;
       margin-left: 9%;
    }
 
-   #options_for_report, .create-botton{
-       margin-left: 37%;
-   }
-
-   .create-botton1{
-       margin-left: 34%;
+   #options_for_report, .create-botton, .create-botton1{
+       margin-left: 35%;
    }
 
    #kids-table{
-       width: 80% ;
+       width: 80%;
    }
 
    #chart_div{
@@ -175,19 +214,40 @@
 
    /* shopping list page */
 
+  .describe-list-info{
+     margin-left: 12.5%;
+  }
+    
+   #shopping-list{
+     width: 100%
+      margin-left: 0;
+  }
+
+   .shoppinglist-form3{
+       margin-left: 12.3%;
+   }
+
    #category, #item , #quantity{
        margin-left: 0; 
    }
 
+   #itemcategory{
+       width: 90%;
+   }
+
    #artitems, #officeitems,
    #fooditems, #empty{
-       width: 87%;
-       margin-left: -2%;
+       width: 90%;
+       margin-left:  0;
    }
 
    #quantity-input{
-       margin-left: -1%;
+       margin-left:  0;
        display: block;
+   }
+
+   #add{
+      margin-left: 42%;
    }
 
    #item-table{
@@ -219,7 +279,7 @@
    /* attendance page */
 
    #attendance-table{
-       margin-left: 11%;
+       margin-left: 15%;
    }
 
    #Update-Attendance{
