@@ -139,9 +139,8 @@ function createItemsTable(data){
                 '<td>' + item.quantity + '</td>' +
                 '<td>&#x20AA;' + item.unitPrice + '</td>' +
                 '<td>&#x20AA;' + itemTotal + '</td>' +
-                /********************* continue with purchase action **************/
-                '<td> <button title="Purchase this item" class="btn btn-success purchase-item" data-id="' + item.id + '" data-quantity="' + item.quantity + '"> Purchase </button></td>' +
-                '<td> <button class="btn btn-danger delete-from-cart" data-id="' + item.id + '" data-item-total="' + itemTotal + '">Delete</button></td>' +
+                '<td> <button title="Mark as purchased and remove from list" class="btn btn-success purchase-item" data-id="' + item.id + '" data-quantity="' + item.quantity + '"> Purchase </button></td>' +
+                '<td> <button title="Remove from list" class="btn btn-danger delete-from-cart" data-id="' + item.id + '" data-item-total="' + itemTotal + '">Delete</button></td>' +
                 '</tr>';
             $('#item-table').append(table);
             var currentVal = parseInt($('.total_shopping_cart').html());
