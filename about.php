@@ -40,7 +40,7 @@
         fulfill the goal of strengthening the connection with the parents and monitoring their children in the kindergarten - “Kidin Touch” was built to be your all-in-one solution.<br>
         In time studies, “Kidin Touch” saves as much as one hour per day per staff member. More time for what matters!<br><br>
         No installation, setup fees or training required. And no more paper to buy! Works on any device. <br> <br>
-        Real-time updates between kindergarten’ staff members, parents and across devices - iPhone,Android, and web.
+        Real-time updates between kindergarten’s staff members, parents and across devices - iPhone,Android, and web.
       </p>  
     </div>
   </div>
