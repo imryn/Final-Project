@@ -29,9 +29,9 @@
             }
 
             $values = "'{$_POST['observation']}','{$_POST['observationDate']}','{$_POST['SpecialRequests']}',
-            {$_POST['kidId']},'{$_POST['fname']}','{$_POST['lastname']}'";
+            {$_POST['kidId']},'{$_POST['fname']}','{$_POST['lastname']}','{$_SESSION['kindergartenid']}'";
     
-            $sql = "INSERT INTO exceptions (observation,observationDate,SpecialRequests,kidId,fname,lastname) VALUES($values)";
+            $sql = "INSERT INTO exceptions (observation,observationDate,SpecialRequests,kidId,fname,lastname,kindergartenid) VALUES($values)";
             $result =$this->db->query($sql);
             if($result){
              echo json_encode((object) [
@@ -46,7 +46,9 @@
         public function getAllExceptions(){
             $sql = "SELECT exceptions.observation, exceptions.specialRequests ,exceptions.observationDate,exceptions.fname,exceptions.lastname FROM exceptions WHERE exceptions.observationDate>={$_GET['startDate']}
             AND exceptions.observationDate<={$_GET['endDate']} AND exceptions.fname='{$_GET['kidFname']}' AND exceptions.lastname='{$_GET['kidLname']}'" ;
- 
+
+            echo $sql;
+
             $result =$this->db->query($sql); 
             if($result){
                 $data= [];
@@ -102,10 +104,10 @@
     public function getAllExceptionsInGraph(){
         $selectedKid = "";
         if($_GET['kidFname'] != 'All'){
-            $selectedKid = "AND exceptions.fname='{$_GET['kidFname']}' AND exceptions.lastname='{$_GET['kidLname']}'";
+            $selectedKid = "AND exceptions.fname='{$_GET['kidFname']}' AND exceptions.lastname='{$_GET['kidLname']}' ";
         }
         $sql = "SELECT exceptions.observation,exceptions.fname,exceptions.lastname FROM exceptions WHERE exceptions.observationDate>={$_GET['startDate']}
-        AND exceptions.observationDate<={$_GET['endDate']} {$selectedKid}" ;
+        AND exceptions.observationDate<={$_GET['endDate']} {$selectedKid} AND exceptions.kindergartenid= '{$_SESSION['kindergartenid']}'" ;
 
         $result =$this->db->query($sql); 
         if($result){

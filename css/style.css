@@ -509,35 +509,42 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
 }
 
 .schedule_row label{
-    width:190px;
+    margin-left: 1%;
 }
 
 .schduler_holder{
-    padding:20px;
-    margin-left:120px; 
+    margin-left: 10%; 
 }
-.scheduler-description{
-    width:720px;
+
+#bfInput, #eaInput, #lInput{
+    margin-left: 0;
+    display: block;
 }
+/* .scheduler-description{
+    
+} */
 
 .pick{
     margin-top:5%;
-    margin-left: 1.7%;
+    margin-left: -0.3%;
 }
 
 #date{
-    width:28%;
-    margin-top: 5%;
+    margin-left: 0;
+}
+
+.scheduler-add{
+    margin: 9% 0 0 -32%
 }
 
 .addeventatc_icon{
     top:3px !important;
 }
 .addeventatc{
+    /* display: block; */
     padding-top:5px !important;
     padding-bottom:5px !important;
-    margin-left:10px;
-    float:left;
+    /* margin-left: 90%; */
 }
 .scheduler-description input{
     background-color: transparent;
@@ -545,8 +552,10 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
     color: black;
     background: white;
     text-indent: 10px;
-    width: 430px;
+    width: 71%;
     border-radius: 5px;
+    margin-left: 0.5%;
+    margin-top: 1%;
     font-family: 'Lato';
     font-weight: 300;
     height: 32px;

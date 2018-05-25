@@ -28,7 +28,6 @@
         </header>
 
         <section id="Weekly-Scheduler">
- 
             <form>
                 <h1> Update Weekly Schedule </h1>
 
@@ -41,22 +40,25 @@
                        <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=WEEK&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffcc66&amp;src=sadnakidintouch%40gmail.com&amp;color=%231B887A&amp;src=iw.jewish%23holiday%40group.v.calendar.google.com&amp;color=%23125A12&amp;ctz=Asia%2FJerusalem" style="border:solid 1px #777" width="355" height="400" frameborder="0" scrolling="no"></iframe>
                    </div>
 
-                </div>
-     
-                <div class="row schduler_holder">
-            
-                    <div class="col span-1-of-4 box schedule_row">
+            </div>
+            <div class="row schduler_holder">
+                    <div class="col span-1-of-1 box">
                         <div class="scheduler-description">
                             <label for="data" class="pick"> Pick a date: </label>
                             <input name="Date" type="date" id="date" />
                         </div>
                     </div>
-                    <div class="col span-1-of-4 box schedule_row">
+            </div>
+            <div class="row schduler_holder">
+                    <div class="col span-1-of-2 box">
                         <div class="scheduler-description" id="bf">
-                        
                             <label for="Breakfast" class="schedule_row_label">  Breakfast: </label> 
                             <input name="Breakfast" id="bfInput" type="text" /> 
-                            
+                        </div>
+                    </div>
+            
+                <div class="col span-1-of-2 box">
+                        <div class="scheduler-add">
                             <!-- Button code -->
                             <div title="Add to Calendar" class="addeventatc"> 
                                 Add
@@ -67,13 +69,17 @@
                                 <span class="description"><!-- description from jquery --></span>
                             </div>                    
                         </div>
-                    </div>
-
-                    <div class="col span-1-of-4 box schedule_row">
+                </div>
+            </div>
+               <div class="row schduler_holder">
+                    <div class="col span-1-of-2 box">
                           <div class="scheduler-description" id="ea">
                             <label for="Educational" class="schedule_row_label">  Educational Activity: </label>
                             <input name="Educational" id='eaInput' type="text" /> 
-
+                          </div>
+                    </div>
+                    <div class="col span-1-of-2 box">
+                        <div class="scheduler-add">
                             <!-- Button code -->
                             <div title="Add to Calendar" class="addeventatc"> 
                                 Add
@@ -85,13 +91,17 @@
                             </div>                        
                         </div>
                     </div>
-
-                    <div class="col span-1-of-4 box schedule_row">
+              </div>
+               <div class="row schduler_holder">
+                    <div class="col span-1-of-2 box">
                         <div class="scheduler-description" id="ln">                            
                             <label for="Lunch" class="schedule_row_label">  Lunch: </label>
                             <input name="Lunch" id='lInput' type="text" /> 
-
+                        </div>
+                    </div>
                             <!-- Button code -->
+                    <div class="col span-1-of-2 box">
+                        <div class="scheduler-add">
                             <div title="Add to Calendar" class="addeventatc"> 
                                 Add  
                                 <span class="start" id="startl"><!-- start from jquery --></span>
@@ -100,15 +110,19 @@
                                 <span class="title">Lunch</span>
                                 <span class="description"><!-- description from jquery --></span>
                             </div>
-                         </div>
+                        </div>
                     </div>    
-
-                    <div class="col span-1-of-4 box schedule_row">
+              </div>
+               <div class="row schduler_holder">
+                    <div class="col span-1-of-2 box">
                         <div class="scheduler-description" id="se">                            
                             <label for="Lunch" class="schedule_row_label">  Special Event: </label>
                             <input name="Lunch" id='seInput' type="text" /> 
-
+                        </div>
+                    </div>
                             <!-- Button code -->
+                    <div class="col span-1-of-2 box">
+                        <div class="scheduler-add">
                             <div title="Add to Calendar" class="addeventatc"> 
                                 Add  
                                 <span class="start" id="startse"><!-- start from jquery --></span>
@@ -118,7 +132,7 @@
                                 <span class="description"><!-- description from jquery --></span>
                                 <!-- <span class="all_day_event">true</span> -->
                             </div>
-                         </div>
+                        </div>
                     </div>                    
                 </div>
             </form>

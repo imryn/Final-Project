@@ -153,22 +153,26 @@
         margin-left: -48%;   
     }
 
+    .scheduler-add{
+        margin: 2% 0 0 -1%;
+    }
+
+    #bfInput, #eaInput, #lInput, .scheduler-description input{
+        width: 80%;
+        margin-left: -1%;
+    }
+
    #date{
-       margin-left: -11%;
-       width: 25%;
+       /* margin-left: -11%;
+       width: 25%; */
+       margin-left: -1%;
+       width: 95%;
+       display: block;
    }
 
     .schedule_row_label{
        margin-left: -1.5%;
    }
-
-   .pick{
-    margin-left: -15%;
-   }
-
-   .scheduler-description input{
-       width: 14%;
-    }
 
    /* report page */
 
@@ -219,8 +223,8 @@
   }
     
    #shopping-list{
-     width: 100%
-      margin-left: 0;
+     width: 100%;
+     margin-left: 0;
   }
 
    .shoppinglist-form3{
