@@ -127,7 +127,7 @@ $shoppingitems = $items->getItemsFromShoppingListHistory();
                             </div>
                         </div>
                 </div>
-                    <input type="button" value="Add" id="add" class="btn btn-warning add-to-cart" disabled onClick="getItemList()" />
+                    <input type="button" value="Add" id="add" title="Add item to list" class="btn btn-warning add-to-cart" disabled onClick="getItemList()" />
                 <input type="hidden" name="kindergardenid" value="<?php  echo $_SESSION['kindergardenid']; ?>">
             </form>  
             <table id="item-table" class="table table-striped table-responsive w-auto">
@@ -152,11 +152,13 @@ $shoppingitems = $items->getItemsFromShoppingListHistory();
                             <td class="colDisplay"> &#x20AA; <?php echo $item['unitPrice']; ?> </td>
                             <td class="colDisplay"> &#x20AA; <?php echo $item['unitPrice'] * $item['quantity']; ?></td>
                             <td>
-                                <button title="Purchase this item" class="btn btn-success purchase-item"
+                                <button title="Mark as purchased and remove from list" 
+                                        class="btn btn-success purchase-item"
                                         data-id="<?php echo $item['id']; ?>">Purchase</button>
                             </td>
                             <td>
-                                <button class="btn btn-danger delete-from-cart"
+                                <button title="Remove from list" 
+                                        class="btn btn-danger delete-from-cart"
                                         data-id="<?php echo $item['id']; ?>"
                                         data-item-total="<?php echo $itemTotal;?>">Delete</button>
                             </td>

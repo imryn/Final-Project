@@ -289,4 +289,20 @@
    #Update-Attendance{
        margin-left: 28%;
    }
-}							
+
+    /*  Building/view schedule page */
+    #calendar{
+        display:none;
+    }
+    #smartphonecalendar{
+        display:block;
+    }
+
+    #viewCalendar{
+        display:none;
+    }
+    #smartphoneviewCalendar{
+        display:block;
+    }
+
+}

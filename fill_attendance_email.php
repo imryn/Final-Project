@@ -5,6 +5,21 @@ $username = "b1cecd1cfb136f";
 $password = "7e767b54";
 $dbname = "gcp_69477eab26f5d4ebcd7f";
 
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql="SELECT * FROM sendgrid ";
+
+$result = $conn->query($sql);
+$conn->close();
+$row1 = mysqli_fetch_assoc($result);
+
+
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
@@ -19,14 +34,13 @@ $sql="SELECT users.email as email
 
 $result = $conn->query($sql);
 $conn->close();
-
 $row = mysqli_fetch_assoc($result);
+
 $email = $row['email'];
 
 $url = 'https://api.sendgrid.com/';
-$user = 'karinhp1';
-$pass = 'khp12345678';
-
+$user = $row1['username'];
+$pass = $row1['password'];
 
 $json_string = array(
 
@@ -42,10 +56,10 @@ $params = array(
     'api_key'   => $pass,
     'x-smtpapi' => json_encode($json_string),
     'to'        => 'example3@sendgrid.com',
-    'subject'   => 'testing from curl',
-    'html'      => "Hello {$email}",
+    'subject'   => 'Daily Attendance',
+    'html'      => "Hello,<br> please call your child's kindergarten teacher. <br> Currently, your child hasn't arrived yet to kindergarten. <br><br> Thanks and have a nice day :)",
     'text'      => "Hello {$email}",
-    'from'      => 'example@sendgrid.com',
+    'from'      => 'kindergarten@today.com',
   );
 
 $request =  $url.'api/mail.send.json';
@@ -67,9 +81,11 @@ $response = curl_exec($session);
 curl_close($session);
 
 // print everything out
+// echo $row1['username'];
+// echo $row1['password'];
 // print_r($response);
 // echo $email;
         
-header('Location: http://sadna.byethost33.com/fill_attendance.php');
+ header('Location: http://localhost/Sadna/fill_attendance.php');
 
 ?> 

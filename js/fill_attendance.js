@@ -29,5 +29,6 @@ function saveInServer(){
   
 function sendEmail(id)
 {
+    alert("Email was sent successfully to parent !");
     window.location=('http://localhost/Sadna/fill_attendance_email.php?id=' +id)
 }
