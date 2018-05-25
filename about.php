@@ -34,7 +34,14 @@
       <div class="col-sm-4">
         <img id="about-picture" src="pictures/kids-plays.jpg" alt="kids plays">
       </div>
-      <p id="about-exp">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>  
+      <p id="about-exp">
+        Welcome to “Kidin Touch”, a new information system for private kindergartens.<br>
+        Developed and designed specifically to meet the needs of staff members in order to be more efficient, organized and to
+        fulfill the goal of strengthening the connection with the parents and monitoring their children in the kindergarten - “Kidin Touch” was built to be your all-in-one solution.<br>
+        In time studies, “Kidin Touch” saves as much as one hour per day per staff member. More time for what matters!<br><br>
+        No installation, setup fees or training required. And no more paper to buy! Works on any device. <br> <br>
+        Real-time updates between kindergarten’ staff members, parents and across devices - iPhone,Android, and web.
+      </p>  
     </div>
   </div>
   
