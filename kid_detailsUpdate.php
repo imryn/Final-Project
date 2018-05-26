@@ -122,13 +122,13 @@
                 <div class="col span-1-of-3 box">
                     <div class="registration-info">
                         <label for="food"> Food Preference: </label>   
-                        <p> <input type="radio" name="vegan"> Vegan </p>                  
+                        <p> <input type="radio" name="foodpreference" value="vegan"> Vegan </p>                  
                     </div>
                 </div>
                 <div class="col span-1-of-3 box">
                     <div class="registration-info">
                         <label for="food"> </label>   
-                        <p class="food-pref"> <input type="radio" name="vegetarian"> Vegetarian </p>                  
+                        <p class="food-pref"> <input type="radio" name="foodpreference" value="vegetarian"> Vegetarian </p>                  
                     </div>
                 </div>
            </div>

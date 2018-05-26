@@ -29,8 +29,12 @@ function getFormData(formSelector){
 
             switch (input.getAttribute("type")) {
                 case "checkbox":
-                case "radio":
                     data[name] = input.checked;
+                    break;
+                case "radio":
+                    if(input.checked){
+                        data[name] = input.value;
+                    }
                     break;
                 default:
                     data[name] = input.value;
@@ -57,11 +61,14 @@ function setFormData(formId,data){
             if(item.nodeName == "INPUT" || item.nodeName == "SELECT" || item.nodeName == "TEXTAREA"){
                 var type = item.getAttribute("type");
                 switch (type) {
-                    case "radio":
                     case "checkbox":
                         if(data[key] == "1"){
                             item.checked = true;
                         }
+                        break;
+                    case "radio":
+                        var item = document.querySelector(formId + " [name= " + key + "][value=" + data[key] + "]");
+                        item.checked = true;
                         break;
                     default:
                         item.value = data[key];
