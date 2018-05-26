@@ -174,7 +174,7 @@ $shoppingitems = $items->getItemsFromShoppingListHistory();
             <form>
                 <div class="pickDateField">
                     <span> Total: </span>
-                    <strong class="total_shopping_cart"><?php echo $sumTotal; ?></strong> ₪
+                    <strong class="total_shopping_cart">&#x20AA;<?php echo $sumTotal; ?></strong> 
                 </div>
             </form>
     </section>
@@ -185,6 +185,7 @@ $shoppingitems = $items->getItemsFromShoppingListHistory();
     </footer>
 
         <script src="js/shopping-list.js"></script>
-        <script src="commons.js"></script>       
+        <script src="commons.js"></script>   
+       
 </body>
 </html>
