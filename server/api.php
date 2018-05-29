@@ -135,6 +135,10 @@
                    $items = new Items();
                    $items->updateQuantity( $_GET['id'], $_GET['quantity'], $_GET['unitPrice'] );
                    break;
+               case "clear_shopping_history":
+                   $items = new Items();
+                   $items->clearShoppingHistory( );
+                   break;
             }
        }
        else{

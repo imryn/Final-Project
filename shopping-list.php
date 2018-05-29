@@ -35,14 +35,15 @@ $shoppingitems = $items->getItemsFromShoppingListHistory();
 
     <body>
         <header>
-            <templateHtml src="logo-container/logo-container.html"></templateHtml>        
+            <templateHtml src="logo-container/logo-container.html"></templateHtml>
+            <?php include "weather/api.php" ?>
             <?php include "nav-menu/nav-menu-container.php" ?>
-           
+
         </header>
         <section id="shopping-list">
             <form>
                  <h1> Shopping List</h1>
-                 <p class="describe-list-info"> Add items to shopping list:</p>      
+                 <p class="describe-list-info"> Add items to cart:</p>
                  <div class="row shoppinglist-form3">
                     <div class="col span-1-of-4 box">
                         <div class="list-info">
@@ -129,8 +130,11 @@ $shoppingitems = $items->getItemsFromShoppingListHistory();
                 </div>
                     <input type="button" value="Add" id="add" title="Add item to list" class="btn btn-warning add-to-cart" disabled onClick="getItemList()" />
                 <input type="hidden" name="kindergardenid" value="<?php  echo $_SESSION['kindergardenid']; ?>">
-            </form>  
-            <table id="item-table" class="table table-striped table-responsive w-auto">
+            </form>
+            <div>
+                <h4>Cart</h4>
+            </div>
+            <table id="cart-table" class="table table-striped table-responsive w-auto">
                 <tr>
                     <th>Category - Item</th>
                     <th>Qty</th>
@@ -140,33 +144,34 @@ $shoppingitems = $items->getItemsFromShoppingListHistory();
                     <th>Delete</th>
                 </tr>
                 <?php
-
-                $sumTotal = 0;
+                $cartTotal = 0;
                 foreach ( $shoppingitems as $item_id => $item ){
                     $itemTotal = $item['unitPrice'] * $item['quantity'];
-                    if( $item['purchased'] == 0 ) {
+                    if( $item['purchased'] == 0 && $item['isremoved'] == 0) {
                         ?>
                         <tr class="table-info" id="item_cart_row_<?php echo $item['id']; ?>">
                             <td><?php echo $item['itemCategory']; ?> - <?php echo $item['itemName']; ?></td>
                             <td><?php echo $item['quantity']; ?></td>
                             <td class="colDisplay"> &#x20AA; <?php echo $item['unitPrice']; ?> </td>
                             <td class="colDisplay"> &#x20AA; <?php echo $item['unitPrice'] * $item['quantity']; ?></td>
-                            <td>
+                            <td class="purchase_col">
                                 <button title="Mark as purchased and remove from list" 
                                         class="btn btn-success purchase-item"
+                                        data-price="<?php echo $item['unitPrice'] * $item['quantity']; ?>"
                                         data-id="<?php echo $item['id']; ?>">Purchase</button>
                             </td>
                             <td>
                                 <button title="Remove from list" 
                                         class="btn btn-danger delete-from-cart"
+                                        data-type="cart"
                                         data-id="<?php echo $item['id']; ?>"
                                         data-item-total="<?php echo $itemTotal;?>">Delete</button>
                             </td>
                         </tr>
                         <?php
+                        $cartTotal = $cartTotal + $itemTotal;
                     }
-                    $sumTotal = $sumTotal + $itemTotal;
-                    $_SESSION['shopping_total'] = $sumTotal;
+                    //$_SESSION['cart_total'] = $cartTotal;
                 }
                 ?>
             </table>
@@ -174,9 +179,70 @@ $shoppingitems = $items->getItemsFromShoppingListHistory();
             <form>
                 <div class="pickDateField">
                     <span> Total: </span>
-                    <strong class="total_shopping_cart">&#x20AA;<?php echo $sumTotal; ?></strong> 
+                    <strong>&#x20AA;</strong> <strong class="cart_total"><?php echo $cartTotal; ?></strong>
                 </div>
             </form>
+            <h4>Shopping list history</h4>
+            <table id="shopping-table" class="table table-striped table-responsive w-auto">
+                <tr>
+                    <th>Category - Item</th>
+                    <th>Qty</th>
+                    <th class="colDisplay">Unit Price</th>
+                    <th class="colDisplay">Total</th>
+                    <th>Delete</th>
+                </tr>
+                <?php
+                $shoppingHistoryTotal = 0;
+                foreach ( $shoppingitems as $item_id => $item ){
+                    $itemTotal = $item['unitPrice'] * $item['quantity'];
+                    if( $item['purchased'] == 1 && $item['isremoved'] == 0 ) {
+                        ?>
+                        <tr class="table-info" id="item_cart_row_<?php echo $item['id']; ?>" data-type="shopping">
+                            <td><?php echo $item['itemCategory']; ?> - <?php echo $item['itemName']; ?></td>
+                            <td><?php echo $item['quantity']; ?></td>
+                            <td class="colDisplay"> &#x20AA; <?php echo $item['unitPrice']; ?> </td>
+                            <td class="colDisplay"> &#x20AA; <?php echo $item['unitPrice'] * $item['quantity']; ?></td>
+                            <td>
+                                <button title="Remove from list"
+                                        class="btn btn-danger delete-from-cart"
+                                        data-type="shopping"
+                                        data-id="<?php echo $item['id']; ?>"
+                                        data-item-total="<?php echo $itemTotal;?>">Delete</button>
+                            </td>
+                        </tr>
+                        <?php
+                        $shoppingHistoryTotal = $shoppingHistoryTotal + $itemTotal;
+                    }
+
+                    //$_SESSION['shopping_history_total'] = $shoppingHistoryTotal;
+                }
+
+                $_SESSION['shopping_cart_total'] = $cartTotal + $shoppingHistoryTotal;
+                ?>
+            </table>
+            <form>
+                <div class="pickDateField">
+                    <span> Total: </span>
+                    <strong>&#x20AA;</strong> <strong class="shopping_total"><?php echo $shoppingHistoryTotal; ?></strong>
+                </div>
+            </form>
+            <div>
+                <button title="Clear shopping history"
+                        class="btn btn-warning clear_shopping_history"
+                        data-item-total="<?php echo $itemTotal;?>">Clear Shopping History</button>
+            </div>
+            <div>
+                <p>
+                    Total: <strong>&#x20AA;</strong> <strong class="shopping_cart_total"><?php echo $_SESSION['shopping_cart_total']; ?></strong>
+                </p>
+                <p>
+                    Budget: <strong>&#x20AA; <?php echo $_SESSION['shoppingbudget'] ; ?></strong>
+                </p>
+                <p>
+                    Remain:<strong>&#x20AA;</strong> <strong class="shopping_cart_remain"><?php echo $_SESSION['shoppingbudget'] - $_SESSION['shopping_cart_total']; ?></strong>
+                </p>
+            </div>
+
     </section>
     <footer class="container-fluid text-center bg-lightgray">
       <div class="copyrights" style="margin-top:18px;">

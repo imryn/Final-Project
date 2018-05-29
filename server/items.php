@@ -31,8 +31,8 @@ class Items{
             $row = mysqli_fetch_array($result);
             $itemTotal = $_GET['quantity'] * $row['unitPrice'];
             // add item only if not exceed total budget
-            if ( $_SESSION['shopping_total'] + $itemTotal <= $_SESSION['shoppingbudget']) {
-                $_SESSION['shopping_total'] += $itemTotal;
+            if ( $_SESSION['shopping_cart_total'] + $itemTotal <= $_SESSION['shoppingbudget']) {
+                $_SESSION['shopping_cart_total'] += $itemTotal;
                 $average = $this->getItemsAverageFromShoppingListHistory($row['id']);
                 // add item to shopping cart table
                 $shopping_list_id = $this->addItemToShoppingListHistory($row['id'], $_GET['quantity']);
@@ -64,7 +64,7 @@ class Items{
 
 
     public function removeItemFromCart( $id, $itemTotal, $send_response = true ) {
-        $_SESSION['shopping_total'] -= $itemTotal;
+        $_SESSION['shopping_cart_total'] -= $itemTotal;
         $sql = "DELETE FROM shoppinghistory WHERE id=$id";
         $this->db->query( $sql );
         if( $send_response ) {
@@ -84,7 +84,7 @@ class Items{
 
     public function updateQuantity( $id, $quantity, $unitPrice ) {
         $itemTotal = $quantity * $unitPrice;
-        if ( $_SESSION['shopping_total'] + $itemTotal <= $_SESSION['shoppingbudget']) {
+        if ( $_SESSION['shopping_cart_total'] + $itemTotal <= $_SESSION['shoppingbudget']) {
             $sql = "UPDATE shoppinghistory SET quantity=$quantity WHERE id=$id";
             $this->db->query($sql);
             echo json_encode((object)[
@@ -116,6 +116,7 @@ class Items{
                 shoppinghistory.itemID,
                 shoppinghistory.quantity,
                 shoppinghistory.purchased,
+                shoppinghistory.isremoved,
                 items.itemCategory,
                 items.itemName,
                 items.unitPrice
@@ -142,6 +143,15 @@ class Items{
             $average = $sum/$counter;
         }
         return $average;
+    }
+
+    public function clearShoppingHistory() {
+        $kindergartenid = $_SESSION[ 'kindergartenid' ];
+        $sql = "UPDATE shoppinghistory SET isremoved=1 WHERE kindergartenid=$kindergartenid AND purchased=1 AND isremoved=0";
+        $this->db->query( $sql );
+        echo json_encode((object)[
+            'success' => true
+        ]);
     }
 } 
 ?>

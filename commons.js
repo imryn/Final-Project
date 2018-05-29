@@ -139,3 +139,32 @@ function putInfoInsideSelector(selectorId, data){
 
     document.querySelector(selectorId).innerHTML = optionsString;
 }
+
+ var city_id = "293397";
+ var key = 'c6d2bb1ff69b72eb20130799f7be62fb';
+
+ $.ajax({
+     url: 'http://api.openweathermap.org/data/2.5/forecast',
+     dataType: 'json',
+     type: 'GET',
+     data: { id:city_id, appid: key, units: 'metric'},
+
+     success: function(data){
+         $('.today_temp').html( "" + data.list[1].main.temp_min + " - " + data.list[1].main.temp_max );
+         $('.today_icon').append( '<img src="http://openweathermap.org/img/w/' + data.list[1].weather[0].icon + '.png">' );
+         $('.today_desc').html( "" + data.list[1].weather[0].description );
+
+         $('.tomorrow_temp').html( "" + data.list[9].main.temp_min + " - " + data.list[9].main.temp_max );
+         $('.tomorrow_icon').append( '<img src="http://openweathermap.org/img/w/' + data.list[9].weather[0].icon + '.png">' );
+         $('.tomorrow_desc').html( "" + data.list[9].weather[0].description );
+
+         $('.day3_temp').html( "" + data.list[16].main.temp_min + " - " + data.list[16].main.temp_max );
+         $('.day3_icon').append( '<img src="http://openweathermap.org/img/w/' + data.list[16].weather[0].icon + '.png">' );
+         $('.day3_desc').html( "" + data.list[16].weather[0].description );
+
+         $('.day4_temp').html( "" + data.list[24].main.temp_min + " - " + data.list[24].main.temp_max );
+         $('.day4_icon').append( '<img src="http://openweathermap.org/img/w/' + data.list[24].weather[0].icon + '.png">' );
+         $('.day4_desc').html( "" + data.list[24].weather[0].description );
+     }
+
+ });
