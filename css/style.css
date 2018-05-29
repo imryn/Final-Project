@@ -614,7 +614,11 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
 
 #add{
      margin: 2% 0 0 48%; 
- }
+}
+
+.clear_shopping_history{
+    margin: 2% 0 0 41%; 
+}
 /* END building shopping-list design */
 
 

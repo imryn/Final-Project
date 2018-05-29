@@ -177,7 +177,7 @@ function createItemsTable(data){
                 '<td>' + item.quantity + '</td>' +
                 '<td>&#x20AA;' + item.unitPrice + '</td>' +
                 '<td>&#x20AA;' + itemTotal + '</td>' +
-                '<td class="purchase_col"> <button title="Mark as purchased and remove from list" class="btn btn-success purchase-item" data-id="' + item.id + '" data-price="' + itemTotal + '"> Purchase </button></td>' +
+                '<td class="purchase_col"> <button title="Mark as purchased and remove from cart" class="btn btn-success purchase-item" data-id="' + item.id + '" data-price="' + itemTotal + '"> Purchase </button></td>' +
                 '<td> <button title="Remove from list" class="btn btn-danger delete-from-cart" data-id="' + item.id + '" data-item-total="' + itemTotal + '" data-type="cart">Delete</button></td>' +
                 '</tr>';
             $('#cart-table').append(table);

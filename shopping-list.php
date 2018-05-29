@@ -155,7 +155,7 @@ $shoppingitems = $items->getItemsFromShoppingListHistory();
                             <td class="colDisplay"> &#x20AA; <?php echo $item['unitPrice']; ?> </td>
                             <td class="colDisplay"> &#x20AA; <?php echo $item['unitPrice'] * $item['quantity']; ?></td>
                             <td class="purchase_col">
-                                <button title="Mark as purchased and remove from list" 
+                                <button title="Mark as purchased and remove from cart" 
                                         class="btn btn-success purchase-item"
                                         data-price="<?php echo $item['unitPrice'] * $item['quantity']; ?>"
                                         data-id="<?php echo $item['id']; ?>">Purchase</button>
@@ -227,9 +227,9 @@ $shoppingitems = $items->getItemsFromShoppingListHistory();
                 </div>
             </form>
             <div>
-                <button title="Clear shopping history"
+                <button title="Clear history and renew budget"
                         class="btn btn-warning clear_shopping_history"
-                        data-item-total="<?php echo $itemTotal;?>">Clear Shopping History</button>
+                        data-item-total="<?php echo $itemTotal;?>">Clear history and renew budget</button>
             </div>
             <div>
                 <p>
