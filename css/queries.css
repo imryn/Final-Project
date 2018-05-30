@@ -1,683 +1,340 @@
-/* default styling */
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* big tablt to 1200px */
+@media only screen and (max-width: 1200px){
+    
+
 }
+/* small phones to small tablets: from 481px to 732px */
+@media only screen and (max-width: 732px){
 
-body{ 
-    font-family: 'Lato';
-    font-size: 20px;
-    font-weight: 300;
-    text-rendering: optimizeLegibility;
+
 }
+/* small phones: from 0 to 480px */
+@media only screen and (max-width: 480px){
 
-span{
-    color: #e67e22;
-}
+  .navbar,   #shopping-list, .bg-lightgray,
+  #reports, #alergic-report, #exception-report,
+  #Weekly-Scheduler, #daily-attendance, #kid-choosen, 
+  #kidList-detailsUpdate, #kid-observation,  #index-section,
+  #registration-parent, #registration-kid, #kid-detailsUpdate,
+  #about-section{
+     width: 100%;
+     margin-left: 0;
+  }
 
-section{
-    padding: 30px 0;
-}
+   .logo-container{
+      margin-left: -10%;
+  } 
 
-.row{
-    max-width: 1140px;
-    margin: 0 auto 0 auto;
-}
+    /* index page */
 
-.box{
-    padding: 1%
-}
+   .container{
+      width: 100%;
+      padding: 0;
+    }
 
-/* styling for headlines */
-h1{
-    font-weight: bold;
-    word-spacing: 5px;
-    letter-spacing: 2px;
-    font-size: 150%; 
-    margin-bottom: 30px;
-    text-align: center;
-}
+    .card{
+        margin-left: 0;
+    }
 
-.registration-info p input{
-    position:relative;
-    top:10px;
-}
+   .card-text{ 
+       font-size: 14px; 
+       top: 2px;
+       left: 0;
+    }
 
-h2, h3{
-    word-spacing: 5px;
-    letter-spacing: 2px;
-    text-align: center;
-}
+    #logo-to-pages{
+        margin-left: 5%;
+    }
 
-h2{
-    font-size: 120%;
-    font-weight: bold;
-}
+    .template-row{
+        margin-left: 2.5%;
+    }
 
-/* index template styling */
+    /* registration page */
 
-.container{
-    width: 86.8%;
-}
-.template-header{
-    word-spacing: 5px;
-    letter-spacing: 2px;
-    text-align: left;
-}
+    #f-member-select{
+        width: 118%;
+    }
 
-.template-row{
-    margin-top: 5%;
-    margin-left: 0.5%;
-}
+    .save-2{
+        margin-left: 40%;
+    }
 
-#first-temp-p{
-    margin-top: -3%;
-}
+    #gender{
+        width: 112%;
+         
+    }
 
-.bg-lightgray
-{
-    background-color:#e67e22;
-    width: 80%;
-}
+   input[type=radio]{
+        margin-top: 0;
+   }
 
+  */ kid_detailsUpdates page */
 
-.card:hover .card-text{
-    display: block;
-}
+   .describe-info{
+     margin-left: 9%;
+   }
 
-.card:hover img{
-     filter:blur(14px); 
-}
+  /*  kidsList_detailsUpdates page */
 
-.card{
-    position: relative;
-}
+  textarea{
+      width: 88%;
+      margin-left: 4%;
+  }
 
-.card-text{
-    position: absolute;
-    top: 5px;
-    left: 10%;
-    display: none;
-}
+  #kidname-label{
+      margin-left: 3%;
+  }
 
-.template-header{
-    position: relative;
-}
+  #pickDate{
+     margin-left: -2%;
+  }
 
-
-/* sections */
-#registration-parent,#registration-kid,#reports,#daily-attendance,
-#kid-detailsUpdate,#Weekly-Scheduler,#kid-observation,#alergic-report,
-#exception-report, #kidList-detailsUpdate, #kid-choosen, #about-section{
-    background-color: #f0f0f0;
-    width: 80%;
-    margin-left: 10%;
-}
-
-#index-section{
-    background-color:  #f0f0f0;
-    margin-left: 2.7%;
-    width: 94.6%;
-}
-
-#kid-observation{
-    display: none;
-}
-
- .reports-line{
-    margin-left: 6%;
- }
-
- .date-label{
-     margin-left: 17%;
- }
-
- .exception-update2{
+  #kidname{
     margin-left: 3%;
+  }
+
+  .kid-form1, .kid-form2, .kid-update1, .kid-update2{
+     margin-left: 9%;
+  }
+
+  .registration-info input{
+      margin-left: 3.5%;
+  }
+
+  #genders-input{
+      margin-left: 4%;
+  }
+
+ #com_and_req{
+    margin-left: 4%;
  }
 
- /* line on each sections */
-.parent-form1, .kid-form1, .kid-update1{
-    margin-top: 7%;
-}
-
-.parent-form1, .parent-form2, .parent-form3, .parent-form4 {
-    margin-left: 7%;
-}
-
-.kid-form1,.kid-form2,.kid-update1, .kid-update2{
-   margin-left: 6%;
-}
-
-.kid-form3, .kid-form4{
-    margin-left: 7.3%;
-}
-
-.alergic-update, .exception-update{
-    margin-left: 2%; 
-}
-
-
- /* inputs */
-.registration-info input, .update-info input, .alergic-info input,
-.exception-info input{
-    background-color: transparent;
-    border: solid 1px rgb(169,169,169);
-    color: black;
-    background: white;
-    text-indent: 10px;
-    width: 71%;
-    border-radius: 5px;
-    margin-left: 3.5%;
-    margin-top: 1%;
-    font-family: 'Lato';
-    font-weight: 300;
-    height: 32px;
-}
-
-.disabled-input{
-    opacity: 0.5;
-}
-
-#birth-date{
-    width: 76%;
-}
-
-.report-info input{
-    background-color: transparent;
-    border: solid 1px rgb(169,169,169);
-    color: black;
-    background: white;
-    text-indent: 10px;
-    width: 53%;
-    border-radius: 5px;
-    margin-left: 15.3%;
-    margin-top: 1%;
-    font-family: 'Lato';
-    font-weight: 300;
-    height: 32px;
-}
-
-#address, #city, #phone, #kidname-label{
-    margin-left: 4%;
-}
-
-/* selects */
-.registration-info select,.report-info select,
-.update-info select, .list-info select, .alergic-info select,
-.exception-info select{
-    border-radius: 5px;
-    font-family: 'Lato';
-    font-weight: 300;
-    margin-top: 1%;
-    height: 32px;
-    color: black;
-    background: white;
-    border: solid 1px rgb(169,169,169);
- 
-}
-
-.alergic-info select, .exception-info select{
-    margin-top: 1%;
-    margin-left: 10%;
-}
-
-.alergic-info select{
-    width: 55%;
-}
-
-.registration-info select{
-    width: 71%;
-    margin-left: 4%;
-}
-
-.exception-info select{
-    width: 44%;
-}
-
-/* specific inputs,selects and lables */
-
-#observation{
-    width: 126%;
-    margin-left: 0;
-}
-
-#pickDate{
-    margin-left: 28%;
-    width: 60%;
-}
-
-#upDate{
-    margin-left: 28%;
-    width: 50%;
-}
-
-#f-member-select{
-    width: 122%;
-    margin-left: 7%;
-    height:32px;
-}
-
-.allergie-info{
-    margin-top: 17%;
-    width: 100%; 
-}
-
-.food-pref{
-    margin-top: 3%;
-    width: 100%;  
-}
-
-input[type=checkbox]{
-    background-color: transparent;
-    border: solid 1px rgb(169,169,169);
-    color: black;
-    background: white;
-    border-radius: 5px;
-    margin-top: 6%;
-    width: 10%;  
-}
-
-input[type=radio]:first-child{
-    width: 7%;
-    margin-top: 6%;
-}
-
-#email-input{
-    width:71%;
-}
-
-.report-info select{
-    margin-left: 0.7%;
-    width: 66%;
-}
-
-.observation-value1{
-    color: red;
-}
-
-.observation-value2{
-    color: green;   
-}
-
-#start-date, #end-date{
-    width: 86%;
-    margin-left: 17%;
+#observation-text{
+   margin-left: 0;
 }
 
 /* buttons */
-.save-details{
-    margin-left: 56%;
-    margin-top: 5%;
-}
+  #new-observation{
+    width: 72%;
+    margin-left: 14%;
+  }
 
-.create-botton1, .create-botton2{
-    width: 127px;
-}
-
-.create-botton{
-    margin-left: 48%;
-    margin-top: 5%;
-}
-
-.create-botton1{
-    margin-left: 48%;
-    margin-top: 5%;
-}
- 
-.create-botton2{
-    margin-left: 36%;
-    margin-top: -7.1%;
-}
-
-.show-kid-details, .save-2, #new-observation, .save-details,
-.exit, #options_for_report, .create-botton ,.create-botton1,
-.create-botton2, .update-details, #add{
-    background-color: #e67e22;
-    border-color: white;
-    padding: 8px 18px;
-}
-
-.show-kid-details{
-    margin-top: 1%;
-    margin-left: 8.5%;
-    
-}
-.show-kid-details:hover, .save-2:hover,
-#new-observation:hover, .save-details:hover,
-exit:hover, #options_for_report:hover, .create-botton:hover,
-.create-botton1:hover, .create-botton2:hover,
-.update-details:hover, #add:hover{
-  background-color: #f39c12;
-  border-color: white;
-  padding: 8px 18px;
-}
-
-.update-details,#options_for_report{
-   margin-top: 5%;
-   margin-left: 48%;
-}
-
-.save-2{
-  margin-top: 5%;
-  margin-left: 48%; 
-}
-
-.exit{
-    margin-left: 37%;
-    margin-top: -6.7%; 
-}
-
-#special-link{
-    text-decoration:none;
-    color: white;
-}
-
-#new-observation{
-    width: 42%;
-    margin-top: 5%;
-    margin-left: 30%; 
-}
-
-/* instruction at the beginning of forms */
-.describe-info, #form-exp, .describe-list-info{
-    margin-top: 3%;
-    color: #e67e22;
-    word-spacing: 2px;
-}
-.describe-info{
-    margin-left: 7%;
-}
-
-.describe-list-info{
-    margin-left: 6%
-}
-
-#form-exp{
-    margin-left: 7%;  
-}
-#alergic-exp, #exception-exp{
-    margin-left: 10%;
-}
-/* warning message for user in the forms */
-.success-message, .success-message2{
-   font-weight: bold; 
-   margin-left: 11%;
-   color: #9b59b6;
-   margin-bottom: -4%;
-   word-spacing: 2px;
-}
-
-.unsuccess-message{
-    margin: 5%;
-    font-weight: bold;
-    color: #9b59b6;
-    word-spacing: 2px;
-}
-
-/* table in report page */
-#kids-table, #kids-observation-table, #kids-presence-table{
-    margin: 6% auto 0 auto;
-}
-
-#kids-table th, #kids-table tr,
-#kids-observation-table th, #kids-observation-table tr,
-#cart-table th, #cart-table tr,
-#shopping-table th, #shopping-table tr,
-#kids-presence-table tr, #kids-presence-table th{
-    text-align: center;
-}
-
-#kids-table th, #kids-observation-table th,
-#kids-presence-table th{
-    background: #e67e22;
-    color: white;
-    font-weight: normal;
-}
-
-#item{
+  .exit{
     margin-left: 25%;
-}
+    margin-top: -19.3%;
+  }
 
-#cart-table,
-#shopping-table{
-    width:80%;
-    text-align:center;
-    margin-left:10%;
-    margin-top: 30px;  
-}
-#cart-table th,
-#shopping-table th{
-    background-color: #e67e22;
-    color:white;
-    font-weight:normal;
-}
+  .show-kid-details{
+      margin-left: 12%;
+  }
 
-#chart_div{
-    margin-left: 30%;
-    width: 400px;
-    height: 300px;
-}
+/* labels */
 
-/* {
-    margin: 8% auto 0 auto;
-    background-color: #9b59b6;
-    color: white;
-    width: calc(100% - 82px);
-} */
+  #birth-date{
+    width: 72%;
+  }
 
+  #observation{
+    width: 90%;
+  }
 
-.shop{
-	word-spacing: 5px;
-    letter-spacing: 2px;
-    font-size: 120%;
-    font-weight: bold;
-}
+  #upDate{
+      margin-left: 0;
+      width: 90%;
+  }
+
+  #allergies-label, #food-label{
+    margin-left: 4.5%;
+  }
+
+  .date-label{
+      margin-left: 10%;
+  }
 
 
-/* START view/building schedule design */
-.calendar_row{
-    width:100%;
-    float:left;
-}
-#calendar,#smartphonecalendar{
-    margin-left:-350px;
-    position:relative;
-    float:left;  
-    left:50%;
-}
-#viewCalendar{
-    margin-left:-350px;
-    position:relative;
-    left:50%; 
-    width:700px;
-    background-color:white;
-    border:1px orange solid;
-    font-size:16px;
-}
-#smartphoneviewCalendar{
-    margin-left:-350px;
-    position:relative;
-    left:50%; 
-    width:460px;
-    background-color:white;
-    border:1px orange solid;
-    font-size:12px;
-    display:none;
-}
+/* weekly schedule page */
 
-.schedule_row{
-    width:100%;
-}
+   .schedule_row{
+        margin-left: -48%;   
+    }
+   
+   .scheduler-add{
+        margin: 0 0 0 -1%;
+    }
 
-.schedule_row label{
-    margin-left: 1%;
-}
+   #bfInput, #eaInput, #lInput, .scheduler-description input{
+        width: 80%;
+        margin-left: -1%;
+    }
 
-.schduler_holder{
-    margin-left: 10%; 
-}
+   .pick{
+    margin-left: -2%;
+  }
 
-#bfInput, #eaInput, #lInput{
-    margin-left: 0;
-    display: block;
-}
-/* .scheduler-description{
+   #date{
+       margin-left: -2%;
+       width: 80%;
+       display: block;
+   }
+
+    .schedule_row_label{
+       margin-left: -1.5%;
+   }
+
+   /* report page */
+
+   #report-describing{
+       margin-left: 5%;
+   }
+
+   .report-info select{
+       margin-left: 4.7%;
+       width: 77%;
+   }
+
+   #alergic-exp{
+      margin-left: 10.5%;
+   }
+
+   .alergic-info select{
+        width: 69%;
+    }
+
+   .exception-info select{
+         width: 68%;
+    }
+
+   #start-date, #end-date{
+      width: 69%;
+      margin-left: 9%;
+   }
+
+   #options_for_report, .create-botton, .create-botton1{
+       margin-left: 35%;
+   }
+
+   #kids-table{
+       width: 80%;
+   }
+
+   #chart_div{
+       margin-left: 2%;
+       width: 320px;
+       height: 200px;
+   }
+
+   /* shopping list page */
+
+  .describe-list-info{
+     margin-left: 12.5%;
+  }
     
-} */
+   #shopping-list{
+     width: 100%;
+      margin-left: 0;
+  }
 
-.pick{
-    margin-top:5%;
-    margin-left: -0.3%;
+   .shoppinglist-form3{
+       margin-left: 12.3%;
+   }
+
+   #category, #item , #quantity{
+       margin-left: 0; 
+   }
+
+   #itemcategory{
+       width: 90%;
+   }
+
+   #artitems, #officeitems,
+   #fooditems, #empty{
+       width: 90%;
+       margin-left:  0;
+   }
+
+   #quantity-input{
+       margin-left:  0;
+       display: block;
+       width: 90.5%;
+   }
+
+   #add{
+      margin-left: 42%;
+   }
+
+   #item-table{
+        width: 80%;
+        margin-left: 10%;
+   }
+
+   .table>tbody>tr>th{
+       padding: 6px;
+       font-size: 16px;
+   }
+
+   .table>tbody>tr>td{
+       font-size: 16px;
+       padding: 0;
+   }
+
+   /* child file for parent user */
+
+   .update-details{
+       margin-left: 40%;
+   }
+   /* shooping list */
+
+   .colDisplay{
+       display: none;
+   }
+
+   /* attendance page */
+
+   #attendance-table{
+       margin-left: 15%;
+   }
+
+   #Update-Attendance{
+       margin-left: 28%;
+   }
+
+   /* about page */
+
+  .about-form{
+   margin-left: 1%;
 }
-
-#date{
-    margin-left: 0;
-}
-
-.scheduler-add{
-    margin: 9% 0 0 -32%
-}
-
-.addeventatc_icon{
-    top:3px !important;
-}
-.addeventatc{
-    /* display: block; */
-    padding-top:5px !important;
-    padding-bottom:5px !important;
-    /* margin-left: 90%; */
-}
-.scheduler-description input{
-    background-color: transparent;
-    border: solid 1px rgb(169,169,169);
-    color: black;
-    background: white;
-    text-indent: 10px;
-    width: 71%;
-    border-radius: 5px;
-    margin-left: 0.5%;
-    margin-top: 1%;
-    font-family: 'Lato';
-    font-weight: 300;
-    height: 32px;
-}
-.refresh-button{
-    background-color: #e67e22;
-    border-color: white;
-    padding: 8px 18px;
-    margin: 2% 0 0 42%; 
-}
-#smartphonecalendar{
-    display:none;
-}
-/* END building_schedule design  */
-
-
-
-
-
-/* START building shopping-list design */
-#shopping-list{
-    background-color: #f0f0f0;
-    width: 80%;
-    margin-left: 10%;
-}
-
-#quantity{
-    margin-left: 70%;
-}
-
-#quantity-input{
-    background-color: transparent;
-    border: solid 1px rgb(169,169,169);
-    color: black;
-    background: white;
-    text-indent: 10px;
-    border-radius: 5px;
-    font-family: 'Lato';
-    font-weight: 300;
-    width: 40%;
-    margin: 0.7% 0 0 70%;
-}
-
-#artitems,#officeitems,#fooditems,#empty{
-    width: 180%;
-    margin-left: 25%;
-}
-
-#itemcategory{
-    width: 87%;
-}
-
-.shoppinglist-form3{
-    margin-left: 5.3%;
-}
-
-#add{
-     margin: 2% 0 0 48%; 
+  #about-picture{
+    width: 300px;
+    height: 155px;
  }
-/* END building shopping-list design */
+
+  #about-exp{
+      margin: 5% 0 0 4%;
+  }
 
 
-/* START building Daily attendance design */
-#attendance-table{
-    width:50%;
-    text-align:center;
-    margin-left: 26%;  
-}
+  /*  Building/view schedule page */
+    #calendar{
+        display:none;
+    }
+    #smartphonecalendar{
+        display:block;
+        position:relative; 
+        left:370px;
+    }
 
-#attendance-table th{
-    background:#e67e22;
-    text-align:center;
-    width:150px;
-    color:white;
-    font-weight:normal;
-}
+    #viewCalendar{
+        display:none;
+    }
+    #smartphoneviewCalendar{
+        display:block;
+        position:relative; 
+        left:370px;
+    }
 
-.send-button{
-    background-color: #e67e22;
-    border-color: white;
-    padding: 8px 18px;
-    color:white;
-} 
+    .copyrights{
+        font-size:14px;
+     }
 
-.pickDateField{
-    text-align: center;
-}
-
-.pickDateField input{
-    background-color: transparent;
-    border: solid 1px rgb(169,169,169);
-    color: black;
-    background: rgba(128, 128, 128, 0.568);
-    text-indent: 10px;
-    width:130px;
-    border-radius: 5px;
-    margin-left: 3.5%;
-    margin-top: 1%;
-    font-weight: 300;
-    height: 32px;
-    display: inline-block; 
-}
-.pickDateField label{
-    margin-bottom: 2%;
-}
-
-/* END building Daily attendance design */
-
-
-/* START building about design */
-
-#about-picture{
-    width: 500px;
-}
-
-.about-form{
-    margin: 1% 0 0 5%;
-}
-
-#about-exp{
-    margin: 35% 0 0 1.5%;
-}
+}							
