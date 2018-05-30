@@ -1,5 +1,5 @@
 <div>
-    <table id="weather-table" class="table table-striped table-responsive">
+    <table id="weather-table" class="table-responsive">
         <tr>
             <th>Today</th>
             <th>Tomorrow</th>

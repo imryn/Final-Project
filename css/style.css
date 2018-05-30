@@ -55,6 +55,12 @@ h2{
     font-weight: bold;
 }
 
+#logo{
+    width:10%;
+    height:12%;
+    margin-left: 10%;
+}
+
 /* index template styling */
 
 .container{
@@ -694,15 +700,24 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
 /* END building about design */
 
 #weather-table{
-    margin: -15% 0 0 50%;
-    position: absolute;
-    width: 40%;
+    margin: 5% 0 0 25%;
+    width: 50%;
+    background-color: white;
 }
 
 #weather-table th, #weather-table tr{
    text-align: center;
 }
 
+#weather-table td, #weather-table th{
+    border-left: 1px solid #ddd;
+}
+
+#weather-table td:first-child, #weather-table th:first-child{
+    border-left: none;
+}
+
 #weather-table th{
+    padding-bottom: 2%;
     border-top: none;
 }
