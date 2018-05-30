@@ -619,6 +619,18 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
 .clear_shopping_history{
     margin: 2% 0 0 41%; 
 }
+
+.shopping-header{
+    margin-top: 5%;
+}
+
+.shopping-money-exp{
+    margin-left: 45%;
+}
+
+.shopping-money-exp:first-child{
+    margin-top: 5%;
+}
 /* END building shopping-list design */
 
 
@@ -681,4 +693,20 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
 
 #about-exp{
     margin: 35% 0 0 1.5%;
+}
+
+/* END building about design */
+
+#weather-table{
+    margin: -15% 0 0 50%;
+    position: absolute;
+    width: 40%;
+}
+
+#weather-table th, #weather-table tr{
+   text-align: center;
+}
+
+#weather-table th{
+    border-top: none;
 }

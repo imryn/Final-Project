@@ -152,7 +152,7 @@
                      </div>
                 </div>
             </div>
-            <button type="button" id="new-observation" class="btn btn-warning" disabled> Add observation to child file </button>
+            <button type="button" id="new-observation" class="btn btn-warning" disabled> Add Observation To Child File </button>
      </form>  
 </section>
 

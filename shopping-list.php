@@ -132,7 +132,7 @@ $shoppingitems = $items->getItemsFromShoppingListHistory();
                 <input type="hidden" name="kindergardenid" value="<?php  echo $_SESSION['kindergardenid']; ?>">
             </form>
             <div>
-                <h4>Cart</h4>
+                <h2 class="shopping-header"> Cart</h2>
             </div>
             <table id="cart-table" class="table table-striped table-responsive w-auto">
                 <tr>
@@ -182,7 +182,7 @@ $shoppingitems = $items->getItemsFromShoppingListHistory();
                     <strong>&#x20AA;</strong> <strong class="cart_total"><?php echo $cartTotal; ?></strong>
                 </div>
             </form>
-            <h4>Shopping list history</h4>
+            <h2 class="shopping-header">Shopping list history</h2>
             <table id="shopping-table" class="table table-striped table-responsive w-auto">
                 <tr>
                     <th>Category - Item</th>
@@ -229,16 +229,16 @@ $shoppingitems = $items->getItemsFromShoppingListHistory();
             <div>
                 <button title="Clear history and renew budget"
                         class="btn btn-warning clear_shopping_history"
-                        data-item-total="<?php echo $itemTotal;?>">Clear history and renew budget</button>
+                        data-item-total="<?php echo $itemTotal;?>">Clear History And Renew Budget</button>
             </div>
             <div>
-                <p>
+                <p class="shopping-money-exp">
                     Total: <strong>&#x20AA;</strong> <strong class="shopping_cart_total"><?php echo $_SESSION['shopping_cart_total']; ?></strong>
                 </p>
-                <p>
+                <p class="shopping-money-exp">
                     Budget: <strong>&#x20AA; <?php echo $_SESSION['shoppingbudget'] ; ?></strong>
                 </p>
-                <p>
+                <p class="shopping-money-exp">
                     Remain:<strong>&#x20AA;</strong> <strong class="shopping_cart_remain"><?php echo $_SESSION['shoppingbudget'] - $_SESSION['shopping_cart_total']; ?></strong>
                 </p>
             </div>

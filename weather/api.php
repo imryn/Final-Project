@@ -1,10 +1,10 @@
 <div>
-    <table border="1">
+    <table id="weather-table" class="table table-striped table-responsive">
         <tr>
-            <td>Today</td>
-            <td>Tomorrow</td>
-            <td>Day 3</td>
-            <td>Day 4</td>
+            <th>Today</th>
+            <th>Tomorrow</th>
+            <th>Day 3</th>
+            <th>Day 4</th>
         </tr>
         <tr>
             <td class="today_temp">
