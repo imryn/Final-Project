@@ -47,8 +47,6 @@
             $sql = "SELECT exceptions.observation, exceptions.specialRequests ,exceptions.observationDate,exceptions.fname,exceptions.lastname FROM exceptions WHERE exceptions.observationDate>={$_GET['startDate']}
             AND exceptions.observationDate<={$_GET['endDate']} AND exceptions.fname='{$_GET['kidFname']}' AND exceptions.lastname='{$_GET['kidLname']}'" ;
 
-            echo $sql;
-
             $result =$this->db->query($sql); 
             if($result){
                 $data= [];

@@ -102,7 +102,7 @@ function getExceptionReports(data){
 
 function genrateKidReport(){
     var data = getFormData("#exception-report form");
-    if(data.exceptionOptions == 0){
+    if(loginType() && data.exceptionOptions == 0){
         getExceptionGraph(data);
         document.getElementById('kids-observation-table').innerHTML = "";
     }
@@ -163,13 +163,16 @@ function getExceptionGraph(data){
 
 var kinderGarten;
 
+function loginType(){
+    var cookie = document.cookie.match("(loginType=)(.*)");
+    return (cookie && cookie[2] && cookie[2] == 'crew' ? true : false);
+}
 
 function showKindergartenkid(){
     httpGet("/Sadna/server/api.php?route=getKindergartenkid",function(response){
         if(response.success){
             kinderGarten = response.data;
-            var cookie = document.cookie.match("(loginType=)(.*)");
-            if(cookie && cookie[2] && cookie[2] == 'crew'){
+            if(loginType()){
                 response.data.unshift({fname:"All",lastname:""});
             }
             var flatData = response.data.map(function(item){
