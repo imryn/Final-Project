@@ -175,8 +175,8 @@ function createItemsTable(data){
             table = '<tr class="table-info" id="item_cart_row_' + item.id + '">' +
                 '<td>' + item.itemCategory + '-' + item.itemName + '</td>' +
                 '<td>' + item.quantity + '</td>' +
-                '<td>&#x20AA;' + item.unitPrice + '</td>' +
-                '<td>&#x20AA;' + itemTotal + '</td>' +
+                '<td class="colDisplay">&#x20AA;' + item.unitPrice + '</td>' +
+                '<td class="colDisplay">&#x20AA;' + itemTotal + '</td>' +
                 '<td class="purchase_col"> <button title="Mark as purchased and remove from cart" class="btn btn-success purchase-item" data-id="' + item.id + '" data-price="' + itemTotal + '"> Purchase </button></td>' +
                 '<td> <button title="Remove from list" class="btn btn-danger delete-from-cart" data-id="' + item.id + '" data-item-total="' + itemTotal + '" data-type="cart">Delete</button></td>' +
                 '</tr>';
