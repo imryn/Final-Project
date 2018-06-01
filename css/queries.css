@@ -22,8 +22,12 @@
   }
 
    .logo-container{
-      margin-left: -10%;
-  } 
+      margin-left:  -10%;
+  }
+
+  #logo{
+    width: 20%;
+  }
 
     /* index page */
 
@@ -263,10 +267,18 @@
       margin-left: 42%;
    }
 
-   #item-table{
+   #cart-table, #shopping-table{
         width: 80%;
         margin-left: 10%;
    }
+
+   .clear_shopping_history{
+        margin-left: 18%;
+   }
+
+   .shopping-money-exp{
+        margin-left: 36%;
+    }
 
    .table>tbody>tr>th{
        padding: 6px;
@@ -314,7 +326,7 @@
   }
 
 
-  /*  Building/view schedule page */
+  /*  BUILDING view schedule page */
     #calendar{
         display:none;
     }
@@ -337,4 +349,12 @@
         font-size:14px;
      }
 
-}							
+  /*  ENDING view schedule page */
+
+    #weather-table{
+       margin: -3% 0 0 1%;
+       display: initial;
+       position: relative;
+     }
+
+}								
