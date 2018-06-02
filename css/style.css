@@ -55,6 +55,12 @@ h2{
     font-weight: bold;
 }
 
+#logo{
+    width:10%;
+    height:12%;
+    margin-left: 10%;
+}
+
 /* index template styling */
 
 .container{
@@ -423,13 +429,13 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
 
 #kids-table th, #kids-table tr,
 #kids-observation-table th, #kids-observation-table tr,
-#item-table th, #item-table tr, 
-#kids-presence-table tr, #kids-presence-table th{
+#kids-presence-table tr, #kids-presence-table th,
+#shopping-table tr, #shopping-table th{
     text-align: center;
 }
 
 #kids-table th, #kids-observation-table th,
-#kids-presence-table th{
+#kids-presence-table th, #cart-table th, #shopping-table th{
     background: #e67e22;
     color: white;
     font-weight: normal;
@@ -437,18 +443,6 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
 
 #item{
     margin-left: 25%;
-}
-
-#item-table{
-    width:80%;
-    text-align:center;
-    margin-left:10%;
-    margin-top: 30px;  
-}
-#item-table th{
-    background-color: #e67e22;
-    color:white;
-    font-weight:normal;
 }
 
 #chart_div{
@@ -576,6 +570,14 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
 
 
 /* START building shopping-list design */
+
+#cart-table, #shopping-table{
+    width: 80%;
+    text-align: center;
+    margin-left: 10%;
+    margin-top: 30px;
+}
+
 #shopping-list{
     background-color: #f0f0f0;
     width: 80%;
@@ -614,7 +616,23 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
 
 #add{
      margin: 2% 0 0 48%; 
- }
+}
+
+.clear_shopping_history{
+    margin: 2% 0 0 41%; 
+}
+
+.shopping-header{
+    margin-top: 5%;
+}
+
+.shopping-money-exp{
+    margin-left: 45%;
+}
+
+.shopping-money-exp:first-child{
+    margin-top: 5%;
+}
 /* END building shopping-list design */
 
 
@@ -677,4 +695,21 @@ exit:hover, #options_for_report:hover, .create-botton:hover,
 
 #about-exp{
     margin: 35% 0 0 1.5%;
+}
+
+/* END building about design */
+
+#weather-table{
+    margin: -5% 0 0 63.5%;
+    width: 27%;
+    background-color: white;
+    position: absolute;
+}
+
+#weather-table th, #weather-table tr{
+   text-align: center;
+}
+
+#weather-table td, #weather-table th{
+    border: none;
 }

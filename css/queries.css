@@ -15,14 +15,19 @@
   #reports, #alergic-report, #exception-report,
   #Weekly-Scheduler, #daily-attendance, #kid-choosen, 
   #kidList-detailsUpdate, #kid-observation,  #index-section,
-  #registration-parent, #registration-kid, #kid-detailsUpdate{
+  #registration-parent, #registration-kid, #kid-detailsUpdate,
+  #about-section{
      width: 100%;
      margin-left: 0;
   }
 
    .logo-container{
-      margin-left: -10%;
-  } 
+      margin-left:  -10%;
+  }
+
+  #logo{
+    width: 20%;
+  }
 
     /* index page */
 
@@ -32,7 +37,7 @@
     }
 
     .card{
-        margin-left: 4%;
+        margin-left: 0;
     }
 
    .card-text{ 
@@ -46,7 +51,7 @@
     }
 
     .template-row{
-        margin-left: 3.3%
+        margin-left: 2.5%;
     }
 
     /* registration page */
@@ -109,6 +114,10 @@
     margin-left: 4%;
  }
 
+#observation-text{
+   margin-left: 0;
+}
+
 /* buttons */
   #new-observation{
     width: 72%;
@@ -149,24 +158,27 @@
 
 
 /* weekly schedule page */
+
    .schedule_row{
         margin-left: -48%;   
     }
-
-    .scheduler-add{
-        margin: 2% 0 0 -1%;
+   
+   .scheduler-add{
+        margin: 0 0 0 -1%;
     }
 
-    #bfInput, #eaInput, #lInput, .scheduler-description input{
+   #bfInput, #eaInput, #lInput, .scheduler-description input{
         width: 80%;
         margin-left: -1%;
     }
 
+   .pick{
+    margin-left: -2%;
+  }
+
    #date{
-       /* margin-left: -11%;
-       width: 25%; */
-       margin-left: -1%;
-       width: 95%;
+       margin-left: -2%;
+       width: 80%;
        display: block;
    }
 
@@ -224,7 +236,7 @@
     
    #shopping-list{
      width: 100%;
-     margin-left: 0;
+      margin-left: 0;
   }
 
    .shoppinglist-form3{
@@ -248,16 +260,25 @@
    #quantity-input{
        margin-left:  0;
        display: block;
+       width: 90.5%;
    }
 
    #add{
       margin-left: 42%;
    }
 
-   #item-table{
+   #cart-table, #shopping-table{
         width: 80%;
         margin-left: 10%;
    }
+
+   .clear_shopping_history{
+        margin-left: 18%;
+   }
+
+   .shopping-money-exp{
+        margin-left: 36%;
+    }
 
    .table>tbody>tr>th{
        padding: 6px;
@@ -290,12 +311,29 @@
        margin-left: 28%;
    }
 
-    /*  Building/view schedule page */
+   /* about page */
+
+  .about-form{
+   margin-left: 1%;
+}
+  #about-picture{
+    width: 300px;
+    height: 155px;
+ }
+
+  #about-exp{
+      margin: 5% 0 0 4%;
+  }
+
+
+  /*  BUILDING view schedule page */
     #calendar{
         display:none;
     }
     #smartphonecalendar{
         display:block;
+        position:relative; 
+        left:370px;
     }
 
     #viewCalendar{
@@ -303,6 +341,20 @@
     }
     #smartphoneviewCalendar{
         display:block;
+        position:relative; 
+        left:370px;
     }
 
-}
+    .copyrights{
+        font-size:14px;
+     }
+
+  /*  ENDING view schedule page */
+
+    #weather-table{
+       margin: -3% 0 0 1%;
+       display: initial;
+       position: relative;
+     }
+
+}								

@@ -24,6 +24,7 @@
 <body>
        <header>
             <templateHtml src="logo-container/logo-container.html"></templateHtml>
+            <?php include "weather/api.php" ?>
             <?php include "nav-menu/nav-menu-container.php" ?>
        </header>
 
@@ -108,22 +109,24 @@
   </div>
   <div class="col-lg-4 col-sm-6 portfolio-item">
     <div class="card h-100">
-      <img class="card-img-top" src="pictures/shopping-carts-720x340.png" alt="">
+      <iframe class="card-img-top" src="https://www.youtube.com/embed/0R0V-fvTAz4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen alt="marketing-video"></iframe>
       <div class="card-body">
         <h4 class="card-title">
-        <h3 class="template-header"> Project Two</h3>
+        <h3 class="template-header"> Marketing Video </h3>
         </h4>
-        <p class="card-text">
+        <!-- <p class="card-text">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
           Itaque earum nostrum suscipit ducimus nihil provident, 
           perferendis rem illo, voluptate atque, sit eius in voluptates, 
           nemo repellat fugiat excepturi! Nemo, esse.
-        </p>
+        </p> -->
       </div>
     </div>
   </div>
 </div>
 </div>
+
+
 </section>
 
     <footer class="container-fluid text-center bg-lightgray">

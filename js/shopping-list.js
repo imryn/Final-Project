@@ -66,12 +66,27 @@ function SelectCategory(){
   // End - conditions for the selects
 $( document ).on('click', '.delete-from-cart', function(){
     var id = $(this).data('id');
+    var type = $(this).data('type'); // type = cart or shopping ( to know from which table to delete this row )
     var itemTotal = parseInt( $(this).data('item-total') );
     httpGet("/Sadna/server/api.php?route=removeItemFromCart",  { 'id': id, 'itemTotal': itemTotal }, function(response) {
         if( response.success ){
+
             $('#item_cart_row_'+id).remove();
-            var currentVal = parseInt( $('.total_shopping_cart').html() );
-            $('.total_shopping_cart').html( "" + ( currentVal - itemTotal ) );
+            var currentVal = 0;
+            // update total according to type - can be cart_total OR shopping_total
+            if( type === "cart" ) {
+                currentVal = parseInt($('.cart_total').html());
+                $('.cart_total').html("" + (currentVal - itemTotal));
+            } else if( type === "shopping" ) {
+                currentVal = parseInt($('.shopping_total').html());
+                $('.shopping_total').html("" + (currentVal - itemTotal));
+            }
+            // update total and remain values
+            currentVal = parseInt($('.shopping_cart_total').html());
+            $('.shopping_cart_total').html("" + (currentVal - itemTotal));
+
+            currentVal = parseInt($('.shopping_cart_remain').html());
+            $('.shopping_cart_remain').html("" + (currentVal + itemTotal));
         }
     })
 
@@ -79,12 +94,35 @@ $( document ).on('click', '.delete-from-cart', function(){
 
   $( document ).on('click', '.purchase-item', function(){
       var id = $(this).data('id');
+      var price = $(this).data('price'); // = quantity * itemPrice
       httpGet("/Sadna/server/api.php?route=updateItemStatus", { 'id': id } , function(response) {
           if( response.success ){
-              $('#item_cart_row_'+id).remove();
+              // move the table-row from cart-table to shopping table
+              var tr = $('#item_cart_row_'+id).remove().clone();
+              // remove the purchase column
+              tr.find('.purchase_col').remove();
+              // update the delete type to shopping
+              tr.find('.delete-from-cart').data('type', 'shopping');
+              // append to shopping-table
+              $('#shopping-table').append( tr );
+
+              var currentVal = parseInt($('.cart_total').html());
+              $('.cart_total').html("" + (currentVal - price));
+
+
+              currentVal = parseInt($('.shopping_total').html());
+              $('.shopping_total').html("" + (currentVal + price));
           }
       })
   });
+
+$(".clear_shopping_history").on('click', function(){
+    httpGet("/Sadna/server/api.php?route=clear_shopping_history" , function(response) {
+        if( response.success ){
+            window.location.reload();
+        }
+    });
+});
 
 
 $('#quantity-input').on( 'change', function(){
@@ -102,7 +140,6 @@ function buildThs(array){
     return row + '</tr>';
 }
 
-//var tableElement = document.getElementById("item-table").tableElement.length;
 
 function createItemsTable(data){
     
@@ -133,18 +170,26 @@ function createItemsTable(data){
         }
 
         if( is_vail === true ) {
+            $('#quantity-input').val(0);
             itemTotal = item.quantity * item.unitPrice;
             table = '<tr class="table-info" id="item_cart_row_' + item.id + '">' +
                 '<td>' + item.itemCategory + '-' + item.itemName + '</td>' +
                 '<td>' + item.quantity + '</td>' +
-                '<td>&#x20AA;' + item.unitPrice + '</td>' +
-                '<td>&#x20AA;' + itemTotal + '</td>' +
-                '<td> <button title="Mark as purchased and remove from list" class="btn btn-success purchase-item" data-id="' + item.id + '" data-quantity="' + item.quantity + '"> Purchase </button></td>' +
-                '<td> <button title="Remove from list" class="btn btn-danger delete-from-cart" data-id="' + item.id + '" data-item-total="' + itemTotal + '">Delete</button></td>' +
+                '<td class="colDisplay">&#x20AA;' + item.unitPrice + '</td>' +
+                '<td class="colDisplay">&#x20AA;' + itemTotal + '</td>' +
+                '<td class="purchase_col"> <button title="Mark as purchased and remove from cart" class="btn btn-success purchase-item" data-id="' + item.id + '" data-price="' + itemTotal + '"> Purchase </button></td>' +
+                '<td> <button title="Remove from list" class="btn btn-danger delete-from-cart" data-id="' + item.id + '" data-item-total="' + itemTotal + '" data-type="cart">Delete</button></td>' +
                 '</tr>';
-            $('#item-table').append(table);
-            var currentVal = parseInt($('.total_shopping_cart').html());
-            $('.total_shopping_cart').html("" + (currentVal + itemTotal));
+            $('#cart-table').append(table);
+
+            var currentVal = parseInt($('.cart_total').html());
+            $('.cart_total').html("" + (currentVal + itemTotal));
+
+            currentVal = parseInt($('.shopping_cart_total').html());
+            $('.shopping_cart_total').html( currentVal + itemTotal );
+
+            currentVal = parseInt($('.shopping_cart_remain').html());
+            $('.shopping_cart_remain').html( currentVal - itemTotal );
         }
     });
     
@@ -168,26 +213,3 @@ function getItemList(){
 
     //  location.reload();
 }
-
-
-/*
-var onStartCreateTable = true;
-
-function createItemsTable(data){
-    
-    if(onStartCreateTable){
-        var table = buildThs(['Category', 'Item Name','Quantity', 'Price']);
-        onStartCreateTable =  false;
-        $('#item-table').append(table);
-    }
-    
-    
-    data.forEach(function(item) {
-        var table = '<tr class="table-info"><td>'+item.itemCategory+'</td><td>' + item.itemName + '</td><td>'+item.quantity+'</td><td>'
-        + item.unitPrice+'</td></tr>';
-        $('#item-table').append(table);
-    });
-    console.log(table)
-}
-*/
-

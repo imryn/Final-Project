@@ -25,6 +25,7 @@
 <body onload="showKindergartenkid()">
     <header>
         <templateHtml src="logo-container/logo-container.html"></templateHtml>
+        <?php include "weather/api.php" ?>
         <?php include "nav-menu/nav-menu-container.php" ?>
      </header>
 
@@ -134,13 +135,13 @@
                 <div class="col span-1-of-3 box">
                     <div class="registration-info">
                         <label for="food" id="food-label"> Food Preference: </label>   
-                        <p> <input type="radio" name="vegan" class="disabled-input"> Vegan </p>                  
+                        <p> <input type="radio" name="foodpreference" value="vegan" class="disabled-input"> Vegan </p>                  
                     </div>
                 </div>
                 <div class="col span-1-of-3 box">
                     <div class="registration-info">
                         <label for="food"> </label>   
-                        <p class="food-pref"> <input type="radio" name="vegetarian" class="disabled-input"> Vegetarian </p>                  
+                        <p class="food-pref"> <input type="radio" name="foodpreference" value="vegetarian" class="disabled-input"> Vegetarian </p>                  
                     </div>
                 </div>
            </div>
@@ -152,7 +153,7 @@
                      </div>
                 </div>
             </div>
-            <button type="button" id="new-observation" class="btn btn-warning" disabled> Add observation to child file </button>
+            <button type="button" id="new-observation" class="btn btn-warning" disabled> Add Observation To Child File </button>
      </form>  
 </section>
 

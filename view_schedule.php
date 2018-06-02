@@ -29,6 +29,7 @@
     <body>
         <header>
             <templateHtml src="logo-container/logo-container.html"></templateHtml>
+            <?php include "weather/api.php" ?>
             <?php include "nav-menu/nav-menu-container.php" ?>
         </header>
 

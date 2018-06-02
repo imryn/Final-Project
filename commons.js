@@ -29,8 +29,12 @@ function getFormData(formSelector){
 
             switch (input.getAttribute("type")) {
                 case "checkbox":
-                case "radio":
                     data[name] = input.checked;
+                    break;
+                case "radio":
+                    if(input.checked){
+                        data[name] = input.value;
+                    }
                     break;
                 default:
                     data[name] = input.value;
@@ -57,11 +61,14 @@ function setFormData(formId,data){
             if(item.nodeName == "INPUT" || item.nodeName == "SELECT" || item.nodeName == "TEXTAREA"){
                 var type = item.getAttribute("type");
                 switch (type) {
-                    case "radio":
                     case "checkbox":
                         if(data[key] == "1"){
                             item.checked = true;
                         }
+                        break;
+                    case "radio":
+                        var item = document.querySelector(formId + " [name= " + key + "][value=" + data[key] + "]");
+                        item.checked = true;
                         break;
                     default:
                         item.value = data[key];
@@ -132,3 +139,32 @@ function putInfoInsideSelector(selectorId, data){
 
     document.querySelector(selectorId).innerHTML = optionsString;
 }
+
+ var city_id = "293397";
+ var key = 'c6d2bb1ff69b72eb20130799f7be62fb';
+
+ $.ajax({
+     url: 'http://api.openweathermap.org/data/2.5/forecast',
+     dataType: 'json',
+     type: 'GET',
+     data: { id:city_id, appid: key, units: 'metric'},
+
+     success: function(data){
+         $('.today_temp').html( "" + data.list[1].main.temp_min + " - " + data.list[1].main.temp_max );
+         $('.today_icon').append( '<img src="http://openweathermap.org/img/w/' + data.list[1].weather[0].icon + '.png">' );
+         $('.today_desc').html( "" + data.list[1].weather[0].description );
+
+         $('.tomorrow_temp').html( "" + data.list[9].main.temp_min + " - " + data.list[9].main.temp_max );
+         $('.tomorrow_icon').append( '<img src="http://openweathermap.org/img/w/' + data.list[9].weather[0].icon + '.png">' );
+         $('.tomorrow_desc').html( "" + data.list[9].weather[0].description );
+
+         $('.day3_temp').html( "" + data.list[16].main.temp_min + " - " + data.list[16].main.temp_max );
+         $('.day3_icon').append( '<img src="http://openweathermap.org/img/w/' + data.list[16].weather[0].icon + '.png">' );
+         $('.day3_desc').html( "" + data.list[16].weather[0].description );
+
+         $('.day4_temp').html( "" + data.list[24].main.temp_min + " - " + data.list[24].main.temp_max );
+         $('.day4_icon').append( '<img src="http://openweathermap.org/img/w/' + data.list[24].weather[0].icon + '.png">' );
+         $('.day4_desc').html( "" + data.list[24].weather[0].description );
+     }
+
+ });

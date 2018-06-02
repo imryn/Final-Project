@@ -39,7 +39,9 @@
                     $result = $this->db->query( $sql );
                     $row = $result->fetch_assoc();
                     $_SESSION['shoppingbudget'] = $row['shoppingbudget'];
-                    $_SESSION['shopping_total'] = 0;
+                    //$_SESSION['cart_total'] = 0;
+                    //$_SESSION['shopping_history_total'] = 0;
+                    $_SESSION['shopping_cart_total'] = 0; // cart + shopping history
 
                     setcookie("loginType",'crew',time() + 86400000,"/"); 
                     header("Location: /Sadna/index.php");

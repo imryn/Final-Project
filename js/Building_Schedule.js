@@ -4,9 +4,9 @@ $("#date").keyup(function(){
 $("#date").focusout(function(){
     activateAddButton();
 });
-
+ 
 $(".addeventatc").css('display','none')
-
+ 
 var showButton = false
 function activateAddButton()
 {
@@ -16,7 +16,7 @@ function activateAddButton()
         $(".addeventatc").css('display','inline-block')
     }
 }
-
+ 
 window.addeventasync = function(){
     addeventatc.settings({
         appleical  : {show:false, text:"Apple Calendar"},
@@ -26,7 +26,7 @@ window.addeventasync = function(){
         yahoo      : {show:false, text:"Yahoo <em>(online)</em>"}
     });
 };      
-
+ 
 $("#bfInput, #eaInput, #lInput, #seInput").blur(function(e){
     var newText = $(this).val();
 
@@ -36,7 +36,7 @@ $("#bfInput, #eaInput, #lInput, #seInput").blur(function(e){
     //     location.reload();
     // },7000)
 })
-
+ 
 $("#date").blur(function(){
     var newDate = $("#date").val()
 
@@ -52,3 +52,4 @@ $("#date").blur(function(){
     $("#se #startse").text(newDate + ' 9:00 AM')
     $("#se #endse").text(newDate + ' 10:30 AM')
 })
+ 
