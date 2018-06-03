@@ -55,8 +55,8 @@
 
         public function getAllallergies(){
             $sql = "SELECT kids.fname, kids.lastname, users.firstname, users.mobilephone FROM kids
-            INNER JOIN users ON kids.parentId=users.parentId AND kids.{$_GET['alergicOptions']}=1 INNER JOIN kindergarten
-            ON kindergarten.kindergartenId=users.kindergartenid <> '' ";
+            INNER JOIN users ON kids.parentId=users.parentId AND users.kindergartenid='{$_SESSION['kindergartenid']}' AND kids.{$_GET['alergicOptions']}=1 INNER JOIN kindergarten
+            ON kindergarten.kindergartenId='{$_SESSION['kindergartenid']}' <> '' ";
             $result =$this->db->query($sql); 
             if($result){
                 $data= [];
