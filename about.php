@@ -53,6 +53,7 @@
       <p>Copyright &copy; 2018 Karin Haim Pour, Imry Noy And Daniel Ben-Moshe . All rights reserved </p>
       </div>
     </footer>
+    
 
        <script src="commons.js"></script>
 </body>
