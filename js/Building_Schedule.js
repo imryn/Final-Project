@@ -36,10 +36,9 @@ $("#bfInput, #eaInput, #lInput, #seInput").blur(function(e){
     //     location.reload();
     // },7000)
 })
- 
 $("#date").blur(function(){
     var newDate = $("#date").val()
-
+    
     $("#bf #startb").text(newDate + ' 10:45 AM')
     $("#bf #endb").text(newDate + ' 11:15 AM')
 

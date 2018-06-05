@@ -52,13 +52,13 @@
             </div>
             <div class="row schduler_holder">
                     <div class="col span-1-of-2 box">
-                        <div class="scheduler-description" id="bf">
+                        <div class="scheduler-description">
                             <label for="Breakfast" class="schedule_row_label">  Breakfast: </label> 
                             <input name="Breakfast" id="bfInput" type="text" /> 
                         </div>
                     </div>
             
-                <div class="col span-1-of-2 box">
+                <div class="col span-1-of-2 box" id="bf">
                         <div class="scheduler-add">
                             <!-- Button code -->
                             <div title="Add to Calendar" class="addeventatc"> 
@@ -74,12 +74,12 @@
             </div>
                <div class="row schduler_holder">
                     <div class="col span-1-of-2 box">
-                          <div class="scheduler-description" id="ea">
+                          <div class="scheduler-description" >
                             <label for="Educational" class="schedule_row_label">  Educational Activity: </label>
                             <input name="Educational" id='eaInput' type="text" /> 
                           </div>
                     </div>
-                    <div class="col span-1-of-2 box">
+                    <div class="col span-1-of-2 box" id="ea">
                         <div class="scheduler-add">
                             <!-- Button code -->
                             <div title="Add to Calendar" class="addeventatc"> 
@@ -95,13 +95,13 @@
               </div>
                <div class="row schduler_holder">
                     <div class="col span-1-of-2 box">
-                        <div class="scheduler-description" id="ln">                            
+                        <div class="scheduler-description" >                            
                             <label for="Lunch" class="schedule_row_label">  Lunch: </label>
                             <input name="Lunch" id='lInput' type="text" /> 
                         </div>
                     </div>
                             <!-- Button code -->
-                    <div class="col span-1-of-2 box">
+                    <div class="col span-1-of-2 box" id="ln">
                         <div class="scheduler-add">
                             <div title="Add to Calendar" class="addeventatc"> 
                                 Add  
@@ -116,13 +116,13 @@
               </div>
                <div class="row schduler_holder">
                     <div class="col span-1-of-2 box">
-                        <div class="scheduler-description" id="se">                            
+                        <div class="scheduler-description" >                            
                             <label for="Lunch" class="schedule_row_label">  Special Event: </label>
                             <input name="Lunch" id='seInput' type="text" /> 
                         </div>
                     </div>
                             <!-- Button code -->
-                    <div class="col span-1-of-2 box">
+                    <div class="col span-1-of-2 box" id="se">
                         <div class="scheduler-add">
                             <div title="Add to Calendar" class="addeventatc"> 
                                 Add  
