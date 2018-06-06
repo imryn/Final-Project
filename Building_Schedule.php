@@ -1,3 +1,13 @@
+<!--Security -->
+<?php
+session_start();
+include 'server/crew.php';
+$crew = new Crew();
+if( !$crew->isLogin() ) {
+    header('location:index.php');
+}
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
