@@ -3,7 +3,7 @@ session_start();
 include 'server/crew.php';
 $crew = new Crew();
 if( !$crew->isLogin() ) {
-    header('location:login_page.php?usertype=crew');
+    header('location:index.php');
 }
 include 'server/items.php';
 $items = new Items();
@@ -116,7 +116,7 @@ $shoppingitems = $items->getItemsFromShoppingListHistory();
                                 <option value="Pickles (can)" > Pickles (can)  </option>
                                 <option value="Raspberry juice syrup 1 liter" > Raspberry juice syrup 1 liter  </option>
                                 <option value="Tomato (kg)" > Tomato (kg)  </option>
-                                <option value="Tehina-500gram (kg)" > Tehina-500gram (kg)  </option>
+                                <option value="Tehina-500gram" > Tehina-500gram   </option>
                                 <option value="Tuna (package of 4)" > Tuna (package of 4)  </option>
                         </select>
                     </div>
@@ -140,7 +140,7 @@ $shoppingitems = $items->getItemsFromShoppingListHistory();
                     <th>Qty</th>
                     <th class="colDisplay">Unit Price</th>
                     <th class="colDisplay">Total</th>
-                    <th>Purchased</th>
+                    <th>Purchase</th>
                     <th>Delete</th>
                 </tr>
                 <?php
@@ -182,7 +182,7 @@ $shoppingitems = $items->getItemsFromShoppingListHistory();
                     <strong>&#x20AA;</strong> <strong class="cart_total"><?php echo $cartTotal; ?></strong>
                 </div>
             </form>
-            <h2 class="shopping-header">Shopping list history</h2>
+            <h2 class="shopping-header">Purchases</h2>
             <table id="shopping-table" class="table table-striped table-responsive w-auto">
                 <tr>
                     <th>Category - Item</th>

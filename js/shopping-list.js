@@ -153,8 +153,9 @@ function createItemsTable(data){
         var range = 2;
         var is_vail = false;
         if( average > 0 && ( average > (  quantity + range ) || average < ( quantity - range ) ) ){
-            if( confirm( "The average quantity purchased for this item is " + average + ". Would you like to update quantity?") ) {
+            if( confirm( "The average quantity purchased for this item is " + average + ". Would you like to update to average quantity?") ) {
                 item.quantity = Math.floor( average );
+                location.reload();
                 httpGet("/Sadna/server/api.php?route=updateItemQuantity", { 'id': item.id, 'quantity': item.average, 'unitPrice': item.unitPrice }, function ( response ) {
                     if (response.success === true ) {
                         is_vail = true;
