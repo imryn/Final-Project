@@ -115,6 +115,13 @@
             }
         } 
         
+        public function isLogin() {
+            if( !empty( $_SESSION['parentId'] )) {
+                return true;
+            }
+            return false;
+        }
+
         public function __destruct(){
             $this->db->close();
        }
