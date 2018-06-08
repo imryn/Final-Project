@@ -12,7 +12,6 @@ if( !$crew->isLogin() ) {
 <html>
     <?php 
      
-     session_start();
     $servername = "us-cdbr-gcp-east-01.cleardb.net";
     $username = "b1cecd1cfb136f";
     $password = "7e767b54";
@@ -77,6 +76,7 @@ if( !$crew->isLogin() ) {
             crossorigin="anonymous">
         </script>
         <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+        <script src="vendors/bootstrap/js/bootpopup.min.js"></script>
 
         <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
         <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>

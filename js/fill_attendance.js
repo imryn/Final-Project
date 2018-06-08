@@ -21,14 +21,13 @@ function saveInServer(){
         sql += ' insert into noattendance (date,parentId,kidId,kindergartenid) values (current_date(),' + updateKids[i].parentId + ',' + updateKids[i].kidId + ',' + updateKids[i].kindergartenid + '); '
     }
 
-
-    alert("Attendance was updated successfully!!");
+    bootpopup.alert("Attendance was updated successfully !!");
     location.href = 'updateNoattendance.php?sql=' + sql
 
 }
   
 function sendEmail(id)
 {
-    alert("Email was sent successfully to parent !");
+    bootpopup.alert("Email was sent successfully to parent !!");
     window.location=('http://localhost/Sadna/fill_attendance_email.php?id=' +id)
 }
