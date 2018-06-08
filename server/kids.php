@@ -75,6 +75,29 @@
                 'success'=>true
             ]);
         }
+
+        public function getkidallergies(){
+            $sql = "SELECT kids.fname, kids.lastname, users.firstname, users.mobilephone FROM kids
+            INNER JOIN users ON kids.parentId=users.parentId AND users.parentId='{$_SESSION['parentId']}'
+            AND kids.{$_GET['alergicOptions']}=1 <> '' ";
+            $result =$this->db->query($sql); 
+            if($result){
+                $data= [];
+                while($row = mysqli_fetch_array($result)){
+                    array_push($data, (object) [
+                        'first_name' => $row['fname'],
+                        'last_name' => $row['lastname'],
+                        'parent_name' => $row['firstname'],
+                        'phone_number' => $row['mobilephone']
+                    ]);  
+                }
+        
+            }
+            echo json_encode((object) [
+                'data' => $data,
+                'success'=>true
+            ]);
+        }
         
         public function showKindergartenkidsList(){
             $sql = "SELECT kids.fname, kids.lastname FROM kids INNER JOIN users

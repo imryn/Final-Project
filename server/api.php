@@ -57,8 +57,14 @@
                     break;
         
                  case "get_Alergicreport":
+                 if(isSet($_SESSION['kTeacherId'])){
                     $kids= new Kids();
                     $kids -> getAllallergies();
+                 }
+                 else{
+                    $kids= new Kids();
+                    $kids -> getkidallergies();
+                 }
                     break;
 
                 case "signout":
