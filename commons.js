@@ -150,9 +150,9 @@ function putInfoInsideSelector(selectorId, data){
      data: { id:city_id, appid: key, units: 'metric'},
 
      success: function(data){
-         $('.today_temp').html( "" + data.list[1].main.temp_min + " - " + data.list[1].main.temp_max );
-         $('.today_icon').append( '<img src="http://openweathermap.org/img/w/' + data.list[1].weather[0].icon + '.png">' );
-         $('.today_desc').html( "" + data.list[1].weather[0].description );
+         $('.today_temp').html( "" + data.list[0].main.temp_min + " - " + data.list[0].main.temp_max );
+         $('.today_icon').append( '<img src="http://openweathermap.org/img/w/' + data.list[0].weather[0].icon + '.png">' );
+         $('.today_desc').html( "" + data.list[0].weather[0].description );
 
          $('.tomorrow_temp').html( "" + data.list[9].main.temp_min + " - " + data.list[9].main.temp_max );
          $('.tomorrow_icon').append( '<img src="http://openweathermap.org/img/w/' + data.list[9].weather[0].icon + '.png">' );
