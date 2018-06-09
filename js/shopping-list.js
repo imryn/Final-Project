@@ -155,10 +155,10 @@ function createItemsTable(data){
         if( average > 0 && ( average > (  quantity + range ) || average < ( quantity - range ) ) ){
             if( confirm( "The average quantity purchased for this item is " + average + ". Would you like to update to average quantity?") ) {
                 item.quantity = Math.floor( average );
-                location.reload();
+                //location.reload();
                 httpGet("/Sadna/server/api.php?route=updateItemQuantity", { 'id': item.id, 'quantity': item.average, 'unitPrice': item.unitPrice }, function ( response ) {
                     if (response.success === true ) {
-                        is_vail = true;
+                        addTableRowItem(item);
                     } else {
                         alert("You exceeded budget");
                     }
@@ -171,32 +171,30 @@ function createItemsTable(data){
         }
 
         if( is_vail === true ) {
-            $('#quantity-input').val(0);
-            itemTotal = item.quantity * item.unitPrice;
-            table = '<tr class="table-info" id="item_cart_row_' + item.id + '">' +
-                '<td>' + item.itemCategory + '-' + item.itemName + '</td>' +
-                '<td>' + item.quantity + '</td>' +
-                '<td class="colDisplay">&#x20AA;' + item.unitPrice + '</td>' +
-                '<td class="colDisplay">&#x20AA;' + itemTotal + '</td>' +
-                '<td class="purchase_col"> <button title="Mark as purchased and remove from cart" class="btn btn-success purchase-item" data-id="' + item.id + '" data-price="' + itemTotal + '"> Purchase </button></td>' +
-                '<td> <button title="Remove from list" class="btn btn-danger delete-from-cart" data-id="' + item.id + '" data-item-total="' + itemTotal + '" data-type="cart">Delete</button></td>' +
-                '</tr>';
-            $('#cart-table').append(table);
-
-            var currentVal = parseInt($('.cart_total').html());
-            $('.cart_total').html("" + (currentVal + itemTotal));
-
-            currentVal = parseInt($('.shopping_cart_total').html());
-            $('.shopping_cart_total').html( currentVal + itemTotal );
-
-            currentVal = parseInt($('.shopping_cart_remain').html());
-            $('.shopping_cart_remain').html( currentVal - itemTotal );
+            addTableRowItem(item);
         }
     });
-    
-    
-    tableElement.innerHTML = table;
-    console.log(table)
+}
+
+function addTableRowItem( item ) {
+    $('#quantity-input').val(0);
+    itemTotal = item.quantity * item.unitPrice;
+    table = '<tr class="table-info" id="item_cart_row_' + item.id + '">' +
+        '<td>' + item.itemCategory + '-' + item.itemName + '</td>' +
+        '<td>' + item.quantity + '</td>' +
+        '<td class="colDisplay">&#x20AA;' + item.unitPrice + '</td>' +
+        '<td class="colDisplay">&#x20AA;' + itemTotal + '</td>' +
+        '<td class="purchase_col"> <button title="Mark as purchased and remove from cart" class="btn btn-success purchase-item" data-id="' + item.id + '" data-price="' + itemTotal + '"> Purchase </button></td>' +
+        '<td> <button title="Remove from list" class="btn btn-danger delete-from-cart" data-id="' + item.id + '" data-item-total="' + itemTotal + '" data-type="cart">Delete</button></td>' +
+        '</tr>';
+    $('#cart-table').append(table);
+
+    var currentVal = parseInt($('.cart_total').html());
+    $('.cart_total').html("" + (currentVal + itemTotal));
+    currentVal = parseInt($('.shopping_cart_total').html());
+    $('.shopping_cart_total').html( currentVal + itemTotal );
+    currentVal = parseInt($('.shopping_cart_remain').html());
+    $('.shopping_cart_remain').html( currentVal - itemTotal );
 }
 
 function getItemList(){
