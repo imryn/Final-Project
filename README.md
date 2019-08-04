@@ -14,9 +14,9 @@ The idea of the project was to make better connection between parents and kinder
 4. A weekly schedule - planning a weekly schedule for the group's children in the kindergarten, including sleeping hours, meals to be served and activities to be carried out.
 
 5. Generate compatible reports and charts:
-Allergy Report - the kindergarten staff and parents can choose an allergy from a list to identify the sensitivities of the kids.
-Attendance report - the teachers will be able to see the number of delays / subtractions of a particular child / children during the week / month, in order to identify the need to contact the parents of the child (s) in exceptional cases.
-Exception report - the kindergarten staff will be able to view comments for "exceptions" listed in all kindergarten files, while the child's parent will be able to view comments about the child only.
+- Allergy Report - the kindergarten staff and parents can choose an allergy from a list to identify the sensitivities of the kids.
+- Attendance report - the teachers will be able to see the number of delays / subtractions of a particular child / children during the week / month, in order to identify the need to contact the parents of the child (s) in exceptional cases.
+- Exception report - the kindergarten staff will be able to view comments for "exceptions" listed in all kindergarten files, while the child's parent will be able to view comments about the child only.
 
 also used several APIs such as Google Calander.
 
